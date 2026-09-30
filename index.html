@@ -1211,7 +1211,7 @@ function pPick(p, idx){
   main.innerHTML = `${track()}
     <div class="prompt paper">${A(p.prompt)} <button class="say" data-t="${esc(p.prompt.t)}">🔊</button></div>
     <div class="note lis">${A(p.clue,{cls:'zyo big'})}<br><button class="say" data-t="${esc(p.clue.t)}">🔊 ${T('hear')}</button></div>
-    <div class="opts">${p.options.map((o,i)=>`<button class="opt nospeak" data-i="${i}"><span class="em">${o.e}</span>${A(o.w,{cls:'keephz'})}</button>`).join('')}</div>`;
+    <div class="opts">${p.options.map((o,i)=>`<button class="opt nospeak" data-i="${i}"><span class="em">${o.e}</span>${A(o.w,{cls:'keephz',noZy:true})}</button>`).join('')}</div>`;
   // options show pictures + characters only (no zhuyin) so the clue must be read
   main.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
     if(done) return; const i=+b.dataset.i;
