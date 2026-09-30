@@ -1035,7 +1035,7 @@ function story(lines, lastLabel){
         b.classList.add('right'); fx.ding(); $('#sNext').classList.remove('dim');
         $('#qfb').innerHTML = `🎉 ${A(q.good)}`;
         if(miss===0){ R.combo=(R.combo||0)+1;
-          if(!S.stars[cur.key]){ S.stars[cur.key]=1; save(); R.earned++; refreshBar(); const r=b.getBoundingClientRect(); floatStar(r.left+r.width/2, r.top); }
+          awardStory(cur.key,b);
           if(R.combo>=3 && R.combo%2===1) setTimeout(()=>{ toast(`🔥 ${T('streak1')} ${R.combo} ${T('streak2')}`); fx.fanfare(); },500);
         } else R.combo=0;
         playStage(); speakSeq([{text:praise()},{text:q.good.t}]);
@@ -1049,13 +1049,23 @@ function story(lines, lastLabel){
     if(c) main.querySelectorAll('.qopt').forEach(b=>b.onclick=()=>{
       const o=c.options[+b.dataset.i];
       main.querySelectorAll('.qopt').forEach(x=>x.disabled=true); b.classList.add('right'); fx.ding();
-      if(!S.stars[cur.key]){ S.stars[cur.key]=1; save(); R.earned++; refreshBar(); const r=b.getBoundingClientRect(); floatStar(r.left+r.width/2, r.top); }
+      awardStory(cur.key,b);
       if(!L[li+1] || !L[li+1].branch) L.splice(li+1, 0, {l:o.res, key:cur.key+'r', branch:true});
       else L[li+1]={l:o.res, key:cur.key+'r', branch:true};
       setTimeout(()=>{ li++; draw(); }, 550);
     });
   }
   draw();
+}
+function awardStory(key,b){
+  R.storyAwarded=R.storyAwarded||new Set();
+  if(R.storyAwarded.has(key)) return;
+  R.storyAwarded.add(key);
+  const fresh=!S.stars[key];
+  if(fresh) { S.stars[key]=1; save(); }
+  if(fresh || R.c.special==='birthday') {
+    R.earned++; refreshBar(); const r=b.getBoundingClientRect(); floatStar(r.left+r.width/2,r.top);
+  }
 }
 function award(key, mistakes, bonus){
   const st = mistakes===0?3:mistakes<=2?2:1;
@@ -1117,9 +1127,9 @@ function pRead(p, idx){
   });
 }
 function pMatch(p, idx){
-  let round=0, mistakes=0, done=false;
+  let round=0, mistakes=0, done=false, busy=false;
   function draw(){
-    const r=p.rounds[round];
+    busy=false; const r=p.rounds[round];
     main.innerHTML = `${track()}
       <div class="magic-score"><span>🪄 魔法配對 ${round+1} / ${p.rounds.length}</span><span>⭐ <b>${Math.max(0,4-mistakes)}</b></span></div>
       <div class="prompt paper">${A(p.prompt)} <button class="say" data-t="${esc(p.prompt.t)}">🔊</button></div>
@@ -1129,8 +1139,9 @@ function pMatch(p, idx){
     if(S.auto) speakSeq([{text:p.prompt.t},{text:r.word.t}]);
   }
   function choose(b,r){
-    if(done) return;
+    if(done || busy) return;
     if(+b.dataset.i===r.answer){
+      busy=true;
       b.classList.add('right'); fx.ding(); speak(r.word.t);
       round++;
       if(round<p.rounds.length) setTimeout(draw,650);
