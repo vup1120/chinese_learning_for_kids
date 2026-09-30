@@ -508,33 +508,14 @@ main[data-screen="home"]{max-width:1440px;padding:0 24px 70px}.game-lobby{color:
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 
 .card-sigil b{display:block;width:72px;height:65px}.card-sigil b svg{width:100%;height:100%}@media(max-width:600px){.card-sigil b{width:56px;height:52px}}
-/* Story-led miniature adventure */
-main[data-screen="birthday-world"]{max-width:1180px;padding:22px 22px 45px;font-family:"PingFang TC","Microsoft JhengHei",sans-serif;color:#f7edd6}body[data-scene="birthday-world"]{background:#172e36;background-image:radial-gradient(ellipse at top,#3c565a,transparent 65%)}
-.bw-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}.bw-top small{color:#aec9c5;letter-spacing:.18em;font-size:12px}.bw-top h1{font-size:clamp(23px,3vw,34px);margin:5px 0}.bw-score{background:#263e43;border:1px solid #668080;border-radius:16px;padding:12px 18px;white-space:nowrap;color:#ffe3a0}.bw-steps{display:flex;gap:7px;margin-bottom:14px}.bw-steps span{flex:1;border-bottom:3px solid #587174;padding-bottom:8px;color:#a5b8b6;font-size:14px}.bw-steps .active{color:#ffe0a1;border-color:#f1bb6b}.bw-steps .done{color:#addec1;border-color:#8fc5aa}
-.bw-world{position:relative;border-radius:25px;overflow:hidden;background:#183841;box-shadow:0 20px 55px #051c2780;border:1px solid #648281;aspect-ratio:1000/610;isolation:isolate}.bw-world>svg{width:100%;height:100%;display:block}.bw-world:after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 55px #06182566;border-radius:25px}.bw-hot{position:absolute;translate:-50% -50%;border:1px solid #ffe4a5;background:#273c40eb;color:#fff1cb;border-radius:14px;padding:9px 13px;font:inherit;font-size:15px;box-shadow:0 4px 16px #0006;z-index:2;min-height:44px;cursor:pointer}.bw-hot:before{content:'✦';margin-right:7px;color:#f5ce7e}.bw-hot:hover{background:#527b75;transform:translateY(-3px)}.bw-hot.collected{border-color:#9dceb4;color:#b7e7ce}.bw-hot.collected:before{content:'✓'}.bw-hot:focus-visible,.bw-shell button:focus-visible{outline:3px solid #fff0ad;outline-offset:4px}
-.bw-dialog{position:relative;display:grid;grid-template-columns:58px 1fr;gap:12px;background:#f5ead2;color:#30444b;border-radius:17px;padding:18px 22px;margin:16px 0;border-left:5px solid #dfa868;box-shadow:0 5px 0 #0e252c}.bw-avatar{font-size:33px;align-self:center}.bw-dialog strong{color:#8c593e;font-size:13px;letter-spacing:.1em}.bw-dialog p{font-size:19px;line-height:1.7;margin:5px 0}.bw-team{display:flex;gap:10px;align-items:stretch;flex-wrap:wrap}.bw-team button,.bw-action,.bw-choices button{border:1px solid #769593;background:#314f54;color:#f3f1d9;padding:12px 17px;border-radius:14px;font:inherit;cursor:pointer;min-height:48px}.bw-team button.selected{background:#f1cd91;color:#29444d;border-color:#ffedc7}.bw-team button small{display:block;font-size:12px;margin-top:4px}.bw-team .bw-help{font-size:13px;color:#b9ceca;line-height:1.7;flex:1;min-width:170px}.bw-action{background:#f1cd91;color:#29444d;font-weight:bold;margin-left:auto}.bw-action:disabled{opacity:.45;cursor:default}.bw-clues{display:flex;gap:9px;flex-wrap:wrap;margin:16px 0;color:#c6d9cd;font-size:14px}.bw-clues span{border:1px solid #638277;border-radius:10px;padding:8px 12px;background:#203e41}.bw-choices{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.bw-choices button{flex:1;font-size:23px}.bw-choices button.wrong{background:#704d4c}.bw-choices button.correct{background:#476d55}.bw-sub{display:flex;gap:12px;align-items:center;margin-top:22px;font-size:13px;color:#b3c7c3}.bw-sub button{background:none;color:#c8d9d4;border:0;text-decoration:underline;cursor:pointer;font:inherit}.bw-ribbon{stroke-dasharray:12 8;animation:bwShimmer 2s linear infinite}.bw-actor{transition:transform .65s ease}.bw-wing{transform-origin:center;animation:bwFlutter 2s ease-in-out infinite}.bw-spark{animation:bwShimmer 3s ease-in-out infinite}.bw-candle{animation:bwShimmer 1.8s ease-in-out infinite}.bw-sent{animation:bwFly 2.5s ease-in-out infinite}.bw-gifts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}.bw-gifts button{background:#f1d296;border:1px solid #ad815d;color:#31424a;padding:16px;border-radius:13px;font:inherit;cursor:pointer}.bw-gifts button span{display:block;font-size:34px}.bw-letter{background:#fff3d3;color:#3e4b49;padding:22px;border-radius:14px;text-align:center;font-size:21px;line-height:1.8;margin-top:14px}.bw-world .bw-title{font-family:"PingFang TC","Microsoft JhengHei",sans-serif}
-@keyframes bwShimmer{50%{opacity:.55}}@keyframes bwFlutter{50%{transform:rotate(-7deg)}}@keyframes bwFly{50%{transform:translate(25px,-20px)}}
-@media(max-width:650px){main[data-screen="birthday-world"]{padding:14px 10px 30px}.bw-world{aspect-ratio:1000/760;border-radius:17px}.bw-world>svg{object-fit:cover}.bw-hot{font-size:12px;padding:6px 8px;max-width:34%;min-height:44px}.bw-top{gap:5px}.bw-score{padding:9px;font-size:14px}.bw-steps span{font-size:12px}.bw-dialog{padding:12px;grid-template-columns:34px 1fr}.bw-dialog p{font-size:17px}.bw-team button{padding:10px 12px;font-size:14px}.bw-help{width:100%}.bw-action{margin-left:0;flex:1}.bw-sub{flex-wrap:wrap}.bw-choices button{font-size:20px}.bw-top small{letter-spacing:.1em;font-size:10px}}
-@media(prefers-reduced-motion:reduce){.bw-wing,.bw-spark,.bw-candle,.bw-sent,.bw-ribbon{animation:none}.bw-actor{transition:none}}
-
-
-/* Questions belong to the illustrated page, next to the magic they control. */
-.bw-world{background:#e6d6b8;border:6px solid #eedfc2;box-shadow:0 12px 35px #0c253755;border-radius:8px 25px 12px 18px}
-.bw-world>svg{filter:saturate(.8)}
-.bw-world #bwPuzzle{position:absolute;left:27%;top:3%;width:53%;z-index:3;pointer-events:none}
-.bw-world #bwPuzzle .bw-dialog{display:block;border:1px solid #bca67c;background:#fff5dceF;box-shadow:3px 5px 0 #16384222;border-radius:5px 19px 7px 15px;padding:12px 16px;margin:0;pointer-events:auto;transform:rotate(-.6deg)}
-.bw-world #bwPuzzle .bw-avatar{display:none}.bw-world #bwPuzzle p{font-size:17px;line-height:1.5;margin:5px 0}.bw-world #bwPuzzle .bw-choices{margin:8px 0 0;gap:7px}.bw-world #bwPuzzle button{font-size:21px;padding:8px;min-height:44px;background:#e8dcba;color:#334a4f;border-color:#baa87e}.bw-world #bwPuzzle button.wrong{background:#e8bbb0}.bw-world #bwPuzzle #bwFeedback:empty{display:none}
-@media(max-width:650px){.bw-world #bwPuzzle{left:18%;width:78%;top:3%}.bw-world #bwPuzzle .bw-dialog{padding:8px 10px}.bw-world #bwPuzzle p{font-size:14px}.bw-world #bwPuzzle button{font-size:16px;padding:6px}.bw-world #bwPuzzle .bw-choices{gap:4px}.bw-world{border-width:3px}}
-
-/* A reading-first picture book: one page, one task, full Zhuyin. */
-body[data-scene="birthday-reader"]{background:#eae8dc;color:#394c46}
-main[data-screen="birthday-reader"]{max-width:1000px;padding:18px 18px 40px;font-family:"Noto Serif TC","PingFang TC","Microsoft JhengHei",serif}
-.reader-head{display:flex;align-items:center;gap:15px;color:#4f6555;margin:0 0 12px}.reader-head h1{font-size:27px;margin:0;flex:1}.reader-head>span{font-family:sans-serif;font-size:15px;white-space:nowrap}
-.reader-page{background:linear-gradient(#fff8eab3,#fff8ea11 35%,#fff8ea11 60%,#fff8eac9),url('assets/birthday-hall.webp') center/cover;border:5px solid #fff9eb;border-radius:9px 22px 12px 18px;box-shadow:0 7px 24px #675b3b22;overflow:hidden;position:relative;isolation:isolate;padding:18px 22px 16px}
-.reader-lines{position:relative;z-index:1;background:#fff9edef;border-radius:6px 15px 8px 12px;padding:12px 20px;color:#3d504c;box-shadow:0 2px 8px #513b2622}.reader-lines p{font-size:34px;margin:4px 0;line-height:1.8}.reader .ann .zy{color:#53695f;font-size:.48em;min-height:2.7em;line-height:1.07}.reader .zy b{height:1.12em}.reader .ann .u{margin-right:.1em}.reader .ann .wd{white-space:nowrap}.reader-stage{height:285px;position:relative;pointer-events:none}.reader-stage svg{position:absolute;inset:0;width:100%;height:100%;overflow:hidden}.reader-feather{position:absolute;left:68%;top:53%;font-size:40px;filter:drop-shadow(0 3px 3px #795d4744)}
-.reader-question{background:#fff9eef5;border-radius:8px 16px 5px 14px;padding:12px 16px;color:#384b46;position:relative;z-index:1}.reader-question>p{margin:0 0 10px;font-size:28px;line-height:1.8}.reader-options{display:flex;gap:12px;flex-wrap:wrap}.reader-options button,.reader-trybox{font:inherit;font-size:27px;border:2px solid #abc0a3;background:#f7f7e7;color:#3c5547;border-radius:13px;padding:12px 15px;cursor:pointer;min-height:65px;flex:1}.reader-options button:hover{background:#e9efdd;border-color:#739471}.reader-options button:disabled{opacity:.65;cursor:default}.reader-phonetic{font-family:"Bpmf", "Noto Sans TC",sans-serif;font-size:1.15em;white-space:nowrap}.reader-feedback{font-size:25px;margin-top:8px;color:#52744e}.reader-feedback:empty{display:none}.reader-trybox{margin-top:8px;font-size:24px}.reader-controls{display:flex;justify-content:center;gap:12px;margin-top:15px}.reader-controls button,.reader-result>button{font:inherit;font-size:23px;padding:12px 18px;border:1px solid #b6c3a5;border-radius:14px;background:#fffaf0;color:#4a624a;cursor:pointer;min-height:56px}.reader-controls .reader-next{background:#dce9cc;border-color:#8fa879}.reader-controls button:disabled{opacity:.4;cursor:default}.reader button:focus-visible{outline:3px solid #799d60;outline-offset:3px}.reader-result{background:#fff9ec;padding:24px;border:2px solid #cfdbc2;border-radius:20px;text-align:center}.reader-result h1{font-size:32px}.reader-result p{font-size:26px;line-height:1.8}.reader-sign{font-size:22px!important;color:#6b7c61}.reader-gifts{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:22px 0}.reader-gifts button{font:inherit;font-size:21px;padding:15px;border:1px solid #cbbb92;border-radius:13px;background:#f2e5c6;color:#4a634e;cursor:pointer;flex:1;min-width:125px}.reader-gifts button>span{display:block;font-size:40px;margin-bottom:8px}.reader-gifts button:disabled{opacity:.6}
-@media(max-width:600px){main[data-screen="birthday-reader"]{padding:10px 7px 28px}.reader-head{gap:8px}.reader-head h1{font-size:21px}.reader-head>span{font-size:12px}.reader-page{padding:10px 9px;border-width:3px}.reader-lines{padding:10px 12px}.reader-lines p{font-size:28px;line-height:1.9}.reader-stage{height:215px}.reader-question{padding:10px}.reader-question>p{font-size:25px;line-height:1.9}.reader-options{gap:8px}.reader-options button{font-size:23px;padding:10px 7px;min-width:95px}.reader-controls{gap:7px;flex-wrap:wrap}.reader-controls button{font-size:20px;padding:10px 12px}.reader-feedback{font-size:23px}.reader-result{padding:16px}.reader-result h1{font-size:28px}.reader-result p{font-size:24px}.reader-sign{font-size:19px!important}}
-
+/* Birthday content keeps the original question sequence inside a painted page. */
+body[data-scene="magic"]{background:#eae8dc;background-image:none}
+main[data-screen="play"]:has(.birthday-book){max-width:1050px}
+.birthday-book{background:linear-gradient(#fff8eabc,#fff8ea22 45%,#fff8eac9),url('assets/birthday-hall.webp') center/cover;padding:22px;border:5px solid #fff9eb;border-radius:12px 22px 9px 18px;box-shadow:0 6px 25px #675b3b22;color:#405349;min-height:560px}
+.birthday-book .stagebox.magic{background-image:url('assets/birthday-hall.webp');background-size:cover;background-position:center;border-color:#dfdcc5;height:270px}
+.birthday-book .prompt.paper,.birthday-book .paper,.birthday-book .stage,.birthday-book .note{background:#fff9edf5;color:#3e5048;border-color:#cbd2b8}
+.birthday-book .prompt{font-size:28px;line-height:1.9}.birthday-book .zy{font-size:.48em;color:#576e54}.birthday-book .zyo .zy{font-size:.8em}.birthday-book .opt{background:#f8f8e9;color:#415a46;border-color:#a8ba98;font-size:27px}.birthday-book .chip{background:#f7f4df;color:#455e46}.birthday-book .wd:not(.nospeak .wd){cursor:pointer}.birthday-book .u[role="button"]:hover,.birthday-book .u[role="button"]:focus-visible{background:#e4eccc;outline:2px solid #a3b38b;outline-offset:2px}.birthday-book .controls{background:#f8f6e8b8;border-color:#c7d1b7}.birthday-book .memory-arena{background:#eff1dde0}.birthday-book .memory-card{background:#82906b}.birthday-book .memory-card.open{background:#fffbed;color:#455c47}
+@media(max-width:600px){.birthday-book{padding:12px 9px;border-width:3px}.birthday-book .prompt{font-size:25px}.birthday-book .opt{font-size:24px}.birthday-book .stagebox.magic{height:225px}}
 </style>
 </head>
 <body>
@@ -750,7 +731,7 @@ document.addEventListener('click', e=>{
   const sb=e.target.closest('.say[data-t]');
   if(sb){ if(sb.closest('.lis') && onListen) onListen(); speak(sb.dataset.t); return; }
   const wd=e.target.closest('.wd');
-  if(wd && !wd.closest('.nospeak') && !wd.closest('button')){ if(wd.closest('.lis') && onListen) onListen(); speak(wd.dataset.say, wd); }
+  if(wd && !wd.closest('.nospeak') && !wd.closest('button')){ if(wd.closest('.lis') && onListen) onListen(); const unit=e.target.closest('.u');speak(unit?.querySelector('.hz')?.textContent||wd.dataset.say, unit||wd); }
 });
 
 /* ---------- 以琴探長 & 安安小幫手 ---------- */
@@ -1043,8 +1024,7 @@ function cases(){
 
 /* ---------- case runner ---------- */
 let R=null;
-function startCase(i, practice=false){
-  if(D.cases[i].special==='birthday' && !practice){birthdayWorld(i); return;}
+function startCase(i){
   const c=D.cases[i], steps=[{k:'intro'}];
   if(c.id==='c4') steps.push({k:'shoot'});
   c.puzzles.forEach((p,j)=>steps.push({k:'p',j})); if(c.deduce) steps.push({k:'d'}); steps.push({k:'end'},{k:'cele'});
@@ -1177,6 +1157,8 @@ function clueCard(p, res){
 }
 function wrongFeedback(el){ fx.wrong(); el.classList.remove('wrong'); void el.offsetWidth; el.classList.add('wrong'); const r=D.ph.retry; speak(r[Math.random()*r.length|0].t); }
 
+function targetUnit(p,si,ci){return p.word.s.slice(0,si).reduce((n,sg)=>n+(sg.ch?.length||0),0)+ci===p.idx;}
+function puzzlePrompt(p){return A(p.prompt,{unit:(si,ci)=>p.target && p.prompt.s[si]?.ch?.[ci]?.[0]===p.target[0]?{noZy:true}:{}});}
 function pPick(p, idx){
   let mistakes=0, listened=false, done=false;
   onListen=()=>{ listened=true; };
@@ -1265,9 +1247,9 @@ function pMatch(p, idx){
 }
 function pTone(p, idx){
   let mistakes=0, done=false;
-  const wordHTML = hide => A(p.word,{cls:'huge keephz', unit:(si,ci)=> ci===p.idx?{hideTone:hide, tgt:true}:{}});
+  const wordHTML = hide => A(p.word,{cls:'huge keephz', unit:(si,ci)=> targetUnit(p,si,ci)?{hideTone:hide, tgt:true}:{}});
   main.innerHTML = `${track()}
-    <div class="prompt paper">${A(p.prompt)} <button class="say" data-t="${esc(p.prompt.t)}">🔊</button></div>
+    <div class="prompt paper">${puzzlePrompt(p)} <button class="say" data-t="${esc(p.prompt.t)}">🔊</button></div>
     <div class="stage"><div id="tw">${wordHTML(true)}</div>
       <button class="say" data-t="${esc(p.word.t)}">🔊 ${T('hearWord')}</button>
       <div class="refrow" aria-label="四聲參考">${TONES.map(t=>`<button data-ref="${t[3]}">${t[3]}<small style="font-size:.5em">${t[1]}</small></button>`).join('')}</div>
@@ -1293,10 +1275,10 @@ function pSpell(p, idx){
     {name:T('tone'), opts:TONES.map(t=>t[1]), ans: toneMark||'ˉ'}
   ];
   function draw(){
-    const disp = A(p.word,{cls:'huge keephz', unit:(si,ci)=> ci===p.idx ? {tgt:true, slots:{ini:pick.ini, fin:pick.fin, tone: pick.tone==null?null:(pick.tone==='ˉ'?'':pick.tone)}} : {}});
+    const disp = A(p.word,{cls:'huge keephz', unit:(si,ci)=> targetUnit(p,si,ci) ? {tgt:true, slots:{ini:pick.ini, fin:pick.fin, tone: pick.tone==null?null:(pick.tone==='ˉ'?'':pick.tone)}} : {}});
     const st=stages[Math.min(stage,2)];
     main.innerHTML = `${track()}
-      <div class="prompt paper">${A(p.prompt)} <button class="say" data-t="${esc(p.prompt.t)}">🔊</button></div>
+      <div class="prompt paper">${puzzlePrompt(p)} <button class="say" data-t="${esc(p.prompt.t)}">🔊</button></div>
       <div class="stage">${disp}<div style="margin-top:8px"><button class="say" data-t="${esc(p.word.t)}">🔊 ${T('hearRight')}</button></div></div>
       <div class="steps">${stages.map((s,i)=>`<span class="${i<stage?'ok':i===stage?'now':''}">${i+1}. ${s.name}${i<stage?' ✔':''}</span>`).join('')}</div>
       ${stage<3?`<div class="chips">${st.opts.map(o=>`<button class="chip ${[...o].length>1?'v':''}" data-o="${o}">${[...o].length>1?[...o].map(x=>`<span>${x}</span>`).join(''):o}${stage===2?`<small>${A(W(TONES.find(t=>t[1]===o)[2]),{cls:'keephz'})}</small>`:''}</button>`).join('')}</div>`
@@ -1683,67 +1665,16 @@ function settings(){
   $('#fReset').onclick=()=>{ if(confirm('確定要清除所有星星和徽章嗎？')){ S.stars={}; S.done={}; save(); refreshBar(); nav('home'); } };
 }
 
-/* The birthday scene is a single-device, two-role adventure. */
-function birthdayWorld(ci){
-  stopSpeak(); onListen=null; window.scrollTo(0,0);
-  const c=D.cases[ci]; R={ci,c,earned:0,startTotal:total(),clues:[],steps:[],step:0};
-  const state={chapter:0,role:'qin',found:new Set(),latched:false,moved:false,spell:0,mistakes:0,revealed:false,candles:false,sent:false,opened:new Set(),pos:{qin:[330,490],an:[430,515]},awards:new Set(),message:'生日歌唱完了，蛋糕盤卻空空的！點選現場物件，讓以琴用放大鏡找線索。'};
-  function reward(key,points){if(state.awards.has(key))return;state.awards.add(key);R.earned+=points;S.stars['c7-world-'+key]=Math.max(S.stars['c7-world-'+key]||0,points);save();refreshBar();fx.ding();}
-  function person(id,x,y,color){return `<g class="bw-actor" data-person="${id}" transform="translate(${x} ${y})"><ellipse cy="28" rx="25" ry="9" fill="#102a32" opacity=".4"/><path d="M-14 4L-17 27M14 4L18 27" stroke="#384052" stroke-width="10" stroke-linecap="round"/><path d="M-21-44Q0-53 21-44L26 8Q0 20-26 8Z" fill="${color}" stroke="#263943" stroke-width="2"/><path d="M-23-32L-34-3M23-32L34-15" stroke="${color}" stroke-width="12" stroke-linecap="round"/><circle cy="-68" r="24" fill="url(#skin)"/><path d="M-25-71Q-22-108 25-77L24-63Q9-75-22-67Z" fill="#4b3331"/><path d="M-29-85L0-126L28-85Z" fill="${color}"/><path d="M-31-84Q0-74 31-84" stroke="#edc278" stroke-width="7" stroke-linecap="round"/><circle cx="-9" cy="-65" r="2.5" fill="#34383b"/><circle cx="9" cy="-65" r="2.5" fill="#34383b"/><path d="M-7-54Q0-49 7-54" stroke="#a36351" stroke-width="2" fill="none"/>${id==='qin'?'<circle cx="36" cy="-21" r="12" fill="#c2e7de99" stroke="#e7bb68" stroke-width="5"/><path d="M30-10L23 1" stroke="#e7bb68" stroke-width="5"/>':'<path d="M30-15L53-41" stroke="#e7bb68" stroke-width="5"/><path d="M52-45L55-39L62-41L57-35L60-29L53-32L48-28L49-35L43-38L50-39Z" fill="#ffe4a7"/>'}<text y="53" text-anchor="middle" fill="#fff2ce" font-size="17" class="bw-title">${id==='qin'?'以琴':id==='an'?'安安':'以諾'}${state.role===id?' •':''}</text></g>`;}
-  function cake(){return `<g transform="translate(735 380)"><ellipse cy="38" rx="72" ry="17" fill="#24303877"/><ellipse cy="28" rx="71" ry="19" fill="#e7bd83"/><path d="M-60-18V25Q0 56 60 25V-18" fill="url(#icing)"/><ellipse cy="-18" rx="60" ry="21" fill="#fff1dc"/><path d="M-60-18Q-49 10-38-10Q-25 11-14-7Q0 13 13-7Q30 10 39-9Q52 9 60-18" fill="#fff1dc"/>${Array.from({length:8},(_,i)=>{let x=-42+i*12,y=-28-Math.sin(i/7*Math.PI)*10;return `<path d="M${x} ${y}v-23" stroke="${i%2?'#80babe':'#dc9e85'}" stroke-width="5"/>${state.candles?'':`<path class="bw-candle" d="M${x} ${y-24}q-8-8 0-16q8 8 0 16" fill="#ffe397"/>`}`}).join('')}</g>`;}
-  function owl(){return `<g class="${state.sent?'bw-sent':'bw-wing'}" transform="translate(790 205)"><path d="M-25 10Q-102-50-106-1Q-66 26-24 35M25 10Q102-50 106-1Q66 26 24 35" fill="#dde6df" stroke="#a5bab7" stroke-width="2"/><ellipse rx="35" ry="44" fill="#eeeede"/><path d="M-32-22L-24-45L-4-32M32-22L24-45L4-32" fill="#eeeede"/><circle cx="-15" cy="-7" r="19" fill="#fff9e9"/><circle cx="15" cy="-7" r="19" fill="#fff9e9"/><circle cx="-14" cy="-7" r="6" fill="#304750"/><circle cx="14" cy="-7" r="6" fill="#304750"/><path d="M-7 7L0 16L7 7Z" fill="#d9ad64"/><rect x="-23" y="27" width="46" height="31" rx="3" fill="#ecd69d"/><path d="M-23 27L0 43L23 27" stroke="#b49868" fill="none"/></g>`;}
-  function scene(){const late=state.chapter>=2,boxX=state.moved?520:740;return `<svg viewBox="0 0 1000 610" preserveAspectRatio="none" aria-label="魔法生日派對微縮場景" role="img"><defs><linearGradient id="wall" x2="0" y2="1"><stop stop-color="#2b555e"/><stop offset="1" stop-color="#142f3a"/></linearGradient><linearGradient id="floor" x2="0" y2="1"><stop stop-color="#779b92"/><stop offset="1" stop-color="#395b61"/></linearGradient><linearGradient id="gift" x2="1" y2="1"><stop stop-color="#d5a17e"/><stop offset="1" stop-color="#9c6262"/></linearGradient><linearGradient id="skin" x2="1" y2="1"><stop stop-color="#ffe3bd"/><stop offset="1" stop-color="#e8ac8f"/></linearGradient><linearGradient id="icing" x2="0" y2="1"><stop stop-color="#efb4a6"/><stop offset="1" stop-color="#cd7e86"/></linearGradient><radialGradient id="light"><stop stop-color="#ffedba" stop-opacity=".3"/><stop offset="1" stop-color="#ffedba" stop-opacity="0"/></radialGradient></defs>
-  <image href="assets/birthday-hall.webp" width="1000" height="610" preserveAspectRatio="xMidYMid slice"/>
-  ${person('enoch',560,350,'#ba838b')}<g transform="translate(415 320)"><ellipse cy="102" rx="116" ry="25" fill="#15344055"/><path d="M-82 4L-70 87M82 4L70 87" stroke="#a78161" stroke-width="13"/><path d="M-115-4L0-35L115-4L0 30Z" fill="#d4b58b"/><path d="M-115-4V16L0 48L115 16V-4L0 30Z" fill="#927563"/><path d="M-105-1L0-27L105-1L0 24Z" fill="#f3e3bf"/><ellipse cy="-2" rx="51" ry="16" fill="#c7ddcf" stroke="#6b9992" stroke-width="4"/>${!state.found.has('tray')&&state.chapter===0?'<circle cx="-9" cy="-4" r="5" fill="#fff4db"/>':''}</g>
-  <g transform="translate(${boxX} 360)"><ellipse cy="112" rx="110" ry="25" fill="#102c3555"/><path d="M-80-78L20-106L104-64L3-33Z" fill="#e3b394"/><path d="M-80-78V66L3 111V-33Z" fill="url(#gift)"/><path d="M3-33L104-64V78L3 111Z" fill="#8d6468"/><path d="M-36-55V91L-9 105V-43M43-45V98L66 90V-52" fill="#ecd097"/><path fill="none" d="M-80-19L3 22L104-10" stroke="#ecd097" stroke-width="19"/><path d="M4-72Q-67-143-65-93Q-51-63 4-72Q48-148 55-100Q50-65 4-72Z" fill="#eac68c" stroke="#ae815f" stroke-width="4"/>${state.latched?'<path class="bw-ribbon" d="M-65-16Q-170 50-220 118" stroke="#ffdf90" stroke-width="5" fill="none"/>':''}</g>
-  ${state.moved&&!state.revealed?'<g transform="translate(735 358)"><path d="M-65 66Q-83-63 0-69Q83-63 65 66Q0 102-65 66" fill="#c4dbd655" stroke="#c8dfd0" stroke-width="3" stroke-dasharray="6 8"/><path class="bw-spark" d="M0-95v22M-11-84h22M-65-28v18M-74-19h18" stroke="#ffeab3" stroke-width="3"/></g>':''}
-  ${state.revealed?cake():''}${state.chapter===0?'<path d="M600 390Q580 370 604 349Q616 376 600 390M601 387L605 355" fill="#f7efd5" stroke="#d6dfce"/><g fill="#e0bc77"><circle cx="624" cy="455" r="4"/><circle cx="650" cy="443" r="3"/><circle cx="675" cy="431" r="5"/><circle cx="696" cy="414" r="3"/></g>':''}
-  ${person('qin',...state.pos.qin,'#d6a570')}${person('an',...state.pos.an,'#83b9b2')}${state.chapter===3?owl():''}<text x="28" y="581" fill="#d2e2d7" font-size="15" class="bw-title">${late?'禮物箱後面 • 隱形魔法的祕密':'魔法學院 • 以諾的生日派對'}</text></svg>`;}
-  // Explicit, reviewed readings; punctuation consumes no pronunciation token.
-  function B(t,reading){const tokens=reading.trim().split(/\s+/),segments=[];let i=0;for(const h of t){if(!/[\u3400-\u9fff]/.test(h)){segments.push({p:h});continue;}const z=tokens[i++];if(!z)throw Error('Missing reading: '+t);const tone=z.match(/[ˊˇˋ˙]$/)?.[0]||'';segments.push({w:h,ch:[[h,z.replace(/[ˊˇˋ˙]$/,''),tone]]});}if(i!==tokens.length)throw Error('Extra reading: '+t);return {t,s:segments};}
-  const text={
-    title:B('以諾的生日','ㄧˇ ㄋㄨㄛˋ ㄉㄜ˙ ㄕㄥ ㄖˋ'),
-    next:B('下一頁','ㄒㄧㄚˋ ㄧ ㄧㄝˋ'),back:B('上一頁','ㄕㄤˋ ㄧ ㄧㄝˋ'),listen:B('聽故事','ㄊㄧㄥ ㄍㄨˋ ㄕˋ'),home:B('回首頁','ㄏㄨㄟˊ ㄕㄡˇ ㄧㄝˋ'),again:B('再玩一次','ㄗㄞˋ ㄨㄢˊ ㄧ ㄘˋ'),
-    retry:B('再看看，慢慢讀。','ㄗㄞˋ ㄎㄢˋ ㄎㄢˋ ㄇㄢˋ ㄇㄢˋ ㄉㄨˊ'),good:B('答對了！','ㄉㄚˊ ㄉㄨㄟˋ ㄌㄜ˙'),open:B('拆禮物','ㄔㄞ ㄌㄧˇ ㄨˋ'),
-    table:B('桌子下面','ㄓㄨㄛ ㄗ˙ ㄒㄧㄚˋ ㄇㄧㄢˋ'),box:B('禮物箱後面','ㄌㄧˇ ㄨˋ ㄒㄧㄤ ㄏㄡˋ ㄇㄧㄢˋ'),
-    tableHint:B('這裡只有一頂帽子。','ㄓㄜˋ ㄌㄧˇ ㄓˇ ㄧㄡˇ ㄧ ㄉㄧㄥˇ ㄇㄠˋ ㄗ˙'),boxHint:B('這裡有白色羽毛！','ㄓㄜˋ ㄌㄧˇ ㄧㄡˇ ㄅㄞˊ ㄙㄜˋ ㄩˇ ㄇㄠˊ'),
-    feather:B('羽毛','ㄩˇ ㄇㄠˊ'),hat:B('帽子','ㄇㄠˋ ㄗ˙'),book:B('書本','ㄕㄨ ㄅㄣˇ'),eight:B('八根','ㄅㄚ ㄍㄣ'),seven:B('七根','ㄑㄧ ㄍㄣ'),six:B('六根','ㄌㄧㄡˋ ㄍㄣ'),
-    blessing:B('生日祝福','ㄕㄥ ㄖˋ ㄓㄨˋ ㄈㄨˊ'),broom:B('飛天掃帚','ㄈㄟ ㄊㄧㄢ ㄙㄠˋ ㄓㄡˇ'),
-    letter:B('以諾，生日快樂！','ㄧˇ ㄋㄨㄛˋ ㄕㄥ ㄖˋ ㄎㄨㄞˋ ㄌㄜˋ'),wish:B('希望下次一起去遊樂園玩！','ㄒㄧ ㄨㄤˋ ㄒㄧㄚˋ ㄘˋ ㄧ ㄑㄧˇ ㄑㄩˋ ㄧㄡˊ ㄌㄜˋ ㄩㄢˊ ㄨㄢˊ'),from:B('以琴和安安','ㄧˇ ㄑㄧㄣˊ ㄏㄜˊ ㄢ ㄢ'),
-    gifts:[B('糖果','ㄊㄤˊ ㄍㄨㄛˇ'),B('魔法棒','ㄇㄛˊ ㄈㄚˇ ㄅㄤˋ'),B('飛天掃帚','ㄈㄟ ㄊㄧㄢ ㄙㄠˋ ㄓㄡˇ'),B('貓頭鷹玩偶','ㄇㄠ ㄊㄡˊ ㄧㄥ ㄨㄢˊ ㄡˇ'),B('神祕禮物','ㄕㄣˊ ㄇㄧˋ ㄌㄧˇ ㄨˋ')]
-  };
-  const pages=[
-    {lines:[B('今天，以諾八歲了！','ㄐㄧㄣ ㄊㄧㄢ ㄧˇ ㄋㄨㄛˋ ㄅㄚ ㄙㄨㄟˋ ㄌㄜ˙'),B('大家要一起吃蛋糕。','ㄉㄚˋ ㄐㄧㄚ ㄧㄠˋ ㄧ ㄑㄧˇ ㄔ ㄉㄢˋ ㄍㄠ')]},
-    {lines:[B('咦？蛋糕不見了！','ㄧˊ ㄉㄢˋ ㄍㄠ ㄅㄨˊ ㄐㄧㄢˋ ㄌㄜ˙')],ask:B('你想先找哪裡？','ㄋㄧˇ ㄒㄧㄤˇ ㄒㄧㄢ ㄓㄠˇ ㄋㄚˇ ㄌㄧˇ'),choices:[text.table,text.box],kind:'explore',points:4},
-    {lines:[B('禮物箱旁有白色羽毛。','ㄌㄧˇ ㄨˋ ㄒㄧㄤ ㄆㄤˊ ㄧㄡˇ ㄅㄞˊ ㄙㄜˋ ㄩˇ ㄇㄠˊ')],ask:B('圖上哪個是羽毛？','ㄊㄨˊ ㄕㄤˋ ㄋㄚˇ ㄍㄜ˙ ㄕˋ ㄩˇ ㄇㄠˊ'),choices:[text.hat,text.feather,text.book],answer:1,points:5},
-    {lines:[B('箱子後面有一塊布。','ㄒㄧㄤ ㄗ˙ ㄏㄡˋ ㄇㄧㄢˋ ㄧㄡˇ ㄧ ㄎㄨㄞˋ ㄅㄨˋ'),B('讀對咒語，布就會打開。','ㄉㄨˊ ㄉㄨㄟˋ ㄓㄡˋ ㄩˇ ㄅㄨˋ ㄐㄧㄡˋ ㄏㄨㄟˋ ㄉㄚˇ ㄎㄞ')],ask:B('開的注音是哪個？','ㄎㄞ ㄉㄜ˙ ㄓㄨˋ ㄧㄣ ㄕˋ ㄋㄚˇ ㄍㄜ˙'),choices:['ㄎㄞ','ㄍㄞ','ㄎㄢ'],answer:0,points:5,kind:'spell'},
-    {lines:[B('蛋糕出現了！','ㄉㄢˋ ㄍㄠ ㄔㄨ ㄒㄧㄢˋ ㄌㄜ˙'),B('我們一起數蠟燭。','ㄨㄛˇ ㄇㄣ˙ ㄧ ㄑㄧˇ ㄕㄨˇ ㄌㄚˋ ㄓㄨˊ')],ask:B('蛋糕上有幾根蠟燭？','ㄉㄢˋ ㄍㄠ ㄕㄤˋ ㄧㄡˇ ㄐㄧˇ ㄍㄣ ㄌㄚˋ ㄓㄨˊ'),choices:[text.six,text.eight,text.seven],answer:1,points:5,kind:'candles'},
-    {lines:[B('白色貓頭鷹飛來了。','ㄅㄞˊ ㄙㄜˋ ㄇㄠ ㄊㄡˊ ㄧㄥ ㄈㄟ ㄌㄞˊ ㄌㄜ˙')],ask:B('請牠送什麼給以諾？','ㄑㄧㄥˇ ㄊㄚ ㄙㄨㄥˋ ㄕㄜˊ ㄇㄜ˙ ㄍㄟˇ ㄧˇ ㄋㄨㄛˋ'),choices:[text.broom,text.blessing],answer:1,points:4,kind:'owl'},
-    {lines:[text.letter,text.wish],kind:'letter'}
-  ];
-  let page=0,misses={},answered=new Set(),feedback=null,branch=null;
-  const H=a=>typeof a==='string'?`<span class="reader-phonetic">${a}</span>`:A(a);
-  function draw(){
-    const p=pages[page];state.chapter=page>=5?3:page>=3?2:0;state.role='';state.moved=page>=3;state.revealed=page===0||page>=4||(page===3&&answered.has(3));state.candles=page>=5||(page===4&&answered.has(4));state.sent=page>=6||(page===5&&answered.has(5));
-    main.dataset.screen='birthday-reader';document.body.dataset.scene='birthday-reader';
-    const ready=!p.choices||answered.has(page);
-    main.innerHTML=`<section class="reader"><header class="reader-head"><h1>${H(text.title)}</h1><span>${page+1} / ${pages.length}</span><span>⭐ ${R.earned}　🎁 ${[0,6,12,18,23].filter(n=>R.earned>=n).length}</span></header><div class="reader-page"><div class="reader-lines">${p.lines.map(l=>`<p>${H(l)}</p>`).join('')}${p.kind==='letter'?`<p class="reader-sign">${H(text.from)} · Hofis</p>`:''}</div><div class="reader-stage">${scene().replace(/<image[^>]*\/>/,'').replace(/<text[\s\S]*?<\/text>/g,'').replace('viewBox="0 0 1000 610"',page===4?'viewBox="620 230 260 280"':'viewBox="0 0 1000 610"')}${page===2?'<div class="reader-feather" aria-hidden="true">🪶</div>':''}</div><div class="reader-question">${p.ask?`<p>${H(p.ask)}</p>`:''}${p.choices?`<div class="reader-options">${p.choices.map((o,i)=>`<button data-choice="${i}" ${answered.has(page)?'disabled':''} aria-label="${typeof o==='string'?o:o.t}">${page===2?['🎩','🪶','📖'][i]:page===1?['🪑','🎁'][i]:''}${H(o)}</button>`).join('')}</div>`:''}<div class="reader-feedback" role="status" aria-live="polite">${feedback?H(feedback):''}</div>${branch==='table'?`<button class="reader-trybox" id="readerBox">🎁 ${H(text.box)}</button>`:''}</div></div><nav class="reader-controls">${page>0?`<button id="readerBack" aria-label="上一頁">◀ ${H(text.back)}</button>`:''}<button id="readerListen" aria-label="聽故事">🔊 ${H(text.listen)}</button><button id="readerNext" class="reader-next" aria-label="${page===6?'拆禮物':'下一頁'}" ${ready?'':'disabled'}>${H(page===6?text.open:text.next)} ▶</button></nav></section>`;
-    main.querySelectorAll('[data-choice]').forEach(b=>b.onclick=()=>choose(+b.dataset.choice));
-    if($('#readerBox'))$('#readerBox').onclick=()=>choose(1);
-    $('#readerListen').onclick=()=>speak(p.lines.map(l=>l.t).join('')+(p.ask?.t||''));
-    if($('#readerBack'))$('#readerBack').onclick=()=>{page--;feedback=null;branch=null;draw();};
-    $('#readerNext').onclick=()=>{if(!ready)return;feedback=null;branch=null;if(page===6)finish();else{page++;draw();window.scrollTo(0,0);}};
+// Keep original birthday content and attach only the picturebook presentation.
+function decorateBirthday(){
+  if(main.dataset.screen==='play' && R?.c.special==='birthday' && !main.querySelector(':scope > .birthday-book')){
+    const book=document.createElement('div');book.className='birthday-book';
+    while(main.firstChild)book.appendChild(main.firstChild);main.appendChild(book);
   }
-  function choose(i){if(answered.has(page))return;const p=pages[page];
-    if(p.kind==='explore'&&i===0){branch='table';feedback=text.tableHint;draw();return;}
-    if(p.kind==='explore'){feedback=text.boxHint;branch=null;}
-    else if(i!==p.answer){misses[page]=(misses[page]||0)+1;feedback=text.retry;draw();return;}
-    else feedback=text.good;
-    answered.add(page);reward('reader'+page,Math.max(1,p.points-(misses[page]||0)));draw();
-  }
-  function finish(){S.done.c7=true;save();refreshBar();const thresholds=[0,6,12,18,23],icons=['🍬','🪄','🧹','🦉','🎁'];main.innerHTML=`<section class="reader"><div class="reader-result"><h1>${H(text.letter)}</h1><p>⭐ ${R.earned} / 23</p><p>${H(text.wish)}</p><p class="reader-sign">Hofis · ${H(text.from)}</p><div class="reader-gifts">${thresholds.map((n,i)=>`<button data-gift="${i}" ${R.earned<n?'disabled':''} aria-label="${R.earned<n?'尚未解鎖':'拆禮物'}"><span>${R.earned>=n?'🎁':'🔒'}</span>${R.earned>=n?H(text.open):n+' ⭐'}</button>`).join('')}</div><button id="readerReplay">${H(text.again)}</button><button data-go="home">${H(text.home)}</button></div></section>`;main.querySelectorAll('[data-gift]').forEach(b=>b.onclick=()=>{const i=+b.dataset.gift;b.innerHTML=`<span>${icons[i]}</span>${H(text.gifts[i])}`;b.disabled=true;fx.ding();});$('#readerReplay').onclick=()=>birthdayWorld(ci);fx.fanfare();}
-  draw();
+  main.querySelectorAll('.ann .u').forEach(el=>{if(el.closest('button,.nospeak'))return;const hz=el.querySelector('.hz');if(!hz)return;el.setAttribute('role','button');el.tabIndex=0;el.setAttribute('aria-label','朗讀'+hz.textContent);});
 }
+new MutationObserver(decorateBirthday).observe(main,{childList:true});
+document.addEventListener('keydown',e=>{const el=e.target.closest('.ann .u[role="button"]');if(el && (e.key==='Enter'||e.key===' ')){e.preventDefault();speak(el.querySelector('.hz').textContent,el);}});
 
 $('#modeZi').innerHTML=T('mode'); setMode(!!S.zyOnly); refreshBar(); home();
 </script>
