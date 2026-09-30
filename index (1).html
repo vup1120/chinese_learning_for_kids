@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>以琴探長：注音破案記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --desk:#24495B; --desk2:#1B3847; --deskline:#2F5A6E;
+  --kraft:#D9B57A; --kraft2:#B98E4E; --paper:#FFF9E4; --paper2:#F6EDCC;
+  --grid:#8FC4A5; --gridsoft:#CFE6D7; --ink:#2A2724; --ink2:#5E5548;
+  --stamp:#C8342B; --amber:#EA9A3B; --amber2:#B96F1C; --good:#2F8F57; --goodbg:#DFF2E3;
+  --hl:#FFE08A; --onDesk:#F5EBD3; --shadow:0 3px 0 rgba(0,0,0,.18);
+  --font:"LXGW WenKai TC","Kaiti TC","BiauKai","DFKai-SB","STKaiti","PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --desk:#14303D; --desk2:#0F2530; --deskline:#1D4052; --paper:#F1E7C6; --paper2:#E6DAB2;
+    --kraft:#C7A267; --kraft2:#A07A3E; --onDesk:#EDE2C6;
+  }
+}
+:root[data-theme="dark"]{
+  --desk:#14303D; --desk2:#0F2530; --deskline:#1D4052; --paper:#F1E7C6; --paper2:#E6DAB2;
+  --kraft:#C7A267; --kraft2:#A07A3E; --onDesk:#EDE2C6;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{height:100%; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0; min-height:100%; background:var(--desk); color:var(--ink); font-family:var(--font);
+  background-image:repeating-linear-gradient(90deg,transparent 0 46px,rgba(255,255,255,.025) 46px 48px);
+  -webkit-tap-highlight-color:transparent; font-size:18px}
+button{font-family:inherit; color:inherit; cursor:pointer}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--hl); outline-offset:2px}
+img,svg{max-width:100%}
+
+/* top bar */
+.bar{position:sticky; top:env(safe-area-inset-top,0px); z-index:20; display:flex; align-items:center; gap:8px;
+  padding:8px 12px; background:var(--desk2); color:var(--onDesk); border-bottom:2px solid var(--deskline)}
+.bar .home{border:0; background:none; font-size:26px; padding:4px 6px; color:var(--onDesk)}
+.bar .name{flex:1; font-size:17px; opacity:.9; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.starpill{background:var(--paper); color:var(--ink); border-radius:999px; padding:4px 12px; font-weight:700; font-size:18px; box-shadow:var(--shadow)}
+.seg{display:flex; background:rgba(0,0,0,.25); border-radius:12px; padding:3px}
+.seg button{border:0; background:none; color:var(--onDesk); font-size:15px; padding:6px 9px; border-radius:9px; white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--paper); color:var(--ink); font-weight:700}
+.gear{border:0; background:none; font-size:22px; padding:4px}
+
+@media (max-width:440px){ .bar .name{visibility:hidden} }
+main{max-width:760px; margin:0 auto; padding:14px 14px 40px}
+.vnote{max-width:760px; margin:10px auto 0; padding:10px 14px; background:#FFE6DA; color:#6B2419; border-radius:10px; font-size:16px; line-height:1.5}
+.vnote b{color:var(--stamp)}
+
+/* zhuyin annotated text */
+.ann{line-height:2.1}
+.wd{display:inline-flex; flex-wrap:nowrap; border-radius:8px; transition:background .15s}
+.wd.on{background:var(--hl)}
+.u{display:inline-flex; align-items:center; margin:0 .02em; vertical-align:middle}
+.hz{font-size:1em; line-height:1.15}
+.zy{position:relative; display:inline-flex; flex-direction:column; align-items:center; justify-content:center;
+  font-size:.42em; line-height:1; margin-left:.1em; padding-right:.62em; min-height:2.2em}
+.zy b{display:block; font-weight:400; height:1.04em}
+.zy .tn,.zy .tq{position:absolute; right:0; font-style:normal; top:calc(50% - .5em + (var(--n) - 1) * .42em)}
+.zy .lt{position:absolute; top:-.2em; left:calc(50% - .31em - .25em); font-style:normal; transform:translateY(-.55em)}
+.zy .tq{background:var(--stamp); color:#fff; border-radius:50%; width:1.3em; height:1.3em; right:-.35em; display:grid; place-items:center; font-size:1em; font-weight:700; top:calc(50% - .65em)}
+.pn{display:inline-block; vertical-align:middle}
+.ck{display:inline-flex; flex-wrap:nowrap; align-items:center; vertical-align:middle}
+.u.tgt .zy{font-size:.55em}
+.zyonly .ann:not(.keephz) .hz, .zyo .hz{display:none}
+.grid:not(.zyo) .zy{font-size:.45em}
+.zyonly .ann:not(.keephz) .zy, .zyo .zy{font-size:.7em; margin-left:.05em}
+.zyonly .ann:not(.keephz) .u, .zyo .u{margin:0 .12em}
+.zyo.big .zy{font-size:1em}
+.zyo.big .u{margin:0 .25em}
+.big{font-size:clamp(34px,10vw,54px)}
+.huge{font-size:clamp(46px,15vw,78px)}
+
+/* 作業簿 grid */
+.grid .u, .grid .pn{border:1.5px solid var(--grid); margin:0 -1.5px -1.5px 0; background:var(--paper); padding:.06em .02em .06em .1em; min-height:1.62em}
+.grid .zy{border-left:1px dashed var(--grid); padding-left:.18em}
+.grid .pn{width:1.1em; display:inline-flex; align-items:center; justify-content:center}
+.grid .wd.on .u{background:var(--hl)}
+.grid.ann{line-height:1; display:flex; flex-wrap:wrap; row-gap:.35em}
+.grid .ck{align-items:stretch}
+
+.paper{background:var(--paper); border-radius:6px; box-shadow:0 2px 0 var(--paper2),0 6px 14px rgba(0,0,0,.2); padding:14px 16px}
+.say{border:0; background:var(--amber); color:var(--ink); border-radius:12px; font-size:20px; padding:8px 12px; box-shadow:0 3px 0 var(--amber2); vertical-align:middle}
+.say.alt{background:var(--gridsoft); box-shadow:0 3px 0 var(--grid)}
+.say:active,.btn:active{transform:translateY(2px); box-shadow:none}
+.btn{border:0; border-radius:14px; background:var(--amber); color:var(--ink); font-size:21px; font-weight:700; padding:12px 20px; box-shadow:0 4px 0 var(--amber2); display:inline-flex; align-items:center; gap:8px; justify-content:center}
+.btn.ghost{background:var(--paper); box-shadow:0 4px 0 var(--kraft2)}
+.btn.big{font-size:26px; padding:16px 30px}
+.btn.wide{width:100%}
+.row{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+.center{text-align:center}
+.lbl{color:var(--onDesk); font-size:17px; margin:18px 2px 8px}
+
+/* home */
+.hero{text-align:center; color:var(--onDesk); padding-top:6px}
+.mascot{width:min(340px,86vw); margin:0 auto; display:block}
+.mascot svg{display:block; width:100%; height:auto}
+.title{margin:4px 0 10px; font-weight:700; color:var(--onDesk)}
+.title .t1{font-size:clamp(38px,10.5vw,66px)}
+.title .t2{font-size:clamp(26px,7vw,38px); color:var(--kraft)}
+.title .zy{color:var(--kraft)}
+.bubble{color:var(--ink); text-align:left; font-size:26px; margin:10px auto 18px; position:relative; max-width:560px}
+.bubble::before{content:""; position:absolute; top:-12px; left:50%; border:12px solid transparent; border-top:0; border-bottom-color:var(--paper); transform:translateX(-50%)}
+.pills{display:flex; justify-content:center; gap:8px; flex-wrap:wrap; margin:0 0 18px}
+.pill{background:rgba(0,0,0,.25); color:var(--onDesk); border-radius:999px; padding:6px 14px; font-size:18px}
+
+/* case folders */
+.folders{display:grid; gap:26px; margin-top:26px}
+.folder{position:relative; text-align:left; border:0; background:var(--kraft); border-radius:4px 16px 16px 16px; padding:18px 18px 16px; box-shadow:0 5px 0 var(--kraft2); font-size:30px}
+.folder::before{content:attr(data-tab); position:absolute; top:-24px; left:0; background:var(--kraft); padding:3px 16px 2px; border-radius:10px 10px 0 0; font-size:17px; color:var(--ink2)}
+.folder .fplace{display:block; font-size:20px; color:var(--ink2); margin-top:4px}
+.folder .fmeta{display:flex; gap:10px; align-items:center; margin-top:8px; font-size:18px}
+.folder.locked{filter:grayscale(.7) brightness(.85); cursor:not-allowed}
+.folder .stamp{position:absolute; right:14px; top:14px; font-size:24px}
+.stamp{display:inline-block; color:var(--stamp); border:4px double var(--stamp); border-radius:8px; padding:2px 10px; font-weight:700; transform:rotate(-12deg); letter-spacing:.1em; background:rgba(255,255,255,.15)}
+
+/* progress */
+.track{display:flex; gap:6px; align-items:center; justify-content:center; margin:2px 0 14px; color:var(--onDesk)}
+.track i{font-style:normal; width:34px; height:34px; border-radius:50%; display:grid; place-items:center; background:rgba(0,0,0,.25); font-size:17px; opacity:.55}
+.track i.done{background:var(--good); opacity:1}
+.track i.now{background:var(--paper); opacity:1; outline:3px solid var(--amber)}
+.casehead{color:var(--onDesk); text-align:center; font-size:26px; margin:0 0 8px}
+
+/* story */
+.lines{display:flex; flex-direction:column; gap:12px; font-size:clamp(26px,7vw,38px)}
+.line.past{opacity:.55; font-size:.72em}
+.line.cur{outline:3px solid var(--amber)}
+.controls{display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:18px; padding:10px; background:rgba(0,0,0,.28); border-radius:18px; backdrop-filter:blur(4px)}
+
+/* puzzles */
+.prompt{font-size:clamp(24px,6.6vw,32px); display:flex; gap:10px; align-items:flex-start}
+.prompt .ann{flex:1}
+.note{position:relative; margin:22px auto; width:fit-content; max-width:100%; background:#FFFDF3; padding:22px 26px 18px; transform:rotate(-1.5deg); box-shadow:0 6px 16px rgba(0,0,0,.3); text-align:center}
+.note::before{content:""; position:absolute; top:-12px; left:calc(50% - 40px); width:80px; height:24px; background:rgba(234,154,59,.55); transform:rotate(3deg)}
+.note .say{margin-top:10px}
+.opts{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px}
+.opt{border:0; background:var(--paper); border-radius:16px; padding:14px 4px 12px; box-shadow:0 5px 0 var(--kraft2); display:flex; flex-direction:column; align-items:center; gap:4px; font-size:clamp(20px,5.4vw,28px)}
+.opt .em{font-size:clamp(44px,13vw,64px); line-height:1.1}
+.opt.right{background:var(--goodbg); box-shadow:0 5px 0 var(--good); outline:4px solid var(--good)}
+.opt.wrong{animation:shake .4s}
+.opt.hint{animation:pulse 1s infinite}
+@keyframes shake{20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+@keyframes pulse{50%{transform:scale(1.05); box-shadow:0 5px 0 var(--amber2),0 0 0 6px var(--hl)}}
+.stage{background:var(--paper); border-radius:16px; padding:18px 12px; margin:16px 0; text-align:center}
+.slot{display:block; min-width:1.2em; border:2px dashed var(--stamp); border-radius:4px; color:var(--stamp); margin:.08em 0; height:auto!important; padding:.04em .08em}
+.slot.fill{border-style:solid; border-color:var(--good); color:var(--good); animation:popin .35s}
+.tslot{position:absolute; right:-.9em; top:calc(50% - .7em); width:1.2em; height:1.4em; border:2px dashed var(--stamp); border-radius:4px; color:var(--stamp); display:grid; place-items:center}
+.tslot.fill{border-style:solid; border-color:var(--good); color:var(--good)}
+@keyframes popin{0%{transform:scale(.3)}70%{transform:scale(1.25)}100%{transform:scale(1)}}
+.steps{display:flex; justify-content:center; gap:8px; margin:6px 0 10px; font-size:18px}
+.steps > span{padding:4px 12px; border-radius:999px; background:rgba(255,255,255,.12); color:var(--onDesk)}
+.steps > span.now{background:var(--amber); color:var(--ink); font-weight:700}
+.steps > span.ok{background:var(--goodbg); color:var(--good)}
+.steps .ann{line-height:1.4}
+.chips{display:flex; flex-wrap:wrap; gap:12px; justify-content:center}
+.chip{border:0; min-width:74px; height:84px; padding:0 12px; border-radius:16px; background:#fff; font-size:40px; box-shadow:0 5px 0 var(--kraft2); display:flex; flex-direction:column; align-items:center; justify-content:center; line-height:1}
+.chip small{font-size:15px; color:var(--ink2); margin-top:4px}
+.chip.v{font-size:32px; gap:0}
+.chip.v span{display:block; line-height:1.02}
+.chip.wrong{animation:shake .4s}
+.chip.hint{animation:pulse 1s infinite}
+.tones{display:grid; grid-template-columns:repeat(5,1fr); gap:8px}
+.tones .chip{min-width:0; padding:0 4px; font-size:56px; height:104px}
+.refrow{display:flex; gap:6px; justify-content:center; flex-wrap:wrap; margin:10px 0}
+.refrow button{border:0; background:var(--gridsoft); border-radius:12px; padding:4px 10px; font-size:30px}
+
+.witness{display:flex; gap:12px; align-items:flex-start}
+.witness .who{flex:none; text-align:center; font-size:22px; color:var(--onDesk)}
+.witness .who .em{font-size:60px; display:block; line-height:1}
+.witness .paper{flex:1; font-size:clamp(28px,8vw,40px)}
+
+.notebook{background:var(--paper); border-radius:6px; padding:8px 12px 8px 34px; position:relative}
+.cl + .cl{border-top:1px dashed var(--grid)}
+.notebook::before{content:""; position:absolute; left:18px; top:0; bottom:0; width:2px; background:#E9A3A3}
+.cl{display:flex; gap:8px; align-items:center; font-size:22px; padding:4px 0}
+.cl .em{font-size:30px}
+.cl .ann{flex:1}
+.suspects{display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.sus{background:var(--paper); border-radius:16px; padding:14px; text-align:center; position:relative; box-shadow:0 5px 0 var(--kraft2)}
+.sus .em{font-size:64px; line-height:1.1}
+.sus .nm{font-size:30px; font-weight:700}
+.sus .tr{font-size:21px; text-align:left; margin:6px 0 10px}
+.sus.wrong{animation:shake .4s}
+.sus.right{outline:4px solid var(--good)}
+.sus .stamp{position:absolute; top:34px; left:50%; font-size:40px; transform:translateX(-50%) rotate(-14deg); animation:slam .45s cubic-bezier(.2,1.6,.4,1)}
+@keyframes slam{0%{transform:translateX(-50%) rotate(-14deg) scale(3); opacity:0}100%{transform:translateX(-50%) rotate(-14deg) scale(1); opacity:1}}
+
+/* little stage */
+.stagebox{position:relative; height:176px; margin:0 0 12px; border-radius:14px; overflow:hidden; cursor:pointer;
+  display:flex; align-items:flex-end; justify-content:center; gap:22px; padding-bottom:10px;
+  background:linear-gradient(#D7EEF6 0 74%, #BFDDB0 74% 100%)}
+.stagebox.night{background:linear-gradient(#34507A 0 74%, #4E6B4A 74% 100%)}
+.stagebox.fest{background:repeating-linear-gradient(45deg,#fff 0 10px,#8CC4EA 10px 20px) top/100% 16px no-repeat, linear-gradient(#DCEFFA 0 74%, #C9DDA8 74% 100%)}
+.stagebox.sky{background:radial-gradient(circle at 20% 35%,#fff 0 16px,transparent 17px), radial-gradient(circle at 78% 25%,#fff 0 12px,transparent 13px), linear-gradient(#9FD3F2,#E3F4FC)}
+.stagebox.home{background:linear-gradient(#FCE3CF 0 74%, #D8A874 74% 100%)}
+.stagebox.night::before{content:"✦ · ✧ · ✦"; position:absolute; top:10px; left:0; right:0; text-align:center; color:#FFE9A8; letter-spacing:34px; font-size:12px; opacity:.8}
+.actor{position:relative; display:flex; align-items:flex-end; justify-content:center}
+.actor .ac{display:block; font-size:74px; line-height:1; transform-origin:50% 92%; animation:idle 2.6s ease-in-out infinite}
+.actor.person .ac svg{display:block; height:150px; width:auto; max-width:none}
+.sus .actor .ac{font-size:64px}
+.sus .actor.person .ac svg{height:120px}
+.sus{position:relative}
+.who{position:relative}
+.who .actor .ac{font-size:60px}
+.who .actor.person .ac svg{height:96px}
+.actor{cursor:pointer}
+.actor svg ellipse[fill="#2A1B12"]{transform-box:fill-box; transform-origin:center; animation:blink 4.2s infinite}
+@keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+.bub{position:absolute; z-index:3; transform:translate(-50%,-100%); background:#fff; color:var(--ink); border:3px solid var(--ink); border-radius:16px; padding:2px 10px; font-size:18px; font-weight:700; white-space:nowrap; animation:bubPop 1.9s ease forwards; pointer-events:none}
+.bub::after{content:""; position:absolute; left:50%; bottom:-10px; border:7px solid transparent; border-top-color:var(--ink); transform:translateX(-50%)}
+@keyframes bubPop{0%{opacity:0; transform:translate(-50%,-80%) scale(.3)}12%{opacity:1; transform:translate(-50%,-100%) scale(1.15)}20%{transform:translate(-50%,-100%) scale(1)}85%{opacity:1}100%{opacity:0; transform:translate(-50%,-115%)}}
+.actor.hid .ac{opacity:0; animation:none}
+.card .actor .ac{font-size:84px}
+@keyframes idle{50%{transform:translateY(-3px) scale(1.02)}}
+.a-jump .ac,.a-cheer .ac{animation:aJump 1s ease both}
+.a-cheer .ac{animation-iteration-count:2}
+.a-wave .ac,.a-dance .ac,.a-wiggle .ac{animation:aWave 1.1s ease-in-out both}
+.a-shake .ac{animation:aShake .7s ease both}
+.a-shiver .ac{animation:aShiver 1s linear both}
+.a-cry .ac{animation:aCry 1.5s ease-in-out both}
+.a-sad .ac{animation:aSad 1s ease forwards}
+.a-spin .ac{animation:aSpin .9s ease both}
+.a-gone .ac{animation:aGone 1s ease-in forwards}
+.a-appear .ac{animation:aAppear .7s cubic-bezier(.2,1.6,.4,1) both}
+.a-glow .ac{animation:aGlow 1.6s ease-in-out both}
+.a-wow .ac{animation:aWow .7s ease both}
+.a-think .ac{animation:aThink 1.4s ease both}
+.a-proud .ac{animation:aProud 1.3s ease both}
+.a-laugh .ac{animation:aLaugh 1.2s ease both}
+.a-eat .ac{animation:aEat 1.1s ease both}
+.a-nod .ac,.a-pat .ac{animation:aNod 1s ease both}
+.a-love .ac{animation:aLove 1.2s ease both}
+.a-search .ac{animation:aSearch 1.8s ease-in-out both}
+.a-sparkle .ac{animation:aWow .9s ease both}
+.a-boing .ac{animation:aBoing .9s ease both}
+.a-run .ac{animation:aRun .8s cubic-bezier(.2,.9,.3,1.2) both}
+.a-fly .ac{animation:aFly 1.8s ease-in-out both}
+.a-drive .ac{animation:aDrive 1.8s ease-in both}
+.a-float .ac{animation:aFloat 2s ease-in-out both}
+.a-sleep .ac{animation:aSleep 2s ease both}
+.a-scratch .ac{animation:aScratch 1.2s ease both}
+.a-shock .ac{animation:aShock 1s ease both}
+.a-hug .ac{animation:aHug 1.3s ease both}
+.a-wink .ac,.a-yum .ac{animation:aLove 1.2s ease both}
+.a-yum .ac{animation:aEat 1.1s ease both}
+.a-brake .ac{animation:aBrake 1s ease both}
+@keyframes aBoing{15%{transform:scale(1.25,.72)}35%{transform:translateY(-26px) scale(.82,1.22)}55%{transform:translateY(0) scale(1.14,.86)}72%{transform:scale(.94,1.06)}86%{transform:scale(1.03,.97)}}
+@keyframes aRun{0%{transform:translateX(calc(var(--dir) * 170px)) rotate(calc(var(--dir) * -10deg))}70%{transform:translateX(calc(var(--dir) * -10px)) rotate(calc(var(--dir) * 6deg))}}
+@keyframes aFly{0%{transform:translate(-190px,50px) rotate(-12deg)}55%{transform:translate(190px,-40px) rotate(-12deg); opacity:1}56%{opacity:0}60%{transform:translate(0,-20px) scale(.3); opacity:0}100%{transform:none; opacity:1}}
+@keyframes aDrive{0%{transform:none}10%{transform:translateX(-14px)}55%{transform:translateX(240px); opacity:1}56%{opacity:0; transform:translateX(-240px)}100%{transform:none; opacity:1}}
+@keyframes aFloat{25%{transform:translate(-18px,-6px)}75%{transform:translate(18px,4px)}}
+@keyframes aSleep{25%,85%{transform:rotate(-14deg) translateY(4px)}50%{transform:rotate(-14deg) translateY(4px) scale(1.04)}}
+@keyframes aScratch{20%,60%{transform:rotate(-8deg) translateY(2px)}40%,80%{transform:rotate(4deg)}}
+@keyframes aShock{15%{transform:translateY(-34px) scale(.9,1.2)}30%{transform:translateY(0) scale(1.1,.9)}45%,75%{transform:translateX(-7px)}60%,90%{transform:translateX(7px)}}
+@keyframes aHug{35%,70%{transform:translateX(calc(var(--dir) * -22px)) rotate(calc(var(--dir) * -10deg)) scale(1.05)}}
+@keyframes aBrake{0%{transform:translateX(-120px)}55%{transform:translateX(14px) rotate(-6deg)}75%{transform:translateX(-4px) rotate(2deg)}100%{transform:none}}
+@keyframes aJump{25%{transform:translateY(-46px) scaleY(1.05)}45%{transform:translateY(0) scaleY(.88)}65%{transform:translateY(-20px)}85%{transform:translateY(0) scaleY(.95)}}
+@keyframes aWave{20%{transform:rotate(-14deg)}40%{transform:rotate(14deg)}60%{transform:rotate(-12deg)}80%{transform:rotate(10deg)}}
+@keyframes aShake{15%,55%{transform:translateX(-12px)}35%,75%{transform:translateX(12px)}}
+@keyframes aShiver{10%,30%,50%,70%,90%{transform:translateX(-4px)}20%,40%,60%,80%{transform:translateX(4px)}}
+@keyframes aCry{20%,60%{transform:translateY(4px) rotate(-5deg)}40%,80%{transform:translateY(4px) rotate(5deg)}}
+@keyframes aSad{to{transform:translateY(10px) rotate(-10deg) scale(.94)}}
+@keyframes aSpin{to{transform:rotate(360deg)}}
+@keyframes aGone{30%{transform:scale(1.2)}100%{transform:scale(0) rotate(200deg); opacity:0}}
+@keyframes aAppear{0%{transform:scale(0); opacity:0}100%{transform:scale(1); opacity:1}}
+@keyframes aGlow{30%,70%{transform:scale(1.1); filter:drop-shadow(0 0 16px #FFD54A)}}
+@keyframes aWow{40%{transform:scale(1.35)}}
+@keyframes aThink{30%,80%{transform:rotate(-12deg)}}
+@keyframes aProud{30%,75%{transform:translateY(-8px) scale(1.18)}}
+@keyframes aLaugh{15%,45%,75%{transform:translateY(-10px) rotate(-4deg)}30%,60%,90%{transform:translateY(0) rotate(4deg)}}
+@keyframes aEat{20%,60%{transform:scale(1.08,.86)}40%,80%{transform:scale(.95,1.06)}}
+@keyframes aNod{25%,75%{transform:rotate(10deg) translateY(3px)}50%{transform:rotate(0)}}
+@keyframes aLove{30%,70%{transform:scale(1.12)}50%{transform:scale(1.02)}}
+@keyframes aSearch{20%{transform:rotate(-8deg) translateX(-8px)}50%{transform:rotate(8deg) translateX(8px)}80%{transform:rotate(-5deg)}}
+.pt{position:absolute; pointer-events:none; font-size:24px; line-height:1; margin:-12px 0 0 -12px; opacity:0; animation:ptRise 1.5s ease-out forwards; z-index:2}
+.pt.fall{animation-name:ptFall; font-size:18px}
+.pt.pop{animation-name:ptPop}
+.pt.one{animation-name:ptOne; font-size:30px}
+.pt.orbit{animation-name:ptOrbit; animation-duration:1.8s; font-size:30px}
+.pt.rise{color:var(--stamp); font-weight:700}
+@keyframes ptRise{0%{opacity:0; transform:scale(.5)}20%{opacity:1}100%{opacity:0; transform:translate(var(--dx),-72px) scale(1.1)}}
+@keyframes ptFall{0%{opacity:0}20%{opacity:1}100%{opacity:0; transform:translate(var(--dx),64px)}}
+@keyframes ptPop{0%{opacity:0; transform:scale(.2)}40%{opacity:1; transform:translate(var(--dx),var(--dy)) scale(1.2)}100%{opacity:0; transform:translate(var(--dx),var(--dy)) scale(.9)}}
+@keyframes ptOne{0%{opacity:0; transform:scale(.2)}30%{opacity:1; transform:translate(var(--dx),var(--dy)) scale(1.3)}80%{opacity:1; transform:translate(var(--dx),var(--dy)) scale(1)}100%{opacity:0; transform:translate(var(--dx),var(--dy))}}
+@keyframes ptOrbit{0%{opacity:0; transform:translate(-44px,0)}15%{opacity:1}50%{transform:translate(40px,-40px) rotate(20deg)}85%{opacity:1; transform:translate(-26px,-26px) rotate(-10deg)}100%{opacity:0}}
+.mascot.party svg{animation:aJump 1s ease 3; transform-origin:50% 95%}
+
+.hunt{display:flex; flex-wrap:wrap; align-items:center; gap:8px; background:var(--paper); border-radius:14px; padding:8px 14px; margin:0 0 10px; border:3px dashed var(--amber); font-size:clamp(26px,7vw,34px)}
+.hunt .hq{font-size:18px; font-weight:700; color:var(--ink2)}
+.hunt .htarget{background:#FFF1C9; border-radius:10px; padding:0 8px}
+.hunt.done{border-style:solid; border-color:var(--good); background:var(--goodbg)}
+.hunt .got{margin-left:auto; font-size:24px}
+.symbtn{border:0; background:#FFF1C9; border-radius:12px; font-size:40px; padding:2px 16px; box-shadow:0 3px 0 var(--kraft2)}
+.tip{color:var(--onDesk); text-align:center; font-size:16px; margin:8px 0 0; opacity:.85}
+.wd.hit{background:#BDE8C9!important}
+.grid .wd.hit .u{background:#BDE8C9}
+.wd.miss{animation:shake .4s}
+.wd.hint{animation:pulse 1s infinite}
+.grid .wd.hint .u{background:var(--hl)}
+.line{cursor:pointer}
+.plus{position:fixed; z-index:80; transform:translate(-50%,-50%); font-size:28px; font-weight:700; color:var(--amber2); text-shadow:0 2px 0 #fff,0 0 8px #fff; pointer-events:none; animation:plusUp 1.3s ease-out forwards}
+@keyframes plusUp{0%{opacity:0; transform:translate(-50%,-30%) scale(.5)}20%{opacity:1; transform:translate(-50%,-80%) scale(1.3)}100%{opacity:0; transform:translate(-50%,-260%) scale(1)}}
+.starpill.bump{animation:bump .5s ease}
+@keyframes bump{40%{transform:scale(1.35)}}
+.ahud{display:flex; justify-content:space-around; color:var(--onDesk); font-size:26px; margin:4px 0 10px}
+.ahud b{font-size:32px}
+.atarget{display:flex; align-items:center; justify-content:center; gap:14px; background:var(--paper); border-radius:18px; padding:8px; margin-bottom:14px}
+.atarget .em{font-size:76px; line-height:1.1}
+.holes{display:grid; grid-template-columns:repeat(3,1fr); gap:10px}
+.hole{position:relative; height:clamp(128px,34vw,170px); overflow:hidden; border-radius:14px;
+  background:radial-gradient(ellipse 46% 16% at 50% 88%, #3B2A1C 0 98%, transparent 100%), linear-gradient(#8CC46A,#6EA84E)}
+.mole{position:absolute; left:4%; right:4%; bottom:6px; border:0; background:none; display:flex; flex-direction:column; align-items:center; transform:translateY(105%); transition:transform .22s cubic-bezier(.3,1.5,.5,1); padding:0}
+.mole.up{transform:translateY(0)}
+.mole .sign{background:#FFFDF3; border:3px solid #8A5A2B; border-radius:10px; padding:2px 6px; font-size:clamp(22px,6.2vw,30px); min-height:1.2em; max-width:100%}
+.mole .sign .ann{line-height:1.3}
+.mole .critter{font-size:clamp(40px,11vw,56px); line-height:1}
+.mole.hitme .critter{animation:aBoing .5s}
+.mole.hitme .sign{background:var(--goodbg); border-color:var(--good)}
+.mole.no{animation:shake .4s}
+
+button .ann,.lbl .ann,.hq .ann,.tip .ann,.pill .ann,.fmeta .ann,.stamp .ann,.rankup .ann,.toast .ann,.bub .ann,.name .ann,.steps .ann,.chip small .ann,.ftab .ann{line-height:1.45}
+.folder .ftab{position:absolute; top:-30px; left:0; background:var(--kraft); padding:2px 14px 0; border-radius:10px 10px 0 0; font-size:17px; color:var(--ink2)}
+.folder::before{display:none}
+.folders{gap:40px}
+.bub .zy{font-size:.45em}
+.chip small{font-size:15px}
+#modeZi{display:inline-block}
+
+.mic{border:0; background:#E4574B; color:#fff; border-radius:999px; font-size:20px; font-weight:700; padding:8px 18px; box-shadow:0 4px 0 #A83A30}
+.mic.big{font-size:28px; padding:12px 34px}
+.mic.on{background:var(--good); box-shadow:0 4px 0 #1E6B3E; animation:pulse 1s infinite}
+.mic:disabled{opacity:.4}
+.mic .ann .zy{color:#fff}
+.hmic{flex-basis:100%; display:flex; flex-direction:column; align-items:flex-start; gap:6px; margin-top:4px}
+.hfb{font-size:22px}
+.vcard{display:flex; align-items:center; justify-content:center; gap:14px; margin:12px 0}
+.vcard .em{font-size:72px}
+.vhow{color:var(--onDesk); font-size:22px; margin:8px 0 12px}
+.vfb{min-height:2em; text-align:center; font-size:24px; color:var(--onDesk); margin:12px 0}
+.vfb b{background:var(--paper); color:var(--ink); border-radius:8px; padding:0 6px}
+
+/* overlays */
+.overlay{position:fixed; inset:0; z-index:50; background:rgba(15,34,44,.82); display:flex; align-items:center; justify-content:center; padding:calc(env(safe-area-inset-top,0px) + 16px) 16px calc(env(safe-area-inset-bottom,0px) + 16px); overflow:auto}
+.card{background:var(--paper); border-radius:18px; padding:20px; max-width:520px; width:100%; text-align:center; animation:popin .4s}
+.card .em{font-size:84px; line-height:1.1}
+.card .txt{font-size:clamp(24px,6.5vw,32px); margin:8px 0 12px}
+.card .hdr{font-size:28px; color:var(--good); font-weight:700}
+.starsrow{font-size:38px; letter-spacing:4px; margin:4px 0 12px}
+.starsrow .bonus{font-size:18px; display:block; letter-spacing:0; color:var(--amber2)}
+.celebrate .stamp{font-size:40px; white-space:nowrap; margin:14px 0 6px; animation:slam2 .5s cubic-bezier(.2,1.6,.4,1)}
+@keyframes slam2{0%{transform:rotate(-12deg) scale(3); opacity:0}100%{transform:rotate(-12deg) scale(1); opacity:1}}
+.badge{font-size:96px; line-height:1}
+.rankup{background:var(--hl); border-radius:12px; padding:8px; font-size:22px; margin:10px 0}
+
+/* guide */
+.symgrid{display:grid; grid-template-columns:repeat(auto-fill,minmax(98px,1fr)); gap:10px}
+.sym{border:0; background:var(--paper); border-radius:14px; padding:8px 4px; box-shadow:0 4px 0 var(--kraft2); display:flex; flex-direction:column; align-items:center; gap:2px}
+.sym .s{font-size:46px; line-height:1.1}
+.sym .ex{font-size:20px}
+.sym .ex .ann{line-height:1.5}
+.sym.on{outline:4px solid var(--amber)}
+.tonegrid{display:grid; grid-template-columns:repeat(5,1fr); gap:8px}
+.tonegrid .sym .s{font-size:36px}
+
+/* badges */
+.badges{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
+.sect{margin:8px 2px 2px; font-size:20px; font-weight:700}
+.bslot{background:var(--paper); border-radius:16px; padding:14px 6px; text-align:center; font-size:20px}
+.bslot .badge{font-size:64px}
+@media (max-width:440px){ .bslot .badge{font-size:48px} .bslot{font-size:17px} }
+.bslot.off .badge{filter:grayscale(1) brightness(.4); opacity:.35}
+.cert{margin-top:22px; background:var(--paper); border:8px double var(--amber2); border-radius:10px; padding:22px; text-align:center}
+.cert h2{margin:0; font-size:34px}
+.cert .who{font-size:40px; font-weight:700; margin:10px 0; color:var(--stamp)}
+
+/* settings */
+.form{display:grid; gap:16px}
+.form label{display:grid; gap:6px; font-size:19px}
+.form input[type=text],.form select{font:inherit; font-size:20px; padding:10px; border-radius:10px; border:2px solid var(--kraft2); background:#fff; color:var(--ink)}
+.form input[type=range]{width:100%}
+.check{display:flex!important; grid-template-columns:none; align-items:center; gap:10px}
+.check input{width:26px; height:26px}
+.muted{color:var(--ink2); font-size:16px; line-height:1.5}
+
+.toast{position:fixed; left:50%; top:calc(env(safe-area-inset-top,0px) + 70px); transform:translateX(-50%); z-index:60; background:var(--paper); border-radius:999px; padding:8px 20px; font-size:24px; font-weight:700; box-shadow:0 6px 20px rgba(0,0,0,.35); animation:popin .35s}
+canvas#confetti{position:fixed; inset:0; width:100%; height:100%; pointer-events:none; z-index:70}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation:none!important; transition:none!important}
+}
+</style>
+</head>
+<body>
+<header class="bar">
+  <button class="home" data-go="home" aria-label="回首頁">🏠</button>
+  <span class="name" id="barname"></span>
+  <span class="starpill" id="starpill">⭐ 0</span>
+  <div class="seg" role="group" aria-label="顯示方式">
+    <button id="mBoth" aria-pressed="true" aria-label="國字加注音"><span id="modeZi"></span>+ㄅ</button>
+    <button id="mZy" aria-pressed="false" aria-label="只看注音">ㄅㄆㄇ</button>
+  </div>
+  <button class="gear" data-go="settings" aria-label="設定">⚙️</button>
+</header>
+<div id="vnote" class="vnote" hidden></div>
+<main id="main"></main>
+<canvas id="confetti" hidden></canvas>
+<script>
+const D = {"cases":[{"id":"c1","badge":"🍍","badgeName":{"t":"鳳梨酥守護者","s":[{"w":"鳳梨酥","ch":[["鳳","ㄈㄥ","ˋ"],["梨","ㄌㄧ","ˊ"],["酥","ㄙㄨ",""]]},{"w":"守護者","ch":[["守","ㄕㄡ","ˇ"],["護","ㄏㄨ","ˋ"],["者","ㄓㄜ","ˇ"]]}]},"title":{"t":"鳳梨酥不見了","s":[{"w":"鳳梨酥","ch":[["鳳","ㄈㄥ","ˋ"],["梨","ㄌㄧ","ˊ"],["酥","ㄙㄨ",""]]},{"w":"不見","ch":[["不","ㄅㄨ","ˋ"],["見","ㄐㄧㄢ","ˋ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]}]},"place":"🍞","placeName":{"t":"森林麵包店","s":[{"w":"森林","ch":[["森","ㄙㄣ",""],["林","ㄌㄧㄣ","ˊ"]]},{"w":"麵包店","ch":[["麵","ㄇㄧㄢ","ˋ"],["包","ㄅㄠ",""],["店","ㄉㄧㄢ","ˋ"]]}]},"intro":[{"t":"叮咚！森林麵包店開門囉～","s":[{"w":"叮咚","ch":[["叮","ㄉㄧㄥ",""],["咚","ㄉㄨㄥ",""]]},{"p":"！"},{"w":"森林","ch":[["森","ㄙㄣ",""],["林","ㄌㄧㄣ","ˊ"]]},{"w":"麵包店","ch":[["麵","ㄇㄧㄢ","ˋ"],["包","ㄅㄠ",""],["店","ㄉㄧㄢ","ˋ"]]},{"w":"開門","ch":[["開","ㄎㄞ",""],["門","ㄇㄣ","ˊ"]]},{"w":"囉","ch":[["囉","ㄌㄨㄛ","˙"]]},{"p":"～"}],"act":[["🍞","boing","叮咚！"],["🐻","wave"]]},{"t":"咦？熊老闆看著空空的盤子：「嗚嗚嗚……我的鳳梨酥不見了！」","s":[{"w":"咦","ch":[["咦","ㄧ","ˊ"]]},{"p":"？"},{"w":"熊","ch":[["熊","ㄒㄩㄥ","ˊ"]]},{"w":"老闆","ch":[["老","ㄌㄠ","ˇ"],["闆","ㄅㄢ","ˇ"]]},{"w":"看著","ch":[["看","ㄎㄢ","ˋ"],["著","ㄓㄜ","˙"]]},{"w":"空空","ch":[["空","ㄎㄨㄥ",""],["空","ㄎㄨㄥ",""]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"盤子","ch":[["盤","ㄆㄢ","ˊ"],["子","ㄗ","˙"]]},{"p":"："},{"p":"「"},{"w":"嗚嗚嗚","ch":[["嗚","ㄨ",""],["嗚","ㄨ",""],["嗚","ㄨ",""]]},{"p":"…"},{"p":"…"},{"w":"我","ch":[["我","ㄨㄛ","ˇ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"鳳梨酥","ch":[["鳳","ㄈㄥ","ˋ"],["梨","ㄌㄧ","ˊ"],["酥","ㄙㄨ",""]]},{"w":"不見","ch":[["不","ㄅㄨ","ˋ"],["見","ㄐㄧㄢ","ˋ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"p":"！"},{"p":"」"}],"act":[["🐻","cry","嗚嗚～"],["🍽️","shake","空空！"]]},{"t":"以琴探長咻一聲跳出來，拿起放大鏡東看西看。","s":[{"w":"以琴","ch":[["以","ㄧ","ˇ"],["琴","ㄑㄧㄣ","ˊ"]]},{"w":"探長","ch":[["探","ㄊㄢ","ˋ"],["長","ㄓㄤ","ˇ"]]},{"w":"咻","ch":[["咻","ㄒㄧㄡ",""]]},{"w":"一聲","ch":[["一","ㄧ",""],["聲","ㄕㄥ",""]]},{"w":"跳","ch":[["跳","ㄊㄧㄠ","ˋ"]]},{"w":"出來","ch":[["出","ㄔㄨ",""],["來","ㄌㄞ","ˊ"]]},{"p":"，"},{"w":"拿起","ch":[["拿","ㄋㄚ","ˊ"],["起","ㄑㄧ","ˇ"]]},{"w":"放大鏡","ch":[["放","ㄈㄤ","ˋ"],["大","ㄉㄚ","ˋ"],["鏡","ㄐㄧㄥ","ˋ"]]},{"w":"東","ch":[["東","ㄉㄨㄥ",""]]},{"w":"看","ch":[["看","ㄎㄢ","ˋ"]]},{"w":"西","ch":[["西","ㄒㄧ",""]]},{"w":"看","ch":[["看","ㄎㄢ","ˋ"]]},{"p":"。"}],"act":[["Q","search"]]},{"t":"安安翻開筆記本：「探長，我們出發吧！」","s":[{"w":"安安","ch":[["安","ㄢ",""],["安","ㄢ",""]]},{"w":"翻開","ch":[["翻","ㄈㄢ",""],["開","ㄎㄞ",""]]},{"w":"筆記本","ch":[["筆","ㄅㄧ","ˇ"],["記","ㄐㄧ","ˋ"],["本","ㄅㄣ","ˇ"]]},{"p":"："},{"p":"「"},{"w":"探長","ch":[["探","ㄊㄢ","ˋ"],["長","ㄓㄤ","ˇ"]]},{"p":"，"},{"w":"我們","ch":[["我","ㄨㄛ","ˇ"],["們","ㄇㄣ","˙"]]},{"w":"出發","ch":[["出","ㄔㄨ",""],["發","ㄈㄚ",""]]},{"w":"吧","ch":[["吧","ㄅㄚ","˙"]]},{"p":"！"},{"p":"」"}],"act":[["A","cheer"],["Q","cheer"]]}],"ending":[{"t":"哇！原來是藍鵲阿姨拿的！","s":[{"w":"哇","ch":[["哇","ㄨㄚ",""]]},{"p":"！"},{"w":"原來","ch":[["原","ㄩㄢ","ˊ"],["來","ㄌㄞ","ˊ"]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"藍鵲","ch":[["藍","ㄌㄢ","ˊ"],["鵲","ㄑㄩㄝ","ˋ"]]},{"w":"阿姨","ch":[["阿","ㄚ",""],["姨","ㄧ","ˊ"]]},{"w":"拿","ch":[["拿","ㄋㄚ","ˊ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"p":"！"}],"act":[["🐦","wow"]]},{"t":"藍鵲阿姨紅著臉說：「對不起～今天是寶寶的生日，我想給他驚喜。」","s":[{"w":"藍鵲","ch":[["藍","ㄌㄢ","ˊ"],["鵲","ㄑㄩㄝ","ˋ"]]},{"w":"阿姨","ch":[["阿","ㄚ",""],["姨","ㄧ","ˊ"]]},{"w":"紅著","ch":[["紅","ㄏㄨㄥ","ˊ"],["著","ㄓㄜ","˙"]]},{"w":"臉","ch":[["臉","ㄌㄧㄢ","ˇ"]]},{"w":"說","ch":[["說","ㄕㄨㄛ",""]]},{"p":"："},{"p":"「"},{"w":"對不起","ch":[["對","ㄉㄨㄟ","ˋ"],["不","ㄅㄨ","ˋ"],["起","ㄑㄧ","ˇ"]]},{"p":"～"},{"w":"今天","ch":[["今","ㄐㄧㄣ",""],["天","ㄊㄧㄢ",""]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"寶寶","ch":[["寶","ㄅㄠ","ˇ"],["寶","ㄅㄠ","ˇ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"生日","ch":[["生","ㄕㄥ",""],["日","ㄖ","ˋ"]]},{"p":"，"},{"w":"我","ch":[["我","ㄨㄛ","ˇ"]]},{"w":"想","ch":[["想","ㄒㄧㄤ","ˇ"]]},{"w":"給","ch":[["給","ㄍㄟ","ˇ"]]},{"w":"他","ch":[["他","ㄊㄚ",""]]},{"w":"驚喜","ch":[["驚","ㄐㄧㄥ",""],["喜","ㄒㄧ","ˇ"]]},{"p":"。"},{"p":"」"}],"act":[["🐦","love"],["🐣","jump"]]},{"t":"熊老闆哈哈大笑：「下次跟我說，我送你一大盒！」","s":[{"w":"熊","ch":[["熊","ㄒㄩㄥ","ˊ"]]},{"w":"老闆","ch":[["老","ㄌㄠ","ˇ"],["闆","ㄅㄢ","ˇ"]]},{"w":"哈哈","ch":[["哈","ㄏㄚ",""],["哈","ㄏㄚ",""]]},{"w":"大笑","ch":[["大","ㄉㄚ","ˋ"],["笑","ㄒㄧㄠ","ˋ"]]},{"p":"："},{"p":"「"},{"w":"下次","ch":[["下","ㄒㄧㄚ","ˋ"],["次","ㄘ","ˋ"]]},{"w":"跟","ch":[["跟","ㄍㄣ",""]]},{"w":"我","ch":[["我","ㄨㄛ","ˇ"]]},{"w":"說","ch":[["說","ㄕㄨㄛ",""]]},{"p":"，"},{"w":"我","ch":[["我","ㄨㄛ","ˇ"]]},{"w":"送","ch":[["送","ㄙㄨㄥ","ˋ"]]},{"w":"你","ch":[["你","ㄋㄧ","ˇ"]]},{"w":"一","ch":[["一","ㄧ",""]]},{"w":"大","ch":[["大","ㄉㄚ","ˋ"]]},{"w":"盒","ch":[["盒","ㄏㄜ","ˊ"]]},{"p":"！"},{"p":"」"}],"act":[["🐻","laugh"],["🎁","appear"]]},{"t":"大家一起吃鳳梨酥，哇～好香好甜！","s":[{"w":"大家","ch":[["大","ㄉㄚ","ˋ"],["家","ㄐㄧㄚ",""]]},{"w":"一起","ch":[["一","ㄧ",""],["起","ㄑㄧ","ˇ"]]},{"w":"吃","ch":[["吃","ㄔ",""]]},{"w":"鳳梨酥","ch":[["鳳","ㄈㄥ","ˋ"],["梨","ㄌㄧ","ˊ"],["酥","ㄙㄨ",""]]},{"p":"，"},{"w":"哇","ch":[["哇","ㄨㄚ",""]]},{"p":"～"},{"w":"好","ch":[["好","ㄏㄠ","ˇ"]]},{"w":"香","ch":[["香","ㄒㄧㄤ",""]]},{"w":"好","ch":[["好","ㄏㄠ","ˇ"]]},{"w":"甜","ch":[["甜","ㄊㄧㄢ","ˊ"]]},{"p":"！"}],"act":[["Q","eat"],["A","eat"],["🍍","spin"]]}],"puzzles":[{"type":"pick","card":["👣",{"t":"哇，腳印好小，只有三根腳趾！","s":[{"w":"哇","ch":[["哇","ㄨㄚ",""]]},{"p":"，"},{"w":"腳印","ch":[["腳","ㄐㄧㄠ","ˇ"],["印","ㄧㄣ","ˋ"]]},{"w":"好","ch":[["好","ㄏㄠ","ˇ"]]},{"w":"小","ch":[["小","ㄒㄧㄠ","ˇ"]]},{"p":"，"},{"w":"只有","ch":[["只","ㄓ","ˇ"],["有","ㄧㄡ","ˇ"]]},{"w":"三","ch":[["三","ㄙㄢ",""]]},{"w":"根","ch":[["根","ㄍㄣ",""]]},{"w":"腳趾","ch":[["腳","ㄐㄧㄠ","ˇ"],["趾","ㄓ","ˇ"]]},{"p":"！"}]}],"prompt":{"t":"咦？地上有奇怪的東西！讀讀看注音，這是什麼呢？","s":[{"w":"咦","ch":[["咦","ㄧ","ˊ"]]},{"p":"？"},{"w":"地上","ch":[["地","ㄉㄧ","ˋ"],["上","ㄕㄤ","ˋ"]]},{"w":"有","ch":[["有","ㄧㄡ","ˇ"]]},{"w":"奇怪","ch":[["奇","ㄑㄧ","ˊ"],["怪","ㄍㄨㄞ","ˋ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"東西","ch":[["東","ㄉㄨㄥ",""],["西","ㄒㄧ",""]]},{"p":"！"},{"w":"讀讀看","ch":[["讀","ㄉㄨ","ˊ"],["讀","ㄉㄨ","ˊ"],["看","ㄎㄢ","ˋ"]]},{"w":"注音","ch":[["注","ㄓㄨ","ˋ"],["音","ㄧㄣ",""]]},{"p":"，"},{"w":"這","ch":[["這","ㄓㄜ","ˋ"]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"什麼","ch":[["什","ㄕㄜ","ˊ"],["麼","ㄇㄜ","˙"]]},{"w":"呢","ch":[["呢","ㄋㄜ","˙"]]},{"p":"？"}]},"clue":{"t":"腳印","s":[{"w":"腳印","ch":[["腳","ㄐㄧㄠ","ˇ"],["印","ㄧㄣ","ˋ"]]}]},"options":[{"w":{"t":"腳印","s":[{"w":"腳印","ch":[["腳","ㄐㄧㄠ","ˇ"],["印","ㄧㄣ","ˋ"]]}]},"e":"👣"},{"w":{"t":"餃子","s":[{"w":"餃子","ch":[["餃","ㄐㄧㄠ","ˇ"],["子","ㄗ","˙"]]}]},"e":"🥟"},{"w":{"t":"鈴鐺","s":[{"w":"鈴鐺","ch":[["鈴","ㄌㄧㄥ","ˊ"],["鐺","ㄉㄤ",""]]}]},"e":"🔔"}],"answer":0},{"type":"tone","card":["💨",{"t":"啪啪啪！是拍翅膀的聲音，小偷會飛！","s":[{"w":"啪啪啪","ch":[["啪","ㄆㄚ",""],["啪","ㄆㄚ",""],["啪","ㄆㄚ",""]]},{"p":"！"},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"拍","ch":[["拍","ㄆㄞ",""]]},{"w":"翅膀","ch":[["翅","ㄔ","ˋ"],["膀","ㄅㄤ","ˇ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"聲音","ch":[["聲","ㄕㄥ",""],["音","ㄧㄣ",""]]},{"p":"，"},{"w":"小偷","ch":[["小","ㄒㄧㄠ","ˇ"],["偷","ㄊㄡ",""]]},{"w":"會","ch":[["會","ㄏㄨㄟ","ˋ"]]},{"w":"飛","ch":[["飛","ㄈㄟ",""]]},{"p":"！"}]}],"prompt":{"t":"熊老闆說，他聽到啪啪啪的聲音。「翅膀」的「膀」是第幾聲？","s":[{"w":"熊","ch":[["熊","ㄒㄩㄥ","ˊ"]]},{"w":"老闆","ch":[["老","ㄌㄠ","ˇ"],["闆","ㄅㄢ","ˇ"]]},{"w":"說","ch":[["說","ㄕㄨㄛ",""]]},{"p":"，"},{"w":"他","ch":[["他","ㄊㄚ",""]]},{"w":"聽到","ch":[["聽","ㄊㄧㄥ",""],["到","ㄉㄠ","ˋ"]]},{"w":"啪啪啪","ch":[["啪","ㄆㄚ",""],["啪","ㄆㄚ",""],["啪","ㄆㄚ",""]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"聲音","ch":[["聲","ㄕㄥ",""],["音","ㄧㄣ",""]]},{"p":"。"},{"p":"「"},{"w":"翅膀","ch":[["翅","ㄔ","ˋ"],["膀","ㄅㄤ","ˇ"]]},{"p":"」"},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"p":"「"},{"w":"膀","ch":[["膀","ㄅㄤ","ˇ"]]},{"p":"」"},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"第","ch":[["第","ㄉㄧ","ˋ"]]},{"w":"幾","ch":[["幾","ㄐㄧ","ˇ"]]},{"w":"聲","ch":[["聲","ㄕㄥ",""]]},{"p":"？"}]},"word":{"t":"翅膀","s":[{"w":"翅膀","ch":[["翅","ㄔ","ˋ"],["膀","ㄅㄤ","ˇ"]]}]},"idx":1,"target":["膀","ㄅㄤ","ˇ"],"answer":3},{"type":"spell","card":["🪶",{"t":"窗戶旁邊有一根藍色的羽毛，輕輕飄呀飄。","s":[{"w":"窗戶","ch":[["窗","ㄔㄨㄤ",""],["戶","ㄏㄨ","ˋ"]]},{"w":"旁邊","ch":[["旁","ㄆㄤ","ˊ"],["邊","ㄅㄧㄢ",""]]},{"w":"有","ch":[["有","ㄧㄡ","ˇ"]]},{"w":"一","ch":[["一","ㄧ",""]]},{"w":"根","ch":[["根","ㄍㄣ",""]]},{"w":"藍色","ch":[["藍","ㄌㄢ","ˊ"],["色","ㄙㄜ","ˋ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"羽毛","ch":[["羽","ㄩ","ˇ"],["毛","ㄇㄠ","ˊ"]]},{"p":"，"},{"w":"輕輕","ch":[["輕","ㄑㄧㄥ",""],["輕","ㄑㄧㄥ",""]]},{"w":"飄","ch":[["飄","ㄆㄧㄠ",""]]},{"w":"呀","ch":[["呀","ㄧㄚ","˙"]]},{"w":"飄","ch":[["飄","ㄆㄧㄠ",""]]},{"p":"。"}]}],"prompt":{"t":"窗戶旁邊有東西在飄！幫「毛」拼出注音，打開證物箱！","s":[{"w":"窗戶","ch":[["窗","ㄔㄨㄤ",""],["戶","ㄏㄨ","ˋ"]]},{"w":"旁邊","ch":[["旁","ㄆㄤ","ˊ"],["邊","ㄅㄧㄢ",""]]},{"w":"有","ch":[["有","ㄧㄡ","ˇ"]]},{"w":"東西","ch":[["東","ㄉㄨㄥ",""],["西","ㄒㄧ",""]]},{"w":"在","ch":[["在","ㄗㄞ","ˋ"]]},{"w":"飄","ch":[["飄","ㄆㄧㄠ",""]]},{"p":"！"},{"w":"幫","ch":[["幫","ㄅㄤ",""]]},{"p":"「"},{"w":"毛","ch":[["毛","ㄇㄠ","ˊ"]]},{"p":"」"},{"w":"拼出","ch":[["拼","ㄆㄧㄣ",""],["出","ㄔㄨ",""]]},{"w":"注音","ch":[["注","ㄓㄨ","ˋ"],["音","ㄧㄣ",""]]},{"p":"，"},{"w":"打開","ch":[["打","ㄉㄚ","ˇ"],["開","ㄎㄞ",""]]},{"w":"證物","ch":[["證","ㄓㄥ","ˋ"],["物","ㄨ","ˋ"]]},{"w":"箱","ch":[["箱","ㄒㄧㄤ",""]]},{"p":"！"}]},"word":{"t":"羽毛","s":[{"w":"羽毛","ch":[["羽","ㄩ","ˇ"],["毛","ㄇㄠ","ˊ"]]}]},"idx":1,"target":["毛","ㄇㄠ","ˊ"],"ini":"ㄇ","fin":"ㄠ","initials":["ㄇ","ㄋ","ㄈ","ㄅ"],"finals":["ㄠ","ㄡ","ㄚ","ㄛ"]},{"type":"read","card":["🐒",{"t":"猴子一直在呼呼大睡，不是他！","s":[{"w":"猴子","ch":[["猴","ㄏㄡ","ˊ"],["子","ㄗ","˙"]]},{"w":"一直","ch":[["一","ㄧ",""],["直","ㄓ","ˊ"]]},{"w":"在","ch":[["在","ㄗㄞ","ˋ"]]},{"w":"呼呼","ch":[["呼","ㄏㄨ",""],["呼","ㄏㄨ",""]]},{"w":"大睡","ch":[["大","ㄉㄚ","ˋ"],["睡","ㄕㄨㄟ","ˋ"]]},{"p":"，"},{"w":"不是","ch":[["不","ㄅㄨ","ˋ"],["是","ㄕ","ˋ"]]},{"w":"他","ch":[["他","ㄊㄚ",""]]},{"p":"！"}]}],"who":["🐒",{"t":"猴子","s":[{"w":"猴子","ch":[["猴","ㄏㄡ","ˊ"],["子","ㄗ","˙"]]}]}],"statement":{"t":"呼～我今天早上一直在樹上睡覺啦！","s":[{"w":"呼","ch":[["呼","ㄏㄨ",""]]},{"p":"～"},{"w":"我","ch":[["我","ㄨㄛ","ˇ"]]},{"w":"今天","ch":[["今","ㄐㄧㄣ",""],["天","ㄊㄧㄢ",""]]},{"w":"早上","ch":[["早","ㄗㄠ","ˇ"],["上","ㄕㄤ","ˋ"]]},{"w":"一直","ch":[["一","ㄧ",""],["直","ㄓ","ˊ"]]},{"w":"在","ch":[["在","ㄗㄞ","ˋ"]]},{"w":"樹上","ch":[["樹","ㄕㄨ","ˋ"],["上","ㄕㄤ","ˋ"]]},{"w":"睡覺","ch":[["睡","ㄕㄨㄟ","ˋ"],["覺","ㄐㄧㄠ","ˋ"]]},{"w":"啦","ch":[["啦","ㄌㄚ","˙"]]},{"p":"！"}]},"question":{"t":"猴子早上在做什麼？","s":[{"w":"猴子","ch":[["猴","ㄏㄡ","ˊ"],["子","ㄗ","˙"]]},{"w":"早上","ch":[["早","ㄗㄠ","ˇ"],["上","ㄕㄤ","ˋ"]]},{"w":"在","ch":[["在","ㄗㄞ","ˋ"]]},{"w":"做","ch":[["做","ㄗㄨㄛ","ˋ"]]},{"w":"什麼","ch":[["什","ㄕㄜ","ˊ"],["麼","ㄇㄜ","˙"]]},{"p":"？"}]},"options":[{"w":{"t":"睡覺","s":[{"w":"睡覺","ch":[["睡","ㄕㄨㄟ","ˋ"],["覺","ㄐㄧㄠ","ˋ"]]}]},"e":"😴"},{"w":{"t":"吃蛋糕","s":[{"w":"吃","ch":[["吃","ㄔ",""]]},{"w":"蛋糕","ch":[["蛋","ㄉㄢ","ˋ"],["糕","ㄍㄠ",""]]}]},"e":"🍰"},{"w":{"t":"踢足球","s":[{"w":"踢","ch":[["踢","ㄊㄧ",""]]},{"w":"足球","ch":[["足","ㄗㄨ","ˊ"],["球","ㄑㄧㄡ","ˊ"]]}]},"e":"⚽"}],"answer":0}],"deduce":{"kind":"who","question":{"t":"到底是誰拿走了鳳梨酥？","s":[{"w":"到底","ch":[["到","ㄉㄠ","ˋ"],["底","ㄉㄧ","ˇ"]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"誰","ch":[["誰","ㄕㄟ","ˊ"]]},{"w":"拿走","ch":[["拿","ㄋㄚ","ˊ"],["走","ㄗㄡ","ˇ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"w":"鳳梨酥","ch":[["鳳","ㄈㄥ","ˋ"],["梨","ㄌㄧ","ˊ"],["酥","ㄙㄨ",""]]},{"p":"？"}]},"answer":2,"suspects":[{"e":"🐒","n":{"t":"猴子","s":[{"w":"猴子","ch":[["猴","ㄏㄡ","ˊ"],["子","ㄗ","˙"]]}]},"t":{"t":"有五根手指，會爬樹。","s":[{"w":"有","ch":[["有","ㄧㄡ","ˇ"]]},{"w":"五","ch":[["五","ㄨ","ˇ"]]},{"w":"根","ch":[["根","ㄍㄣ",""]]},{"w":"手指","ch":[["手","ㄕㄡ","ˇ"],["指","ㄓ","ˇ"]]},{"p":"，"},{"w":"會","ch":[["會","ㄏㄨㄟ","ˋ"]]},{"w":"爬樹","ch":[["爬","ㄆㄚ","ˊ"],["樹","ㄕㄨ","ˋ"]]},{"p":"。"}]}},{"e":"🐻","n":{"t":"黑熊","s":[{"w":"黑熊","ch":[["黑","ㄏㄟ",""],["熊","ㄒㄩㄥ","ˊ"]]}]},"t":{"t":"腳很大，毛是黑色的。","s":[{"w":"腳","ch":[["腳","ㄐㄧㄠ","ˇ"]]},{"w":"很","ch":[["很","ㄏㄣ","ˇ"]]},{"w":"大","ch":[["大","ㄉㄚ","ˋ"]]},{"p":"，"},{"w":"毛","ch":[["毛","ㄇㄠ","ˊ"]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"黑色","ch":[["黑","ㄏㄟ",""],["色","ㄙㄜ","ˋ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"p":"。"}]}},{"e":"🐦","n":{"t":"藍鵲","s":[{"w":"藍鵲","ch":[["藍","ㄌㄢ","ˊ"],["鵲","ㄑㄩㄝ","ˋ"]]}]},"t":{"t":"有三根腳趾，藍色的羽毛，會飛。","s":[{"w":"有","ch":[["有","ㄧㄡ","ˇ"]]},{"w":"三","ch":[["三","ㄙㄢ",""]]},{"w":"根","ch":[["根","ㄍㄣ",""]]},{"w":"腳趾","ch":[["腳","ㄐㄧㄠ","ˇ"],["趾","ㄓ","ˇ"]]},{"p":"，"},{"w":"藍色","ch":[["藍","ㄌㄢ","ˊ"],["色","ㄙㄜ","ˋ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"羽毛","ch":[["羽","ㄩ","ˇ"],["毛","ㄇㄠ","ˊ"]]},{"p":"，"},{"w":"會","ch":[["會","ㄏㄨㄟ","ˋ"]]},{"w":"飛","ch":[["飛","ㄈㄟ",""]]},{"p":"。"}]}}]},"journey":false},{"id":"c2","badge":"🏮","badgeName":{"t":"燈籠小英雄","s":[{"w":"燈籠","ch":[["燈","ㄉㄥ",""],["籠","ㄌㄨㄥ","ˊ"]]},{"w":"小","ch":[["小","ㄒㄧㄠ","ˇ"]]},{"w":"英雄","ch":[["英","ㄧㄥ",""],["雄","ㄒㄩㄥ","ˊ"]]}]},"title":{"t":"月亮燈籠不見了","s":[{"w":"月亮","ch":[["月","ㄩㄝ","ˋ"],["亮","ㄌㄧㄤ","ˋ"]]},{"w":"燈籠","ch":[["燈","ㄉㄥ",""],["籠","ㄌㄨㄥ","ˊ"]]},{"w":"不見","ch":[["不","ㄅㄨ","ˋ"],["見","ㄐㄧㄢ","ˋ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]}]},"place":"🏮","placeName":{"t":"動物村燈會","s":[{"w":"動物村","ch":[["動","ㄉㄨㄥ","ˋ"],["物","ㄨ","ˋ"],["村","ㄘㄨㄣ",""]]},{"w":"燈會","ch":[["燈","ㄉㄥ",""],["會","ㄏㄨㄟ","ˋ"]]}]},"intro":[{"t":"晚上，動物村亮晶晶，燈會開始囉！","s":[{"w":"晚上","ch":[["晚","ㄨㄢ","ˇ"],["上","ㄕㄤ","ˋ"]]},{"p":"，"},{"w":"動物村","ch":[["動","ㄉㄨㄥ","ˋ"],["物","ㄨ","ˋ"],["村","ㄘㄨㄣ",""]]},{"w":"亮晶晶","ch":[["亮","ㄌㄧㄤ","ˋ"],["晶","ㄐㄧㄥ",""],["晶","ㄐㄧㄥ",""]]},{"p":"，"},{"w":"燈會","ch":[["燈","ㄉㄥ",""],["會","ㄏㄨㄟ","ˋ"]]},{"w":"開始","ch":[["開","ㄎㄞ",""],["始","ㄕ","ˇ"]]},{"w":"囉","ch":[["囉","ㄌㄨㄛ","˙"]]},{"p":"！"}],"act":[["🏮","glow"],["🎆","sparkle"]]},{"t":"可是……最大的月亮燈籠，咻的一下不見了！","s":[{"w":"可是","ch":[["可","ㄎㄜ","ˇ"],["是","ㄕ","ˋ"]]},{"p":"…"},{"p":"…"},{"w":"最","ch":[["最","ㄗㄨㄟ","ˋ"]]},{"w":"大","ch":[["大","ㄉㄚ","ˋ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"月亮","ch":[["月","ㄩㄝ","ˋ"],["亮","ㄌㄧㄤ","ˋ"]]},{"w":"燈籠","ch":[["燈","ㄉㄥ",""],["籠","ㄌㄨㄥ","ˊ"]]},{"p":"，"},{"w":"咻","ch":[["咻","ㄒㄧㄡ",""]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"一下","ch":[["一","ㄧ",""],["下","ㄒㄧㄚ","ˋ"]]},{"w":"不見","ch":[["不","ㄅㄨ","ˋ"],["見","ㄐㄧㄢ","ˋ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"p":"！"}],"act":[["🌕","gone"]]},{"t":"大家急得跳來跳去：「怎麼辦？怎麼辦？」","s":[{"w":"大家","ch":[["大","ㄉㄚ","ˋ"],["家","ㄐㄧㄚ",""]]},{"w":"急得","ch":[["急","ㄐㄧ","ˊ"],["得","ㄉㄜ","˙"]]},{"w":"跳","ch":[["跳","ㄊㄧㄠ","ˋ"]]},{"w":"來","ch":[["來","ㄌㄞ","ˊ"]]},{"w":"跳","ch":[["跳","ㄊㄧㄠ","ˋ"]]},{"w":"去","ch":[["去","ㄑㄩ","ˋ"]]},{"p":"："},{"p":"「"},{"w":"怎麼","ch":[["怎","ㄗㄣ","ˇ"],["麼","ㄇㄜ","˙"]]},{"w":"辦","ch":[["辦","ㄅㄢ","ˋ"]]},{"p":"？"},{"w":"怎麼","ch":[["怎","ㄗㄣ","ˇ"],["麼","ㄇㄜ","˙"]]},{"w":"辦","ch":[["辦","ㄅㄢ","ˋ"]]},{"p":"？"},{"p":"」"}],"act":[["🐰","jump"],["🦉","shake"]]},{"t":"以琴探長扶好皇冠：「別怕，小偷一定留下了線索！」","s":[{"w":"以琴","ch":[["以","ㄧ","ˇ"],["琴","ㄑㄧㄣ","ˊ"]]},{"w":"探長","ch":[["探","ㄊㄢ","ˋ"],["長","ㄓㄤ","ˇ"]]},{"w":"扶好","ch":[["扶","ㄈㄨ","ˊ"],["好","ㄏㄠ","ˇ"]]},{"w":"皇冠","ch":[["皇","ㄏㄨㄤ","ˊ"],["冠","ㄍㄨㄢ",""]]},{"p":"："},{"p":"「"},{"w":"別","ch":[["別","ㄅㄧㄝ","ˊ"]]},{"w":"怕","ch":[["怕","ㄆㄚ","ˋ"]]},{"p":"，"},{"w":"小偷","ch":[["小","ㄒㄧㄠ","ˇ"],["偷","ㄊㄡ",""]]},{"w":"一定","ch":[["一","ㄧ",""],["定","ㄉㄧㄥ","ˋ"]]},{"w":"留下","ch":[["留","ㄌㄧㄡ","ˊ"],["下","ㄒㄧㄚ","ˋ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"w":"線索","ch":[["線","ㄒㄧㄢ","ˋ"],["索","ㄙㄨㄛ","ˇ"]]},{"p":"！"},{"p":"」"}],"act":[["Q","proud"]]}],"ending":[{"t":"原來是小白狗拿的！他低著頭，耳朵垂下來。","s":[{"w":"原來","ch":[["原","ㄩㄢ","ˊ"],["來","ㄌㄞ","ˊ"]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"小白狗","ch":[["小","ㄒㄧㄠ","ˇ"],["白","ㄅㄞ","ˊ"],["狗","ㄍㄡ","ˇ"]]},{"w":"拿","ch":[["拿","ㄋㄚ","ˊ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"p":"！"},{"w":"他","ch":[["他","ㄊㄚ",""]]},{"w":"低著","ch":[["低","ㄉㄧ",""],["著","ㄓㄜ","˙"]]},{"w":"頭","ch":[["頭","ㄊㄡ","ˊ"]]},{"p":"，"},{"w":"耳朵","ch":[["耳","ㄦ","ˇ"],["朵","ㄉㄨㄛ","ˇ"]]},{"w":"垂","ch":[["垂","ㄔㄨㄟ","ˊ"]]},{"w":"下來","ch":[["下","ㄒㄧㄚ","ˋ"],["來","ㄌㄞ","ˊ"]]},{"p":"。"}],"act":[["🐶","sad"]]},{"t":"「我家晚上好黑好黑，我好怕……所以想要一個月亮。」","s":[{"p":"「"},{"w":"我","ch":[["我","ㄨㄛ","ˇ"]]},{"w":"家","ch":[["家","ㄐㄧㄚ",""]]},{"w":"晚上","ch":[["晚","ㄨㄢ","ˇ"],["上","ㄕㄤ","ˋ"]]},{"w":"好","ch":[["好","ㄏㄠ","ˇ"]]},{"w":"黑","ch":[["黑","ㄏㄟ",""]]},{"w":"好","ch":[["好","ㄏㄠ","ˇ"]]},{"w":"黑","ch":[["黑","ㄏㄟ",""]]},{"p":"，"},{"w":"我","ch":[["我","ㄨㄛ","ˇ"]]},{"w":"好","ch":[["好","ㄏㄠ","ˇ"]]},{"w":"怕","ch":[["怕","ㄆㄚ","ˋ"]]},{"p":"…"},{"p":"…"},{"w":"所以","ch":[["所","ㄙㄨㄛ","ˇ"],["以","ㄧ","ˇ"]]},{"w":"想","ch":[["想","ㄒㄧㄤ","ˇ"]]},{"w":"要","ch":[["要","ㄧㄠ","ˋ"]]},{"w":"一","ch":[["一","ㄧ",""]]},{"w":"個","ch":[["個","ㄍㄜ","ˋ"]]},{"w":"月亮","ch":[["月","ㄩㄝ","ˋ"],["亮","ㄌㄧㄤ","ˋ"]]},{"p":"。"},{"p":"」"}],"act":[["🐶","shiver"],["🌙","appear"]]},{"t":"以琴探長摸摸他的頭：「怕黑沒關係，但是要先問大家喔！」","s":[{"w":"以琴","ch":[["以","ㄧ","ˇ"],["琴","ㄑㄧㄣ","ˊ"]]},{"w":"探長","ch":[["探","ㄊㄢ","ˋ"],["長","ㄓㄤ","ˇ"]]},{"w":"摸摸","ch":[["摸","ㄇㄛ",""],["摸","ㄇㄛ",""]]},{"w":"他","ch":[["他","ㄊㄚ",""]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"頭","ch":[["頭","ㄊㄡ","ˊ"]]},{"p":"："},{"p":"「"},{"w":"怕","ch":[["怕","ㄆㄚ","ˋ"]]},{"w":"黑","ch":[["黑","ㄏㄟ",""]]},{"w":"沒關係","ch":[["沒","ㄇㄟ","ˊ"],["關","ㄍㄨㄢ",""],["係","ㄒㄧ","ˋ"]]},{"p":"，"},{"w":"但是","ch":[["但","ㄉㄢ","ˋ"],["是","ㄕ","ˋ"]]},{"w":"要","ch":[["要","ㄧㄠ","ˋ"]]},{"w":"先","ch":[["先","ㄒㄧㄢ",""]]},{"w":"問","ch":[["問","ㄨㄣ","ˋ"]]},{"w":"大家","ch":[["大","ㄉㄚ","ˋ"],["家","ㄐㄧㄚ",""]]},{"w":"喔","ch":[["喔","ㄛ",""]]},{"p":"！"},{"p":"」"}],"act":[["Q","pat"],["🐶","love"]]},{"t":"大家送他一個小燈籠，小白狗開心得搖尾巴：汪汪汪！","s":[{"w":"大家","ch":[["大","ㄉㄚ","ˋ"],["家","ㄐㄧㄚ",""]]},{"w":"送","ch":[["送","ㄙㄨㄥ","ˋ"]]},{"w":"他","ch":[["他","ㄊㄚ",""]]},{"w":"一","ch":[["一","ㄧ",""]]},{"w":"個","ch":[["個","ㄍㄜ","ˋ"]]},{"w":"小","ch":[["小","ㄒㄧㄠ","ˇ"]]},{"w":"燈籠","ch":[["燈","ㄉㄥ",""],["籠","ㄌㄨㄥ","ˊ"]]},{"p":"，"},{"w":"小白狗","ch":[["小","ㄒㄧㄠ","ˇ"],["白","ㄅㄞ","ˊ"],["狗","ㄍㄡ","ˇ"]]},{"w":"開心","ch":[["開","ㄎㄞ",""],["心","ㄒㄧㄣ",""]]},{"w":"得","ch":[["得","ㄉㄜ","˙"]]},{"w":"搖","ch":[["搖","ㄧㄠ","ˊ"]]},{"w":"尾巴","ch":[["尾","ㄨㄟ","ˇ"],["巴","ㄅㄚ","˙"]]},{"p":"："},{"w":"汪汪汪","ch":[["汪","ㄨㄤ",""],["汪","ㄨㄤ",""],["汪","ㄨㄤ",""]]},{"p":"！"}],"act":[["🐶","dance","汪汪汪！"],["🏮","glow"]]}],"puzzles":[{"type":"pick","card":["🦴",{"t":"地上有一根被咬過的骨頭，上面都是牙齒印！","s":[{"w":"地上","ch":[["地","ㄉㄧ","ˋ"],["上","ㄕㄤ","ˋ"]]},{"w":"有","ch":[["有","ㄧㄡ","ˇ"]]},{"w":"一","ch":[["一","ㄧ",""]]},{"w":"根","ch":[["根","ㄍㄣ",""]]},{"w":"被","ch":[["被","ㄅㄟ","ˋ"]]},{"w":"咬過","ch":[["咬","ㄧㄠ","ˇ"],["過","ㄍㄨㄛ","ˋ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"骨頭","ch":[["骨","ㄍㄨ","ˇ"],["頭","ㄊㄡ","˙"]]},{"p":"，"},{"w":"上面","ch":[["上","ㄕㄤ","ˋ"],["面","ㄇㄧㄢ","ˋ"]]},{"w":"都","ch":[["都","ㄉㄡ",""]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"牙齒","ch":[["牙","ㄧㄚ","ˊ"],["齒","ㄔ","ˇ"]]},{"w":"印","ch":[["印","ㄧㄣ","ˋ"]]},{"p":"！"}]}],"prompt":{"t":"燈籠旁邊的地上有東西！讀讀看注音，這是什麼呢？","s":[{"w":"燈籠","ch":[["燈","ㄉㄥ",""],["籠","ㄌㄨㄥ","ˊ"]]},{"w":"旁邊","ch":[["旁","ㄆㄤ","ˊ"],["邊","ㄅㄧㄢ",""]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"地上","ch":[["地","ㄉㄧ","ˋ"],["上","ㄕㄤ","ˋ"]]},{"w":"有","ch":[["有","ㄧㄡ","ˇ"]]},{"w":"東西","ch":[["東","ㄉㄨㄥ",""],["西","ㄒㄧ",""]]},{"p":"！"},{"w":"讀讀看","ch":[["讀","ㄉㄨ","ˊ"],["讀","ㄉㄨ","ˊ"],["看","ㄎㄢ","ˋ"]]},{"w":"注音","ch":[["注","ㄓㄨ","ˋ"],["音","ㄧㄣ",""]]},{"p":"，"},{"w":"這","ch":[["這","ㄓㄜ","ˋ"]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"什麼","ch":[["什","ㄕㄜ","ˊ"],["麼","ㄇㄜ","˙"]]},{"w":"呢","ch":[["呢","ㄋㄜ","˙"]]},{"p":"？"}]},"clue":{"t":"骨頭","s":[{"w":"骨頭","ch":[["骨","ㄍㄨ","ˇ"],["頭","ㄊㄡ","˙"]]}]},"options":[{"w":{"t":"烏龜","s":[{"w":"烏龜","ch":[["烏","ㄨ",""],["龜","ㄍㄨㄟ",""]]}]},"e":"🐢"},{"w":{"t":"骨頭","s":[{"w":"骨頭","ch":[["骨","ㄍㄨ","ˇ"],["頭","ㄊㄡ","˙"]]}]},"e":"🦴"},{"w":{"t":"大鼓","s":[{"w":"大鼓","ch":[["大","ㄉㄚ","ˋ"],["鼓","ㄍㄨ","ˇ"]]}]},"e":"🥁"}],"answer":1},{"type":"spell","card":["🤍",{"t":"骨頭上有白白的毛。","s":[{"w":"骨頭","ch":[["骨","ㄍㄨ","ˇ"],["頭","ㄊㄡ","˙"]]},{"w":"上","ch":[["上","ㄕㄤ","ˋ"]]},{"w":"有","ch":[["有","ㄧㄡ","ˇ"]]},{"w":"白白","ch":[["白","ㄅㄞ","ˊ"],["白","ㄅㄞ","ˊ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"毛","ch":[["毛","ㄇㄠ","ˊ"]]},{"p":"。"}]}],"prompt":{"t":"骨頭上黏著毛！幫「白」拼出注音，看看是什麼顏色！","s":[{"w":"骨頭","ch":[["骨","ㄍㄨ","ˇ"],["頭","ㄊㄡ","˙"]]},{"w":"上","ch":[["上","ㄕㄤ","ˋ"]]},{"w":"黏著","ch":[["黏","ㄋㄧㄢ","ˊ"],["著","ㄓㄜ","˙"]]},{"w":"毛","ch":[["毛","ㄇㄠ","ˊ"]]},{"p":"！"},{"w":"幫","ch":[["幫","ㄅㄤ",""]]},{"p":"「"},{"w":"白","ch":[["白","ㄅㄞ","ˊ"]]},{"p":"」"},{"w":"拼出","ch":[["拼","ㄆㄧㄣ",""],["出","ㄔㄨ",""]]},{"w":"注音","ch":[["注","ㄓㄨ","ˋ"],["音","ㄧㄣ",""]]},{"p":"，"},{"w":"看看","ch":[["看","ㄎㄢ","ˋ"],["看","ㄎㄢ","ˋ"]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"什麼","ch":[["什","ㄕㄜ","ˊ"],["麼","ㄇㄜ","˙"]]},{"w":"顏色","ch":[["顏","ㄧㄢ","ˊ"],["色","ㄙㄜ","ˋ"]]},{"p":"！"}]},"word":{"t":"白色","s":[{"w":"白色","ch":[["白","ㄅㄞ","ˊ"],["色","ㄙㄜ","ˋ"]]}]},"idx":0,"target":["白","ㄅㄞ","ˊ"],"ini":"ㄅ","fin":"ㄞ","initials":["ㄅ","ㄆ","ㄇ","ㄉ"],"finals":["ㄞ","ㄟ","ㄠ","ㄢ"]},{"type":"tone","card":["🔊",{"t":"遠遠的，有「汪汪汪」的叫聲！","s":[{"w":"遠遠","ch":[["遠","ㄩㄢ","ˇ"],["遠","ㄩㄢ","ˇ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"p":"，"},{"w":"有","ch":[["有","ㄧㄡ","ˇ"]]},{"p":"「"},{"w":"汪汪汪","ch":[["汪","ㄨㄤ",""],["汪","ㄨㄤ",""],["汪","ㄨㄤ",""]]},{"p":"」"},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"叫聲","ch":[["叫","ㄐㄧㄠ","ˋ"],["聲","ㄕㄥ",""]]},{"p":"！"}]}],"prompt":{"t":"安安聽到遠遠的叫聲，汪汪汪！「汪汪」的「汪」是第幾聲？","s":[{"w":"安安","ch":[["安","ㄢ",""],["安","ㄢ",""]]},{"w":"聽到","ch":[["聽","ㄊㄧㄥ",""],["到","ㄉㄠ","ˋ"]]},{"w":"遠遠","ch":[["遠","ㄩㄢ","ˇ"],["遠","ㄩㄢ","ˇ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"叫聲","ch":[["叫","ㄐㄧㄠ","ˋ"],["聲","ㄕㄥ",""]]},{"p":"，"},{"w":"汪汪汪","ch":[["汪","ㄨㄤ",""],["汪","ㄨㄤ",""],["汪","ㄨㄤ",""]]},{"p":"！"},{"p":"「"},{"w":"汪汪","ch":[["汪","ㄨㄤ",""],["汪","ㄨㄤ",""]]},{"p":"」"},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"p":"「"},{"w":"汪","ch":[["汪","ㄨㄤ",""]]},{"p":"」"},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"第","ch":[["第","ㄉㄧ","ˋ"]]},{"w":"幾","ch":[["幾","ㄐㄧ","ˇ"]]},{"w":"聲","ch":[["聲","ㄕㄥ",""]]},{"p":"？"}]},"word":{"t":"汪汪","s":[{"w":"汪汪","ch":[["汪","ㄨㄤ",""],["汪","ㄨㄤ",""]]}]},"idx":0,"target":["汪","ㄨㄤ",""],"answer":1},{"type":"read","card":["🦉",{"t":"小偷是白色的！","s":[{"w":"小偷","ch":[["小","ㄒㄧㄠ","ˇ"],["偷","ㄊㄡ",""]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"白色","ch":[["白","ㄅㄞ","ˊ"],["色","ㄙㄜ","ˋ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"p":"！"}]}],"who":["🦉",{"t":"貓頭鷹","s":[{"w":"貓頭鷹","ch":[["貓","ㄇㄠ",""],["頭","ㄊㄡ","ˊ"],["鷹","ㄧㄥ",""]]}]}],"statement":{"t":"咕咕！我看到一個白白的影子，抱著圓圓的東西跑走了！","s":[{"w":"咕咕","ch":[["咕","ㄍㄨ",""],["咕","ㄍㄨ",""]]},{"p":"！"},{"w":"我","ch":[["我","ㄨㄛ","ˇ"]]},{"w":"看到","ch":[["看","ㄎㄢ","ˋ"],["到","ㄉㄠ","ˋ"]]},{"w":"一","ch":[["一","ㄧ",""]]},{"w":"個","ch":[["個","ㄍㄜ","ˋ"]]},{"w":"白白","ch":[["白","ㄅㄞ","ˊ"],["白","ㄅㄞ","ˊ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"影子","ch":[["影","ㄧㄥ","ˇ"],["子","ㄗ","˙"]]},{"p":"，"},{"w":"抱著","ch":[["抱","ㄅㄠ","ˋ"],["著","ㄓㄜ","˙"]]},{"w":"圓圓","ch":[["圓","ㄩㄢ","ˊ"],["圓","ㄩㄢ","ˊ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"東西","ch":[["東","ㄉㄨㄥ",""],["西","ㄒㄧ",""]]},{"w":"跑走","ch":[["跑","ㄆㄠ","ˇ"],["走","ㄗㄡ","ˇ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"p":"！"}]},"question":{"t":"貓頭鷹看到什麼顏色的影子？","s":[{"w":"貓頭鷹","ch":[["貓","ㄇㄠ",""],["頭","ㄊㄡ","ˊ"],["鷹","ㄧㄥ",""]]},{"w":"看到","ch":[["看","ㄎㄢ","ˋ"],["到","ㄉㄠ","ˋ"]]},{"w":"什麼","ch":[["什","ㄕㄜ","ˊ"],["麼","ㄇㄜ","˙"]]},{"w":"顏色","ch":[["顏","ㄧㄢ","ˊ"],["色","ㄙㄜ","ˋ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"影子","ch":[["影","ㄧㄥ","ˇ"],["子","ㄗ","˙"]]},{"p":"？"}]},"options":[{"w":{"t":"黑色","s":[{"w":"黑色","ch":[["黑","ㄏㄟ",""],["色","ㄙㄜ","ˋ"]]}]},"e":"⚫"},{"w":{"t":"紅色","s":[{"w":"紅色","ch":[["紅","ㄏㄨㄥ","ˊ"],["色","ㄙㄜ","ˋ"]]}]},"e":"🔴"},{"w":{"t":"白色","s":[{"w":"白色","ch":[["白","ㄅㄞ","ˊ"],["色","ㄙㄜ","ˋ"]]}]},"e":"⚪"}],"answer":2}],"deduce":{"kind":"who","question":{"t":"到底是誰拿走了月亮燈籠？","s":[{"w":"到底","ch":[["到","ㄉㄠ","ˋ"],["底","ㄉㄧ","ˇ"]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"誰","ch":[["誰","ㄕㄟ","ˊ"]]},{"w":"拿走","ch":[["拿","ㄋㄚ","ˊ"],["走","ㄗㄡ","ˇ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"w":"月亮","ch":[["月","ㄩㄝ","ˋ"],["亮","ㄌㄧㄤ","ˋ"]]},{"w":"燈籠","ch":[["燈","ㄉㄥ",""],["籠","ㄌㄨㄥ","ˊ"]]},{"p":"？"}]},"answer":1,"suspects":[{"e":"🐰","n":{"t":"白兔","s":[{"w":"白兔","ch":[["白","ㄅㄞ","ˊ"],["兔","ㄊㄨ","ˋ"]]}]},"t":{"t":"毛是白色的，喜歡吃紅蘿蔔。","s":[{"w":"毛","ch":[["毛","ㄇㄠ","ˊ"]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"白色","ch":[["白","ㄅㄞ","ˊ"],["色","ㄙㄜ","ˋ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"p":"，"},{"w":"喜歡","ch":[["喜","ㄒㄧ","ˇ"],["歡","ㄏㄨㄢ",""]]},{"w":"吃","ch":[["吃","ㄔ",""]]},{"w":"紅蘿蔔","ch":[["紅","ㄏㄨㄥ","ˊ"],["蘿","ㄌㄨㄛ","ˊ"],["蔔","ㄅㄛ","˙"]]},{"p":"。"}]}},{"e":"🐶","n":{"t":"小白狗","s":[{"w":"小白狗","ch":[["小","ㄒㄧㄠ","ˇ"],["白","ㄅㄞ","ˊ"],["狗","ㄍㄡ","ˇ"]]}]},"t":{"t":"毛是白色的，會汪汪叫，喜歡咬骨頭。","s":[{"w":"毛","ch":[["毛","ㄇㄠ","ˊ"]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"白色","ch":[["白","ㄅㄞ","ˊ"],["色","ㄙㄜ","ˋ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"p":"，"},{"w":"會","ch":[["會","ㄏㄨㄟ","ˋ"]]},{"w":"汪汪","ch":[["汪","ㄨㄤ",""],["汪","ㄨㄤ",""]]},{"w":"叫","ch":[["叫","ㄐㄧㄠ","ˋ"]]},{"p":"，"},{"w":"喜歡","ch":[["喜","ㄒㄧ","ˇ"],["歡","ㄏㄨㄢ",""]]},{"w":"咬","ch":[["咬","ㄧㄠ","ˇ"]]},{"w":"骨頭","ch":[["骨","ㄍㄨ","ˇ"],["頭","ㄊㄡ","˙"]]},{"p":"。"}]}},{"e":"🦉","n":{"t":"貓頭鷹","s":[{"w":"貓頭鷹","ch":[["貓","ㄇㄠ",""],["頭","ㄊㄡ","ˊ"],["鷹","ㄧㄥ",""]]}]},"t":{"t":"羽毛是咖啡色的，晚上不睡覺。","s":[{"w":"羽毛","ch":[["羽","ㄩ","ˇ"],["毛","ㄇㄠ","ˊ"]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"咖啡色","ch":[["咖","ㄎㄚ",""],["啡","ㄈㄟ",""],["色","ㄙㄜ","ˋ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"p":"，"},{"w":"晚上","ch":[["晚","ㄨㄢ","ˇ"],["上","ㄕㄤ","ˋ"]]},{"w":"不","ch":[["不","ㄅㄨ","ˋ"]]},{"w":"睡覺","ch":[["睡","ㄕㄨㄟ","ˋ"],["覺","ㄐㄧㄠ","ˋ"]]},{"p":"。"}]}}]},"journey":false},{"id":"c3","badge":"🧋","badgeName":{"t":"夜市神探","s":[{"w":"夜市","ch":[["夜","ㄧㄝ","ˋ"],["市","ㄕ","ˋ"]]},{"w":"神探","ch":[["神","ㄕㄣ","ˊ"],["探","ㄊㄢ","ˋ"]]}]},"title":{"t":"珍珠奶茶不見了","s":[{"w":"珍珠","ch":[["珍","ㄓㄣ",""],["珠","ㄓㄨ",""]]},{"w":"奶茶","ch":[["奶","ㄋㄞ","ˇ"],["茶","ㄔㄚ","ˊ"]]},{"w":"不見","ch":[["不","ㄅㄨ","ˋ"],["見","ㄐㄧㄢ","ˋ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]}]},"place":"🌙","placeName":{"t":"熱鬧的夜市","s":[{"w":"熱鬧","ch":[["熱","ㄖㄜ","ˋ"],["鬧","ㄋㄠ","ˋ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"夜市","ch":[["夜","ㄧㄝ","ˋ"],["市","ㄕ","ˋ"]]}]},"intro":[{"t":"夜市到囉！香香的雞排，甜甜的奶茶，好熱鬧！","s":[{"w":"夜市","ch":[["夜","ㄧㄝ","ˋ"],["市","ㄕ","ˋ"]]},{"w":"到","ch":[["到","ㄉㄠ","ˋ"]]},{"w":"囉","ch":[["囉","ㄌㄨㄛ","˙"]]},{"p":"！"},{"w":"香香","ch":[["香","ㄒㄧㄤ",""],["香","ㄒㄧㄤ",""]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"雞排","ch":[["雞","ㄐㄧ",""],["排","ㄆㄞ","ˊ"]]},{"p":"，"},{"w":"甜甜","ch":[["甜","ㄊㄧㄢ","ˊ"],["甜","ㄊㄧㄢ","ˊ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"奶茶","ch":[["奶","ㄋㄞ","ˇ"],["茶","ㄔㄚ","ˊ"]]},{"p":"，"},{"w":"好","ch":[["好","ㄏㄠ","ˇ"]]},{"w":"熱鬧","ch":[["熱","ㄖㄜ","ˋ"],["鬧","ㄋㄠ","ˋ"]]},{"p":"！"}],"act":[["🍗","jump"],["🧋","dance"]]},{"t":"松鼠老闆大叫：「哎呀！我的珍珠奶茶不見了！」","s":[{"w":"松鼠","ch":[["松","ㄙㄨㄥ",""],["鼠","ㄕㄨ","ˇ"]]},{"w":"老闆","ch":[["老","ㄌㄠ","ˇ"],["闆","ㄅㄢ","ˇ"]]},{"w":"大叫","ch":[["大","ㄉㄚ","ˋ"],["叫","ㄐㄧㄠ","ˋ"]]},{"p":"："},{"p":"「"},{"w":"哎呀","ch":[["哎","ㄞ",""],["呀","ㄧㄚ",""]]},{"p":"！"},{"w":"我","ch":[["我","ㄨㄛ","ˇ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"珍珠","ch":[["珍","ㄓㄣ",""],["珠","ㄓㄨ",""]]},{"w":"奶茶","ch":[["奶","ㄋㄞ","ˇ"],["茶","ㄔㄚ","ˊ"]]},{"w":"不見","ch":[["不","ㄅㄨ","ˋ"],["見","ㄐㄧㄢ","ˋ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"p":"！"},{"p":"」"}],"act":[["🐿️","shake"],["🧋","gone"]]},{"t":"安安舉起手：「探長，這是最難的案子，加油！」","s":[{"w":"安安","ch":[["安","ㄢ",""],["安","ㄢ",""]]},{"w":"舉起","ch":[["舉","ㄐㄩ","ˇ"],["起","ㄑㄧ","ˇ"]]},{"w":"手","ch":[["手","ㄕㄡ","ˇ"]]},{"p":"："},{"p":"「"},{"w":"探長","ch":[["探","ㄊㄢ","ˋ"],["長","ㄓㄤ","ˇ"]]},{"p":"，"},{"w":"這","ch":[["這","ㄓㄜ","ˋ"]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"最","ch":[["最","ㄗㄨㄟ","ˋ"]]},{"w":"難","ch":[["難","ㄋㄢ","ˊ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"案子","ch":[["案","ㄢ","ˋ"],["子","ㄗ","˙"]]},{"p":"，"},{"w":"加油","ch":[["加","ㄐㄧㄚ",""],["油","ㄧㄡ","ˊ"]]},{"p":"！"},{"p":"」"}],"act":[["A","cheer"],["Q","proud"]]}],"ending":[{"t":"哈！原來是青蛙弟弟拿的！","s":[{"w":"哈","ch":[["哈","ㄏㄚ",""]]},{"p":"！"},{"w":"原來","ch":[["原","ㄩㄢ","ˊ"],["來","ㄌㄞ","ˊ"]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"青蛙","ch":[["青","ㄑㄧㄥ",""],["蛙","ㄨㄚ",""]]},{"w":"弟弟","ch":[["弟","ㄉㄧ","ˋ"],["弟","ㄉㄧ","˙"]]},{"w":"拿","ch":[["拿","ㄋㄚ","ˊ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"p":"！"}],"act":[["🐸","wow"]]},{"t":"青蛙弟弟說：「杯子裡有好多黑黑的蛋，我以為是青蛙寶寶，想救牠們！」","s":[{"w":"青蛙","ch":[["青","ㄑㄧㄥ",""],["蛙","ㄨㄚ",""]]},{"w":"弟弟","ch":[["弟","ㄉㄧ","ˋ"],["弟","ㄉㄧ","˙"]]},{"w":"說","ch":[["說","ㄕㄨㄛ",""]]},{"p":"："},{"p":"「"},{"w":"杯子","ch":[["杯","ㄅㄟ",""],["子","ㄗ","˙"]]},{"w":"裡","ch":[["裡","ㄌㄧ","ˇ"]]},{"w":"有","ch":[["有","ㄧㄡ","ˇ"]]},{"w":"好多","ch":[["好","ㄏㄠ","ˇ"],["多","ㄉㄨㄛ",""]]},{"w":"黑黑","ch":[["黑","ㄏㄟ",""],["黑","ㄏㄟ",""]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"蛋","ch":[["蛋","ㄉㄢ","ˋ"]]},{"p":"，"},{"w":"我","ch":[["我","ㄨㄛ","ˇ"]]},{"w":"以為","ch":[["以","ㄧ","ˇ"],["為","ㄨㄟ","ˊ"]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"青蛙","ch":[["青","ㄑㄧㄥ",""],["蛙","ㄨㄚ",""]]},{"w":"寶寶","ch":[["寶","ㄅㄠ","ˇ"],["寶","ㄅㄠ","ˇ"]]},{"p":"，"},{"w":"想","ch":[["想","ㄒㄧㄤ","ˇ"]]},{"w":"救","ch":[["救","ㄐㄧㄡ","ˋ"]]},{"w":"牠們","ch":[["牠","ㄊㄚ",""],["們","ㄇㄣ","˙"]]},{"p":"！"},{"p":"」"}],"act":[["🐸","think"],["🧋","wiggle"]]},{"t":"大家笑得東倒西歪：「哈哈哈！那是珍珠，不是青蛙蛋啦！」","s":[{"w":"大家","ch":[["大","ㄉㄚ","ˋ"],["家","ㄐㄧㄚ",""]]},{"w":"笑","ch":[["笑","ㄒㄧㄠ","ˋ"]]},{"w":"得","ch":[["得","ㄉㄜ","˙"]]},{"w":"東倒","ch":[["東","ㄉㄨㄥ",""],["倒","ㄉㄠ","ˇ"]]},{"w":"西歪","ch":[["西","ㄒㄧ",""],["歪","ㄨㄞ",""]]},{"p":"："},{"p":"「"},{"w":"哈哈哈","ch":[["哈","ㄏㄚ",""],["哈","ㄏㄚ",""],["哈","ㄏㄚ",""]]},{"p":"！"},{"w":"那","ch":[["那","ㄋㄚ","ˋ"]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"珍珠","ch":[["珍","ㄓㄣ",""],["珠","ㄓㄨ",""]]},{"p":"，"},{"w":"不是","ch":[["不","ㄅㄨ","ˋ"],["是","ㄕ","ˋ"]]},{"w":"青蛙","ch":[["青","ㄑㄧㄥ",""],["蛙","ㄨㄚ",""]]},{"w":"蛋","ch":[["蛋","ㄉㄢ","ˋ"]]},{"w":"啦","ch":[["啦","ㄌㄚ","˙"]]},{"p":"！"},{"p":"」"}],"act":[["Q","laugh"],["A","laugh"],["🐸","spin"]]},{"t":"松鼠老闆請大家喝奶茶，安安大喊：「以琴探長，妳是真正的神探！」","s":[{"w":"松鼠","ch":[["松","ㄙㄨㄥ",""],["鼠","ㄕㄨ","ˇ"]]},{"w":"老闆","ch":[["老","ㄌㄠ","ˇ"],["闆","ㄅㄢ","ˇ"]]},{"w":"請","ch":[["請","ㄑㄧㄥ","ˇ"]]},{"w":"大家","ch":[["大","ㄉㄚ","ˋ"],["家","ㄐㄧㄚ",""]]},{"w":"喝","ch":[["喝","ㄏㄜ",""]]},{"w":"奶茶","ch":[["奶","ㄋㄞ","ˇ"],["茶","ㄔㄚ","ˊ"]]},{"p":"，"},{"w":"安安","ch":[["安","ㄢ",""],["安","ㄢ",""]]},{"w":"大喊","ch":[["大","ㄉㄚ","ˋ"],["喊","ㄏㄢ","ˇ"]]},{"p":"："},{"p":"「"},{"w":"以琴","ch":[["以","ㄧ","ˇ"],["琴","ㄑㄧㄣ","ˊ"]]},{"w":"探長","ch":[["探","ㄊㄢ","ˋ"],["長","ㄓㄤ","ˇ"]]},{"p":"，"},{"w":"妳","ch":[["妳","ㄋㄧ","ˇ"]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"真正","ch":[["真","ㄓㄣ",""],["正","ㄓㄥ","ˋ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"神探","ch":[["神","ㄕㄣ","ˊ"],["探","ㄊㄢ","ˋ"]]},{"p":"！"},{"p":"」"}],"act":[["A","cheer"],["Q","proud"],["🧋","spin"]]}],"puzzles":[{"type":"pick","card":["💧",{"t":"滴答滴答，地上有水滴，小偷身上濕濕的！","s":[{"w":"滴答","ch":[["滴","ㄉㄧ",""],["答","ㄉㄚ","ˊ"]]},{"w":"滴答","ch":[["滴","ㄉㄧ",""],["答","ㄉㄚ","ˊ"]]},{"p":"，"},{"w":"地上","ch":[["地","ㄉㄧ","ˋ"],["上","ㄕㄤ","ˋ"]]},{"w":"有","ch":[["有","ㄧㄡ","ˇ"]]},{"w":"水滴","ch":[["水","ㄕㄨㄟ","ˇ"],["滴","ㄉㄧ",""]]},{"p":"，"},{"w":"小偷","ch":[["小","ㄒㄧㄠ","ˇ"],["偷","ㄊㄡ",""]]},{"w":"身上","ch":[["身","ㄕㄣ",""],["上","ㄕㄤ","ˋ"]]},{"w":"濕濕","ch":[["濕","ㄕ",""],["濕","ㄕ",""]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"p":"！"}]}],"prompt":{"t":"攤子前面亮亮的是什麼？讀讀看注音，猜猜看！","s":[{"w":"攤子","ch":[["攤","ㄊㄢ",""],["子","ㄗ","˙"]]},{"w":"前面","ch":[["前","ㄑㄧㄢ","ˊ"],["面","ㄇㄧㄢ","ˋ"]]},{"w":"亮亮","ch":[["亮","ㄌㄧㄤ","ˋ"],["亮","ㄌㄧㄤ","ˋ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"什麼","ch":[["什","ㄕㄜ","ˊ"],["麼","ㄇㄜ","˙"]]},{"p":"？"},{"w":"讀讀看","ch":[["讀","ㄉㄨ","ˊ"],["讀","ㄉㄨ","ˊ"],["看","ㄎㄢ","ˋ"]]},{"w":"注音","ch":[["注","ㄓㄨ","ˋ"],["音","ㄧㄣ",""]]},{"p":"，"},{"w":"猜猜","ch":[["猜","ㄘㄞ",""],["猜","ㄘㄞ",""]]},{"w":"看","ch":[["看","ㄎㄢ","ˋ"]]},{"p":"！"}]},"clue":{"t":"水滴","s":[{"w":"水滴","ch":[["水","ㄕㄨㄟ","ˇ"],["滴","ㄉㄧ",""]]}]},"options":[{"w":{"t":"睡覺","s":[{"w":"睡覺","ch":[["睡","ㄕㄨㄟ","ˋ"],["覺","ㄐㄧㄠ","ˋ"]]}]},"e":"😴"},{"w":{"t":"書包","s":[{"w":"書包","ch":[["書","ㄕㄨ",""],["包","ㄅㄠ",""]]}]},"e":"🎒"},{"w":{"t":"水滴","s":[{"w":"水滴","ch":[["水","ㄕㄨㄟ","ˇ"],["滴","ㄉㄧ",""]]}]},"e":"💧"}],"answer":2},{"type":"spell","card":["🐾",{"t":"小偷是一跳一跳的，蹦蹦蹦！","s":[{"w":"小偷","ch":[["小","ㄒㄧㄠ","ˇ"],["偷","ㄊㄡ",""]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"一","ch":[["一","ㄧ",""]]},{"w":"跳","ch":[["跳","ㄊㄧㄠ","ˋ"]]},{"w":"一","ch":[["一","ㄧ",""]]},{"w":"跳","ch":[["跳","ㄊㄧㄠ","ˋ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"p":"，"},{"w":"蹦蹦","ch":[["蹦","ㄅㄥ","ˋ"],["蹦","ㄅㄥ","ˋ"]]},{"w":"蹦","ch":[["蹦","ㄅㄥ","ˋ"]]},{"p":"！"}]}],"prompt":{"t":"水滴旁邊的腳印離得好遠！幫「跳」拼出注音！","s":[{"w":"水滴","ch":[["水","ㄕㄨㄟ","ˇ"],["滴","ㄉㄧ",""]]},{"w":"旁邊","ch":[["旁","ㄆㄤ","ˊ"],["邊","ㄅㄧㄢ",""]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"腳印","ch":[["腳","ㄐㄧㄠ","ˇ"],["印","ㄧㄣ","ˋ"]]},{"w":"離","ch":[["離","ㄌㄧ","ˊ"]]},{"w":"得","ch":[["得","ㄉㄜ","˙"]]},{"w":"好","ch":[["好","ㄏㄠ","ˇ"]]},{"w":"遠","ch":[["遠","ㄩㄢ","ˇ"]]},{"p":"！"},{"w":"幫","ch":[["幫","ㄅㄤ",""]]},{"p":"「"},{"w":"跳","ch":[["跳","ㄊㄧㄠ","ˋ"]]},{"p":"」"},{"w":"拼出","ch":[["拼","ㄆㄧㄣ",""],["出","ㄔㄨ",""]]},{"w":"注音","ch":[["注","ㄓㄨ","ˋ"],["音","ㄧㄣ",""]]},{"p":"！"}]},"word":{"t":"跳","s":[{"w":"跳","ch":[["跳","ㄊㄧㄠ","ˋ"]]}]},"idx":0,"target":["跳","ㄊㄧㄠ","ˋ"],"ini":"ㄊ","fin":"ㄧㄠ","initials":["ㄊ","ㄉ","ㄑ","ㄐ"],"finals":["ㄧㄠ","ㄧㄡ","ㄠ","ㄧㄢ"]},{"type":"read","card":["🐱",{"t":"小偷是綠色的，跳得很快！","s":[{"w":"小偷","ch":[["小","ㄒㄧㄠ","ˇ"],["偷","ㄊㄡ",""]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"綠色","ch":[["綠","ㄌㄩ","ˋ"],["色","ㄙㄜ","ˋ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"p":"，"},{"w":"跳","ch":[["跳","ㄊㄧㄠ","ˋ"]]},{"w":"得","ch":[["得","ㄉㄜ","˙"]]},{"w":"很","ch":[["很","ㄏㄣ","ˇ"]]},{"w":"快","ch":[["快","ㄎㄨㄞ","ˋ"]]},{"p":"！"}]}],"who":["🐱",{"t":"小貓","s":[{"w":"小貓","ch":[["小","ㄒㄧㄠ","ˇ"],["貓","ㄇㄠ",""]]}]}],"statement":{"t":"喵～我看見一個綠色的小東西，跳得又高又快！","s":[{"w":"喵","ch":[["喵","ㄇㄧㄠ",""]]},{"p":"～"},{"w":"我","ch":[["我","ㄨㄛ","ˇ"]]},{"w":"看見","ch":[["看","ㄎㄢ","ˋ"],["見","ㄐㄧㄢ","ˋ"]]},{"w":"一","ch":[["一","ㄧ",""]]},{"w":"個","ch":[["個","ㄍㄜ","ˋ"]]},{"w":"綠色","ch":[["綠","ㄌㄩ","ˋ"],["色","ㄙㄜ","ˋ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"小","ch":[["小","ㄒㄧㄠ","ˇ"]]},{"w":"東西","ch":[["東","ㄉㄨㄥ",""],["西","ㄒㄧ",""]]},{"p":"，"},{"w":"跳","ch":[["跳","ㄊㄧㄠ","ˋ"]]},{"w":"得","ch":[["得","ㄉㄜ","˙"]]},{"w":"又","ch":[["又","ㄧㄡ","ˋ"]]},{"w":"高","ch":[["高","ㄍㄠ",""]]},{"w":"又","ch":[["又","ㄧㄡ","ˋ"]]},{"w":"快","ch":[["快","ㄎㄨㄞ","ˋ"]]},{"p":"！"}]},"question":{"t":"小貓看見什麼顏色的小東西？","s":[{"w":"小貓","ch":[["小","ㄒㄧㄠ","ˇ"],["貓","ㄇㄠ",""]]},{"w":"看見","ch":[["看","ㄎㄢ","ˋ"],["見","ㄐㄧㄢ","ˋ"]]},{"w":"什麼","ch":[["什","ㄕㄜ","ˊ"],["麼","ㄇㄜ","˙"]]},{"w":"顏色","ch":[["顏","ㄧㄢ","ˊ"],["色","ㄙㄜ","ˋ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"小","ch":[["小","ㄒㄧㄠ","ˇ"]]},{"w":"東西","ch":[["東","ㄉㄨㄥ",""],["西","ㄒㄧ",""]]},{"p":"？"}]},"options":[{"w":{"t":"綠色","s":[{"w":"綠色","ch":[["綠","ㄌㄩ","ˋ"],["色","ㄙㄜ","ˋ"]]}]},"e":"🟢"},{"w":{"t":"黃色","s":[{"w":"黃色","ch":[["黃","ㄏㄨㄤ","ˊ"],["色","ㄙㄜ","ˋ"]]}]},"e":"🟡"},{"w":{"t":"藍色","s":[{"w":"藍色","ch":[["藍","ㄌㄢ","ˊ"],["色","ㄙㄜ","ˋ"]]}]},"e":"🔵"}],"answer":0},{"type":"tone","card":["🌿",{"t":"杯子上有池塘的味道！","s":[{"w":"杯子","ch":[["杯","ㄅㄟ",""],["子","ㄗ","˙"]]},{"w":"上","ch":[["上","ㄕㄤ","ˋ"]]},{"w":"有","ch":[["有","ㄧㄡ","ˇ"]]},{"w":"池塘","ch":[["池","ㄔ","ˊ"],["塘","ㄊㄤ","ˊ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"味道","ch":[["味","ㄨㄟ","ˋ"],["道","ㄉㄠ","ˋ"]]},{"p":"！"}]}],"prompt":{"t":"以琴探長聞一聞杯子，哇～有池塘的味道！「池塘」的「塘」是第幾聲？","s":[{"w":"以琴","ch":[["以","ㄧ","ˇ"],["琴","ㄑㄧㄣ","ˊ"]]},{"w":"探長","ch":[["探","ㄊㄢ","ˋ"],["長","ㄓㄤ","ˇ"]]},{"w":"聞一聞","ch":[["聞","ㄨㄣ","ˊ"],["一","ㄧ",""],["聞","ㄨㄣ","ˊ"]]},{"w":"杯子","ch":[["杯","ㄅㄟ",""],["子","ㄗ","˙"]]},{"p":"，"},{"w":"哇","ch":[["哇","ㄨㄚ",""]]},{"p":"～"},{"w":"有","ch":[["有","ㄧㄡ","ˇ"]]},{"w":"池塘","ch":[["池","ㄔ","ˊ"],["塘","ㄊㄤ","ˊ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"味道","ch":[["味","ㄨㄟ","ˋ"],["道","ㄉㄠ","ˋ"]]},{"p":"！"},{"p":"「"},{"w":"池塘","ch":[["池","ㄔ","ˊ"],["塘","ㄊㄤ","ˊ"]]},{"p":"」"},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"p":"「"},{"w":"塘","ch":[["塘","ㄊㄤ","ˊ"]]},{"p":"」"},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"第","ch":[["第","ㄉㄧ","ˋ"]]},{"w":"幾","ch":[["幾","ㄐㄧ","ˇ"]]},{"w":"聲","ch":[["聲","ㄕㄥ",""]]},{"p":"？"}]},"word":{"t":"池塘","s":[{"w":"池塘","ch":[["池","ㄔ","ˊ"],["塘","ㄊㄤ","ˊ"]]}]},"idx":1,"target":["塘","ㄊㄤ","ˊ"],"answer":2}],"deduce":{"kind":"who","question":{"t":"到底是誰拿走了珍珠奶茶？","s":[{"w":"到底","ch":[["到","ㄉㄠ","ˋ"],["底","ㄉㄧ","ˇ"]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"誰","ch":[["誰","ㄕㄟ","ˊ"]]},{"w":"拿走","ch":[["拿","ㄋㄚ","ˊ"],["走","ㄗㄡ","ˇ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"w":"珍珠","ch":[["珍","ㄓㄣ",""],["珠","ㄓㄨ",""]]},{"w":"奶茶","ch":[["奶","ㄋㄞ","ˇ"],["茶","ㄔㄚ","ˊ"]]},{"p":"？"}]},"answer":0,"suspects":[{"e":"🐸","n":{"t":"青蛙","s":[{"w":"青蛙","ch":[["青","ㄑㄧㄥ",""],["蛙","ㄨㄚ",""]]}]},"t":{"t":"綠色的，住在池塘，跳得又高又快。","s":[{"w":"綠色","ch":[["綠","ㄌㄩ","ˋ"],["色","ㄙㄜ","ˋ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"p":"，"},{"w":"住在","ch":[["住","ㄓㄨ","ˋ"],["在","ㄗㄞ","ˋ"]]},{"w":"池塘","ch":[["池","ㄔ","ˊ"],["塘","ㄊㄤ","ˊ"]]},{"p":"，"},{"w":"跳","ch":[["跳","ㄊㄧㄠ","ˋ"]]},{"w":"得","ch":[["得","ㄉㄜ","˙"]]},{"w":"又","ch":[["又","ㄧㄡ","ˋ"]]},{"w":"高","ch":[["高","ㄍㄠ",""]]},{"w":"又","ch":[["又","ㄧㄡ","ˋ"]]},{"w":"快","ch":[["快","ㄎㄨㄞ","ˋ"]]},{"p":"。"}]}},{"e":"🐢","n":{"t":"烏龜","s":[{"w":"烏龜","ch":[["烏","ㄨ",""],["龜","ㄍㄨㄟ",""]]}]},"t":{"t":"綠色的，住在池塘，走路很慢。","s":[{"w":"綠色","ch":[["綠","ㄌㄩ","ˋ"],["色","ㄙㄜ","ˋ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"p":"，"},{"w":"住在","ch":[["住","ㄓㄨ","ˋ"],["在","ㄗㄞ","ˋ"]]},{"w":"池塘","ch":[["池","ㄔ","ˊ"],["塘","ㄊㄤ","ˊ"]]},{"p":"，"},{"w":"走路","ch":[["走","ㄗㄡ","ˇ"],["路","ㄌㄨ","ˋ"]]},{"w":"很","ch":[["很","ㄏㄣ","ˇ"]]},{"w":"慢","ch":[["慢","ㄇㄢ","ˋ"]]},{"p":"。"}]}},{"e":"🦆","n":{"t":"鴨子","s":[{"w":"鴨子","ch":[["鴨","ㄧㄚ",""],["子","ㄗ","˙"]]}]},"t":{"t":"黃色的，住在池塘，走路搖搖擺擺。","s":[{"w":"黃色","ch":[["黃","ㄏㄨㄤ","ˊ"],["色","ㄙㄜ","ˋ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"p":"，"},{"w":"住在","ch":[["住","ㄓㄨ","ˋ"],["在","ㄗㄞ","ˋ"]]},{"w":"池塘","ch":[["池","ㄔ","ˊ"],["塘","ㄊㄤ","ˊ"]]},{"p":"，"},{"w":"走路","ch":[["走","ㄗㄡ","ˇ"],["路","ㄌㄨ","ˋ"]]},{"w":"搖搖","ch":[["搖","ㄧㄠ","ˊ"],["搖","ㄧㄠ","ˊ"]]},{"w":"擺擺","ch":[["擺","ㄅㄞ","ˇ"],["擺","ㄅㄞ","ˇ"]]},{"p":"。"}]}}]},"journey":false},{"id":"c4","badge":"💝","badgeName":{"t":"慕尼黑好朋友","s":[{"w":"慕尼黑","ch":[["慕","ㄇㄨ","ˋ"],["尼","ㄋㄧ","ˊ"],["黑","ㄏㄟ",""]]},{"w":"好朋友","ch":[["好","ㄏㄠ","ˇ"],["朋","ㄆㄥ","ˊ"],["友","ㄧㄡ","ˇ"]]}]},"title":{"t":"消失的愛心薑餅","s":[{"w":"消失","ch":[["消","ㄒㄧㄠ",""],["失","ㄕ",""]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"愛心","ch":[["愛","ㄞ","ˋ"],["心","ㄒㄧㄣ",""]]},{"w":"薑餅","ch":[["薑","ㄐㄧㄤ",""],["餅","ㄅㄧㄥ","ˇ"]]}]},"place":"🥨","placeName":{"t":"慕尼黑啤酒節","s":[{"w":"慕尼黑","ch":[["慕","ㄇㄨ","ˋ"],["尼","ㄋㄧ","ˊ"],["黑","ㄏㄟ",""]]},{"w":"啤酒節","ch":[["啤","ㄆㄧ","ˊ"],["酒","ㄐㄧㄡ","ˇ"],["節","ㄐㄧㄝ","ˊ"]]}]},"intro":[{"t":"以琴住在德國慕尼黑。今天，爸爸帶大家去啤酒節玩！","s":[{"w":"以琴","ch":[["以","ㄧ","ˇ"],["琴","ㄑㄧㄣ","ˊ"]]},{"w":"住在","ch":[["住","ㄓㄨ","ˋ"],["在","ㄗㄞ","ˋ"]]},{"w":"德國","ch":[["德","ㄉㄜ","ˊ"],["國","ㄍㄨㄛ","ˊ"]]},{"w":"慕尼黑","ch":[["慕","ㄇㄨ","ˋ"],["尼","ㄋㄧ","ˊ"],["黑","ㄏㄟ",""]]},{"p":"。"},{"w":"今天","ch":[["今","ㄐㄧㄣ",""],["天","ㄊㄧㄢ",""]]},{"p":"，"},{"w":"爸爸","ch":[["爸","ㄅㄚ","ˋ"],["爸","ㄅㄚ","˙"]]},{"w":"帶","ch":[["帶","ㄉㄞ","ˋ"]]},{"w":"大家","ch":[["大","ㄉㄚ","ˋ"],["家","ㄐㄧㄚ",""]]},{"w":"去","ch":[["去","ㄑㄩ","ˋ"]]},{"w":"啤酒節","ch":[["啤","ㄆㄧ","ˊ"],["酒","ㄐㄧㄡ","ˇ"],["節","ㄐㄧㄝ","ˊ"]]},{"w":"玩","ch":[["玩","ㄨㄢ","ˊ"]]},{"p":"！"}],"act":[["D2","wave"],["Q","cheer"],["A","cheer"]]},{"t":"哇～摩天輪轉呀轉，蝴蝶餅比臉還大！","s":[{"w":"哇","ch":[["哇","ㄨㄚ",""]]},{"p":"～"},{"w":"摩天輪","ch":[["摩","ㄇㄛ","ˊ"],["天","ㄊㄧㄢ",""],["輪","ㄌㄨㄣ","ˊ"]]},{"w":"轉","ch":[["轉","ㄓㄨㄢ","ˋ"]]},{"w":"呀","ch":[["呀","ㄧㄚ","˙"]]},{"w":"轉","ch":[["轉","ㄓㄨㄢ","ˋ"]]},{"p":"，"},{"w":"蝴蝶餅","ch":[["蝴","ㄏㄨ","ˊ"],["蝶","ㄉㄧㄝ","ˊ"],["餅","ㄅㄧㄥ","ˇ"]]},{"w":"比","ch":[["比","ㄅㄧ","ˇ"]]},{"w":"臉","ch":[["臉","ㄌㄧㄢ","ˇ"]]},{"w":"還","ch":[["還","ㄏㄞ","ˊ"]]},{"w":"大","ch":[["大","ㄉㄚ","ˋ"]]},{"p":"！"}],"act":[["🎡","spin","轉呀轉～"],["🥨","boing","好大！"]]},{"t":"好朋友莉亞跑過來：「以琴，聽說妳要回台灣念小學了？」","s":[{"w":"好朋友","ch":[["好","ㄏㄠ","ˇ"],["朋","ㄆㄥ","ˊ"],["友","ㄧㄡ","ˇ"]]},{"w":"莉亞","ch":[["莉","ㄌㄧ","ˋ"],["亞","ㄧㄚ","ˋ"]]},{"w":"跑","ch":[["跑","ㄆㄠ","ˇ"]]},{"w":"過來","ch":[["過","ㄍㄨㄛ","ˋ"],["來","ㄌㄞ","ˊ"]]},{"p":"："},{"p":"「"},{"w":"以琴","ch":[["以","ㄧ","ˇ"],["琴","ㄑㄧㄣ","ˊ"]]},{"p":"，"},{"w":"聽說","ch":[["聽","ㄊㄧㄥ",""],["說","ㄕㄨㄛ",""]]},{"w":"妳","ch":[["妳","ㄋㄧ","ˇ"]]},{"w":"要","ch":[["要","ㄧㄠ","ˋ"]]},{"w":"回","ch":[["回","ㄏㄨㄟ","ˊ"]]},{"w":"台灣","ch":[["台","ㄊㄞ","ˊ"],["灣","ㄨㄢ",""]]},{"w":"念","ch":[["念","ㄋㄧㄢ","ˋ"]]},{"w":"小學","ch":[["小","ㄒㄧㄠ","ˇ"],["學","ㄒㄩㄝ","ˊ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"p":"？"},{"p":"」"}],"act":[["L","run"],["Q","nod"]]},{"t":"莉亞做了一個愛心薑餅，上面寫著「好朋友」。可是……咦？薑餅不見了！","s":[{"w":"莉亞","ch":[["莉","ㄌㄧ","ˋ"],["亞","ㄧㄚ","ˋ"]]},{"w":"做","ch":[["做","ㄗㄨㄛ","ˋ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"w":"一","ch":[["一","ㄧ",""]]},{"w":"個","ch":[["個","ㄍㄜ","ˋ"]]},{"w":"愛心","ch":[["愛","ㄞ","ˋ"],["心","ㄒㄧㄣ",""]]},{"w":"薑餅","ch":[["薑","ㄐㄧㄤ",""],["餅","ㄅㄧㄥ","ˇ"]]},{"p":"，"},{"w":"上面","ch":[["上","ㄕㄤ","ˋ"],["面","ㄇㄧㄢ","ˋ"]]},{"w":"寫著","ch":[["寫","ㄒㄧㄝ","ˇ"],["著","ㄓㄜ","˙"]]},{"p":"「"},{"w":"好朋友","ch":[["好","ㄏㄠ","ˇ"],["朋","ㄆㄥ","ˊ"],["友","ㄧㄡ","ˇ"]]},{"p":"」"},{"p":"。"},{"w":"可是","ch":[["可","ㄎㄜ","ˇ"],["是","ㄕ","ˋ"]]},{"p":"…"},{"p":"…"},{"w":"咦","ch":[["咦","ㄧ","ˊ"]]},{"p":"？"},{"w":"薑餅","ch":[["薑","ㄐㄧㄤ",""],["餅","ㄅㄧㄥ","ˇ"]]},{"w":"不見","ch":[["不","ㄅㄨ","ˋ"],["見","ㄐㄧㄢ","ˋ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"p":"！"}],"act":[["L","shock"],["💝","gone"]]}],"ending":[{"t":"什麼？是爸爸！薑餅就掛在爸爸的脖子上！","s":[{"w":"什麼","ch":[["什","ㄕㄜ","ˊ"],["麼","ㄇㄜ","˙"]]},{"p":"？"},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"爸爸","ch":[["爸","ㄅㄚ","ˋ"],["爸","ㄅㄚ","˙"]]},{"p":"！"},{"w":"薑餅","ch":[["薑","ㄐㄧㄤ",""],["餅","ㄅㄧㄥ","ˇ"]]},{"w":"就","ch":[["就","ㄐㄧㄡ","ˋ"]]},{"w":"掛在","ch":[["掛","ㄍㄨㄚ","ˋ"],["在","ㄗㄞ","ˋ"]]},{"w":"爸爸","ch":[["爸","ㄅㄚ","ˋ"],["爸","ㄅㄚ","˙"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"脖子","ch":[["脖","ㄅㄛ","ˊ"],["子","ㄗ","˙"]]},{"w":"上","ch":[["上","ㄕㄤ","ˋ"]]},{"p":"！"}],"act":[["D2","shock","什麼！"],["💝","boing"]]},{"t":"爸爸抓抓頭：「哎呀，我以為是送我的啦！」","s":[{"w":"爸爸","ch":[["爸","ㄅㄚ","ˋ"],["爸","ㄅㄚ","˙"]]},{"w":"抓抓","ch":[["抓","ㄓㄨㄚ",""],["抓","ㄓㄨㄚ",""]]},{"w":"頭","ch":[["頭","ㄊㄡ","ˊ"]]},{"p":"："},{"p":"「"},{"w":"哎呀","ch":[["哎","ㄞ",""],["呀","ㄧㄚ",""]]},{"p":"，"},{"w":"我","ch":[["我","ㄨㄛ","ˇ"]]},{"w":"以為","ch":[["以","ㄧ","ˇ"],["為","ㄨㄟ","ˊ"]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"送","ch":[["送","ㄙㄨㄥ","ˋ"]]},{"w":"我","ch":[["我","ㄨㄛ","ˇ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"啦","ch":[["啦","ㄌㄚ","˙"]]},{"p":"！"},{"p":"」"}],"act":[["D2","scratch"],["L","laugh"],["Q","laugh"]]},{"t":"莉亞把薑餅掛在以琴身上：「回台灣也不要忘記我喔！」","s":[{"w":"莉亞","ch":[["莉","ㄌㄧ","ˋ"],["亞","ㄧㄚ","ˋ"]]},{"w":"把","ch":[["把","ㄅㄚ","ˇ"]]},{"w":"薑餅","ch":[["薑","ㄐㄧㄤ",""],["餅","ㄅㄧㄥ","ˇ"]]},{"w":"掛在","ch":[["掛","ㄍㄨㄚ","ˋ"],["在","ㄗㄞ","ˋ"]]},{"w":"以琴","ch":[["以","ㄧ","ˇ"],["琴","ㄑㄧㄣ","ˊ"]]},{"w":"身上","ch":[["身","ㄕㄣ",""],["上","ㄕㄤ","ˋ"]]},{"p":"："},{"p":"「"},{"w":"回","ch":[["回","ㄏㄨㄟ","ˊ"]]},{"w":"台灣","ch":[["台","ㄊㄞ","ˊ"],["灣","ㄨㄢ",""]]},{"w":"也","ch":[["也","ㄧㄝ","ˇ"]]},{"w":"不要","ch":[["不","ㄅㄨ","ˋ"],["要","ㄧㄠ","ˋ"]]},{"w":"忘記","ch":[["忘","ㄨㄤ","ˋ"],["記","ㄐㄧ","ˋ"]]},{"w":"我","ch":[["我","ㄨㄛ","ˇ"]]},{"w":"喔","ch":[["喔","ㄛ",""]]},{"p":"！"},{"p":"」"}],"act":[["L","hug"],["Q","love"]]},{"t":"以琴抱了抱莉亞：「我會寫信給妳，我們永遠是好朋友！」","s":[{"w":"以琴","ch":[["以","ㄧ","ˇ"],["琴","ㄑㄧㄣ","ˊ"]]},{"w":"抱","ch":[["抱","ㄅㄠ","ˋ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"w":"抱","ch":[["抱","ㄅㄠ","ˋ"]]},{"w":"莉亞","ch":[["莉","ㄌㄧ","ˋ"],["亞","ㄧㄚ","ˋ"]]},{"p":"："},{"p":"「"},{"w":"我","ch":[["我","ㄨㄛ","ˇ"]]},{"w":"會","ch":[["會","ㄏㄨㄟ","ˋ"]]},{"w":"寫信","ch":[["寫","ㄒㄧㄝ","ˇ"],["信","ㄒㄧㄣ","ˋ"]]},{"w":"給","ch":[["給","ㄍㄟ","ˇ"]]},{"w":"妳","ch":[["妳","ㄋㄧ","ˇ"]]},{"p":"，"},{"w":"我們","ch":[["我","ㄨㄛ","ˇ"],["們","ㄇㄣ","˙"]]},{"w":"永遠","ch":[["永","ㄩㄥ","ˇ"],["遠","ㄩㄢ","ˇ"]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"好朋友","ch":[["好","ㄏㄠ","ˇ"],["朋","ㄆㄥ","ˊ"],["友","ㄧㄡ","ˇ"]]},{"p":"！"},{"p":"」"}],"act":[["Q","hug"],["L","hug"],["💌","appear"]]}],"puzzles":[{"type":"pick","card":["🥨",{"t":"地上有蝴蝶餅的碎屑，小偷好愛吃蝴蝶餅！","s":[{"w":"地上","ch":[["地","ㄉㄧ","ˋ"],["上","ㄕㄤ","ˋ"]]},{"w":"有","ch":[["有","ㄧㄡ","ˇ"]]},{"w":"蝴蝶餅","ch":[["蝴","ㄏㄨ","ˊ"],["蝶","ㄉㄧㄝ","ˊ"],["餅","ㄅㄧㄥ","ˇ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"碎屑","ch":[["碎","ㄙㄨㄟ","ˋ"],["屑","ㄒㄧㄝ","ˋ"]]},{"p":"，"},{"w":"小偷","ch":[["小","ㄒㄧㄠ","ˇ"],["偷","ㄊㄡ",""]]},{"w":"好","ch":[["好","ㄏㄠ","ˇ"]]},{"w":"愛","ch":[["愛","ㄞ","ˋ"]]},{"w":"吃","ch":[["吃","ㄔ",""]]},{"w":"蝴蝶餅","ch":[["蝴","ㄏㄨ","ˊ"],["蝶","ㄉㄧㄝ","ˊ"],["餅","ㄅㄧㄥ","ˇ"]]},{"p":"！"}]}],"prompt":{"t":"地上掉了一點點東西！讀讀看注音，這是什麼？","s":[{"w":"地上","ch":[["地","ㄉㄧ","ˋ"],["上","ㄕㄤ","ˋ"]]},{"w":"掉","ch":[["掉","ㄉㄧㄠ","ˋ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"w":"一","ch":[["一","ㄧ",""]]},{"w":"點點","ch":[["點","ㄉㄧㄢ","ˇ"],["點","ㄉㄧㄢ","ˇ"]]},{"w":"東西","ch":[["東","ㄉㄨㄥ",""],["西","ㄒㄧ",""]]},{"p":"！"},{"w":"讀讀看","ch":[["讀","ㄉㄨ","ˊ"],["讀","ㄉㄨ","ˊ"],["看","ㄎㄢ","ˋ"]]},{"w":"注音","ch":[["注","ㄓㄨ","ˋ"],["音","ㄧㄣ",""]]},{"p":"，"},{"w":"這","ch":[["這","ㄓㄜ","ˋ"]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"什麼","ch":[["什","ㄕㄜ","ˊ"],["麼","ㄇㄜ","˙"]]},{"p":"？"}]},"clue":{"t":"蝴蝶餅","s":[{"w":"蝴蝶餅","ch":[["蝴","ㄏㄨ","ˊ"],["蝶","ㄉㄧㄝ","ˊ"],["餅","ㄅㄧㄥ","ˇ"]]}]},"options":[{"w":{"t":"蝴蝶","s":[{"w":"蝴蝶","ch":[["蝴","ㄏㄨ","ˊ"],["蝶","ㄉㄧㄝ","ˊ"]]}]},"e":"🦋"},{"w":{"t":"蝴蝶餅","s":[{"w":"蝴蝶餅","ch":[["蝴","ㄏㄨ","ˊ"],["蝶","ㄉㄧㄝ","ˊ"],["餅","ㄅㄧㄥ","ˇ"]]}]},"e":"🥨"},{"w":{"t":"鬆餅","s":[{"w":"鬆餅","ch":[["鬆","ㄙㄨㄥ",""],["餅","ㄅㄧㄥ","ˇ"]]}]},"e":"🥞"}],"answer":1},{"type":"spell","card":["👒",{"t":"小偷戴著有羽毛的帽子！","s":[{"w":"小偷","ch":[["小","ㄒㄧㄠ","ˇ"],["偷","ㄊㄡ",""]]},{"w":"戴著","ch":[["戴","ㄉㄞ","ˋ"],["著","ㄓㄜ","˙"]]},{"w":"有","ch":[["有","ㄧㄡ","ˇ"]]},{"w":"羽毛","ch":[["羽","ㄩ","ˇ"],["毛","ㄇㄠ","ˊ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"帽子","ch":[["帽","ㄇㄠ","ˋ"],["子","ㄗ","˙"]]},{"p":"！"}]}],"prompt":{"t":"碎屑旁邊有一根羽毛，是從帽子上掉下來的！幫「帽」拼出注音！","s":[{"w":"碎屑","ch":[["碎","ㄙㄨㄟ","ˋ"],["屑","ㄒㄧㄝ","ˋ"]]},{"w":"旁邊","ch":[["旁","ㄆㄤ","ˊ"],["邊","ㄅㄧㄢ",""]]},{"w":"有","ch":[["有","ㄧㄡ","ˇ"]]},{"w":"一","ch":[["一","ㄧ",""]]},{"w":"根","ch":[["根","ㄍㄣ",""]]},{"w":"羽毛","ch":[["羽","ㄩ","ˇ"],["毛","ㄇㄠ","ˊ"]]},{"p":"，"},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"從","ch":[["從","ㄘㄨㄥ","ˊ"]]},{"w":"帽子","ch":[["帽","ㄇㄠ","ˋ"],["子","ㄗ","˙"]]},{"w":"上","ch":[["上","ㄕㄤ","ˋ"]]},{"w":"掉","ch":[["掉","ㄉㄧㄠ","ˋ"]]},{"w":"下來","ch":[["下","ㄒㄧㄚ","ˋ"],["來","ㄌㄞ","ˊ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"p":"！"},{"w":"幫","ch":[["幫","ㄅㄤ",""]]},{"p":"「"},{"w":"帽","ch":[["帽","ㄇㄠ","ˋ"]]},{"p":"」"},{"w":"拼出","ch":[["拼","ㄆㄧㄣ",""],["出","ㄔㄨ",""]]},{"w":"注音","ch":[["注","ㄓㄨ","ˋ"],["音","ㄧㄣ",""]]},{"p":"！"}]},"word":{"t":"帽子","s":[{"w":"帽子","ch":[["帽","ㄇㄠ","ˋ"],["子","ㄗ","˙"]]}]},"idx":0,"target":["帽","ㄇㄠ","ˋ"],"ini":"ㄇ","fin":"ㄠ","initials":["ㄇ","ㄈ","ㄋ","ㄆ"],"finals":["ㄠ","ㄡ","ㄛ","ㄞ"]},{"type":"read","card":["👀",{"t":"小偷是個大個子，一直吃蝴蝶餅！","s":[{"w":"小偷","ch":[["小","ㄒㄧㄠ","ˇ"],["偷","ㄊㄡ",""]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"個","ch":[["個","ㄍㄜ","ˋ"]]},{"w":"大","ch":[["大","ㄉㄚ","ˋ"]]},{"w":"個子","ch":[["個","ㄍㄜ","ˋ"],["子","ㄗ","˙"]]},{"p":"，"},{"w":"一直","ch":[["一","ㄧ",""],["直","ㄓ","ˊ"]]},{"w":"吃","ch":[["吃","ㄔ",""]]},{"w":"蝴蝶餅","ch":[["蝴","ㄏㄨ","ˊ"],["蝶","ㄉㄧㄝ","ˊ"],["餅","ㄅㄧㄥ","ˇ"]]},{"p":"！"}]}],"who":["L",{"t":"莉亞","s":[{"w":"莉亞","ch":[["莉","ㄌㄧ","ˋ"],["亞","ㄧㄚ","ˋ"]]}]}],"statement":{"t":"我看到一個大個子，一邊哈哈笑，一邊吃蝴蝶餅！","s":[{"w":"我","ch":[["我","ㄨㄛ","ˇ"]]},{"w":"看到","ch":[["看","ㄎㄢ","ˋ"],["到","ㄉㄠ","ˋ"]]},{"w":"一","ch":[["一","ㄧ",""]]},{"w":"個","ch":[["個","ㄍㄜ","ˋ"]]},{"w":"大","ch":[["大","ㄉㄚ","ˋ"]]},{"w":"個子","ch":[["個","ㄍㄜ","ˋ"],["子","ㄗ","˙"]]},{"p":"，"},{"w":"一邊","ch":[["一","ㄧ",""],["邊","ㄅㄧㄢ",""]]},{"w":"哈哈","ch":[["哈","ㄏㄚ",""],["哈","ㄏㄚ",""]]},{"w":"笑","ch":[["笑","ㄒㄧㄠ","ˋ"]]},{"p":"，"},{"w":"一邊","ch":[["一","ㄧ",""],["邊","ㄅㄧㄢ",""]]},{"w":"吃","ch":[["吃","ㄔ",""]]},{"w":"蝴蝶餅","ch":[["蝴","ㄏㄨ","ˊ"],["蝶","ㄉㄧㄝ","ˊ"],["餅","ㄅㄧㄥ","ˇ"]]},{"p":"！"}]},"question":{"t":"莉亞看到的人在做什麼？","s":[{"w":"莉亞","ch":[["莉","ㄌㄧ","ˋ"],["亞","ㄧㄚ","ˋ"]]},{"w":"看到","ch":[["看","ㄎㄢ","ˋ"],["到","ㄉㄠ","ˋ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"人","ch":[["人","ㄖㄣ","ˊ"]]},{"w":"在","ch":[["在","ㄗㄞ","ˋ"]]},{"w":"做","ch":[["做","ㄗㄨㄛ","ˋ"]]},{"w":"什麼","ch":[["什","ㄕㄜ","ˊ"],["麼","ㄇㄜ","˙"]]},{"p":"？"}]},"options":[{"w":{"t":"吃蝴蝶餅","s":[{"w":"吃","ch":[["吃","ㄔ",""]]},{"w":"蝴蝶餅","ch":[["蝴","ㄏㄨ","ˊ"],["蝶","ㄉㄧㄝ","ˊ"],["餅","ㄅㄧㄥ","ˇ"]]}]},"e":"🥨"},{"w":{"t":"坐摩天輪","s":[{"w":"坐","ch":[["坐","ㄗㄨㄛ","ˋ"]]},{"w":"摩天輪","ch":[["摩","ㄇㄛ","ˊ"],["天","ㄊㄧㄢ",""],["輪","ㄌㄨㄣ","ˊ"]]}]},"e":"🎡"},{"w":{"t":"啃骨頭","s":[{"w":"啃","ch":[["啃","ㄎㄣ","ˇ"]]},{"w":"骨頭","ch":[["骨","ㄍㄨ","ˇ"],["頭","ㄊㄡ","˙"]]}]},"e":"🦴"}],"answer":0},{"type":"tone","card":["😆",{"t":"哈哈哈！這個笑聲，好像是……？","s":[{"w":"哈哈哈","ch":[["哈","ㄏㄚ",""],["哈","ㄏㄚ",""],["哈","ㄏㄚ",""]]},{"p":"！"},{"w":"這","ch":[["這","ㄓㄜ","ˋ"]]},{"w":"個","ch":[["個","ㄍㄜ","ˋ"]]},{"w":"笑聲","ch":[["笑","ㄒㄧㄠ","ˋ"],["聲","ㄕㄥ",""]]},{"p":"，"},{"w":"好像","ch":[["好","ㄏㄠ","ˇ"],["像","ㄒㄧㄤ","ˋ"]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"p":"…"},{"p":"…"},{"p":"？"}]}],"prompt":{"t":"以琴聽到一個笑聲，好像在哪裡聽過！「笑聲」的「笑」是第幾聲？","s":[{"w":"以琴","ch":[["以","ㄧ","ˇ"],["琴","ㄑㄧㄣ","ˊ"]]},{"w":"聽到","ch":[["聽","ㄊㄧㄥ",""],["到","ㄉㄠ","ˋ"]]},{"w":"一","ch":[["一","ㄧ",""]]},{"w":"個","ch":[["個","ㄍㄜ","ˋ"]]},{"w":"笑聲","ch":[["笑","ㄒㄧㄠ","ˋ"],["聲","ㄕㄥ",""]]},{"p":"，"},{"w":"好像","ch":[["好","ㄏㄠ","ˇ"],["像","ㄒㄧㄤ","ˋ"]]},{"w":"在","ch":[["在","ㄗㄞ","ˋ"]]},{"w":"哪裡","ch":[["哪","ㄋㄚ","ˇ"],["裡","ㄌㄧ","ˇ"]]},{"w":"聽過","ch":[["聽","ㄊㄧㄥ",""],["過","ㄍㄨㄛ","ˋ"]]},{"p":"！"},{"p":"「"},{"w":"笑聲","ch":[["笑","ㄒㄧㄠ","ˋ"],["聲","ㄕㄥ",""]]},{"p":"」"},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"p":"「"},{"w":"笑","ch":[["笑","ㄒㄧㄠ","ˋ"]]},{"p":"」"},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"第","ch":[["第","ㄉㄧ","ˋ"]]},{"w":"幾","ch":[["幾","ㄐㄧ","ˇ"]]},{"w":"聲","ch":[["聲","ㄕㄥ",""]]},{"p":"？"}]},"word":{"t":"笑聲","s":[{"w":"笑聲","ch":[["笑","ㄒㄧㄠ","ˋ"],["聲","ㄕㄥ",""]]}]},"idx":0,"target":["笑","ㄒㄧㄠ","ˋ"],"answer":4}],"deduce":{"kind":"who","question":{"t":"到底是誰拿走了愛心薑餅？","s":[{"w":"到底","ch":[["到","ㄉㄠ","ˋ"],["底","ㄉㄧ","ˇ"]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"誰","ch":[["誰","ㄕㄟ","ˊ"]]},{"w":"拿走","ch":[["拿","ㄋㄚ","ˊ"],["走","ㄗㄡ","ˇ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"w":"愛心","ch":[["愛","ㄞ","ˋ"],["心","ㄒㄧㄣ",""]]},{"w":"薑餅","ch":[["薑","ㄐㄧㄤ",""],["餅","ㄅㄧㄥ","ˇ"]]},{"p":"？"}]},"answer":2,"suspects":[{"e":"🐕","n":{"t":"臘腸狗","s":[{"w":"臘腸狗","ch":[["臘","ㄌㄚ","ˋ"],["腸","ㄔㄤ","ˊ"],["狗","ㄍㄡ","ˇ"]]}]},"t":{"t":"腿短短的，個子小小的。","s":[{"w":"腿","ch":[["腿","ㄊㄨㄟ","ˇ"]]},{"w":"短短","ch":[["短","ㄉㄨㄢ","ˇ"],["短","ㄉㄨㄢ","ˇ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"p":"，"},{"w":"個子","ch":[["個","ㄍㄜ","ˋ"],["子","ㄗ","˙"]]},{"w":"小小","ch":[["小","ㄒㄧㄠ","ˇ"],["小","ㄒㄧㄠ","ˇ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"p":"。"}]}},{"e":"🐴","n":{"t":"白馬","s":[{"w":"白馬","ch":[["白","ㄅㄞ","ˊ"],["馬","ㄇㄚ","ˇ"]]}]},"t":{"t":"一直在拉車，只吃紅蘿蔔。","s":[{"w":"一直","ch":[["一","ㄧ",""],["直","ㄓ","ˊ"]]},{"w":"在","ch":[["在","ㄗㄞ","ˋ"]]},{"w":"拉車","ch":[["拉","ㄌㄚ",""],["車","ㄔㄜ",""]]},{"p":"，"},{"w":"只","ch":[["只","ㄓ",""]]},{"w":"吃","ch":[["吃","ㄔ",""]]},{"w":"紅蘿蔔","ch":[["紅","ㄏㄨㄥ","ˊ"],["蘿","ㄌㄨㄛ","ˊ"],["蔔","ㄅㄛ","˙"]]},{"p":"。"}]}},{"e":"D2","n":{"t":"爸爸","s":[{"w":"爸爸","ch":[["爸","ㄅㄚ","ˋ"],["爸","ㄅㄚ","˙"]]}]},"t":{"t":"個子大大的，戴著羽毛帽子，好愛吃蝴蝶餅！","s":[{"w":"個子","ch":[["個","ㄍㄜ","ˋ"],["子","ㄗ","˙"]]},{"w":"大大","ch":[["大","ㄉㄚ","ˋ"],["大","ㄉㄚ","ˋ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"p":"，"},{"w":"戴著","ch":[["戴","ㄉㄞ","ˋ"],["著","ㄓㄜ","˙"]]},{"w":"羽毛","ch":[["羽","ㄩ","ˇ"],["毛","ㄇㄠ","ˊ"]]},{"w":"帽子","ch":[["帽","ㄇㄠ","ˋ"],["子","ㄗ","˙"]]},{"p":"，"},{"w":"好","ch":[["好","ㄏㄠ","ˇ"]]},{"w":"愛","ch":[["愛","ㄞ","ˋ"]]},{"w":"吃","ch":[["吃","ㄔ",""]]},{"w":"蝴蝶餅","ch":[["蝴","ㄏㄨ","ˊ"],["蝶","ㄉㄧㄝ","ˊ"],["餅","ㄅㄧㄥ","ˇ"]]},{"p":"！"}]}}]},"journey":true},{"id":"c5","badge":"🔑","badgeName":{"t":"找鑰匙高手","s":[{"w":"找","ch":[["找","ㄓㄠ","ˇ"]]},{"w":"鑰匙","ch":[["鑰","ㄧㄠ","ˋ"],["匙","ㄕ","˙"]]},{"w":"高手","ch":[["高","ㄍㄠ",""],["手","ㄕㄡ","ˇ"]]}]},"title":{"t":"阿嬤的鑰匙任務","s":[{"w":"阿嬤","ch":[["阿","ㄚ",""],["嬤","ㄇㄚ",""]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"鑰匙","ch":[["鑰","ㄧㄠ","ˋ"],["匙","ㄕ","˙"]]},{"w":"任務","ch":[["任","ㄖㄣ","ˋ"],["務","ㄨ","ˋ"]]}]},"place":"✈️","placeName":{"t":"飛回台灣","s":[{"w":"飛","ch":[["飛","ㄈㄟ",""]]},{"w":"回","ch":[["回","ㄏㄨㄟ","ˊ"]]},{"w":"台灣","ch":[["台","ㄊㄞ","ˊ"],["灣","ㄨㄢ",""]]}]},"intro":[{"t":"咻～飛機起飛了！爸爸帶著以琴和安安，飛回台灣囉！","s":[{"w":"咻","ch":[["咻","ㄒㄧㄡ",""]]},{"p":"～"},{"w":"飛機","ch":[["飛","ㄈㄟ",""],["機","ㄐㄧ",""]]},{"w":"起飛","ch":[["起","ㄑㄧ","ˇ"],["飛","ㄈㄟ",""]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"p":"！"},{"w":"爸爸","ch":[["爸","ㄅㄚ","ˋ"],["爸","ㄅㄚ","˙"]]},{"w":"帶著","ch":[["帶","ㄉㄞ","ˋ"],["著","ㄓㄜ","˙"]]},{"w":"以琴","ch":[["以","ㄧ","ˇ"],["琴","ㄑㄧㄣ","ˊ"]]},{"w":"和","ch":[["和","ㄏㄜ","ˊ"]]},{"w":"安安","ch":[["安","ㄢ",""],["安","ㄢ",""]]},{"p":"，"},{"w":"飛","ch":[["飛","ㄈㄟ",""]]},{"w":"回","ch":[["回","ㄏㄨㄟ","ˊ"]]},{"w":"台灣","ch":[["台","ㄊㄞ","ˊ"],["灣","ㄨㄢ",""]]},{"w":"囉","ch":[["囉","ㄌㄨㄛ","˙"]]},{"p":"！"}],"act":[["✈️","fly"],["D","wave"],["A","cheer"]]},{"t":"窗外的雲好像棉花糖，安安看著看著，就睡著了。","s":[{"w":"窗外","ch":[["窗","ㄔㄨㄤ",""],["外","ㄨㄞ","ˋ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"雲","ch":[["雲","ㄩㄣ","ˊ"]]},{"w":"好","ch":[["好","ㄏㄠ","ˇ"]]},{"w":"像","ch":[["像","ㄒㄧㄤ","ˋ"]]},{"w":"棉花糖","ch":[["棉","ㄇㄧㄢ","ˊ"],["花","ㄏㄨㄚ",""],["糖","ㄊㄤ","ˊ"]]},{"p":"，"},{"w":"安安","ch":[["安","ㄢ",""],["安","ㄢ",""]]},{"w":"看著","ch":[["看","ㄎㄢ","ˋ"],["著","ㄓㄜ","˙"]]},{"w":"看著","ch":[["看","ㄎㄢ","ˋ"],["著","ㄓㄜ","˙"]]},{"p":"，"},{"w":"就","ch":[["就","ㄐㄧㄡ","ˋ"]]},{"w":"睡著","ch":[["睡","ㄕㄨㄟ","ˋ"],["著","ㄓㄠ","ˊ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"p":"。"}],"act":[["☁️","float"],["A","sleep"]]},{"t":"到台灣了！寶蛋阿姨和容容阿姨在機場揮手：「歡迎回家！」","s":[{"w":"到","ch":[["到","ㄉㄠ","ˋ"]]},{"w":"台灣","ch":[["台","ㄊㄞ","ˊ"],["灣","ㄨㄢ",""]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"p":"！"},{"w":"寶蛋","ch":[["寶","ㄅㄠ","ˇ"],["蛋","ㄉㄢ","ˋ"]]},{"w":"阿姨","ch":[["阿","ㄚ",""],["姨","ㄧ","ˊ"]]},{"w":"和","ch":[["和","ㄏㄜ","ˊ"]]},{"w":"容容","ch":[["容","ㄖㄨㄥ","ˊ"],["容","ㄖㄨㄥ","ˊ"]]},{"w":"阿姨","ch":[["阿","ㄚ",""],["姨","ㄧ","ˊ"]]},{"w":"在","ch":[["在","ㄗㄞ","ˋ"]]},{"w":"機場","ch":[["機","ㄐㄧ",""],["場","ㄔㄤ","ˇ"]]},{"w":"揮手","ch":[["揮","ㄏㄨㄟ",""],["手","ㄕㄡ","ˇ"]]},{"p":"："},{"p":"「"},{"w":"歡迎","ch":[["歡","ㄏㄨㄢ",""],["迎","ㄧㄥ","ˊ"]]},{"w":"回家","ch":[["回","ㄏㄨㄟ","ˊ"],["家","ㄐㄧㄚ",""]]},{"p":"！"},{"p":"」"}],"act":[["B","wave"],["R","wave"],["Q","run"]]},{"t":"容容阿姨拿出一封信：「這是阿嬤給探長的任務！」","s":[{"w":"容容","ch":[["容","ㄖㄨㄥ","ˊ"],["容","ㄖㄨㄥ","ˊ"]]},{"w":"阿姨","ch":[["阿","ㄚ",""],["姨","ㄧ","ˊ"]]},{"w":"拿出","ch":[["拿","ㄋㄚ","ˊ"],["出","ㄔㄨ",""]]},{"w":"一","ch":[["一","ㄧ",""]]},{"w":"封","ch":[["封","ㄈㄥ",""]]},{"w":"信","ch":[["信","ㄒㄧㄣ","ˋ"]]},{"p":"："},{"p":"「"},{"w":"這","ch":[["這","ㄓㄜ","ˋ"]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"阿嬤","ch":[["阿","ㄚ",""],["嬤","ㄇㄚ",""]]},{"w":"給","ch":[["給","ㄍㄟ","ˇ"]]},{"w":"探長","ch":[["探","ㄊㄢ","ˋ"],["長","ㄓㄤ","ˇ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"任務","ch":[["任","ㄖㄣ","ˋ"],["務","ㄨ","ˋ"]]},{"p":"！"},{"p":"」"}],"act":[["R","nod"],["💌","boing"]]},{"t":"信上寫著：「阿嬤家的鑰匙藏起來了，找到它，才能回家喔！」","s":[{"w":"信","ch":[["信","ㄒㄧㄣ","ˋ"]]},{"w":"上","ch":[["上","ㄕㄤ","ˋ"]]},{"w":"寫著","ch":[["寫","ㄒㄧㄝ","ˇ"],["著","ㄓㄜ","˙"]]},{"p":"："},{"p":"「"},{"w":"阿嬤","ch":[["阿","ㄚ",""],["嬤","ㄇㄚ",""]]},{"w":"家","ch":[["家","ㄐㄧㄚ",""]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"鑰匙","ch":[["鑰","ㄧㄠ","ˋ"],["匙","ㄕ","˙"]]},{"w":"藏","ch":[["藏","ㄘㄤ","ˊ"]]},{"w":"起來","ch":[["起","ㄑㄧ","ˇ"],["來","ㄌㄞ","ˊ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"p":"，"},{"w":"找到","ch":[["找","ㄓㄠ","ˇ"],["到","ㄉㄠ","ˋ"]]},{"w":"它","ch":[["它","ㄊㄚ",""]]},{"p":"，"},{"w":"才","ch":[["才","ㄘㄞ","ˊ"]]},{"w":"能","ch":[["能","ㄋㄥ","ˊ"]]},{"w":"回家","ch":[["回","ㄏㄨㄟ","ˊ"],["家","ㄐㄧㄚ",""]]},{"w":"喔","ch":[["喔","ㄛ",""]]},{"p":"！"},{"p":"」"}],"act":[["M","wink"],["🔑","sparkle"]]}],"ending":[{"t":"打開粉紅色行李箱，叮！鑰匙就在這裡！","s":[{"w":"打開","ch":[["打","ㄉㄚ","ˇ"],["開","ㄎㄞ",""]]},{"w":"粉紅色","ch":[["粉","ㄈㄣ","ˇ"],["紅","ㄏㄨㄥ","ˊ"],["色","ㄙㄜ","ˋ"]]},{"w":"行李箱","ch":[["行","ㄒㄧㄥ","ˊ"],["李","ㄌㄧ","ˇ"],["箱","ㄒㄧㄤ",""]]},{"p":"，"},{"w":"叮","ch":[["叮","ㄉㄧㄥ",""]]},{"p":"！"},{"w":"鑰匙","ch":[["鑰","ㄧㄠ","ˋ"],["匙","ㄕ","˙"]]},{"w":"就","ch":[["就","ㄐㄧㄡ","ˋ"]]},{"w":"在","ch":[["在","ㄗㄞ","ˋ"]]},{"w":"這裡","ch":[["這","ㄓㄜ","ˋ"],["裡","ㄌㄧ","ˇ"]]},{"p":"！"}],"act":[["🧳","boing"],["🔑","sparkle","叮！"]]},{"t":"安安大叫：「耶！我們可以回阿嬤家了！」","s":[{"w":"安安","ch":[["安","ㄢ",""],["安","ㄢ",""]]},{"w":"大叫","ch":[["大","ㄉㄚ","ˋ"],["叫","ㄐㄧㄠ","ˋ"]]},{"p":"："},{"p":"「"},{"w":"耶","ch":[["耶","ㄧㄝ",""]]},{"p":"！"},{"w":"我們","ch":[["我","ㄨㄛ","ˇ"],["們","ㄇㄣ","˙"]]},{"w":"可以","ch":[["可","ㄎㄜ","ˇ"],["以","ㄧ","ˇ"]]},{"w":"回","ch":[["回","ㄏㄨㄟ","ˊ"]]},{"w":"阿嬤","ch":[["阿","ㄚ",""],["嬤","ㄇㄚ",""]]},{"w":"家","ch":[["家","ㄐㄧㄚ",""]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"p":"！"},{"p":"」"}],"act":[["A","cheer"],["Q","cheer"]]},{"t":"大家坐上黃色的計程車，叭叭～出發！","s":[{"w":"大家","ch":[["大","ㄉㄚ","ˋ"],["家","ㄐㄧㄚ",""]]},{"w":"坐上","ch":[["坐","ㄗㄨㄛ","ˋ"],["上","ㄕㄤ","ˋ"]]},{"w":"黃色","ch":[["黃","ㄏㄨㄤ","ˊ"],["色","ㄙㄜ","ˋ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"計程車","ch":[["計","ㄐㄧ","ˋ"],["程","ㄔㄥ","ˊ"],["車","ㄔㄜ",""]]},{"p":"，"},{"w":"叭叭","ch":[["叭","ㄅㄚ",""],["叭","ㄅㄚ",""]]},{"p":"～"},{"w":"出發","ch":[["出","ㄔㄨ",""],["發","ㄈㄚ",""]]},{"p":"！"}],"act":[["🚕","drive"]]}],"puzzles":[{"type":"pick","card":["🧳",{"t":"鑰匙藏在一個行李箱裡！","s":[{"w":"鑰匙","ch":[["鑰","ㄧㄠ","ˋ"],["匙","ㄕ","˙"]]},{"w":"藏在","ch":[["藏","ㄘㄤ","ˊ"],["在","ㄗㄞ","ˋ"]]},{"w":"一","ch":[["一","ㄧ",""]]},{"w":"個","ch":[["個","ㄍㄜ","ˋ"]]},{"w":"行李箱","ch":[["行","ㄒㄧㄥ","ˊ"],["李","ㄌㄧ","ˇ"],["箱","ㄒㄧㄤ",""]]},{"w":"裡","ch":[["裡","ㄌㄧ","ˇ"]]},{"p":"！"}]}],"prompt":{"t":"阿嬤的信上，第一個線索只有注音！讀讀看，這是什麼？","s":[{"w":"阿嬤","ch":[["阿","ㄚ",""],["嬤","ㄇㄚ",""]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"信","ch":[["信","ㄒㄧㄣ","ˋ"]]},{"w":"上","ch":[["上","ㄕㄤ","ˋ"]]},{"p":"，"},{"w":"第一","ch":[["第","ㄉㄧ","ˋ"],["一","ㄧ",""]]},{"w":"個","ch":[["個","ㄍㄜ","ˋ"]]},{"w":"線索","ch":[["線","ㄒㄧㄢ","ˋ"],["索","ㄙㄨㄛ","ˇ"]]},{"w":"只有","ch":[["只","ㄓ","ˇ"],["有","ㄧㄡ","ˇ"]]},{"w":"注音","ch":[["注","ㄓㄨ","ˋ"],["音","ㄧㄣ",""]]},{"p":"！"},{"w":"讀讀看","ch":[["讀","ㄉㄨ","ˊ"],["讀","ㄉㄨ","ˊ"],["看","ㄎㄢ","ˋ"]]},{"p":"，"},{"w":"這","ch":[["這","ㄓㄜ","ˋ"]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"什麼","ch":[["什","ㄕㄜ","ˊ"],["麼","ㄇㄜ","˙"]]},{"p":"？"}]},"clue":{"t":"行李","s":[{"w":"行李","ch":[["行","ㄒㄧㄥ","ˊ"],["李","ㄌㄧ","ˇ"]]}]},"options":[{"w":{"t":"星星","s":[{"w":"星星","ch":[["星","ㄒㄧㄥ",""],["星","ㄒㄧㄥ",""]]}]},"e":"⭐"},{"w":{"t":"行李","s":[{"w":"行李","ch":[["行","ㄒㄧㄥ","ˊ"],["李","ㄌㄧ","ˇ"]]}]},"e":"🧳"},{"w":{"t":"梨子","s":[{"w":"梨子","ch":[["梨","ㄌㄧ","ˊ"],["子","ㄗ","˙"]]}]},"e":"🍐"}],"answer":1},{"type":"read","card":["🌸",{"t":"是粉紅色的行李箱！","s":[{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"粉紅色","ch":[["粉","ㄈㄣ","ˇ"],["紅","ㄏㄨㄥ","ˊ"],["色","ㄙㄜ","ˋ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"行李箱","ch":[["行","ㄒㄧㄥ","ˊ"],["李","ㄌㄧ","ˇ"],["箱","ㄒㄧㄤ",""]]},{"p":"！"}]}],"who":["B",{"t":"寶蛋阿姨","s":[{"w":"寶蛋","ch":[["寶","ㄅㄠ","ˇ"],["蛋","ㄉㄢ","ˋ"]]},{"w":"阿姨","ch":[["阿","ㄚ",""],["姨","ㄧ","ˊ"]]}]}],"statement":{"t":"我看到阿嬤把鑰匙放進一個粉紅色的箱子裡！","s":[{"w":"我","ch":[["我","ㄨㄛ","ˇ"]]},{"w":"看到","ch":[["看","ㄎㄢ","ˋ"],["到","ㄉㄠ","ˋ"]]},{"w":"阿嬤","ch":[["阿","ㄚ",""],["嬤","ㄇㄚ",""]]},{"w":"把","ch":[["把","ㄅㄚ","ˇ"]]},{"w":"鑰匙","ch":[["鑰","ㄧㄠ","ˋ"],["匙","ㄕ","˙"]]},{"w":"放進","ch":[["放","ㄈㄤ","ˋ"],["進","ㄐㄧㄣ","ˋ"]]},{"w":"一","ch":[["一","ㄧ",""]]},{"w":"個","ch":[["個","ㄍㄜ","ˋ"]]},{"w":"粉紅色","ch":[["粉","ㄈㄣ","ˇ"],["紅","ㄏㄨㄥ","ˊ"],["色","ㄙㄜ","ˋ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"箱子","ch":[["箱","ㄒㄧㄤ",""],["子","ㄗ","˙"]]},{"w":"裡","ch":[["裡","ㄌㄧ","ˇ"]]},{"p":"！"}]},"question":{"t":"寶蛋阿姨說，箱子是什麼顏色？","s":[{"w":"寶蛋","ch":[["寶","ㄅㄠ","ˇ"],["蛋","ㄉㄢ","ˋ"]]},{"w":"阿姨","ch":[["阿","ㄚ",""],["姨","ㄧ","ˊ"]]},{"w":"說","ch":[["說","ㄕㄨㄛ",""]]},{"p":"，"},{"w":"箱子","ch":[["箱","ㄒㄧㄤ",""],["子","ㄗ","˙"]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"什麼","ch":[["什","ㄕㄜ","ˊ"],["麼","ㄇㄜ","˙"]]},{"w":"顏色","ch":[["顏","ㄧㄢ","ˊ"],["色","ㄙㄜ","ˋ"]]},{"p":"？"}]},"options":[{"w":{"t":"黑色","s":[{"w":"黑色","ch":[["黑","ㄏㄟ",""],["色","ㄙㄜ","ˋ"]]}]},"e":"⚫"},{"w":{"t":"藍色","s":[{"w":"藍色","ch":[["藍","ㄌㄢ","ˊ"],["色","ㄙㄜ","ˋ"]]}]},"e":"🔵"},{"w":{"t":"粉紅色","s":[{"w":"粉紅色","ch":[["粉","ㄈㄣ","ˇ"],["紅","ㄏㄨㄥ","ˊ"],["色","ㄙㄜ","ˋ"]]}]},"e":"🌸"}],"answer":2},{"type":"spell","card":["🔄",{"t":"粉紅色行李箱在轉盤上轉圈圈！","s":[{"w":"粉紅色","ch":[["粉","ㄈㄣ","ˇ"],["紅","ㄏㄨㄥ","ˊ"],["色","ㄙㄜ","ˋ"]]},{"w":"行李箱","ch":[["行","ㄒㄧㄥ","ˊ"],["李","ㄌㄧ","ˇ"],["箱","ㄒㄧㄤ",""]]},{"w":"在","ch":[["在","ㄗㄞ","ˋ"]]},{"w":"轉盤","ch":[["轉","ㄓㄨㄢ","ˋ"],["盤","ㄆㄢ","ˊ"]]},{"w":"上","ch":[["上","ㄕㄤ","ˋ"]]},{"w":"轉圈圈","ch":[["轉","ㄓㄨㄢ","ˋ"],["圈","ㄑㄩㄢ",""],["圈","ㄑㄩㄢ",""]]},{"p":"！"}]}],"prompt":{"t":"行李箱在哪裡？在轉盤上轉呀轉！幫「盤」拼出注音！","s":[{"w":"行李箱","ch":[["行","ㄒㄧㄥ","ˊ"],["李","ㄌㄧ","ˇ"],["箱","ㄒㄧㄤ",""]]},{"w":"在","ch":[["在","ㄗㄞ","ˋ"]]},{"w":"哪裡","ch":[["哪","ㄋㄚ","ˇ"],["裡","ㄌㄧ","ˇ"]]},{"p":"？"},{"w":"在","ch":[["在","ㄗㄞ","ˋ"]]},{"w":"轉盤","ch":[["轉","ㄓㄨㄢ","ˋ"],["盤","ㄆㄢ","ˊ"]]},{"w":"上","ch":[["上","ㄕㄤ","ˋ"]]},{"w":"轉","ch":[["轉","ㄓㄨㄢ","ˋ"]]},{"w":"呀","ch":[["呀","ㄧㄚ","˙"]]},{"w":"轉","ch":[["轉","ㄓㄨㄢ","ˋ"]]},{"p":"！"},{"w":"幫","ch":[["幫","ㄅㄤ",""]]},{"p":"「"},{"w":"盤","ch":[["盤","ㄆㄢ","ˊ"]]},{"p":"」"},{"w":"拼出","ch":[["拼","ㄆㄧㄣ",""],["出","ㄔㄨ",""]]},{"w":"注音","ch":[["注","ㄓㄨ","ˋ"],["音","ㄧㄣ",""]]},{"p":"！"}]},"word":{"t":"轉盤","s":[{"w":"轉盤","ch":[["轉","ㄓㄨㄢ","ˋ"],["盤","ㄆㄢ","ˊ"]]}]},"idx":1,"target":["盤","ㄆㄢ","ˊ"],"ini":"ㄆ","fin":"ㄢ","initials":["ㄆ","ㄅ","ㄇ","ㄊ"],"finals":["ㄢ","ㄤ","ㄣ","ㄥ"]},{"type":"tone","card":["🔓",{"t":"喀嚓！密碼對了，箱子打開了！","s":[{"w":"喀嚓","ch":[["喀","ㄎㄚ",""],["嚓","ㄔㄚ",""]]},{"p":"！"},{"w":"密碼","ch":[["密","ㄇㄧ","ˋ"],["碼","ㄇㄚ","ˇ"]]},{"w":"對","ch":[["對","ㄉㄨㄟ","ˋ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"p":"，"},{"w":"箱子","ch":[["箱","ㄒㄧㄤ",""],["子","ㄗ","˙"]]},{"w":"打開","ch":[["打","ㄉㄚ","ˇ"],["開","ㄎㄞ",""]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"p":"！"}]}],"prompt":{"t":"行李箱有密碼鎖！密碼就是「匙」的聲調。「鑰匙」的「匙」是第幾聲？","s":[{"w":"行李箱","ch":[["行","ㄒㄧㄥ","ˊ"],["李","ㄌㄧ","ˇ"],["箱","ㄒㄧㄤ",""]]},{"w":"有","ch":[["有","ㄧㄡ","ˇ"]]},{"w":"密碼","ch":[["密","ㄇㄧ","ˋ"],["碼","ㄇㄚ","ˇ"]]},{"w":"鎖","ch":[["鎖","ㄙㄨㄛ","ˇ"]]},{"p":"！"},{"w":"密碼","ch":[["密","ㄇㄧ","ˋ"],["碼","ㄇㄚ","ˇ"]]},{"w":"就是","ch":[["就","ㄐㄧㄡ","ˋ"],["是","ㄕ","ˋ"]]},{"p":"「"},{"w":"匙","ch":[["匙","ㄕ","˙"]]},{"p":"」"},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"聲調","ch":[["聲","ㄕㄥ",""],["調","ㄉㄧㄠ","ˋ"]]},{"p":"。"},{"p":"「"},{"w":"鑰匙","ch":[["鑰","ㄧㄠ","ˋ"],["匙","ㄕ","˙"]]},{"p":"」"},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"p":"「"},{"w":"匙","ch":[["匙","ㄕ","˙"]]},{"p":"」"},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"第","ch":[["第","ㄉㄧ","ˋ"]]},{"w":"幾","ch":[["幾","ㄐㄧ","ˇ"]]},{"w":"聲","ch":[["聲","ㄕㄥ",""]]},{"p":"？"}]},"word":{"t":"鑰匙","s":[{"w":"鑰匙","ch":[["鑰","ㄧㄠ","ˋ"],["匙","ㄕ","˙"]]}]},"idx":1,"target":["匙","ㄕ","˙"],"answer":0}],"deduce":{"kind":"place","question":{"t":"鑰匙藏在哪裡？","s":[{"w":"鑰匙","ch":[["鑰","ㄧㄠ","ˋ"],["匙","ㄕ","˙"]]},{"w":"藏在","ch":[["藏","ㄘㄤ","ˊ"],["在","ㄗㄞ","ˋ"]]},{"w":"哪裡","ch":[["哪","ㄋㄚ","ˇ"],["裡","ㄌㄧ","ˇ"]]},{"p":"？"}]},"answer":2,"suspects":[{"e":"🎒","n":{"t":"安安的背包","s":[{"w":"安安","ch":[["安","ㄢ",""],["安","ㄢ",""]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"背包","ch":[["背","ㄅㄟ",""],["包","ㄅㄠ",""]]}]},"t":{"t":"藍色的，裡面都是玩具。","s":[{"w":"藍色","ch":[["藍","ㄌㄢ","ˊ"],["色","ㄙㄜ","ˋ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"p":"，"},{"w":"裡面","ch":[["裡","ㄌㄧ","ˇ"],["面","ㄇㄧㄢ","ˋ"]]},{"w":"都","ch":[["都","ㄉㄡ",""]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"玩具","ch":[["玩","ㄨㄢ","ˊ"],["具","ㄐㄩ","ˋ"]]},{"p":"。"}]}},{"e":"🧳","n":{"t":"黑色行李箱","s":[{"w":"黑色","ch":[["黑","ㄏㄟ",""],["色","ㄙㄜ","ˋ"]]},{"w":"行李箱","ch":[["行","ㄒㄧㄥ","ˊ"],["李","ㄌㄧ","ˇ"],["箱","ㄒㄧㄤ",""]]}]},"t":{"t":"黑色的，放在推車上。","s":[{"w":"黑色","ch":[["黑","ㄏㄟ",""],["色","ㄙㄜ","ˋ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"p":"，"},{"w":"放在","ch":[["放","ㄈㄤ","ˋ"],["在","ㄗㄞ","ˋ"]]},{"w":"推車","ch":[["推","ㄊㄨㄟ",""],["車","ㄔㄜ",""]]},{"w":"上","ch":[["上","ㄕㄤ","ˋ"]]},{"p":"。"}]}},{"e":"🌸","n":{"t":"粉紅色行李箱","s":[{"w":"粉紅色","ch":[["粉","ㄈㄣ","ˇ"],["紅","ㄏㄨㄥ","ˊ"],["色","ㄙㄜ","ˋ"]]},{"w":"行李箱","ch":[["行","ㄒㄧㄥ","ˊ"],["李","ㄌㄧ","ˇ"],["箱","ㄒㄧㄤ",""]]}]},"t":{"t":"粉紅色的，在轉盤上轉圈圈。","s":[{"w":"粉紅色","ch":[["粉","ㄈㄣ","ˇ"],["紅","ㄏㄨㄥ","ˊ"],["色","ㄙㄜ","ˋ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"p":"，"},{"w":"在","ch":[["在","ㄗㄞ","ˋ"]]},{"w":"轉盤","ch":[["轉","ㄓㄨㄢ","ˋ"],["盤","ㄆㄢ","ˊ"]]},{"w":"上","ch":[["上","ㄕㄤ","ˋ"]]},{"w":"轉圈圈","ch":[["轉","ㄓㄨㄢ","ˋ"],["圈","ㄑㄩㄢ",""],["圈","ㄑㄩㄢ",""]]},{"p":"。"}]}}]},"journey":true},{"id":"c6","badge":"🍛","badgeName":{"t":"阿嬤的寶貝","s":[{"w":"阿嬤","ch":[["阿","ㄚ",""],["嬤","ㄇㄚ",""]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"寶貝","ch":[["寶","ㄅㄠ","ˇ"],["貝","ㄅㄟ","ˋ"]]}]},"title":{"t":"阿嬤家的驚喜","s":[{"w":"阿嬤","ch":[["阿","ㄚ",""],["嬤","ㄇㄚ",""]]},{"w":"家","ch":[["家","ㄐㄧㄚ",""]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"驚喜","ch":[["驚","ㄐㄧㄥ",""],["喜","ㄒㄧ","ˇ"]]}]},"place":"🏠","placeName":{"t":"阿嬤家","s":[{"w":"阿嬤","ch":[["阿","ㄚ",""],["嬤","ㄇㄚ",""]]},{"w":"家","ch":[["家","ㄐㄧㄚ",""]]}]},"intro":[{"t":"計程車停下來了，阿嬤站在門口，等好久了！","s":[{"w":"計程車","ch":[["計","ㄐㄧ","ˋ"],["程","ㄔㄥ","ˊ"],["車","ㄔㄜ",""]]},{"w":"停","ch":[["停","ㄊㄧㄥ","ˊ"]]},{"w":"下來","ch":[["下","ㄒㄧㄚ","ˋ"],["來","ㄌㄞ","ˊ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"p":"，"},{"w":"阿嬤","ch":[["阿","ㄚ",""],["嬤","ㄇㄚ",""]]},{"w":"站在","ch":[["站","ㄓㄢ","ˋ"],["在","ㄗㄞ","ˋ"]]},{"w":"門口","ch":[["門","ㄇㄣ","ˊ"],["口","ㄎㄡ","ˇ"]]},{"p":"，"},{"w":"等","ch":[["等","ㄉㄥ","ˇ"]]},{"w":"好久","ch":[["好","ㄏㄠ","ˇ"],["久","ㄐㄧㄡ","ˇ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"p":"！"}],"act":[["🚕","brake","嘰～"],["M","wave"]]},{"t":"阿嬤張開手：「我的寶貝們，終於回來了！」","s":[{"w":"阿嬤","ch":[["阿","ㄚ",""],["嬤","ㄇㄚ",""]]},{"w":"張開","ch":[["張","ㄓㄤ",""],["開","ㄎㄞ",""]]},{"w":"手","ch":[["手","ㄕㄡ","ˇ"]]},{"p":"："},{"p":"「"},{"w":"我","ch":[["我","ㄨㄛ","ˇ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"寶貝","ch":[["寶","ㄅㄠ","ˇ"],["貝","ㄅㄟ","ˋ"]]},{"w":"們","ch":[["們","ㄇㄣ","˙"]]},{"p":"，"},{"w":"終於","ch":[["終","ㄓㄨㄥ",""],["於","ㄩ","ˊ"]]},{"w":"回來","ch":[["回","ㄏㄨㄟ","ˊ"],["來","ㄌㄞ","ˊ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"p":"！"},{"p":"」"}],"act":[["M","hug"],["Q","run"],["A","run"]]},{"t":"阿嬤笑咪咪：「屋子裡有好多禮物，還有你們最愛吃的東西喔！」","s":[{"w":"阿嬤","ch":[["阿","ㄚ",""],["嬤","ㄇㄚ",""]]},{"w":"笑咪咪","ch":[["笑","ㄒㄧㄠ","ˋ"],["咪","ㄇㄧ",""],["咪","ㄇㄧ",""]]},{"p":"："},{"p":"「"},{"w":"屋子","ch":[["屋","ㄨ",""],["子","ㄗ","˙"]]},{"w":"裡","ch":[["裡","ㄌㄧ","ˇ"]]},{"w":"有","ch":[["有","ㄧㄡ","ˇ"]]},{"w":"好多","ch":[["好","ㄏㄠ","ˇ"],["多","ㄉㄨㄛ",""]]},{"w":"禮物","ch":[["禮","ㄌㄧ","ˇ"],["物","ㄨ","ˋ"]]},{"p":"，"},{"w":"還","ch":[["還","ㄏㄞ","ˊ"]]},{"w":"有","ch":[["有","ㄧㄡ","ˇ"]]},{"w":"你們","ch":[["你","ㄋㄧ","ˇ"],["們","ㄇㄣ","˙"]]},{"w":"最","ch":[["最","ㄗㄨㄟ","ˋ"]]},{"w":"愛","ch":[["愛","ㄞ","ˋ"]]},{"w":"吃","ch":[["吃","ㄔ",""]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"東西","ch":[["東","ㄉㄨㄥ",""],["西","ㄒㄧ",""]]},{"w":"喔","ch":[["喔","ㄛ",""]]},{"p":"！"},{"p":"」"}],"act":[["M","love"],["🎁","boing","驚喜！"]]}],"ending":[{"t":"爸爸、寶蛋阿姨、容容阿姨都來了，大家一起吃晚餐！","s":[{"w":"爸爸","ch":[["爸","ㄅㄚ","ˋ"],["爸","ㄅㄚ","˙"]]},{"p":"、"},{"w":"寶蛋","ch":[["寶","ㄅㄠ","ˇ"],["蛋","ㄉㄢ","ˋ"]]},{"w":"阿姨","ch":[["阿","ㄚ",""],["姨","ㄧ","ˊ"]]},{"p":"、"},{"w":"容容","ch":[["容","ㄖㄨㄥ","ˊ"],["容","ㄖㄨㄥ","ˊ"]]},{"w":"阿姨","ch":[["阿","ㄚ",""],["姨","ㄧ","ˊ"]]},{"w":"都","ch":[["都","ㄉㄡ",""]]},{"w":"來","ch":[["來","ㄌㄞ","ˊ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"p":"，"},{"w":"大家","ch":[["大","ㄉㄚ","ˋ"],["家","ㄐㄧㄚ",""]]},{"w":"一起","ch":[["一","ㄧ",""],["起","ㄑㄧ","ˇ"]]},{"w":"吃","ch":[["吃","ㄔ",""]]},{"w":"晚餐","ch":[["晚","ㄨㄢ","ˇ"],["餐","ㄘㄢ",""]]},{"p":"！"}],"act":[["D","eat"],["B","eat"],["R","eat"]]},{"t":"安安吃咖哩飯，吃到臉上黃黃的，大家笑得好開心！","s":[{"w":"安安","ch":[["安","ㄢ",""],["安","ㄢ",""]]},{"w":"吃","ch":[["吃","ㄔ",""]]},{"w":"咖哩飯","ch":[["咖","ㄍㄚ",""],["哩","ㄌㄧ","ˊ"],["飯","ㄈㄢ","ˋ"]]},{"p":"，"},{"w":"吃","ch":[["吃","ㄔ",""]]},{"w":"到","ch":[["到","ㄉㄠ","ˋ"]]},{"w":"臉","ch":[["臉","ㄌㄧㄢ","ˇ"]]},{"w":"上","ch":[["上","ㄕㄤ","ˋ"]]},{"w":"黃黃","ch":[["黃","ㄏㄨㄤ","ˊ"],["黃","ㄏㄨㄤ","ˊ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"p":"，"},{"w":"大家","ch":[["大","ㄉㄚ","ˋ"],["家","ㄐㄧㄚ",""]]},{"w":"笑","ch":[["笑","ㄒㄧㄠ","ˋ"]]},{"w":"得","ch":[["得","ㄉㄜ","˙"]]},{"w":"好","ch":[["好","ㄏㄠ","ˇ"]]},{"w":"開心","ch":[["開","ㄎㄞ",""],["心","ㄒㄧㄣ",""]]},{"p":"！"}],"act":[["A","eat","好吃！"],["🍛","boing"],["Q","laugh"]]},{"t":"以琴吃了一大口壽司：「阿嬤煮的最好吃了！」","s":[{"w":"以琴","ch":[["以","ㄧ","ˇ"],["琴","ㄑㄧㄣ","ˊ"]]},{"w":"吃","ch":[["吃","ㄔ",""]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"w":"一","ch":[["一","ㄧ",""]]},{"w":"大","ch":[["大","ㄉㄚ","ˋ"]]},{"w":"口","ch":[["口","ㄎㄡ","ˇ"]]},{"w":"壽司","ch":[["壽","ㄕㄡ","ˋ"],["司","ㄙ",""]]},{"p":"："},{"p":"「"},{"w":"阿嬤","ch":[["阿","ㄚ",""],["嬤","ㄇㄚ",""]]},{"w":"煮","ch":[["煮","ㄓㄨ","ˇ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"最","ch":[["最","ㄗㄨㄟ","ˋ"]]},{"w":"好吃","ch":[["好","ㄏㄠ","ˇ"],["吃","ㄔ",""]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"p":"！"},{"p":"」"}],"act":[["Q","yum"],["🍣","spin"]]},{"t":"阿嬤抱著以琴：「明天開始，妳就是台灣的小學生囉！」","s":[{"w":"阿嬤","ch":[["阿","ㄚ",""],["嬤","ㄇㄚ",""]]},{"w":"抱著","ch":[["抱","ㄅㄠ","ˋ"],["著","ㄓㄜ","˙"]]},{"w":"以琴","ch":[["以","ㄧ","ˇ"],["琴","ㄑㄧㄣ","ˊ"]]},{"p":"："},{"p":"「"},{"w":"明天","ch":[["明","ㄇㄧㄥ","ˊ"],["天","ㄊㄧㄢ",""]]},{"w":"開始","ch":[["開","ㄎㄞ",""],["始","ㄕ","ˇ"]]},{"p":"，"},{"w":"妳","ch":[["妳","ㄋㄧ","ˇ"]]},{"w":"就","ch":[["就","ㄐㄧㄡ","ˋ"]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"台灣","ch":[["台","ㄊㄞ","ˊ"],["灣","ㄨㄢ",""]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"小學生","ch":[["小","ㄒㄧㄠ","ˇ"],["學","ㄒㄩㄝ","ˊ"],["生","ㄕㄥ",""]]},{"w":"囉","ch":[["囉","ㄌㄨㄛ","˙"]]},{"p":"！"},{"p":"」"}],"act":[["M","hug"],["Q","proud"]]},{"t":"以琴探長笑了：「新的冒險，要開始囉！」","s":[{"w":"以琴","ch":[["以","ㄧ","ˇ"],["琴","ㄑㄧㄣ","ˊ"]]},{"w":"探長","ch":[["探","ㄊㄢ","ˋ"],["長","ㄓㄤ","ˇ"]]},{"w":"笑","ch":[["笑","ㄒㄧㄠ","ˋ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"p":"："},{"p":"「"},{"w":"新","ch":[["新","ㄒㄧㄣ",""]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"冒險","ch":[["冒","ㄇㄠ","ˋ"],["險","ㄒㄧㄢ","ˇ"]]},{"p":"，"},{"w":"要","ch":[["要","ㄧㄠ","ˋ"]]},{"w":"開始","ch":[["開","ㄎㄞ",""],["始","ㄕ","ˇ"]]},{"w":"囉","ch":[["囉","ㄌㄨㄛ","˙"]]},{"p":"！"},{"p":"」"}],"act":[["Q","cheer"],["A","cheer"],["M","love"]]}],"puzzles":[{"type":"pick","card":["🎒",{"t":"是新書包！阿嬤說：「要上小學囉！」","s":[{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"新","ch":[["新","ㄒㄧㄣ",""]]},{"w":"書包","ch":[["書","ㄕㄨ",""],["包","ㄅㄠ",""]]},{"p":"！"},{"w":"阿嬤","ch":[["阿","ㄚ",""],["嬤","ㄇㄚ",""]]},{"w":"說","ch":[["說","ㄕㄨㄛ",""]]},{"p":"："},{"p":"「"},{"w":"要","ch":[["要","ㄧㄠ","ˋ"]]},{"w":"上","ch":[["上","ㄕㄤ","ˋ"]]},{"w":"小學","ch":[["小","ㄒㄧㄠ","ˇ"],["學","ㄒㄩㄝ","ˊ"]]},{"w":"囉","ch":[["囉","ㄌㄨㄛ","˙"]]},{"p":"！"},{"p":"」"}]}],"prompt":{"t":"第一個禮物上貼著注音卡片。讀讀看，裡面是什麼？","s":[{"w":"第一","ch":[["第","ㄉㄧ","ˋ"],["一","ㄧ",""]]},{"w":"個","ch":[["個","ㄍㄜ","ˋ"]]},{"w":"禮物","ch":[["禮","ㄌㄧ","ˇ"],["物","ㄨ","ˋ"]]},{"w":"上","ch":[["上","ㄕㄤ","ˋ"]]},{"w":"貼著","ch":[["貼","ㄊㄧㄝ",""],["著","ㄓㄜ","˙"]]},{"w":"注音","ch":[["注","ㄓㄨ","ˋ"],["音","ㄧㄣ",""]]},{"w":"卡片","ch":[["卡","ㄎㄚ","ˇ"],["片","ㄆㄧㄢ","ˋ"]]},{"p":"。"},{"w":"讀讀看","ch":[["讀","ㄉㄨ","ˊ"],["讀","ㄉㄨ","ˊ"],["看","ㄎㄢ","ˋ"]]},{"p":"，"},{"w":"裡面","ch":[["裡","ㄌㄧ","ˇ"],["面","ㄇㄧㄢ","ˋ"]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"什麼","ch":[["什","ㄕㄜ","ˊ"],["麼","ㄇㄜ","˙"]]},{"p":"？"}]},"clue":{"t":"書包","s":[{"w":"書包","ch":[["書","ㄕㄨ",""],["包","ㄅㄠ",""]]}]},"options":[{"w":{"t":"書本","s":[{"w":"書本","ch":[["書","ㄕㄨ",""],["本","ㄅㄣ","ˇ"]]}]},"e":"📚"},{"w":{"t":"手錶","s":[{"w":"手錶","ch":[["手","ㄕㄡ","ˇ"],["錶","ㄅㄧㄠ","ˇ"]]}]},"e":"⌚"},{"w":{"t":"書包","s":[{"w":"書包","ch":[["書","ㄕㄨ",""],["包","ㄅㄠ",""]]}]},"e":"🎒"}],"answer":2},{"type":"spell","card":["✏️",{"t":"是一盒彩色鉛筆，可以畫好多畫！","s":[{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"一","ch":[["一","ㄧ",""]]},{"w":"盒","ch":[["盒","ㄏㄜ","ˊ"]]},{"w":"彩色","ch":[["彩","ㄘㄞ","ˇ"],["色","ㄙㄜ","ˋ"]]},{"w":"鉛筆","ch":[["鉛","ㄑㄧㄢ",""],["筆","ㄅㄧ","ˇ"]]},{"p":"，"},{"w":"可以","ch":[["可","ㄎㄜ","ˇ"],["以","ㄧ","ˇ"]]},{"w":"畫","ch":[["畫","ㄏㄨㄚ","ˋ"]]},{"w":"好多","ch":[["好","ㄏㄠ","ˇ"],["多","ㄉㄨㄛ",""]]},{"w":"畫","ch":[["畫","ㄏㄨㄚ","ˋ"]]},{"p":"！"}]}],"prompt":{"t":"第二個禮物長長的。幫「筆」拼出注音，就能打開！","s":[{"w":"第二","ch":[["第","ㄉㄧ","ˋ"],["二","ㄦ","ˋ"]]},{"w":"個","ch":[["個","ㄍㄜ","ˋ"]]},{"w":"禮物","ch":[["禮","ㄌㄧ","ˇ"],["物","ㄨ","ˋ"]]},{"w":"長長","ch":[["長","ㄔㄤ","ˊ"],["長","ㄔㄤ","ˊ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"p":"。"},{"w":"幫","ch":[["幫","ㄅㄤ",""]]},{"p":"「"},{"w":"筆","ch":[["筆","ㄅㄧ","ˇ"]]},{"p":"」"},{"w":"拼出","ch":[["拼","ㄆㄧㄣ",""],["出","ㄔㄨ",""]]},{"w":"注音","ch":[["注","ㄓㄨ","ˋ"],["音","ㄧㄣ",""]]},{"p":"，"},{"w":"就","ch":[["就","ㄐㄧㄡ","ˋ"]]},{"w":"能","ch":[["能","ㄋㄥ","ˊ"]]},{"w":"打開","ch":[["打","ㄉㄚ","ˇ"],["開","ㄎㄞ",""]]},{"p":"！"}]},"word":{"t":"鉛筆","s":[{"w":"鉛筆","ch":[["鉛","ㄑㄧㄢ",""],["筆","ㄅㄧ","ˇ"]]}]},"idx":1,"target":["筆","ㄅㄧ","ˇ"],"ini":"ㄅ","fin":"ㄧ","initials":["ㄅ","ㄆ","ㄇ","ㄉ"],"finals":["ㄧ","ㄩ","ㄨ","ㄟ"]},{"type":"read","card":["🍛",{"t":"是以琴和安安最愛吃的咖哩飯和壽司！","s":[{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"以琴","ch":[["以","ㄧ","ˇ"],["琴","ㄑㄧㄣ","ˊ"]]},{"w":"和","ch":[["和","ㄏㄜ","ˊ"]]},{"w":"安安","ch":[["安","ㄢ",""],["安","ㄢ",""]]},{"w":"最","ch":[["最","ㄗㄨㄟ","ˋ"]]},{"w":"愛","ch":[["愛","ㄞ","ˋ"]]},{"w":"吃","ch":[["吃","ㄔ",""]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"咖哩飯","ch":[["咖","ㄍㄚ",""],["哩","ㄌㄧ","ˊ"],["飯","ㄈㄢ","ˋ"]]},{"w":"和","ch":[["和","ㄏㄜ","ˊ"]]},{"w":"壽司","ch":[["壽","ㄕㄡ","ˋ"],["司","ㄙ",""]]},{"p":"！"}]}],"who":["M",{"t":"阿嬤","s":[{"w":"阿嬤","ch":[["阿","ㄚ",""],["嬤","ㄇㄚ",""]]}]}],"statement":{"t":"阿嬤煮了兩樣菜，一樣黃黃的，一樣捲捲的！","s":[{"w":"阿嬤","ch":[["阿","ㄚ",""],["嬤","ㄇㄚ",""]]},{"w":"煮","ch":[["煮","ㄓㄨ","ˇ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"w":"兩","ch":[["兩","ㄌㄧㄤ","ˇ"]]},{"w":"樣","ch":[["樣","ㄧㄤ","ˋ"]]},{"w":"菜","ch":[["菜","ㄘㄞ","ˋ"]]},{"p":"，"},{"w":"一","ch":[["一","ㄧ",""]]},{"w":"樣","ch":[["樣","ㄧㄤ","ˋ"]]},{"w":"黃黃","ch":[["黃","ㄏㄨㄤ","ˊ"],["黃","ㄏㄨㄤ","ˊ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"p":"，"},{"w":"一","ch":[["一","ㄧ",""]]},{"w":"樣","ch":[["樣","ㄧㄤ","ˋ"]]},{"w":"捲捲","ch":[["捲","ㄐㄩㄢ","ˇ"],["捲","ㄐㄩㄢ","ˇ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"p":"！"}]},"question":{"t":"阿嬤煮了什麼？","s":[{"w":"阿嬤","ch":[["阿","ㄚ",""],["嬤","ㄇㄚ",""]]},{"w":"煮","ch":[["煮","ㄓㄨ","ˇ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"w":"什麼","ch":[["什","ㄕㄜ","ˊ"],["麼","ㄇㄜ","˙"]]},{"p":"？"}]},"options":[{"w":{"t":"咖哩飯和壽司","s":[{"w":"咖哩飯","ch":[["咖","ㄍㄚ",""],["哩","ㄌㄧ","ˊ"],["飯","ㄈㄢ","ˋ"]]},{"w":"和","ch":[["和","ㄏㄜ","ˊ"]]},{"w":"壽司","ch":[["壽","ㄕㄡ","ˋ"],["司","ㄙ",""]]}]},"e":"🍛🍣"},{"w":{"t":"牛肉麵","s":[{"w":"牛肉麵","ch":[["牛","ㄋㄧㄡ","ˊ"],["肉","ㄖㄡ","ˋ"],["麵","ㄇㄧㄢ","ˋ"]]}]},"e":"🍜"},{"w":{"t":"披薩","s":[{"w":"披薩","ch":[["披","ㄆㄧ",""],["薩","ㄙㄚ","ˋ"]]}]},"e":"🍕"}],"answer":0},{"type":"tone","card":["🍣",{"t":"壽司一個一個，排得好整齊！","s":[{"w":"壽司","ch":[["壽","ㄕㄡ","ˋ"],["司","ㄙ",""]]},{"w":"一","ch":[["一","ㄧ",""]]},{"w":"個","ch":[["個","ㄍㄜ","ˋ"]]},{"w":"一","ch":[["一","ㄧ",""]]},{"w":"個","ch":[["個","ㄍㄜ","ˋ"]]},{"p":"，"},{"w":"排","ch":[["排","ㄆㄞ","ˊ"]]},{"w":"得","ch":[["得","ㄉㄜ","˙"]]},{"w":"好","ch":[["好","ㄏㄠ","ˇ"]]},{"w":"整齊","ch":[["整","ㄓㄥ","ˇ"],["齊","ㄑㄧ","ˊ"]]},{"p":"！"}]}],"prompt":{"t":"開飯囉！「壽司」的「壽」是第幾聲？","s":[{"w":"開飯","ch":[["開","ㄎㄞ",""],["飯","ㄈㄢ","ˋ"]]},{"w":"囉","ch":[["囉","ㄌㄨㄛ","˙"]]},{"p":"！"},{"p":"「"},{"w":"壽司","ch":[["壽","ㄕㄡ","ˋ"],["司","ㄙ",""]]},{"p":"」"},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"p":"「"},{"w":"壽","ch":[["壽","ㄕㄡ","ˋ"]]},{"p":"」"},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"第","ch":[["第","ㄉㄧ","ˋ"]]},{"w":"幾","ch":[["幾","ㄐㄧ","ˇ"]]},{"w":"聲","ch":[["聲","ㄕㄥ",""]]},{"p":"？"}]},"word":{"t":"壽司","s":[{"w":"壽司","ch":[["壽","ㄕㄡ","ˋ"],["司","ㄙ",""]]}]},"idx":0,"target":["壽","ㄕㄡ","ˋ"],"answer":4}],"deduce":null,"journey":true}],"ph":{"praise":[{"t":"太棒了！","s":[{"w":"太棒","ch":[["太","ㄊㄞ","ˋ"],["棒","ㄅㄤ","ˋ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"p":"！"}]},{"t":"答對了，耶！","s":[{"w":"答對","ch":[["答","ㄉㄚ","ˊ"],["對","ㄉㄨㄟ","ˋ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"p":"，"},{"w":"耶","ch":[["耶","ㄧㄝ",""]]},{"p":"！"}]},{"t":"哇，好厲害！","s":[{"w":"哇","ch":[["哇","ㄨㄚ",""]]},{"p":"，"},{"w":"好","ch":[["好","ㄏㄠ","ˇ"]]},{"w":"厲害","ch":[["厲","ㄌㄧ","ˋ"],["害","ㄏㄞ","ˋ"]]},{"p":"！"}]},{"t":"探長真聰明！","s":[{"w":"探長","ch":[["探","ㄊㄢ","ˋ"],["長","ㄓㄤ","ˇ"]]},{"w":"真","ch":[["真","ㄓㄣ",""]]},{"w":"聰明","ch":[["聰","ㄘㄨㄥ",""],["明","ㄇㄧㄥ","ˊ"]]},{"p":"！"}]},{"t":"完全正確，讚！","s":[{"w":"完全","ch":[["完","ㄨㄢ","ˊ"],["全","ㄑㄩㄢ","ˊ"]]},{"w":"正確","ch":[["正","ㄓㄥ","ˋ"],["確","ㄑㄩㄝ","ˋ"]]},{"p":"，"},{"w":"讚","ch":[["讚","ㄗㄢ","ˋ"]]},{"p":"！"}]}],"retry":[{"t":"哎呀，再想想看～","s":[{"w":"哎呀","ch":[["哎","ㄞ",""],["呀","ㄧㄚ",""]]},{"p":"，"},{"w":"再","ch":[["再","ㄗㄞ","ˋ"]]},{"w":"想想","ch":[["想","ㄒㄧㄤ","ˇ"],["想","ㄒㄧㄤ","ˇ"]]},{"w":"看","ch":[["看","ㄎㄢ","ˋ"]]},{"p":"～"}]},{"t":"差一點點，再試一次！","s":[{"w":"差","ch":[["差","ㄔㄚ","ˋ"]]},{"w":"一點點","ch":[["一","ㄧ",""],["點","ㄉㄧㄢ","ˇ"],["點","ㄉㄧㄢ","ˇ"]]},{"p":"，"},{"w":"再","ch":[["再","ㄗㄞ","ˋ"]]},{"w":"試","ch":[["試","ㄕ","ˋ"]]},{"w":"一次","ch":[["一","ㄧ",""],["次","ㄘ","ˋ"]]},{"p":"！"}]}],"bonus":{"t":"自己讀懂，多一顆星星！","s":[{"w":"自己","ch":[["自","ㄗ","ˋ"],["己","ㄐㄧ","ˇ"]]},{"w":"讀懂","ch":[["讀","ㄉㄨ","ˊ"],["懂","ㄉㄨㄥ","ˇ"]]},{"p":"，"},{"w":"多","ch":[["多","ㄉㄨㄛ",""]]},{"w":"一","ch":[["一","ㄧ",""]]},{"w":"顆","ch":[["顆","ㄎㄜ",""]]},{"w":"星星","ch":[["星","ㄒㄧㄥ",""],["星","ㄒㄧㄥ",""]]},{"p":"！"}]},"clueGot":{"t":"找到線索了！","s":[{"w":"找到","ch":[["找","ㄓㄠ","ˇ"],["到","ㄉㄠ","ˋ"]]},{"w":"線索","ch":[["線","ㄒㄧㄢ","ˋ"],["索","ㄙㄨㄛ","ˇ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"p":"！"}]},"solved":{"t":"叮叮叮！破案了！","s":[{"w":"叮叮叮","ch":[["叮","ㄉㄧㄥ",""],["叮","ㄉㄧㄥ",""],["叮","ㄉㄧㄥ",""]]},{"p":"！"},{"w":"破案","ch":[["破","ㄆㄛ","ˋ"],["案","ㄢ","ˋ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"p":"！"}]},"title":{"t":"以琴探長","s":[{"w":"以琴","ch":[["以","ㄧ","ˇ"],["琴","ㄑㄧㄣ","ˊ"]]},{"w":"探長","ch":[["探","ㄊㄢ","ˋ"],["長","ㄓㄤ","ˇ"]]}]},"subtitle":{"t":"注音破案記","s":[{"w":"注音","ch":[["注","ㄓㄨ","ˋ"],["音","ㄧㄣ",""]]},{"w":"破案記","ch":[["破","ㄆㄛ","ˋ"],["案","ㄢ","ˋ"],["記","ㄐㄧ","ˋ"]]}]},"welcome":{"t":"嗨！我是安安，以琴探長的小幫手。探長，我們一起用注音破案吧！","s":[{"w":"嗨","ch":[["嗨","ㄏㄞ",""]]},{"p":"！"},{"w":"我","ch":[["我","ㄨㄛ","ˇ"]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"安安","ch":[["安","ㄢ",""],["安","ㄢ",""]]},{"p":"，"},{"w":"以琴","ch":[["以","ㄧ","ˇ"],["琴","ㄑㄧㄣ","ˊ"]]},{"w":"探長","ch":[["探","ㄊㄢ","ˋ"],["長","ㄓㄤ","ˇ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"小","ch":[["小","ㄒㄧㄠ","ˇ"]]},{"w":"幫手","ch":[["幫","ㄅㄤ",""],["手","ㄕㄡ","ˇ"]]},{"p":"。"},{"w":"探長","ch":[["探","ㄊㄢ","ˋ"],["長","ㄓㄤ","ˇ"]]},{"p":"，"},{"w":"我們","ch":[["我","ㄨㄛ","ˇ"],["們","ㄇㄣ","˙"]]},{"w":"一起","ch":[["一","ㄧ",""],["起","ㄑㄧ","ˇ"]]},{"w":"用","ch":[["用","ㄩㄥ","ˋ"]]},{"w":"注音","ch":[["注","ㄓㄨ","ˋ"],["音","ㄧㄣ",""]]},{"w":"破案","ch":[["破","ㄆㄛ","ˋ"],["案","ㄢ","ˋ"]]},{"w":"吧","ch":[["吧","ㄅㄚ","˙"]]},{"p":"！"}]},"pickHelp":{"t":"讀注音，選圖片。","s":[{"w":"讀","ch":[["讀","ㄉㄨ","ˊ"]]},{"w":"注音","ch":[["注","ㄓㄨ","ˋ"],["音","ㄧㄣ",""]]},{"p":"，"},{"w":"選","ch":[["選","ㄒㄩㄢ","ˇ"]]},{"w":"圖片","ch":[["圖","ㄊㄨ","ˊ"],["片","ㄆㄧㄢ","ˋ"]]},{"p":"。"}]},"readHelp":{"t":"證人有話要說！讀讀看他說了什麼？","s":[{"w":"證人","ch":[["證","ㄓㄥ","ˋ"],["人","ㄖㄣ","ˊ"]]},{"w":"有話","ch":[["有","ㄧㄡ","ˇ"],["話","ㄏㄨㄚ","ˋ"]]},{"w":"要","ch":[["要","ㄧㄠ","ˋ"]]},{"w":"說","ch":[["說","ㄕㄨㄛ",""]]},{"p":"！"},{"w":"讀讀看","ch":[["讀","ㄉㄨ","ˊ"],["讀","ㄉㄨ","ˊ"],["看","ㄎㄢ","ˋ"]]},{"w":"他","ch":[["他","ㄊㄚ",""]]},{"w":"說","ch":[["說","ㄕㄨㄛ",""]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"w":"什麼","ch":[["什","ㄕㄜ","ˊ"],["麼","ㄇㄜ","˙"]]},{"p":"？"}]},"deduceHelp":{"t":"看看線索，找出小偷！","s":[{"w":"看看","ch":[["看","ㄎㄢ","ˋ"],["看","ㄎㄢ","ˋ"]]},{"w":"線索","ch":[["線","ㄒㄧㄢ","ˋ"],["索","ㄙㄨㄛ","ˇ"]]},{"p":"，"},{"w":"找出","ch":[["找","ㄓㄠ","ˇ"],["出","ㄔㄨ",""]]},{"w":"小偷","ch":[["小","ㄒㄧㄠ","ˇ"],["偷","ㄊㄡ",""]]},{"p":"！"}]},"toneRef":{"t":"媽麻馬罵嗎","s":[{"w":"媽","ch":[["媽","ㄇㄚ",""]]},{"w":"麻","ch":[["麻","ㄇㄚ","ˊ"]]},{"w":"馬","ch":[["馬","ㄇㄚ","ˇ"]]},{"w":"罵","ch":[["罵","ㄇㄚ","ˋ"]]},{"w":"嗎","ch":[["嗎","ㄇㄚ","˙"]]}]},"allDone":{"t":"以琴探長破了六個案子，是真正的神探！","s":[{"w":"以琴","ch":[["以","ㄧ","ˇ"],["琴","ㄑㄧㄣ","ˊ"]]},{"w":"探長","ch":[["探","ㄊㄢ","ˋ"],["長","ㄓㄤ","ˇ"]]},{"w":"破","ch":[["破","ㄆㄛ","ˋ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"w":"六","ch":[["六","ㄌㄧㄡ","ˋ"]]},{"w":"個","ch":[["個","ㄍㄜ","ˋ"]]},{"w":"案子","ch":[["案","ㄢ","ˋ"],["子","ㄗ","˙"]]},{"p":"，"},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"w":"真正","ch":[["真","ㄓㄣ",""],["正","ㄓㄥ","ˋ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"神探","ch":[["神","ㄕㄣ","ˊ"],["探","ㄊㄢ","ˋ"]]},{"p":"！"}]}},"w":{"一聲":{"t":"一聲","s":[{"w":"一聲","ch":[["一","ㄧ",""],["聲","ㄕㄥ",""]]}]},"二聲":{"t":"二聲","s":[{"w":"二聲","ch":[["二","ㄦ","ˋ"],["聲","ㄕㄥ",""]]}]},"三聲":{"t":"三聲","s":[{"w":"三聲","ch":[["三","ㄙㄢ",""],["聲","ㄕㄥ",""]]}]},"四聲":{"t":"四聲","s":[{"w":"四聲","ch":[["四","ㄙ","ˋ"],["聲","ㄕㄥ",""]]}]},"輕聲":{"t":"輕聲","s":[{"w":"輕聲","ch":[["輕","ㄑㄧㄥ",""],["聲","ㄕㄥ",""]]}]},"聲母":{"t":"聲母","s":[{"w":"聲母","ch":[["聲","ㄕㄥ",""],["母","ㄇㄨ","ˇ"]]}]},"韻母":{"t":"韻母","s":[{"w":"韻母","ch":[["韻","ㄩㄣ","ˋ"],["母","ㄇㄨ","ˇ"]]}]},"聲調":{"t":"聲調","s":[{"w":"聲調","ch":[["聲","ㄕㄥ",""],["調","ㄉㄧㄠ","ˋ"]]}]},"見習探長":{"t":"見習探長","s":[{"w":"見習","ch":[["見","ㄐㄧㄢ","ˋ"],["習","ㄒㄧ","ˊ"]]},{"w":"探長","ch":[["探","ㄊㄢ","ˋ"],["長","ㄓㄤ","ˇ"]]}]},"小探長":{"t":"小探長","s":[{"w":"小","ch":[["小","ㄒㄧㄠ","ˇ"]]},{"w":"探長","ch":[["探","ㄊㄢ","ˋ"],["長","ㄓㄤ","ˇ"]]}]},"金牌探長":{"t":"金牌探長","s":[{"w":"金牌","ch":[["金","ㄐㄧㄣ",""],["牌","ㄆㄞ","ˊ"]]},{"w":"探長","ch":[["探","ㄊㄢ","ˋ"],["長","ㄓㄤ","ˇ"]]}]},"超級神探":{"t":"超級神探","s":[{"w":"超級","ch":[["超","ㄔㄠ",""],["級","ㄐㄧ","ˊ"]]},{"w":"神探","ch":[["神","ㄕㄣ","ˊ"],["探","ㄊㄢ","ˋ"]]}]},"傳說神探":{"t":"傳說神探","s":[{"w":"傳說","ch":[["傳","ㄔㄨㄢ","ˊ"],["說","ㄕㄨㄛ",""]]},{"w":"神探","ch":[["神","ㄕㄣ","ˊ"],["探","ㄊㄢ","ˋ"]]}]},"玻":{"t":"玻","s":[{"w":"玻","ch":[["玻","ㄅㄛ",""]]}]},"玻璃":{"t":"玻璃","s":[{"w":"玻璃","ch":[["玻","ㄅㄛ",""],["璃","ㄌㄧ","ˊ"]]}]},"坡":{"t":"坡","s":[{"w":"坡","ch":[["坡","ㄆㄛ",""]]}]},"葡萄":{"t":"葡萄","s":[{"w":"葡萄","ch":[["葡","ㄆㄨ","ˊ"],["萄","ㄊㄠ","ˊ"]]}]},"摸":{"t":"摸","s":[{"w":"摸","ch":[["摸","ㄇㄛ",""]]}]},"貓":{"t":"貓","s":[{"w":"貓","ch":[["貓","ㄇㄠ",""]]}]},"佛":{"t":"佛","s":[{"w":"佛","ch":[["佛","ㄈㄛ","ˊ"]]}]},"飛機":{"t":"飛機","s":[{"w":"飛機","ch":[["飛","ㄈㄟ",""],["機","ㄐㄧ",""]]}]},"得":{"t":"得","s":[{"w":"得","ch":[["得","ㄉㄜ","ˊ"]]}]},"大象":{"t":"大象","s":[{"w":"大象","ch":[["大","ㄉㄚ","ˋ"],["象","ㄒㄧㄤ","ˋ"]]}]},"特":{"t":"特","s":[{"w":"特","ch":[["特","ㄊㄜ","ˋ"]]}]},"兔子":{"t":"兔子","s":[{"w":"兔子","ch":[["兔","ㄊㄨ","ˋ"],["子","ㄗ","˙"]]}]},"呢":{"t":"呢","s":[{"w":"呢","ch":[["呢","ㄋㄜ","˙"]]}]},"牛":{"t":"牛","s":[{"w":"牛","ch":[["牛","ㄋㄧㄡ","ˊ"]]}]},"勒":{"t":"勒","s":[{"w":"勒","ch":[["勒","ㄌㄜ","ˋ"]]}]},"老虎":{"t":"老虎","s":[{"w":"老虎","ch":[["老","ㄌㄠ","ˇ"],["虎","ㄏㄨ","ˇ"]]}]},"哥":{"t":"哥","s":[{"w":"哥","ch":[["哥","ㄍㄜ",""]]}]},"狗":{"t":"狗","s":[{"w":"狗","ch":[["狗","ㄍㄡ","ˇ"]]}]},"科":{"t":"科","s":[{"w":"科","ch":[["科","ㄎㄜ",""]]}]},"恐龍":{"t":"恐龍","s":[{"w":"恐龍","ch":[["恐","ㄎㄨㄥ","ˇ"],["龍","ㄌㄨㄥ","ˊ"]]}]},"喝":{"t":"喝","s":[{"w":"喝","ch":[["喝","ㄏㄜ",""]]}]},"河馬":{"t":"河馬","s":[{"w":"河馬","ch":[["河","ㄏㄜ","ˊ"],["馬","ㄇㄚ","ˇ"]]}]},"基":{"t":"基","s":[{"w":"基","ch":[["基","ㄐㄧ",""]]}]},"橘子":{"t":"橘子","s":[{"w":"橘子","ch":[["橘","ㄐㄩ","ˊ"],["子","ㄗ","˙"]]}]},"七":{"t":"七","s":[{"w":"七","ch":[["七","ㄑㄧ",""]]}]},"汽車":{"t":"汽車","s":[{"w":"汽車","ch":[["汽","ㄑㄧ","ˋ"],["車","ㄔㄜ",""]]}]},"西":{"t":"西","s":[{"w":"西","ch":[["西","ㄒㄧ",""]]}]},"西瓜":{"t":"西瓜","s":[{"w":"西瓜","ch":[["西","ㄒㄧ",""],["瓜","ㄍㄨㄚ",""]]}]},"知":{"t":"知","s":[{"w":"知","ch":[["知","ㄓ",""]]}]},"蜘蛛":{"t":"蜘蛛","s":[{"w":"蜘蛛","ch":[["蜘","ㄓ",""],["蛛","ㄓㄨ",""]]}]},"吃":{"t":"吃","s":[{"w":"吃","ch":[["吃","ㄔ",""]]}]},"長頸鹿":{"t":"長頸鹿","s":[{"w":"長頸鹿","ch":[["長","ㄔㄤ","ˊ"],["頸","ㄐㄧㄥ","ˇ"],["鹿","ㄌㄨ","ˋ"]]}]},"詩":{"t":"詩","s":[{"w":"詩","ch":[["詩","ㄕ",""]]}]},"獅子":{"t":"獅子","s":[{"w":"獅子","ch":[["獅","ㄕ",""],["子","ㄗ","˙"]]}]},"日":{"t":"日","s":[{"w":"日","ch":[["日","ㄖ","ˋ"]]}]},"熱狗":{"t":"熱狗","s":[{"w":"熱狗","ch":[["熱","ㄖㄜ","ˋ"],["狗","ㄍㄡ","ˇ"]]}]},"資":{"t":"資","s":[{"w":"資","ch":[["資","ㄗ",""]]}]},"足球":{"t":"足球","s":[{"w":"足球","ch":[["足","ㄗㄨ","ˊ"],["球","ㄑㄧㄡ","ˊ"]]}]},"詞":{"t":"詞","s":[{"w":"詞","ch":[["詞","ㄘ","ˊ"]]}]},"草莓":{"t":"草莓","s":[{"w":"草莓","ch":[["草","ㄘㄠ","ˇ"],["莓","ㄇㄟ","ˊ"]]}]},"思":{"t":"思","s":[{"w":"思","ch":[["思","ㄙ",""]]}]},"雨傘":{"t":"雨傘","s":[{"w":"雨傘","ch":[["雨","ㄩ","ˇ"],["傘","ㄙㄢ","ˇ"]]}]},"衣":{"t":"衣","s":[{"w":"衣","ch":[["衣","ㄧ",""]]}]},"椅子":{"t":"椅子","s":[{"w":"椅子","ch":[["椅","ㄧ","ˇ"],["子","ㄗ","˙"]]}]},"烏":{"t":"烏","s":[{"w":"烏","ch":[["烏","ㄨ",""]]}]},"烏龜":{"t":"烏龜","s":[{"w":"烏龜","ch":[["烏","ㄨ",""],["龜","ㄍㄨㄟ",""]]}]},"魚":{"t":"魚","s":[{"w":"魚","ch":[["魚","ㄩ","ˊ"]]}]},"金魚":{"t":"金魚","s":[{"w":"金魚","ch":[["金","ㄐㄧㄣ",""],["魚","ㄩ","ˊ"]]}]},"阿":{"t":"阿","s":[{"w":"阿","ch":[["阿","ㄚ",""]]}]},"鴨子":{"t":"鴨子","s":[{"w":"鴨子","ch":[["鴨","ㄧㄚ",""],["子","ㄗ","˙"]]}]},"喔":{"t":"喔","s":[{"w":"喔","ch":[["喔","ㄛ",""]]}]},"婆婆":{"t":"婆婆","s":[{"w":"婆婆","ch":[["婆","ㄆㄛ","ˊ"],["婆","ㄆㄛ","˙"]]}]},"鵝":{"t":"鵝","s":[{"w":"鵝","ch":[["鵝","ㄜ","ˊ"]]}]},"天鵝":{"t":"天鵝","s":[{"w":"天鵝","ch":[["天","ㄊㄧㄢ",""],["鵝","ㄜ","ˊ"]]}]},"椰子":{"t":"椰子","s":[{"w":"椰子","ch":[["椰","ㄧㄝ","ˊ"],["子","ㄗ","˙"]]}]},"哀":{"t":"哀","s":[{"w":"哀","ch":[["哀","ㄞ",""]]}]},"愛心":{"t":"愛心","s":[{"w":"愛心","ch":[["愛","ㄞ","ˋ"],["心","ㄒㄧㄣ",""]]}]},"誒":{"t":"誒","s":[{"w":"誒","ch":[["誒","ㄟ",""]]}]},"杯子":{"t":"杯子","s":[{"w":"杯子","ch":[["杯","ㄅㄟ",""],["子","ㄗ","˙"]]}]},"凹":{"t":"凹","s":[{"w":"凹","ch":[["凹","ㄠ",""]]}]},"帽子":{"t":"帽子","s":[{"w":"帽子","ch":[["帽","ㄇㄠ","ˋ"],["子","ㄗ","˙"]]}]},"歐":{"t":"歐","s":[{"w":"歐","ch":[["歐","ㄡ",""]]}]},"猴子":{"t":"猴子","s":[{"w":"猴子","ch":[["猴","ㄏㄡ","ˊ"],["子","ㄗ","˙"]]}]},"安":{"t":"安","s":[{"w":"安","ch":[["安","ㄢ",""]]}]},"雞蛋":{"t":"雞蛋","s":[{"w":"雞蛋","ch":[["雞","ㄐㄧ",""],["蛋","ㄉㄢ","ˋ"]]}]},"恩":{"t":"恩","s":[{"w":"恩","ch":[["恩","ㄣ",""]]}]},"大門":{"t":"大門","s":[{"w":"大門","ch":[["大","ㄉㄚ","ˋ"],["門","ㄇㄣ","ˊ"]]}]},"骯":{"t":"骯","s":[{"w":"骯","ch":[["骯","ㄤ",""]]}]},"糖果":{"t":"糖果","s":[{"w":"糖果","ch":[["糖","ㄊㄤ","ˊ"],["果","ㄍㄨㄛ","ˇ"]]}]},"燈":{"t":"燈","s":[{"w":"燈","ch":[["燈","ㄉㄥ",""]]}]},"兒":{"t":"兒","s":[{"w":"兒","ch":[["兒","ㄦ","ˊ"]]}]},"耳朵":{"t":"耳朵","s":[{"w":"耳朵","ch":[["耳","ㄦ","ˇ"],["朵","ㄉㄨㄛ","ˇ"]]}]},"媽":{"t":"媽","s":[{"w":"媽","ch":[["媽","ㄇㄚ",""]]}]},"麻":{"t":"麻","s":[{"w":"麻","ch":[["麻","ㄇㄚ","ˊ"]]}]},"馬":{"t":"馬","s":[{"w":"馬","ch":[["馬","ㄇㄚ","ˇ"]]}]},"罵":{"t":"罵","s":[{"w":"罵","ch":[["罵","ㄇㄚ","ˋ"]]}]},"嗎":{"t":"嗎","s":[{"w":"嗎","ch":[["嗎","ㄇㄚ","˙"]]}]}},"ui":{"start":{"t":"開始辦案","s":[{"w":"開始","ch":[["開","ㄎㄞ",""],["始","ㄕ","ˇ"]]},{"w":"辦案","ch":[["辦","ㄅㄢ","ˋ"],["案","ㄢ","ˋ"]]}]},"arcade":{"t":"注音打地鼠","s":[{"w":"注音","ch":[["注","ㄓㄨ","ˋ"],["音","ㄧㄣ",""]]},{"w":"打地鼠","ch":[["打","ㄉㄚ","ˇ"],["地","ㄉㄧ","ˋ"],["鼠","ㄕㄨ","ˇ"]]}]},"guide":{"t":"注音寶典","s":[{"w":"注音","ch":[["注","ㄓㄨ","ˋ"],["音","ㄧㄣ",""]]},{"w":"寶典","ch":[["寶","ㄅㄠ","ˇ"],["典","ㄉㄧㄢ","ˇ"]]}]},"badges":{"t":"我的徽章","s":[{"w":"我的","ch":[["我","ㄨㄛ","ˇ"],["的","ㄉㄜ","˙"]]},{"w":"徽章","ch":[["徽","ㄏㄨㄟ",""],["章","ㄓㄤ",""]]}]},"voice":{"t":"念給安安聽","s":[{"w":"念給","ch":[["念","ㄋㄧㄢ","ˋ"],["給","ㄍㄟ","ˇ"]]},{"w":"安安","ch":[["安","ㄢ",""],["安","ㄢ",""]]},{"w":"聽","ch":[["聽","ㄊㄧㄥ",""]]}]},"caseBook":{"t":"案件簿","s":[{"w":"案件簿","ch":[["案","ㄢ","ˋ"],["件","ㄐㄧㄢ","ˋ"],["簿","ㄅㄛ","ˊ"]]}]},"sectAnimal":{"t":"動物村的案子","s":[{"w":"動物村","ch":[["動","ㄉㄨㄥ","ˋ"],["物","ㄨ","ˋ"],["村","ㄘㄨㄣ",""]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"案子","ch":[["案","ㄢ","ˋ"],["子","ㄗ","˙"]]}]},"sectJourney":{"t":"回台灣的大冒險","s":[{"w":"回","ch":[["回","ㄏㄨㄟ","ˊ"]]},{"w":"台灣","ch":[["台","ㄊㄞ","ˊ"],["灣","ㄨㄢ",""]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"大","ch":[["大","ㄉㄚ","ˋ"]]},{"w":"冒險","ch":[["冒","ㄇㄠ","ˋ"],["險","ㄒㄧㄢ","ˇ"]]}]},"tabCase":{"t":"案件","s":[{"w":"案件","ch":[["案","ㄢ","ˋ"],["件","ㄐㄧㄢ","ˋ"]]}]},"tabTrip":{"t":"旅程","s":[{"w":"旅程","ch":[["旅","ㄌㄩ","ˇ"],["程","ㄔㄥ","ˊ"]]}]},"notYet":{"t":"還沒破案","s":[{"w":"還沒","ch":[["還","ㄏㄞ","ˊ"],["沒","ㄇㄟ","ˊ"]]},{"w":"破案","ch":[["破","ㄆㄛ","ˋ"],["案","ㄢ","ˋ"]]}]},"locked":{"t":"先破上一個案子","s":[{"w":"先","ch":[["先","ㄒㄧㄢ",""]]},{"w":"破","ch":[["破","ㄆㄛ","ˋ"]]},{"w":"上","ch":[["上","ㄕㄤ","ˋ"]]},{"w":"一","ch":[["一","ㄧ",""]]},{"w":"個","ch":[["個","ㄍㄜ","ˋ"]]},{"w":"案子","ch":[["案","ㄢ","ˋ"],["子","ㄗ","˙"]]}]},"stampSolved":{"t":"破案","s":[{"w":"破案","ch":[["破","ㄆㄛ","ˋ"],["案","ㄢ","ˋ"]]}]},"stampFound":{"t":"找到了","s":[{"w":"找到","ch":[["找","ㄓㄠ","ˇ"],["到","ㄉㄠ","ˋ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]}]},"stampBig":{"t":"破案了！","s":[{"w":"破案","ch":[["破","ㄆㄛ","ˋ"],["案","ㄢ","ˋ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"p":"！"}]},"startClues":{"t":"開始找線索","s":[{"w":"開始","ch":[["開","ㄎㄞ",""],["始","ㄕ","ˇ"]]},{"w":"找","ch":[["找","ㄓㄠ","ˇ"]]},{"w":"線索","ch":[["線","ㄒㄧㄢ","ˋ"],["索","ㄙㄨㄛ","ˇ"]]}]},"getBadge":{"t":"領取徽章","s":[{"w":"領取","ch":[["領","ㄌㄧㄥ","ˇ"],["取","ㄑㄩ","ˇ"]]},{"w":"徽章","ch":[["徽","ㄏㄨㄟ",""],["章","ㄓㄤ",""]]}]},"huntWord":{"t":"找找看，哪個詞是：","s":[{"w":"找找看","ch":[["找","ㄓㄠ","ˇ"],["找","ㄓㄠ","ˇ"],["看","ㄎㄢ","ˋ"]]},{"p":"，"},{"w":"哪個","ch":[["哪","ㄋㄚ","ˇ"],["個","ㄍㄜ","ˋ"]]},{"w":"詞","ch":[["詞","ㄘ","ˊ"]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]},{"p":"："}]},"huntSym":{"t":"點一個有這個注音的詞：","s":[{"w":"點","ch":[["點","ㄉㄧㄢ","ˇ"]]},{"w":"一","ch":[["一","ㄧ",""]]},{"w":"個","ch":[["個","ㄍㄜ","ˋ"]]},{"w":"有","ch":[["有","ㄧㄡ","ˇ"]]},{"w":"這個","ch":[["這","ㄓㄜ","ˋ"],["個","ㄍㄜ","ˋ"]]},{"w":"注音","ch":[["注","ㄓㄨ","ˋ"],["音","ㄧㄣ",""]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"詞","ch":[["詞","ㄘ","ˊ"]]},{"p":"："}]},"tip":{"t":"先自己讀一讀，再聽聽看對不對！","s":[{"w":"先","ch":[["先","ㄒㄧㄢ",""]]},{"w":"自己","ch":[["自","ㄗ","ˋ"],["己","ㄐㄧ","ˇ"]]},{"w":"讀一讀","ch":[["讀","ㄉㄨ","ˊ"],["一","ㄧ",""],["讀","ㄉㄨ","ˊ"]]},{"p":"，"},{"w":"再","ch":[["再","ㄗㄞ","ˋ"]]},{"w":"聽聽看","ch":[["聽","ㄊㄧㄥ",""],["聽","ㄊㄧㄥ",""],["看","ㄎㄢ","ˋ"]]},{"w":"對","ch":[["對","ㄉㄨㄟ","ˋ"]]},{"w":"不","ch":[["不","ㄅㄨ","ˋ"]]},{"w":"對","ch":[["對","ㄉㄨㄟ","ˋ"]]},{"p":"！"}]},"readLine":{"t":"念這句","s":[{"w":"念","ch":[["念","ㄋㄧㄢ","ˋ"]]},{"w":"這","ch":[["這","ㄓㄜ","ˋ"]]},{"w":"句","ch":[["句","ㄐㄩ","ˋ"]]}]},"slow":{"t":"慢慢念","s":[{"w":"慢慢","ch":[["慢","ㄇㄢ","ˋ"],["慢","ㄇㄢ","ˋ"]]},{"w":"念","ch":[["念","ㄋㄧㄢ","ˋ"]]}]},"nextLine":{"t":"下一句","s":[{"w":"下一句","ch":[["下","ㄒㄧㄚ","ˋ"],["一","ㄧ",""],["句","ㄐㄩ","ˋ"]]}]},"streak1":{"t":"連續","s":[{"w":"連續","ch":[["連","ㄌㄧㄢ","ˊ"],["續","ㄒㄩ","ˋ"]]}]},"streak2":{"t":"次答對！","s":[{"w":"次","ch":[["次","ㄘ","ˋ"]]},{"w":"答對","ch":[["答","ㄉㄚ","ˊ"],["對","ㄉㄨㄟ","ˋ"]]},{"p":"！"}]},"collect":{"t":"收進筆記本","s":[{"w":"收進","ch":[["收","ㄕㄡ",""],["進","ㄐㄧㄣ","ˋ"]]},{"w":"筆記本","ch":[["筆","ㄅㄧ","ˇ"],["記","ㄐㄧ","ˋ"],["本","ㄅㄣ","ˇ"]]}]},"hear":{"t":"聽發音","s":[{"w":"聽","ch":[["聽","ㄊㄧㄥ",""]]},{"w":"發音","ch":[["發","ㄈㄚ",""],["音","ㄧㄣ",""]]}]},"hearWho":{"t":"聽聽看","s":[{"w":"聽聽看","ch":[["聽","ㄊㄧㄥ",""],["聽","ㄊㄧㄥ",""],["看","ㄎㄢ","ˋ"]]}]},"hearWord":{"t":"聽這個詞","s":[{"w":"聽","ch":[["聽","ㄊㄧㄥ",""]]},{"w":"這個","ch":[["這","ㄓㄜ","ˋ"],["個","ㄍㄜ","ˋ"]]},{"w":"詞","ch":[["詞","ㄘ","ˊ"]]}]},"hearRight":{"t":"聽正確發音","s":[{"w":"聽","ch":[["聽","ㄊㄧㄥ",""]]},{"w":"正確","ch":[["正","ㄓㄥ","ˋ"],["確","ㄑㄩㄝ","ˋ"]]},{"w":"發音","ch":[["發","ㄈㄚ",""],["音","ㄧㄣ",""]]}]},"toneTip":{"t":"一聲不用寫符號，輕聲的點寫在上面。","s":[{"w":"一聲","ch":[["一","ㄧ",""],["聲","ㄕㄥ",""]]},{"w":"不用","ch":[["不","ㄅㄨ","ˋ"],["用","ㄩㄥ","ˋ"]]},{"w":"寫","ch":[["寫","ㄒㄧㄝ","ˇ"]]},{"w":"符號","ch":[["符","ㄈㄨ","ˊ"],["號","ㄏㄠ","ˋ"]]},{"p":"，"},{"w":"輕聲","ch":[["輕","ㄑㄧㄥ",""],["聲","ㄕㄥ",""]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"點","ch":[["點","ㄉㄧㄢ","ˇ"]]},{"w":"寫在","ch":[["寫","ㄒㄧㄝ","ˇ"],["在","ㄗㄞ","ˋ"]]},{"w":"上面","ch":[["上","ㄕㄤ","ˋ"],["面","ㄇㄧㄢ","ˋ"]]},{"p":"。"}]},"ini":{"t":"聲母","s":[{"w":"聲母","ch":[["聲","ㄕㄥ",""],["母","ㄇㄨ","ˇ"]]}]},"fin":{"t":"韻母","s":[{"w":"韻母","ch":[["韻","ㄩㄣ","ˋ"],["母","ㄇㄨ","ˇ"]]}]},"tone":{"t":"聲調","s":[{"w":"聲調","ch":[["聲","ㄕㄥ",""],["調","ㄉㄧㄠ","ˋ"]]}]},"mid":{"t":"介音","s":[{"w":"介音","ch":[["介","ㄐㄧㄝ","ˋ"],["音","ㄧㄣ",""]]}]},"notebook":{"t":"偵探筆記本","s":[{"w":"偵探","ch":[["偵","ㄓㄣ",""],["探","ㄊㄢ","ˋ"]]},{"w":"筆記本","ch":[["筆","ㄅㄧ","ˇ"],["記","ㄐㄧ","ˋ"],["本","ㄅㄣ","ˇ"]]}]},"suspects":{"t":"嫌疑犯","s":[{"w":"嫌疑犯","ch":[["嫌","ㄒㄧㄢ","ˊ"],["疑","ㄧ","ˊ"],["犯","ㄈㄢ","ˋ"]]}]},"gotcha":{"t":"抓到了！","s":[{"w":"抓到","ch":[["抓","ㄓㄨㄚ",""],["到","ㄉㄠ","ˋ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"p":"！"}]},"here":{"t":"就是這裡！","s":[{"w":"就是","ch":[["就","ㄐㄧㄡ","ˋ"],["是","ㄕ","ˋ"]]},{"w":"這裡","ch":[["這","ㄓㄜ","ˋ"],["裡","ㄌㄧ","ˇ"]]},{"p":"！"}]},"ending":{"t":"看結局","s":[{"w":"看","ch":[["看","ㄎㄢ","ˋ"]]},{"w":"結局","ch":[["結","ㄐㄧㄝ","ˊ"],["局","ㄐㄩ","ˊ"]]}]},"celeGet":{"t":"獲得徽章","s":[{"w":"獲得","ch":[["獲","ㄏㄨㄛ","ˋ"],["得","ㄉㄜ","˙"]]},{"w":"徽章","ch":[["徽","ㄏㄨㄟ",""],["章","ㄓㄤ",""]]}]},"levelUp":{"t":"升級了！妳現在是","s":[{"w":"升級","ch":[["升","ㄕㄥ",""],["級","ㄐㄧ","ˊ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"p":"！"},{"w":"妳","ch":[["妳","ㄋㄧ","ˇ"]]},{"w":"現在","ch":[["現","ㄒㄧㄢ","ˋ"],["在","ㄗㄞ","ˋ"]]},{"w":"是","ch":[["是","ㄕ","ˋ"]]}]},"allDone":{"t":"全部案子都破了！去看神探證書吧！","s":[{"w":"全部","ch":[["全","ㄑㄩㄢ","ˊ"],["部","ㄅㄨ","ˋ"]]},{"w":"案子","ch":[["案","ㄢ","ˋ"],["子","ㄗ","˙"]]},{"w":"都","ch":[["都","ㄉㄡ",""]]},{"w":"破","ch":[["破","ㄆㄛ","ˋ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"p":"！"},{"w":"去","ch":[["去","ㄑㄩ","ˋ"]]},{"w":"看","ch":[["看","ㄎㄢ","ˋ"]]},{"w":"神探","ch":[["神","ㄕㄣ","ˊ"],["探","ㄊㄢ","ˋ"]]},{"w":"證書","ch":[["證","ㄓㄥ","ˋ"],["書","ㄕㄨ",""]]},{"w":"吧","ch":[["吧","ㄅㄚ","˙"]]},{"p":"！"}]},"backCases":{"t":"回案件簿","s":[{"w":"回","ch":[["回","ㄏㄨㄟ","ˊ"]]},{"w":"案件簿","ch":[["案","ㄢ","ˋ"],["件","ㄐㄧㄢ","ˋ"],["簿","ㄅㄛ","ˊ"]]}]},"seeCert":{"t":"看證書","s":[{"w":"看","ch":[["看","ㄎㄢ","ˋ"]]},{"w":"證書","ch":[["證","ㄓㄥ","ˋ"],["書","ㄕㄨ",""]]}]},"arcHow":{"t":"看上面的圖片，找到牌子上寫對注音的地鼠，快打牠！","s":[{"w":"看","ch":[["看","ㄎㄢ","ˋ"]]},{"w":"上面","ch":[["上","ㄕㄤ","ˋ"],["面","ㄇㄧㄢ","ˋ"]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"圖片","ch":[["圖","ㄊㄨ","ˊ"],["片","ㄆㄧㄢ","ˋ"]]},{"p":"，"},{"w":"找到","ch":[["找","ㄓㄠ","ˇ"],["到","ㄉㄠ","ˋ"]]},{"w":"牌子","ch":[["牌","ㄆㄞ","ˊ"],["子","ㄗ","˙"]]},{"w":"上","ch":[["上","ㄕㄤ","ˋ"]]},{"w":"寫","ch":[["寫","ㄒㄧㄝ","ˇ"]]},{"w":"對","ch":[["對","ㄉㄨㄟ","ˋ"]]},{"w":"注音","ch":[["注","ㄓㄨ","ˋ"],["音","ㄧㄣ",""]]},{"w":"的","ch":[["的","ㄉㄜ","˙"]]},{"w":"地鼠","ch":[["地","ㄉㄧ","ˋ"],["鼠","ㄕㄨ","ˇ"]]},{"p":"，"},{"w":"快","ch":[["快","ㄎㄨㄞ","ˋ"]]},{"w":"打","ch":[["打","ㄉㄚ","ˇ"]]},{"w":"牠","ch":[["牠","ㄊㄚ",""]]},{"p":"！"}]},"arcCombo":{"t":"連續打對會加分！","s":[{"w":"連續","ch":[["連","ㄌㄧㄢ","ˊ"],["續","ㄒㄩ","ˋ"]]},{"w":"打對","ch":[["打","ㄉㄚ","ˇ"],["對","ㄉㄨㄟ","ˋ"]]},{"w":"會","ch":[["會","ㄏㄨㄟ","ˋ"]]},{"w":"加分","ch":[["加","ㄐㄧㄚ",""],["分","ㄈㄣ",""]]},{"p":"！"}]},"best":{"t":"最高分","s":[{"w":"最高分","ch":[["最","ㄗㄨㄟ","ˋ"],["高","ㄍㄠ",""],["分","ㄈㄣ",""]]}]},"go":{"t":"開始！","s":[{"w":"開始","ch":[["開","ㄎㄞ",""],["始","ㄕ","ˇ"]]},{"p":"！"}]},"timeUp":{"t":"時間到！","s":[{"w":"時間到","ch":[["時","ㄕ","ˊ"],["間","ㄐㄧㄢ","ˋ"],["到","ㄉㄠ","ˋ"]]},{"p":"！"}]},"youGot":{"t":"妳打到","s":[{"w":"妳","ch":[["妳","ㄋㄧ","ˇ"]]},{"w":"打到","ch":[["打","ㄉㄚ","ˇ"],["到","ㄉㄠ","ˋ"]]}]},"pts":{"t":"分","s":[{"w":"分","ch":[["分","ㄈㄣ",""]]}]},"newRec":{"t":"新紀錄！","s":[{"w":"新","ch":[["新","ㄒㄧㄣ",""]]},{"w":"紀錄","ch":[["紀","ㄐㄧ","ˋ"],["錄","ㄌㄨ","ˋ"]]},{"p":"！"}]},"again":{"t":"再玩一次","s":[{"w":"再玩","ch":[["再","ㄗㄞ","ˋ"],["玩","ㄨㄢ","ˊ"]]},{"w":"一次","ch":[["一","ㄧ",""],["次","ㄘ","ˋ"]]}]},"home":{"t":"回首頁","s":[{"w":"回","ch":[["回","ㄏㄨㄟ","ˊ"]]},{"w":"首頁","ch":[["首","ㄕㄡ","ˇ"],["頁","ㄧㄝ","ˋ"]]}]},"guideTap":{"t":"點一下符號，聽它怎麼念。","s":[{"w":"點","ch":[["點","ㄉㄧㄢ","ˇ"]]},{"w":"一下","ch":[["一","ㄧ",""],["下","ㄒㄧㄚ","ˋ"]]},{"w":"符號","ch":[["符","ㄈㄨ","ˊ"],["號","ㄏㄠ","ˋ"]]},{"p":"，"},{"w":"聽","ch":[["聽","ㄊㄧㄥ",""]]},{"w":"它","ch":[["它","ㄊㄚ",""]]},{"w":"怎麼","ch":[["怎","ㄗㄣ","ˇ"],["麼","ㄇㄜ","˙"]]},{"w":"念","ch":[["念","ㄋㄧㄢ","ˋ"]]},{"p":"。"}]},"noBadge":{"t":"還沒拿到","s":[{"w":"還沒","ch":[["還","ㄏㄞ","ˊ"],["沒","ㄇㄟ","ˊ"]]},{"w":"拿到","ch":[["拿","ㄋㄚ","ˊ"],["到","ㄉㄠ","ˋ"]]}]},"level":{"t":"偵探等級","s":[{"w":"偵探","ch":[["偵","ㄓㄣ",""],["探","ㄊㄢ","ˋ"]]},{"w":"等級","ch":[["等","ㄉㄥ","ˇ"],["級","ㄐㄧ","ˊ"]]}]},"cert":{"t":"神探證書","s":[{"w":"神探","ch":[["神","ㄕㄣ","ˊ"],["探","ㄊㄢ","ˋ"]]},{"w":"證書","ch":[["證","ㄓㄥ","ˋ"],["書","ㄕㄨ",""]]}]},"certStamp":{"t":"神探認證","s":[{"w":"神探","ch":[["神","ㄕㄣ","ˊ"],["探","ㄊㄢ","ˋ"]]},{"w":"認證","ch":[["認","ㄖㄣ","ˋ"],["證","ㄓㄥ","ˋ"]]}]},"name":{"t":"以琴","s":[{"w":"以琴","ch":[["以","ㄧ","ˇ"],["琴","ㄑㄧㄣ","ˊ"]]}]},"helper":{"t":"安安","s":[{"w":"安安","ch":[["安","ㄢ",""],["安","ㄢ",""]]}]},"mode":{"t":"字","s":[{"w":"字","ch":[["字","ㄗ","ˋ"]]}]},"sayIt":{"t":"念念看","s":[{"w":"念念看","ch":[["念","ㄋㄧㄢ","ˋ"],["念","ㄋㄧㄢ","ˋ"],["看","ㄎㄢ","ˋ"]]}]},"listening":{"t":"我在聽……","s":[{"w":"我","ch":[["我","ㄨㄛ","ˇ"]]},{"w":"在","ch":[["在","ㄗㄞ","ˋ"]]},{"w":"聽","ch":[["聽","ㄊㄧㄥ",""]]},{"p":"…"},{"p":"…"}]},"vOk":{"t":"念對了！","s":[{"w":"念對","ch":[["念","ㄋㄧㄢ","ˋ"],["對","ㄉㄨㄟ","ˋ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"p":"！"}]},"vPerfect":{"t":"完美！","s":[{"w":"完美","ch":[["完","ㄨㄢ","ˊ"],["美","ㄇㄟ","ˇ"]]},{"p":"！"}]},"vTry":{"t":"再念一次看看！","s":[{"w":"再","ch":[["再","ㄗㄞ","ˋ"]]},{"w":"念","ch":[["念","ㄋㄧㄢ","ˋ"]]},{"w":"一次","ch":[["一","ㄧ",""],["次","ㄘ","ˋ"]]},{"w":"看看","ch":[["看","ㄎㄢ","ˋ"],["看","ㄎㄢ","ˋ"]]},{"p":"！"}]},"vHeard":{"t":"我聽到：","s":[{"w":"我","ch":[["我","ㄨㄛ","ˇ"]]},{"w":"聽到","ch":[["聽","ㄊㄧㄥ",""],["到","ㄉㄠ","ˋ"]]},{"p":"："}]},"vNoSpeech":{"t":"我沒聽到，大聲一點喔！","s":[{"w":"我","ch":[["我","ㄨㄛ","ˇ"]]},{"w":"沒","ch":[["沒","ㄇㄟ","ˊ"]]},{"w":"聽到","ch":[["聽","ㄊㄧㄥ",""],["到","ㄉㄠ","ˋ"]]},{"p":"，"},{"w":"大聲","ch":[["大","ㄉㄚ","ˋ"],["聲","ㄕㄥ",""]]},{"w":"一點","ch":[["一","ㄧ",""],["點","ㄉㄧㄢ","ˇ"]]},{"w":"喔","ch":[["喔","ㄛ",""]]},{"p":"！"}]},"vNext":{"t":"下一個","s":[{"w":"下","ch":[["下","ㄒㄧㄚ","ˋ"]]},{"w":"一個","ch":[["一","ㄧ",""],["個","ㄍㄜ","ˋ"]]}]},"vHow":{"t":"按麥克風，大聲念出這個詞！","s":[{"w":"按","ch":[["按","ㄢ","ˋ"]]},{"w":"麥克風","ch":[["麥","ㄇㄞ","ˋ"],["克","ㄎㄜ","ˋ"],["風","ㄈㄥ",""]]},{"p":"，"},{"w":"大聲","ch":[["大","ㄉㄚ","ˋ"],["聲","ㄕㄥ",""]]},{"w":"念出","ch":[["念","ㄋㄧㄢ","ˋ"],["出","ㄔㄨ",""]]},{"w":"這個","ch":[["這","ㄓㄜ","ˋ"],["個","ㄍㄜ","ˋ"]]},{"w":"詞","ch":[["詞","ㄘ","ˊ"]]},{"p":"！"}]},"vDone":{"t":"全部念完了！","s":[{"w":"全部","ch":[["全","ㄑㄩㄢ","ˊ"],["部","ㄅㄨ","ˋ"]]},{"w":"念完","ch":[["念","ㄋㄧㄢ","ˋ"],["完","ㄨㄢ","ˊ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"p":"！"}]},"vNoSR":{"t":"這台機器不能用麥克風練習，請用平板試試看。","s":[{"w":"這","ch":[["這","ㄓㄜ","ˋ"]]},{"w":"台","ch":[["台","ㄊㄞ","ˊ"]]},{"w":"機器","ch":[["機","ㄐㄧ",""],["器","ㄑㄧ","ˋ"]]},{"w":"不能","ch":[["不","ㄅㄨ","ˋ"],["能","ㄋㄥ","ˊ"]]},{"w":"用","ch":[["用","ㄩㄥ","ˋ"]]},{"w":"麥克風","ch":[["麥","ㄇㄞ","ˋ"],["克","ㄎㄜ","ˋ"],["風","ㄈㄥ",""]]},{"w":"練習","ch":[["練","ㄌㄧㄢ","ˋ"],["習","ㄒㄧ","ˊ"]]},{"p":"，"},{"w":"請","ch":[["請","ㄑㄧㄥ","ˇ"]]},{"w":"用","ch":[["用","ㄩㄥ","ˋ"]]},{"w":"平板","ch":[["平","ㄆㄧㄥ","ˊ"],["板","ㄅㄢ","ˇ"]]},{"w":"試試看","ch":[["試","ㄕ","ˋ"],["試","ㄕ","ˋ"],["看","ㄎㄢ","ˋ"]]},{"p":"。"}]},"vBlocked":{"t":"麥克風被擋住了，請爸爸幫忙打開。","s":[{"w":"麥克風","ch":[["麥","ㄇㄞ","ˋ"],["克","ㄎㄜ","ˋ"],["風","ㄈㄥ",""]]},{"w":"被","ch":[["被","ㄅㄟ","ˋ"]]},{"w":"擋住","ch":[["擋","ㄉㄤ","ˇ"],["住","ㄓㄨ","ˋ"]]},{"w":"了","ch":[["了","ㄌㄜ","˙"]]},{"p":"，"},{"w":"請","ch":[["請","ㄑㄧㄥ","ˇ"]]},{"w":"爸爸","ch":[["爸","ㄅㄚ","ˋ"],["爸","ㄅㄚ","˙"]]},{"w":"幫忙","ch":[["幫","ㄅㄤ",""],["忙","ㄇㄤ","ˊ"]]},{"w":"打開","ch":[["打","ㄉㄚ","ˇ"],["開","ㄎㄞ",""]]},{"p":"。"}]},"vGood":{"t":"沒關係，我們一起聽一次！","s":[{"w":"沒關係","ch":[["沒","ㄇㄟ","ˊ"],["關","ㄍㄨㄢ",""],["係","ㄒㄧ","ˋ"]]},{"p":"，"},{"w":"我們","ch":[["我","ㄨㄛ","ˇ"],["們","ㄇㄣ","˙"]]},{"w":"一起","ch":[["一","ㄧ",""],["起","ㄑㄧ","ˇ"]]},{"w":"聽","ch":[["聽","ㄊㄧㄥ",""]]},{"w":"一次","ch":[["一","ㄧ",""],["次","ㄘ","ˋ"]]},{"p":"！"}]},"progress":{"t":"第","s":[{"w":"第","ch":[["第","ㄉㄧ","ˋ"]]}]},"of":{"t":"個","s":[{"w":"個","ch":[["個","ㄍㄜ","ˋ"]]}]}},"bub":{"嘿咻！":{"t":"嘿咻！","s":[{"w":"嘿咻","ch":[["嘿","ㄏㄟ",""],["咻","ㄒㄧㄡ",""]]},{"p":"！"}]},"耶！":{"t":"耶！","s":[{"w":"耶","ch":[["耶","ㄧㄝ",""]]},{"p":"！"}]},"啵嗡～":{"t":"啵嗡～","s":[{"w":"啵嗡","ch":[["啵","ㄅㄛ",""],["嗡","ㄨㄥ",""]]},{"p":"～"}]},"嗨～":{"t":"嗨～","s":[{"w":"嗨","ch":[["嗨","ㄏㄞ",""]]},{"p":"～"}]},"啦啦啦～":{"t":"啦啦啦～","s":[{"w":"啦啦啦","ch":[["啦","ㄌㄚ","˙"],["啦","ㄌㄚ","˙"],["啦","ㄌㄚ","˙"]]},{"p":"～"}]},"扭扭～":{"t":"扭扭～","s":[{"w":"扭扭","ch":[["扭","ㄋㄧㄡ","ˇ"],["扭","ㄋㄧㄡ","ˇ"]]},{"p":"～"}]},"哎呀！":{"t":"哎呀！","s":[{"w":"哎呀","ch":[["哎","ㄞ",""],["呀","ㄧㄚ",""]]},{"p":"！"}]},"好怕……":{"t":"好怕……","s":[{"w":"好怕","ch":[["好","ㄏㄠ","ˇ"],["怕","ㄆㄚ","ˋ"]]},{"p":"…"},{"p":"…"}]},"嗚嗚～":{"t":"嗚嗚～","s":[{"w":"嗚嗚","ch":[["嗚","ㄨ",""],["嗚","ㄨ",""]]},{"p":"～"}]},"嗚……":{"t":"嗚……","s":[{"w":"嗚","ch":[["嗚","ㄨ",""]]},{"p":"…"},{"p":"…"}]},"轉～":{"t":"轉～","s":[{"w":"轉","ch":[["轉","ㄓㄨㄢ","ˋ"]]},{"p":"～"}]},"咻！":{"t":"咻！","s":[{"w":"咻","ch":[["咻","ㄒㄧㄡ",""]]},{"p":"！"}]},"登登！":{"t":"登登！","s":[{"w":"登登","ch":[["登","ㄉㄥ",""],["登","ㄉㄥ",""]]},{"p":"！"}]},"亮晶晶！":{"t":"亮晶晶！","s":[{"w":"亮晶晶","ch":[["亮","ㄌㄧㄤ","ˋ"],["晶","ㄐㄧㄥ",""],["晶","ㄐㄧㄥ",""]]},{"p":"！"}]},"哇～":{"t":"哇～","s":[{"w":"哇","ch":[["哇","ㄨㄚ",""]]},{"p":"～"}]},"哇！":{"t":"哇！","s":[{"w":"哇","ch":[["哇","ㄨㄚ",""]]},{"p":"！"}]},"嗯……":{"t":"嗯……","s":[{"w":"嗯","ch":[["嗯","ㄣ",""]]},{"p":"…"},{"p":"…"}]},"看我的！":{"t":"看我的！","s":[{"w":"看我的","ch":[["看","ㄎㄢ","ˋ"],["我","ㄨㄛ","ˇ"],["的","ㄉㄜ","˙"]]},{"p":"！"}]},"哈哈哈！":{"t":"哈哈哈！","s":[{"w":"哈哈哈","ch":[["哈","ㄏㄚ",""],["哈","ㄏㄚ",""],["哈","ㄏㄚ",""]]},{"p":"！"}]},"啊嗚！":{"t":"啊嗚！","s":[{"w":"啊嗚","ch":[["啊","ㄚ","˙"],["嗚","ㄨ",""]]},{"p":"！"}]},"好好吃！":{"t":"好好吃！","s":[{"w":"好好吃","ch":[["好","ㄏㄠ","ˇ"],["好","ㄏㄠ","ˇ"],["吃","ㄔ",""]]},{"p":"！"}]},"嗯嗯！":{"t":"嗯嗯！","s":[{"w":"嗯嗯","ch":[["嗯","ㄣ",""],["嗯","ㄣ",""]]},{"p":"！"}]},"乖乖～":{"t":"乖乖～","s":[{"w":"乖乖","ch":[["乖","ㄍㄨㄞ",""],["乖","ㄍㄨㄞ",""]]},{"p":"～"}]},"好愛你！":{"t":"好愛你！","s":[{"w":"好愛你","ch":[["好","ㄏㄠ","ˇ"],["愛","ㄞ","ˋ"],["你","ㄋㄧ","ˇ"]]},{"p":"！"}]},"在哪裡？":{"t":"在哪裡？","s":[{"w":"在哪裡","ch":[["在","ㄗㄞ","ˋ"],["哪","ㄋㄚ","ˇ"],["裡","ㄌㄧ","ˇ"]]},{"p":"？"}]},"噠噠噠！":{"t":"噠噠噠！","s":[{"w":"噠噠噠","ch":[["噠","ㄉㄚ",""],["噠","ㄉㄚ",""],["噠","ㄉㄚ",""]]},{"p":"！"}]},"咻～":{"t":"咻～","s":[{"w":"咻","ch":[["咻","ㄒㄧㄡ",""]]},{"p":"～"}]},"叭叭！":{"t":"叭叭！","s":[{"w":"叭叭","ch":[["叭","ㄅㄚ",""],["叭","ㄅㄚ",""]]},{"p":"！"}]},"飄～":{"t":"飄～","s":[{"w":"飄","ch":[["飄","ㄆㄧㄠ",""]]},{"p":"～"}]},"呼嚕～":{"t":"呼嚕～","s":[{"w":"呼嚕","ch":[["呼","ㄏㄨ",""],["嚕","ㄌㄨ",""]]},{"p":"～"}]},"嘿嘿～":{"t":"嘿嘿～","s":[{"w":"嘿嘿","ch":[["嘿","ㄏㄟ",""],["嘿","ㄏㄟ",""]]},{"p":"～"}]},"什麼！":{"t":"什麼！","s":[{"w":"什麼","ch":[["什","ㄕㄜ","ˊ"],["麼","ㄇㄜ","˙"]]},{"p":"！"}]},"抱抱！":{"t":"抱抱！","s":[{"w":"抱抱","ch":[["抱","ㄅㄠ","ˋ"],["抱","ㄅㄠ","ˋ"]]},{"p":"！"}]},"嘻嘻～":{"t":"嘻嘻～","s":[{"w":"嘻嘻","ch":[["嘻","ㄒㄧ",""],["嘻","ㄒㄧ",""]]},{"p":"～"}]},"嘰～":{"t":"嘰～","s":[{"w":"嘰","ch":[["嘰","ㄐㄧ",""]]},{"p":"～"}]},"好癢！":{"t":"好癢！","s":[{"w":"好癢","ch":[["好","ㄏㄠ","ˇ"],["癢","ㄧㄤ","ˇ"]]},{"p":"！"}]},"轉圈圈！":{"t":"轉圈圈！","s":[{"w":"轉圈圈","ch":[["轉","ㄓㄨㄢ","ˋ"],["圈","ㄑㄩㄢ",""],["圈","ㄑㄩㄢ",""]]},{"p":"！"}]},"嘻嘻嘻！":{"t":"嘻嘻嘻！","s":[{"w":"嘻嘻嘻","ch":[["嘻","ㄒㄧ",""],["嘻","ㄒㄧ",""],["嘻","ㄒㄧ",""]]},{"p":"！"}]},"嘿！":{"t":"嘿！","s":[{"w":"嘿","ch":[["嘿","ㄏㄟ",""]]},{"p":"！"}]},"扭一扭～":{"t":"扭一扭～","s":[{"w":"扭一扭","ch":[["扭","ㄋㄧㄡ","ˇ"],["一","ㄧ",""],["扭","ㄋㄧㄡ","ˇ"]]},{"p":"～"}]},"叮咚！":{"t":"叮咚！","s":[{"w":"叮咚","ch":[["叮","ㄉㄧㄥ",""],["咚","ㄉㄨㄥ",""]]},{"p":"！"}]},"空空！":{"t":"空空！","s":[{"w":"空空","ch":[["空","ㄎㄨㄥ",""],["空","ㄎㄨㄥ",""]]},{"p":"！"}]},"汪汪汪！":{"t":"汪汪汪！","s":[{"w":"汪汪汪","ch":[["汪","ㄨㄤ",""],["汪","ㄨㄤ",""],["汪","ㄨㄤ",""]]},{"p":"！"}]},"轉呀轉～":{"t":"轉呀轉～","s":[{"w":"轉呀轉","ch":[["轉","ㄓㄨㄢ","ˋ"],["呀","ㄧㄚ","˙"],["轉","ㄓㄨㄢ","ˋ"]]},{"p":"～"}]},"好大！":{"t":"好大！","s":[{"w":"好大","ch":[["好","ㄏㄠ","ˇ"],["大","ㄉㄚ","ˋ"]]},{"p":"！"}]},"叮！":{"t":"叮！","s":[{"w":"叮","ch":[["叮","ㄉㄧㄥ",""]]},{"p":"！"}]},"驚喜！":{"t":"驚喜！","s":[{"w":"驚喜","ch":[["驚","ㄐㄧㄥ",""],["喜","ㄒㄧ","ˇ"]]},{"p":"！"}]},"好吃！":{"t":"好吃！","s":[{"w":"好吃","ch":[["好","ㄏㄠ","ˇ"],["吃","ㄔ",""]]},{"p":"！"}]},"不在這裡！":{"t":"不在這裡！","s":[{"w":"不在這裡","ch":[["不","ㄅㄨ","ˋ"],["在","ㄗㄞ","ˋ"],["這","ㄓㄜ","ˋ"],["裡","ㄌㄧ","ˇ"]]},{"p":"！"}]},"不是我啦！":{"t":"不是我啦！","s":[{"w":"不是我啦","ch":[["不","ㄅㄨ","ˋ"],["是","ㄕ","ˋ"],["我","ㄨㄛ","ˇ"],["啦","ㄌㄚ","˙"]]},{"p":"！"}]},"被發現了！":{"t":"被發現了！","s":[{"w":"被發現了","ch":[["被","ㄅㄟ","ˋ"],["發","ㄈㄚ",""],["現","ㄒㄧㄢ","ˋ"],["了","ㄌㄜ","˙"]]},{"p":"！"}]},"念對了！":{"t":"念對了！","s":[{"w":"念對了","ch":[["念","ㄋㄧㄢ","ˋ"],["對","ㄉㄨㄟ","ˋ"],["了","ㄌㄜ","˙"]]},{"p":"！"}]},"好棒！":{"t":"好棒！","s":[{"w":"好棒","ch":[["好","ㄏㄠ","ˇ"],["棒","ㄅㄤ","ˋ"]]},{"p":"！"}]}}};
+const KEY = 'hu-detective-v1';
+const RANKS = [[0,'見習探長'],[25,'小探長'],[60,'金牌探長'],[100,'超級神探'],[140,'傳說神探']];
+const SYM = [
+ ['ㄅ','玻','玻璃','🪟'],['ㄆ','坡','葡萄','🍇'],['ㄇ','摸','貓','🐱'],['ㄈ','佛','飛機','✈️'],
+ ['ㄉ','得','大象','🐘'],['ㄊ','特','兔子','🐰'],['ㄋ','呢','牛','🐮'],['ㄌ','勒','老虎','🐯'],
+ ['ㄍ','哥','狗','🐶'],['ㄎ','科','恐龍','🦖'],['ㄏ','喝','河馬','🦛'],
+ ['ㄐ','基','橘子','🍊'],['ㄑ','七','汽車','🚗'],['ㄒ','西','西瓜','🍉'],
+ ['ㄓ','知','蜘蛛','🕷️'],['ㄔ','吃','長頸鹿','🦒'],['ㄕ','詩','獅子','🦁'],['ㄖ','日','熱狗','🌭'],
+ ['ㄗ','資','足球','⚽'],['ㄘ','詞','草莓','🍓'],['ㄙ','思','雨傘','☂️'],
+ ['ㄧ','衣','椅子','🪑'],['ㄨ','烏','烏龜','🐢'],['ㄩ','魚','金魚','🐠'],
+ ['ㄚ','阿','鴨子','🦆'],['ㄛ','喔','婆婆','👵'],['ㄜ','鵝','天鵝','🦢'],['ㄝ','','椰子','🥥'],
+ ['ㄞ','哀','愛心','❤️'],['ㄟ','誒','杯子','🥤'],['ㄠ','凹','帽子','🧢'],['ㄡ','歐','猴子','🐒'],
+ ['ㄢ','安','雞蛋','🥚'],['ㄣ','恩','大門','🚪'],['ㄤ','骯','糖果','🍬'],['ㄥ','','燈','💡'],['ㄦ','兒','耳朵','👂']
+];
+const REP = Object.fromEntries(SYM.map(s=>[s[0], s[1]||s[2]]));
+Object.assign(REP,{'ㄧㄚ':'鴨','ㄧㄝ':'耶','ㄧㄠ':'腰','ㄧㄡ':'優','ㄧㄢ':'煙','ㄧㄣ':'音','ㄧㄤ':'央','ㄧㄥ':'英',
+ 'ㄨㄚ':'蛙','ㄨㄛ':'窩','ㄨㄞ':'歪','ㄨㄟ':'威','ㄨㄢ':'彎','ㄨㄣ':'溫','ㄨㄤ':'汪','ㄨㄥ':'翁','ㄩㄝ':'約','ㄩㄢ':'冤','ㄩㄣ':'暈','ㄩㄥ':'擁'});
+const TONES = [[1,'ˉ','一聲','媽'],[2,'ˊ','二聲','麻'],[3,'ˇ','三聲','馬'],[4,'ˋ','四聲','罵'],[0,'˙','輕聲','嗎']];
+const MARK2NUM = {'':1,'ˊ':2,'ˇ':3,'ˋ':4,'˙':0};
+
+/* ---------- state ---------- */
+function load(){ try{ const s = JSON.parse(localStorage.getItem(KEY)); if(s && s.stars){ if(s.name==='小偵探') s.name='以琴'; return s; } }catch(e){} return null; }
+const S = Object.assign({name:'以琴', stars:{}, done:{}, voice:'', rate:0.85, zyOnly:false, auto:true}, load()||{});
+if(!S.v2){ S.auto=false; S.v2=true; }
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} }
+const total = ()=>Object.values(S.stars).reduce((a,b)=>a+b,0);
+const rankIdx = t=>{ let r=0; RANKS.forEach((x,i)=>{ if(t>=x[0]) r=i; }); return r; };
+const $ = s=>document.querySelector(s);
+const main = $('#main');
+function esc(s){ return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+/* ---------- zhuyin rendering ---------- */
+function U(c, o={}){
+  const [h, zy, tn] = c; const syms=[...zy]; const n=syms.length;
+  if (o.noZy) return `<span class="u"><span class="hz">${h}</span></span>`;
+  let col;
+  if (o.slots){
+    const sl=o.slots;
+    col = `<b class="slot ${sl.ini?'fill':''}">${sl.ini||'?'}</b>` +
+          (sl.fin ? [...sl.fin].map(x=>`<b class="slot fill">${x}</b>`).join('') : `<b class="slot">?</b>`) +
+          `<i class="tslot ${sl.tone!=null?'fill':''}">${sl.tone!=null?(sl.tone||'ˉ'):'?'}</i>`;
+  } else {
+    let t='';
+    if (o.hideTone) t=`<i class="tq">?</i>`;
+    else if (tn==='˙') t=`<i class="lt">˙</i>`;
+    else if (tn) t=`<i class="tn" style="--n:${n}">${tn}</i>`;
+    col = syms.map(s=>`<b>${s}</b>`).join('') + t;
+  }
+  return `<span class="u${o.tgt?' tgt':''}"><span class="hz">${h}</span><span class="zy">${col}</span></span>`;
+}
+function A(a, o={}){
+  if(!a) return '';
+  // keep punctuation glued to its word so lines never start with ，。！？
+  const out=[]; let pre='';
+  a.s.forEach((sg,si)=>{
+    if (sg.p!=null){ const h=`<span class="pn">${esc(sg.p)}</span>`;
+      if ('「『（'.includes(sg.p) || !out.length) pre+=h; else out[out.length-1]+=h; }
+    else { out.push(pre + `<span class="wd" data-si="${si}" data-say="${esc(sg.w)}">${sg.ch.map((c,ci)=>U(c, o.unit?o.unit(si,ci):(o.noZy?{noZy:true}:{}))).join('')}</span>`); pre=''; }
+  });
+  if (pre) out.push(pre);
+  return `<span class="ann ${o.cls||''}">` + out.map(x=>`<span class="ck">${x}</span>`).join('') + '</span>';
+}
+const W = k => D.w[k];
+const T = (k, cls='') => A(D.ui[k], {cls:'keephz '+cls});
+const nameHTML = () => S.name==='以琴' ? T('name') : esc(S.name);
+const rankHTML = i => A(W(RANKS[i][1]),{cls:'keephz'}) || RANKS[i][1];
+const BUB = t => D.bub[t] ? A(D.bub[t],{cls:'keephz'}) : esc(t);
+
+/* ---------- speech ---------- */
+const TTS = 'speechSynthesis' in window ? window.speechSynthesis : null;
+let voices=[], voice=null;
+function isZh(v){ const l=(v.lang||'').replace('_','-').toLowerCase(); return l.startsWith('zh') || l.startsWith('cmn'); }
+function isCanto(v){ const l=(v.lang||'').replace('_','-').toLowerCase(); return l.includes('hk')||l.includes('yue')||/粵|canton|hong kong|sin-ji/i.test(v.name); }
+function zhVoices(){ return voices.filter(v=>isZh(v)&&!isCanto(v)); }
+function chooseVoice(){
+  const zs = zhVoices();
+  voice = zs.find(v=>v.name===S.voice)
+    || zs.find(v=>/tw|taiwan|臺灣|台灣|國語/i.test(v.lang+' '+v.name))
+    || zs.find(v=>/cn|hans|普通话|mandarin/i.test(v.lang+' '+v.name)) || zs[0] || null;
+  voiceNote();
+}
+function loadVoices(){ if(!TTS) return; voices = TTS.getVoices(); chooseVoice(); }
+if (TTS){ loadVoices(); TTS.onvoiceschanged = loadVoices; }
+function voiceNote(){
+  const n=$('#vnote');
+  if(!TTS){ n.hidden=false; n.innerHTML='這個瀏覽器不能發音。請用 <b>Safari（iPad／iPhone）</b>或 <b>Chrome</b> 開啟。'; return; }
+  if(voices.length && !zhVoices().length){
+    n.hidden=false;
+    n.innerHTML='找不到<b>中文語音</b>，發音功能需要它。<br>iPad／iPhone：設定 → 輔助使用 → 朗讀內容 → 聲音 → 中文（台灣）→ 下載一個聲音。<br>Android：設定 → 文字轉語音 → 安裝 Google 語音的「國語（台灣）」。<br>電腦：用 Chrome 或 Edge 開啟。';
+  } else n.hidden=true;
+}
+function utter(text, rate){
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = voice ? voice.lang : 'zh-TW'; if (voice) u.voice = voice;
+  u.rate = rate || S.rate; u.pitch = 1.05;
+  return u;
+}
+let hlEls=[];
+function clearHl(){ hlEls.forEach(e=>e.classList.remove('on')); hlEls=[]; }
+let seqId=0;
+function stopSpeak(){ seqId++; if(TTS) TTS.cancel(); clearHl(); }
+// items: [{text, el?, rate?}]; done() runs once when the last item finishes (with a timer fallback)
+function speakSeq(items, done){
+  stopSpeak(); const id=++seqId; let fired=false, tm=null;
+  const fire=()=>{ if(fired||id!==seqId) return; fired=true; clearTimeout(tm); if(done) done(); };
+  if(done){ const chars=items.reduce((a,it)=>a+(it.text||'').length,0); tm=setTimeout(fire, chars*330/S.rate + (TTS?2600:700)); }
+  if(!TTS) return; if(TTS.paused) TTS.resume();
+  const list=items.filter(it=>it.text);
+  list.forEach((it,k)=>{
+    const u = utter(it.text, it.rate);
+    u.onstart = ()=>{ clearHl(); if(it.el){ (Array.isArray(it.el)?it.el:[it.el]).forEach(e=>{e.classList.add('on'); hlEls.push(e);}); } };
+    u.onend = ()=>{ if(it.el) clearHl(); if(k===list.length-1) setTimeout(fire,150); };
+    TTS.speak(u);
+  });
+}
+const speak = (text, el, done) => speakSeq([{text, el}], done);
+function speakWords(container, done){
+  const ws=[...container.querySelectorAll('.wd')];
+  speakSeq(ws.map(el=>({text:el.dataset.say, el, rate:Math.max(.6,S.rate-.1)})), done);
+}
+function playSym(z){
+  const s = SYM.find(x=>x[0]===z);
+  if (s) speakSeq([{text: s[1] ? `${s[1]}，${s[2]}` : s[2]}]);
+  else speak(REP[z]||z);
+}
+
+/* ---------- sound fx ---------- */
+let AC=null;
+function ac(){ try{ if(!AC) AC=new (window.AudioContext||window.webkitAudioContext)(); if(AC.state==='suspended') AC.resume(); }catch(e){} return AC; }
+function beep(f, t0, dur, type='sine', vol=.14){
+  const a=ac(); if(!a) return; const o=a.createOscillator(), g=a.createGain();
+  o.type=type; o.frequency.value=f; o.connect(g); g.connect(a.destination);
+  const t=a.currentTime+t0; g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(vol,t+.02); g.gain.exponentialRampToValueAtTime(.001,t+dur);
+  o.start(t); o.stop(t+dur+.05);
+}
+const fx = {
+  ding(){ beep(880,0,.25); beep(1320,.1,.35); },
+  wrong(){ beep(240,0,.18,'triangle',.12); beep(200,.12,.22,'triangle',.12); },
+  pop(){ beep(700,0,.12,'sine',.1); },
+  fanfare(){ [523,659,784,1047,784,1047].forEach((f,i)=>beep(f,i*.12,.3,'triangle',.12)); },
+  stamp(){ beep(90,0,.25,'sine',.35); beep(140,0,.1,'square',.06); }
+};
+
+function sweep(f1,f2,dur,type='sine',vol=.12,t0=0){
+  const a=ac(); if(!a) return; const o=a.createOscillator(), g=a.createGain(); o.type=type; o.connect(g); g.connect(a.destination);
+  const t=a.currentTime+t0; o.frequency.setValueAtTime(f1,t); o.frequency.exponentialRampToValueAtTime(f2,t+dur);
+  g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(vol,t+.015); g.gain.exponentialRampToValueAtTime(.001,t+dur); o.start(t); o.stop(t+dur+.05);
+}
+function noise(dur,f1,f2,vol=.12,t0=0){
+  const a=ac(); if(!a) return; const n=a.createBufferSource(), buf=a.createBuffer(1,a.sampleRate*dur,a.sampleRate), d=buf.getChannelData(0);
+  for(let i=0;i<d.length;i++) d[i]=Math.random()*2-1; n.buffer=buf;
+  const f=a.createBiquadFilter(); f.type='bandpass'; f.Q.value=1.2; const g=a.createGain(); n.connect(f); f.connect(g); g.connect(a.destination);
+  const t=a.currentTime+t0; f.frequency.setValueAtTime(f1,t); f.frequency.exponentialRampToValueAtTime(f2,t+dur);
+  g.gain.setValueAtTime(vol,t); g.gain.exponentialRampToValueAtTime(.001,t+dur); n.start(t); n.stop(t+dur);
+}
+function sfx(k){
+  switch(k){
+    case 'hop': sweep(320,760,.16); break;
+    case 'boing': sweep(160,560,.12,'sine',.16); sweep(560,240,.3,'sine',.12,.12); break;
+    case 'whoosh': noise(.45,300,2400,.18); break;
+    case 'poof': noise(.3,1800,300,.2); beep(900,.05,.08,'sine',.08); break;
+    case 'honk': beep(415,0,.12,'square',.07); beep(415,.18,.14,'square',.07); break;
+    case 'cry': sweep(700,380,.35,'triangle',.1); sweep(650,340,.4,'triangle',.1,.4); break;
+    case 'laugh': [0,.1,.2,.3].forEach((t,i)=>beep(i%2?880:700,t,.08,'square',.05)); break;
+    case 'twinkle': [1320,1760,2093].forEach((f,i)=>beep(f,i*.07,.18,'sine',.07)); break;
+    case 'shock': sweep(300,1200,.18,'square',.05); beep(1568,.2,.25,'sine',.1); break;
+    case 'snore': sweep(140,90,.7,'sawtooth',.03); break;
+    case 'squeak': sweep(1100,1900,.12,'sine',.08); break;
+    case 'wobble': [0,.08,.16,.24].forEach((t,i)=>beep(i%2?340:290,t,.08,'triangle',.08)); break;
+    case 'hmm': beep(220,0,.14,'sine',.12); beep(262,.16,.18,'sine',.12); break;
+    case 'chomp': [0,.14,.28].forEach(t=>noise(.06,900,500,.2,t)); break;
+    case 'patter': for(let i=0;i<6;i++) beep(900+(i%2)*120,i*.06,.03,'triangle',.08); break;
+    case 'skid': noise(.4,3000,1200,.12); break;
+  }
+}
+
+/* ---------- ui helpers ---------- */
+function toast(html){ const t=document.createElement('div'); t.className='toast'; t.innerHTML=html; document.body.appendChild(t); setTimeout(()=>t.remove(),1500); }
+function refreshBar(){ $('#starpill').textContent='⭐ '+total(); $('#barname').innerHTML='🕵️ '+nameHTML()+'　'+rankHTML(rankIdx(total())); }
+function setMode(zy){ S.zyOnly=zy; save(); document.body.classList.toggle('zyonly',zy); $('#mBoth').setAttribute('aria-pressed',!zy); $('#mZy').setAttribute('aria-pressed',zy); }
+$('#mBoth').onclick=()=>setMode(false); $('#mZy').onclick=()=>setMode(true);
+function confetti(){
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const c=$('#confetti'); c.hidden=false; const x=c.getContext('2d'); const W_=c.width=innerWidth, H=c.height=innerHeight;
+  const cols=['#EA9A3B','#C8342B','#2F8F57','#FFE08A','#8FC4A5','#fff'];
+  const ps=Array.from({length:140},()=>({x:Math.random()*W_, y:-20-Math.random()*H*.5, vx:(Math.random()-.5)*3, vy:2+Math.random()*4, r:Math.random()*6.28, s:6+Math.random()*8, c:cols[Math.random()*cols.length|0]}));
+  let f=0; (function tick(){ x.clearRect(0,0,W_,H); ps.forEach(p=>{p.x+=p.vx; p.y+=p.vy; p.r+=.1; x.save(); x.translate(p.x,p.y); x.rotate(p.r); x.fillStyle=p.c; x.fillRect(-p.s/2,-p.s/4,p.s,p.s/2); x.restore();}); if(++f<150) requestAnimationFrame(tick); else c.hidden=true; })();
+}
+
+/* global taps: word speak, say buttons, navigation */
+let onListen=null;
+document.addEventListener('click', e=>{
+  ac();
+  const go=e.target.closest('[data-go]'); if(go){ nav(go.dataset.go); return; }
+  const sb=e.target.closest('.say[data-t]');
+  if(sb){ if(sb.closest('.lis') && onListen) onListen(); speak(sb.dataset.t); return; }
+  const wd=e.target.closest('.wd');
+  if(wd && !wd.closest('.nospeak') && !wd.closest('button')){ if(wd.closest('.lis') && onListen) onListen(); speak(wd.dataset.say, wd); }
+});
+
+/* ---------- 以琴探長 & 安安小幫手 ---------- */
+const MASCOT = `<svg viewBox="0 0 320 262" role="img" aria-label="以琴探長和安安小幫手">
+ <!-- 安安 (boy) -->
+ <g>
+  <path d="M100 204 L132 204 L134 240 L112 240 L108 222 L104 240 L76 240 L78 204 Z" fill="#C9CACC"/>
+  <path d="M84 216 L84 238 M126 216 L126 238" stroke="#B3B4B6" stroke-width="2"/>
+  <rect x="70" y="237" width="34" height="14" rx="7" fill="#E4D7C1"/><rect x="106" y="237" width="34" height="14" rx="7" fill="#E4D7C1"/>
+  <path d="M76 243 L96 243 M112 243 L132 243" stroke="#4E7FC4" stroke-width="3" stroke-linecap="round"/>
+  <path d="M66 152 Q105 134 144 152 L156 194 L140 198 L136 178 L136 208 L74 208 L74 178 L70 198 L54 194 Z" fill="#A6E3CB"/>
+  <path d="M74 204 L136 204" stroke="#8FD0B6" stroke-width="5"/>
+  <path d="M96 150 Q105 158 114 150" stroke="#8FD0B6" stroke-width="4" fill="none"/>
+  <circle cx="148" cy="197" r="8" fill="#F6CFB3"/>
+  <g transform="rotate(-10 150 182)"><rect x="140" y="166" width="30" height="36" rx="3" fill="#E9B85C"/><rect x="144" y="170" width="23" height="28" rx="2" fill="#FFF8E6"/><path d="M147 177 H163 M147 183 H163 M147 189 H158" stroke="#9BBFD6" stroke-width="2"/></g>
+  <circle cx="60" cy="196" r="8" fill="#F6CFB3"/>
+  <circle cx="58" cy="106" r="9" fill="#F3C6A6"/><circle cx="152" cy="106" r="9" fill="#F3C6A6"/>
+  <circle cx="105" cy="100" r="47" fill="#F8D6BC"/>
+  <path d="M57 104 Q52 48 105 46 Q158 48 153 104 Q148 84 136 78 L141 66 L125 73 L121 58 L110 71 L98 57 L94 72 L78 63 L81 79 Q64 86 57 104 Z" fill="#33241A"/>
+  <path d="M100 50 Q108 36 116 44" stroke="#33241A" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <ellipse cx="87" cy="106" rx="7" ry="9" fill="#2A1B12"/><ellipse cx="123" cy="106" rx="7" ry="9" fill="#2A1B12"/>
+  <circle cx="90" cy="102" r="3" fill="#fff"/><circle cx="126" cy="102" r="3" fill="#fff"/>
+  <ellipse cx="77" cy="122" rx="8" ry="5" fill="#F4A7A0" opacity=".6"/><ellipse cx="133" cy="122" rx="8" ry="5" fill="#F4A7A0" opacity=".6"/>
+  <path d="M92 124 Q105 142 118 124 Z" fill="#B8453F"/><path d="M96 125 H114" stroke="#fff" stroke-width="3"/>
+ </g>
+ <!-- 以琴 (girl, straight bangs, little princess) -->
+ <g>
+  <path d="M158 102 Q154 36 214 36 Q274 36 270 102 L272 150 Q260 160 248 148 L248 118 L180 118 L180 148 Q168 160 156 150 Z" fill="#3A281D"/>
+  <rect x="190" y="222" width="14" height="20" fill="#F7C9D6"/><rect x="224" y="222" width="14" height="20" fill="#F7C9D6"/>
+  <ellipse cx="196" cy="246" rx="12" ry="6" fill="#fff" stroke="#E2DED6" stroke-width="2"/><ellipse cx="232" cy="246" rx="12" ry="6" fill="#fff" stroke="#E2DED6" stroke-width="2"/>
+  <path d="M176 152 Q214 136 252 152 L262 180 L248 184 L246 172 L246 200 L182 200 L182 172 L180 184 L166 180 Z" fill="#FFFFFF" stroke="#E8E4DC" stroke-width="1.5"/>
+  <path d="M184 188 L244 188 L250 224 L218 224 L214 208 L210 224 L178 224 Z" fill="#A9C6E8"/>
+  <rect x="192" y="160" width="44" height="34" rx="6" fill="#A9C6E8"/>
+  <path d="M194 162 L186 150 M234 162 L242 150" stroke="#A9C6E8" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="196" cy="166" r="2.5" fill="#F4C542"/><circle cx="232" cy="166" r="2.5" fill="#F4C542"/>
+  <rect x="202" y="172" width="24" height="17" rx="5" fill="#fff"/>
+  <path d="M205 174 L207 169 L210 173 M218 173 L221 169 L223 174" stroke="#fff" stroke-width="3" fill="#fff"/>
+  <circle cx="210" cy="180" r="1.3" fill="#555"/><circle cx="218" cy="180" r="1.3" fill="#555"/><ellipse cx="214" cy="184" rx="2" ry="1" fill="#F29BB0"/>
+  <circle cx="170" cy="182" r="8" fill="#F6CFB3"/>
+  <path d="M252 158 L270 140" stroke="#fff" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="272" cy="138" r="8" fill="#F6CFB3"/>
+  <path d="M276 132 L290 112" stroke="#8A5A2B" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="298" cy="98" r="17" fill="rgba(190,230,245,.6)" stroke="#8A5A2B" stroke-width="6"/>
+  <path d="M290 92 Q294 87 300 87" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <circle cx="214" cy="98" r="47" fill="#F9DAC3"/>
+  <path d="M166 90 Q162 42 214 41 Q266 42 262 90 Z" fill="#3A281D"/>
+  <path d="M186 60 V90 M200 52 V90 M214 50 V90 M228 52 V90 M242 60 V90" stroke="#4E382A" stroke-width="2"/>
+  <path d="M166 90 Q164 104 170 118 L174 92 Z M262 90 Q264 104 258 118 L254 92 Z" fill="#3A281D"/>
+  <path d="M192 44 L197 28 L205 39 L214 22 L223 39 L231 28 L236 44 Z" fill="#F4C542" stroke="#D99E1E" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="214" cy="33" r="3.5" fill="#F27BA0"/><circle cx="198" cy="37" r="2" fill="#7CC6F2"/><circle cx="230" cy="37" r="2" fill="#7CC6F2"/>
+  <ellipse cx="196" cy="106" rx="8" ry="10" fill="#2A1B12"/><ellipse cx="232" cy="106" rx="8" ry="10" fill="#2A1B12"/>
+  <circle cx="199" cy="101" r="3.4" fill="#fff"/><circle cx="235" cy="101" r="3.4" fill="#fff"/><circle cx="193" cy="110" r="1.5" fill="#fff"/><circle cx="229" cy="110" r="1.5" fill="#fff"/>
+  <path d="M187 95 L184 92 M191 94 L189 90 M241 95 L244 92 M237 94 L239 90" stroke="#2A1B12" stroke-width="2" stroke-linecap="round"/>
+  <ellipse cx="185" cy="122" rx="9" ry="5.5" fill="#F59AA6" opacity=".6"/><ellipse cx="243" cy="122" rx="9" ry="5.5" fill="#F59AA6" opacity=".6"/>
+  <path d="M203 122 Q214 138 225 122 Z" fill="#C24A55"/><path d="M207 123 H221" stroke="#fff" stroke-width="2.5"/>
+  <path d="M168 78 Q160 70 164 62" stroke="#F27BA0" stroke-width="0"/>
+ </g>
+</svg>`;
+
+const ANAN = `<svg viewBox="46 20 128 236" aria-label="安安"><g>
+  <path d="M100 204 L132 204 L134 240 L112 240 L108 222 L104 240 L76 240 L78 204 Z" fill="#C9CACC"/>
+  <path d="M84 216 L84 238 M126 216 L126 238" stroke="#B3B4B6" stroke-width="2"/>
+  <rect x="70" y="237" width="34" height="14" rx="7" fill="#E4D7C1"/><rect x="106" y="237" width="34" height="14" rx="7" fill="#E4D7C1"/>
+  <path d="M76 243 L96 243 M112 243 L132 243" stroke="#4E7FC4" stroke-width="3" stroke-linecap="round"/>
+  <path d="M66 152 Q105 134 144 152 L156 194 L140 198 L136 178 L136 208 L74 208 L74 178 L70 198 L54 194 Z" fill="#A6E3CB"/>
+  <path d="M74 204 L136 204" stroke="#8FD0B6" stroke-width="5"/>
+  <path d="M96 150 Q105 158 114 150" stroke="#8FD0B6" stroke-width="4" fill="none"/>
+  <circle cx="148" cy="197" r="8" fill="#F6CFB3"/>
+  <g transform="rotate(-10 150 182)"><rect x="140" y="166" width="30" height="36" rx="3" fill="#E9B85C"/><rect x="144" y="170" width="23" height="28" rx="2" fill="#FFF8E6"/><path d="M147 177 H163 M147 183 H163 M147 189 H158" stroke="#9BBFD6" stroke-width="2"/></g>
+  <circle cx="60" cy="196" r="8" fill="#F6CFB3"/>
+  <circle cx="58" cy="106" r="9" fill="#F3C6A6"/><circle cx="152" cy="106" r="9" fill="#F3C6A6"/>
+  <circle cx="105" cy="100" r="47" fill="#F8D6BC"/>
+  <path d="M57 104 Q52 48 105 46 Q158 48 153 104 Q148 84 136 78 L141 66 L125 73 L121 58 L110 71 L98 57 L94 72 L78 63 L81 79 Q64 86 57 104 Z" fill="#33241A"/>
+  <path d="M100 50 Q108 36 116 44" stroke="#33241A" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <ellipse cx="87" cy="106" rx="7" ry="9" fill="#2A1B12"/><ellipse cx="123" cy="106" rx="7" ry="9" fill="#2A1B12"/>
+  <circle cx="90" cy="102" r="3" fill="#fff"/><circle cx="126" cy="102" r="3" fill="#fff"/>
+  <ellipse cx="77" cy="122" rx="8" ry="5" fill="#F4A7A0" opacity=".6"/><ellipse cx="133" cy="122" rx="8" ry="5" fill="#F4A7A0" opacity=".6"/>
+  <path d="M92 124 Q105 142 118 124 Z" fill="#B8453F"/><path d="M96 125 H114" stroke="#fff" stroke-width="3"/>
+ </g></svg>`;
+const YIQIN = `<svg viewBox="150 14 170 240" aria-label="以琴探長"><g>
+  <path d="M158 102 Q154 36 214 36 Q274 36 270 102 L272 150 Q260 160 248 148 L248 118 L180 118 L180 148 Q168 160 156 150 Z" fill="#3A281D"/>
+  <rect x="190" y="222" width="14" height="20" fill="#F7C9D6"/><rect x="224" y="222" width="14" height="20" fill="#F7C9D6"/>
+  <ellipse cx="196" cy="246" rx="12" ry="6" fill="#fff" stroke="#E2DED6" stroke-width="2"/><ellipse cx="232" cy="246" rx="12" ry="6" fill="#fff" stroke="#E2DED6" stroke-width="2"/>
+  <path d="M176 152 Q214 136 252 152 L262 180 L248 184 L246 172 L246 200 L182 200 L182 172 L180 184 L166 180 Z" fill="#FFFFFF" stroke="#E8E4DC" stroke-width="1.5"/>
+  <path d="M184 188 L244 188 L250 224 L218 224 L214 208 L210 224 L178 224 Z" fill="#A9C6E8"/>
+  <rect x="192" y="160" width="44" height="34" rx="6" fill="#A9C6E8"/>
+  <path d="M194 162 L186 150 M234 162 L242 150" stroke="#A9C6E8" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="196" cy="166" r="2.5" fill="#F4C542"/><circle cx="232" cy="166" r="2.5" fill="#F4C542"/>
+  <rect x="202" y="172" width="24" height="17" rx="5" fill="#fff"/>
+  <path d="M205 174 L207 169 L210 173 M218 173 L221 169 L223 174" stroke="#fff" stroke-width="3" fill="#fff"/>
+  <circle cx="210" cy="180" r="1.3" fill="#555"/><circle cx="218" cy="180" r="1.3" fill="#555"/><ellipse cx="214" cy="184" rx="2" ry="1" fill="#F29BB0"/>
+  <circle cx="170" cy="182" r="8" fill="#F6CFB3"/>
+  <path d="M252 158 L270 140" stroke="#fff" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="272" cy="138" r="8" fill="#F6CFB3"/>
+  <path d="M276 132 L290 112" stroke="#8A5A2B" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="298" cy="98" r="17" fill="rgba(190,230,245,.6)" stroke="#8A5A2B" stroke-width="6"/>
+  <path d="M290 92 Q294 87 300 87" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <circle cx="214" cy="98" r="47" fill="#F9DAC3"/>
+  <path d="M166 90 Q162 42 214 41 Q266 42 262 90 Z" fill="#3A281D"/>
+  <path d="M186 60 V90 M200 52 V90 M214 50 V90 M228 52 V90 M242 60 V90" stroke="#4E382A" stroke-width="2"/>
+  <path d="M166 90 Q164 104 170 118 L174 92 Z M262 90 Q264 104 258 118 L254 92 Z" fill="#3A281D"/>
+  <path d="M192 44 L197 28 L205 39 L214 22 L223 39 L231 28 L236 44 Z" fill="#F4C542" stroke="#D99E1E" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="214" cy="33" r="3.5" fill="#F27BA0"/><circle cx="198" cy="37" r="2" fill="#7CC6F2"/><circle cx="230" cy="37" r="2" fill="#7CC6F2"/>
+  <ellipse cx="196" cy="106" rx="8" ry="10" fill="#2A1B12"/><ellipse cx="232" cy="106" rx="8" ry="10" fill="#2A1B12"/>
+  <circle cx="199" cy="101" r="3.4" fill="#fff"/><circle cx="235" cy="101" r="3.4" fill="#fff"/><circle cx="193" cy="110" r="1.5" fill="#fff"/><circle cx="229" cy="110" r="1.5" fill="#fff"/>
+  <path d="M187 95 L184 92 M191 94 L189 90 M241 95 L244 92 M237 94 L239 90" stroke="#2A1B12" stroke-width="2" stroke-linecap="round"/>
+  <ellipse cx="185" cy="122" rx="9" ry="5.5" fill="#F59AA6" opacity=".6"/><ellipse cx="243" cy="122" rx="9" ry="5.5" fill="#F59AA6" opacity=".6"/>
+  <path d="M203 122 Q214 138 225 122 Z" fill="#C24A55"/><path d="M207 123 H221" stroke="#fff" stroke-width="2.5"/>
+  <path d="M168 78 Q160 70 164 62" stroke="#F27BA0" stroke-width="0"/>
+ </g></svg>`;
+
+/* ---------- family & friends (simple chibi figures) ---------- */
+function person(o){
+  const sk=o.skin||'#F7D5BA', hc=o.hair;
+  let back='', front='', legs='', torso='', acc='', eyes='';
+  const ribbon=(x,y)=>`<path d="M${x-9} ${y-6} L${x} ${y} L${x-9} ${y+6} Z M${x+9} ${y-6} L${x} ${y} L${x+9} ${y+6} Z" fill="#E0485A"/><circle cx="${x}" cy="${y}" r="3" fill="#C23347"/>`;
+  if(o.style==='bun') back=`<circle cx="70" cy="26" r="18" fill="${hc}"/><path d="M58 22 Q70 14 82 22" stroke="#B8B8C2" stroke-width="2" fill="none"/>`;
+  if(o.style==='long') back=`<path d="M28 74 Q24 22 70 22 Q116 22 112 74 L120 150 Q106 162 94 150 Q100 130 92 112 L48 112 Q40 130 46 150 Q34 162 20 150 Z" fill="${hc}"/>`;
+  if(o.style==='bob') back=`<path d="M26 74 Q24 22 70 22 Q116 22 114 74 L118 116 Q106 126 94 114 L46 114 Q34 126 22 116 Z" fill="${hc}"/>`;
+  if(o.style==='braids') back=[[30,1],[110,-1]].map(([x,s])=>`<g fill="${hc}">${[96,112,128,144].map((y,i)=>`<ellipse cx="${x-s*i*1.5}" cy="${y}" rx="${9-i}" ry="10"/>`).join('')}</g>${ribbon(x-s*6,156)}`).join('');
+  if(o.bottom==='pants') legs=`<path d="M44 168 L96 168 L98 214 L76 214 L72 190 L68 214 L42 214 Z" fill="${o.pants}"/>`;
+  else legs=`<rect x="50" y="198" width="11" height="18" fill="${o.legs||sk}"/><rect x="79" y="198" width="11" height="18" fill="${o.legs||sk}"/><path d="M40 166 L100 166 L110 204 L30 204 Z" fill="${o.skirt}"/>`
+     + (o.apron?`<path d="M54 168 L86 168 L90 200 L50 200 Z" fill="#fff"/><path d="M50 168 L90 168" stroke="#fff" stroke-width="4"/>`:'');
+  legs+=`<ellipse cx="55" cy="220" rx="13" ry="7" fill="${o.shoes||'#6B4A33'}"/><ellipse cx="85" cy="220" rx="13" ry="7" fill="${o.shoes||'#6B4A33'}"/>`;
+  torso=`<path d="M36 120 Q70 104 104 120 L116 158 L102 162 L100 144 L100 172 L40 172 L40 144 L38 162 L24 158 Z" fill="${o.shirt}"/>`;
+  if(o.cardigan) torso+=`<path d="M36 120 Q52 112 60 112 L60 172 L40 172 L40 144 L38 162 L24 158 Z M104 120 Q88 112 80 112 L80 172 L100 172 L100 144 L102 162 L116 158 Z" fill="${o.cardigan}"/><circle cx="64" cy="140" r="2" fill="#fff"/><circle cx="64" cy="156" r="2" fill="#fff"/>`;
+  if(o.bodice) torso+=`<path d="M48 124 L92 124 L94 172 L46 172 Z" fill="${o.bodice}"/><path d="M62 130 L78 138 M78 130 L62 138 M62 144 L78 152 M78 144 L62 152" stroke="#fff" stroke-width="2"/>`;
+  if(o.pearls) acc+=[52,58,64,70,76,82,88].map((x,i)=>`<circle cx="${x}" cy="${118+Math.sin(i/6*Math.PI)*6}" r="3" fill="#FFF8EC" stroke="#E4D9C6"/>`).join('');
+  const hands=`<circle cx="31" cy="160" r="8" fill="${sk}"/><circle cx="109" cy="160" r="8" fill="${sk}"/>`;
+  const head=`<circle cx="30" cy="78" r="7" fill="${sk}"/><circle cx="110" cy="78" r="7" fill="${sk}"/><circle cx="70" cy="74" r="42" fill="${sk}"/>`;
+  if(o.style==='short') front=`<path d="M28 78 Q24 28 70 28 Q116 28 112 78 Q106 58 94 54 L90 62 L80 50 L72 62 L62 50 L54 62 L46 54 Q34 60 28 78 Z" fill="${hc}"/>`;
+  if(o.style==='bun') front=`<path d="M28 76 Q28 32 70 32 Q112 32 112 76 Q104 52 70 50 Q36 52 28 76 Z" fill="${hc}"/><path d="M70 34 Q66 44 70 50" stroke="#B8B8C2" stroke-width="2" fill="none"/>`;
+  if(o.style==='long') front=`<path d="M28 84 Q24 28 70 28 Q116 28 112 86 Q100 58 58 52 Q42 60 34 88 Z" fill="${hc}"/>`;
+  if(o.style==='bob') front=`<path d="M28 90 Q24 28 70 28 Q116 28 112 90 Q108 62 86 52 Q62 58 42 62 Q32 72 28 90 Z" fill="${hc}"/>`;
+  if(o.style==='braids') front=`<path d="M28 82 Q26 30 70 30 Q114 30 112 82 Q100 50 70 48 Q40 50 28 82 Z" fill="${hc}"/><path d="M70 31 V48" stroke="#6E4726" stroke-width="2"/>`;
+  eyes = o.smileEyes
+    ? `<path d="M49 82 Q56 74 63 82 M77 82 Q84 74 91 82" stroke="#2A1B12" stroke-width="3.5" fill="none" stroke-linecap="round"/>`
+    : `<ellipse cx="56" cy="82" rx="6" ry="8" fill="#2A1B12"/><ellipse cx="84" cy="82" rx="6" ry="8" fill="#2A1B12"/><circle cx="58.5" cy="78.5" r="2.4" fill="#fff"/><circle cx="86.5" cy="78.5" r="2.4" fill="#fff"/>`;
+  let face = eyes + `<ellipse cx="45" cy="96" rx="7" ry="4.5" fill="#F59AA6" opacity=".55"/><ellipse cx="95" cy="96" rx="7" ry="4.5" fill="#F59AA6" opacity=".55"/><path d="M61 97 Q70 110 79 97 Z" fill="#C0504D"/><path d="M64 98 H76" stroke="#fff" stroke-width="2"/>`;
+  if(o.glasses) face+=`<circle cx="56" cy="82" r="11" fill="none" stroke="#7A5A44" stroke-width="2.5"/><circle cx="84" cy="82" r="11" fill="none" stroke="#7A5A44" stroke-width="2.5"/><path d="M67 82 H73" stroke="#7A5A44" stroke-width="2.5"/>`;
+  if(o.egg) acc+=`<path d="M92 36 Q104 26 112 36 Q120 46 108 52 Q96 56 92 46 Q86 42 92 36 Z" fill="#fff" stroke="#EDE3C8" stroke-width="1.5"/><circle cx="102" cy="42" r="5" fill="#FFC53D"/>`;
+  if(o.flower) acc+=`<g transform="translate(40 42)">${[0,72,144,216,288].map(a=>`<circle cx="${Math.cos(a*Math.PI/180)*6}" cy="${Math.sin(a*Math.PI/180)*6}" r="5" fill="#FF9EB5"/>`).join('')}<circle r="3.5" fill="#FFD84D"/></g>`;
+  if(o.hat) acc+=`<ellipse cx="70" cy="42" rx="46" ry="7" fill="#3F6B3E"/><path d="M40 42 Q44 8 70 8 Q96 8 100 42 Z" fill="#4E7A4A"/><path d="M42 36 H98" stroke="#8A5A2B" stroke-width="4"/><path d="M92 34 Q112 14 106 -2 Q100 16 90 30 Z" fill="#fff" stroke="#DDD" stroke-width="1"/>`;
+  return `<svg viewBox="0 -4 140 244">${back}${legs}${torso}${hands}${acc.includes('circle cx="52"')?'':''}${head}${front}${face}${acc}</svg>`;
+}
+const DAD = {hair:'#2B211B', style:'short', shirt:'#3F6FB5', bottom:'pants', pants:'#C8B08A', shoes:'#4A4A4A'};
+const PEOPLE = {
+  M: person({hair:'#D6D6DE', style:'bun', shirt:'#FFFFFF', cardigan:'#B08BCB', skirt:'#6D5A7E', pearls:true, glasses:true, smileEyes:true, shoes:'#8A5A3B'}),
+  D: person(DAD),
+  D2: person({...DAD, hat:true}),
+  B: person({hair:'#5A3A28', style:'long', shirt:'#FFD65A', bottom:'pants', pants:'#6F8FC0', egg:true, shoes:'#F2F2F2'}),
+  R: person({hair:'#2E221C', style:'bob', shirt:'#FF8C7A', skirt:'#7FB8A8', flower:true, shoes:'#B5654A'}),
+  L: person({hair:'#9A6A3E', style:'braids', shirt:'#FFFFFF', bodice:'#3E8E5A', skirt:'#3E8E5A', apron:true, legs:'#FFFFFF', shoes:'#5A3A28'})
+};
+
+/* ---------- little stage: an action after each sentence ---------- */
+const MO = {
+  jump:{pt:[['💫','one',1]], bub:'嘿咻！', snd:'hop'}, cheer:{pt:[['✨','pop',3]], bub:'耶！', snd:'hop'},
+  boing:{pt:[['💫','pop',2]], bub:'啵嗡～', snd:'boing'}, wave:{pt:[['👋','one',1]], bub:'嗨～', snd:'hop'},
+  dance:{pt:[['🎵','rise',3]], bub:'啦啦啦～', snd:'hop'}, wiggle:{pt:[], bub:'扭扭～', snd:'wobble'},
+  shake:{pt:[['❗','one',1]], bub:'哎呀！', snd:'wobble'}, shiver:{pt:[['💦','pop',2]], bub:'好怕……', snd:'wobble'},
+  cry:{pt:[['💧','fall',4]], bub:'嗚嗚～', snd:'cry'}, sad:{pt:[['💧','fall',1]], bub:'嗚……', snd:'cry'},
+  spin:{pt:[['✨','pop',3]], bub:'轉～', snd:'whoosh'}, gone:{pt:[['💨','pop',2]], bub:'咻！', snd:'poof'},
+  appear:{pt:[['✨','pop',3]], bub:'登登！', snd:'twinkle'}, glow:{pt:[['✨','pop',4]], bub:'亮晶晶！', snd:'twinkle'},
+  sparkle:{pt:[['✨','pop',4]], bub:'哇～', snd:'twinkle'}, wow:{pt:[['❗','one',1]], bub:'哇！', snd:'shock'},
+  think:{pt:[['❓','one',1]], bub:'嗯……', snd:'hmm'}, proud:{pt:[['✨','pop',4]], bub:'看我的！', snd:'twinkle'},
+  laugh:{pt:[['哈','rise',3]], bub:'哈哈哈！', snd:'laugh'}, eat:{pt:[['✨','pop',2]], bub:'啊嗚！', snd:'chomp'},
+  yum:{pt:[['😋','one',1],['💕','rise',2]], bub:'好好吃！', snd:'chomp'}, nod:{pt:[], bub:'嗯嗯！', snd:'hop'},
+  pat:{pt:[['💗','rise',2]], bub:'乖乖～', snd:'twinkle'}, love:{pt:[['💕','rise',3]], bub:'好愛你！', snd:'twinkle'},
+  search:{pt:[['🔍','orbit',1]], bub:'在哪裡？', snd:'patter'}, run:{pt:[['💨','fall',2]], bub:'噠噠噠！', snd:'patter'},
+  fly:{pt:[['☁️','pop',2]], bub:'咻～', snd:'whoosh'}, drive:{pt:[['💨','pop',2]], bub:'叭叭！', snd:'honk'},
+  float:{pt:[], bub:'飄～', snd:'whoosh'}, sleep:{pt:[['💤','rise',3]], bub:'呼嚕～', snd:'snore'},
+  scratch:{pt:[['💦','one',1]], bub:'嘿嘿～', snd:'squeak'}, shock:{pt:[['❗','one',1],['💦','pop',2]], bub:'什麼！', snd:'shock'},
+  hug:{pt:[['💗','rise',2]], bub:'抱抱！', snd:'twinkle'}, wink:{pt:[['😉','one',1],['✨','pop',2]], bub:'嘻嘻～', snd:'twinkle'},
+  brake:{pt:[['💨','pop',2]], bub:'嘰～', snd:'skid'}, idle:{pt:[], snd:''}
+};
+const SILLY = [['boing','好癢！'],['spin','轉圈圈！'],['laugh','嘻嘻嘻！'],['jump','嘿！'],['wiggle','扭一扭～']];
+const REDUCED = matchMedia('(prefers-reduced-motion: reduce)');
+const isTok = w => w==='Q'||w==='A'||!!PEOPLE[w];
+function figure(w){ return w==='Q'?YIQIN : w==='A'?ANAN : PEOPLE[w] || w; }
+function actorHTML([who, m, bub]){
+  return `<div class="actor ${isTok(who)?'person':''} ${m==='appear'?'hid':''}" data-m="${m||'idle'}" ${bub?`data-bub="${esc(bub)}"`:''}><span class="ac">${figure(who)}</span></div>`;
+}
+function playActor(a, box, opt={}){
+  const m = opt.m || a.dataset.m; const mo = MO[m] || MO.jump;
+  const bx=box.getBoundingClientRect(), ar=a.getBoundingClientRect();
+  const cx=ar.left-bx.left+ar.width/2, top=ar.top-bx.top;
+  a.style.setProperty('--dir', cx < bx.width/2 ? -1 : 1);
+  a.classList.remove('go','hid'); [...a.classList].filter(c=>c.startsWith('a-')).forEach(c=>a.classList.remove(c));
+  void a.offsetWidth; a.classList.add('go','a-'+m);
+  if (mo.snd && opt.sound!==false) sfx(mo.snd);
+  if (REDUCED.matches) return;
+  const bubText = opt.bub!==undefined ? opt.bub : (a.dataset.bub || mo.bub);
+  if (bubText && opt.bubble!==false){
+    const b=document.createElement('span'); b.className='bub'; b.innerHTML=BUB(bubText);
+    b.style.left=Math.min(Math.max(cx,50),bx.width-50)+'px'; b.style.top=Math.max(top-8,30)+'px';
+    box.appendChild(b); setTimeout(()=>b.remove(),1900);
+  }
+  (mo.pt||[]).forEach(([ch,kind,n])=>{ for(let i=0;i<n;i++){
+    const p=document.createElement('span'); p.className='pt '+kind; p.textContent=ch;
+    let x=cx, y=top+ar.height*.35, dx=(Math.random()*60-30), dy=-(20+Math.random()*30);
+    if(kind==='fall'){ x=cx+(i%2?1:-1)*ar.width*.22; dx=(i%2?1:-1)*(6+Math.random()*10); }
+    if(kind==='one'){ x=cx+ar.width*.32; y=top+10; dx=6; dy=-14; }
+    if(kind==='pop'){ const ang=Math.random()*6.28, r=40+Math.random()*25; dx=Math.cos(ang)*r; dy=Math.sin(ang)*r*.7-10; }
+    if(kind==='orbit'){ y=top+ar.height*.3; }
+    p.style.left=x+'px'; p.style.top=y+'px'; p.style.setProperty('--dx',dx+'px'); p.style.setProperty('--dy',dy+'px');
+    p.style.animationDelay=(i*.14)+'s'; box.appendChild(p); setTimeout(()=>p.remove(),2200);
+  }});
+}
+function playStage(){
+  const box=$('#stg'); if(!box) return;
+  const actors=[...box.querySelectorAll('.actor')];
+  // explicit bubbles first, at most two bubbles so it stays readable
+  const withBub = actors.filter(a=>a.dataset.bub); const bubbled = new Set([...withBub, ...actors.filter(a=>!a.dataset.bub)].slice(0,2));
+  actors.forEach((a,i)=>setTimeout(()=>playActor(a,box,{bubble:bubbled.has(a), sound:i<2}), i*220));
+}
+// tap any character for a silly reaction
+document.addEventListener('click', e=>{
+  const a=e.target.closest('.actor'); if(!a || e.target.closest('button')) return;
+  const box=a.closest('.stagebox,.cstage,.sus,.who'); if(!box) return;
+  const [m,b]=SILLY[Math.random()*SILLY.length|0]; playActor(a, box, {m, bub:b});
+});
+
+/* ---------- screens ---------- */
+function nav(name){
+  stopSpeak(); onListen=null; if(curRec){ try{curRec.abort()}catch(e){} curRec=null; } if(window._arcadeStop){ window._arcadeStop(); window._arcadeStop=null; }
+  if (name==='home') home(); else if (name==='cases') cases(); else if (name==='guide') guide();
+  else if (name==='badges') badges(); else if (name==='settings') settings(); else if (name==='arcade') arcade(); else if (name==='voice') voiceGame();
+  window.scrollTo(0,0); refreshBar();
+}
+function home(){
+  const t=total(), r=rankIdx(t);
+  main.innerHTML = `<section class="hero">
+    <div class="mascot">${MASCOT}</div>
+    <h1 class="title">${A(D.ph.title,{cls:'t1 keephz'})}<br>${A(D.ph.subtitle,{cls:'t2 keephz'})}</h1>
+    <div class="bubble paper">${A(D.ph.welcome)} <button class="say" data-t="${esc(D.ph.welcome.t)}" aria-label="念給我聽">🔊</button></div>
+    <div class="pills"><span class="pill">🕵️ ${nameHTML()}</span><span class="pill">🎖️ ${rankHTML(r)}</span><span class="pill">⭐ ${t}</span></div>
+    <button class="btn big" data-go="cases">🔍 ${T('start')}</button>
+    <div class="row" style="justify-content:center;margin-top:16px">
+      <button class="btn ghost" data-go="voice">🎤 ${T('voice')}</button>
+      <button class="btn ghost" data-go="arcade">🐹 ${T('arcade')}</button>
+      <button class="btn ghost" data-go="guide">ㄅ ${T('guide')}</button>
+      <button class="btn ghost" data-go="badges">🏅 ${T('badges')}</button>
+    </div></section>`;
+}
+function caseStars(c){ let s=0; c.puzzles.forEach((p,i)=>s+=S.stars[c.id+'-'+i]||0); s+=S.stars[c.id+'-d']||0; return s; }
+function cases(){
+  main.innerHTML = `<h2 class="casehead">📁 ${T('caseBook')}</h2><div class="folders">` + D.cases.map((c,i)=>{
+    const firstJ = c.journey && !D.cases[i-1].journey;
+    const unlocked = i===0 || firstJ || S.done[D.cases[i-1].id], done = S.done[c.id];
+    const head = i===0 ? `<p class="lbl sect">🐾 ${T('sectAnimal')}</p>` : firstJ ? `<p class="lbl sect">🇩🇪 ✈️ 🇹🇼 ${T('sectJourney')}</p>` : '';
+    return head + `<button class="folder nospeak ${unlocked?'':'locked'}" data-case="${i}" ${unlocked?'':'aria-disabled="true"'}><span class="ftab">${c.journey?T('tabTrip')+' '+(i-D.cases.findIndex(x=>x.journey)+1):T('tabCase')+' '+(i+1)}</span>
+      ${A(c.title,{cls:'keephz'})}
+      <span class="fplace">${c.place} ${A(c.placeName)}</span>
+      <span class="fmeta">${unlocked ? (done? `${c.badge} ⭐ ${caseStars(c)}` : '🔍 '+T('notYet')) : '🔒 '+T('locked')}</span>
+      ${done?`<span class="stamp">${T('stampSolved')}</span>`:''}</button>`;
+  }).join('') + `</div>`;
+  main.querySelectorAll('.folder').forEach(b=>b.onclick=()=>{
+    const i=+b.dataset.case; if(b.classList.contains('locked')){ fx.wrong(); return; } startCase(i);
+  });
+}
+
+/* ---------- case runner ---------- */
+let R=null;
+function startCase(i){
+  const c=D.cases[i], steps=[{k:'intro'}];
+  c.puzzles.forEach((p,j)=>steps.push({k:'p',j})); if(c.deduce) steps.push({k:'d'}); steps.push({k:'end'},{k:'cele'});
+  R={ci:i, c, step:0, steps, clues:[], earned:0, startTotal:total()}; renderStep();
+}
+function next(){ R.step++; renderStep(); }
+function track(){
+  const ic={intro:'📖', p:'🔍', d:'🕵️', end:'🎉'};
+  return `<div class="track" aria-label="進度">${R.steps.filter(x=>x.k!=='cele').map((x,i)=>`<i class="${i<R.step?'done':i===R.step?'now':''}">${i<R.step?'✔':ic[x.k]}</i>`).join('')}</div>`;
+}
+function renderStep(){
+  stopSpeak(); onListen=null; window.scrollTo(0,0); refreshBar();
+  const st=R.steps[R.step];
+  if (st.k==='intro') story(R.c.intro, '🔍 '+T('startClues'));
+  else if (st.k==='p'){ const p=R.c.puzzles[st.j]; ({pick:pPick, tone:pTone, spell:pSpell, read:pRead})[p.type](p, st.j); }
+  else if (st.k==='d') pDeduce();
+  else if (st.k==='end') story(R.c.ending, '🎉 '+T('getBadge'));
+  else celebrate();
+}
+const STAGE_BG = {c1:'day', c2:'night', c3:'night', c4:'fest', c5:'sky', c6:'home'};
+const PARTICLE = new Set('的了嗎呢吧啊呀啦著們麼得囉喔哇耶咦嗚呼咻啪叮咚哈嗨哎'.split(''));
+function makeHunt(ln, li){
+  const words = ln.s.map((sg,si)=>({sg,si})).filter(x=>x.sg.ch && !x.sg.ch.every(c=>PARTICLE.has(c[0])));
+  const count = w => ln.s.filter(sg=>sg.w===w).length;
+  if (li%2===1){ // find any word that contains a symbol
+    const bag={};
+    words.forEach(x=>x.sg.ch.forEach(c=>[...c[1]].forEach(z=>{ (bag[z]=bag[z]||new Set()).add(x.si); })));
+    const opts=Object.entries(bag).filter(([z,set])=>set.size>=1 && set.size<=Math.max(1,words.length-2));
+    if (opts.length){ const [z,set]=opts[Math.random()*opts.length|0]; return {type:'sym', z, ok:[...set]}; }
+  }
+  let pool = words.filter(x=>x.sg.ch.length>=2 && count(x.sg.w)===1);
+  if (!pool.length) pool = words.filter(x=>count(x.sg.w)===1);
+  const pk = pool[Math.random()*pool.length|0];
+  return {type:'word', seg:pk.sg, ok:[pk.si]};
+}
+function floatStar(x, y, txt='+1 ⭐'){
+  const f=document.createElement('div'); f.className='plus'; f.textContent=txt; f.style.left=x+'px'; f.style.top=y+'px';
+  document.body.appendChild(f); setTimeout(()=>f.remove(),1300);
+  const sp=$('#starpill'); sp.classList.remove('bump'); void sp.offsetWidth; sp.classList.add('bump');
+}
+function story(lines, lastLabel){
+  let li=0; const kind = R.step===0 ? 'i' : 'e';
+  function draw(){
+    const ln = lines[li]; const h = makeHunt(ln, li); let miss=0, solved=false;
+    const key = `${R.c.id}-${kind}${li}`;
+    const huntTxt = h.type==='word'
+      ? `<span class="hq">🔎 ${T('huntWord')}</span><span class="htarget">${A({t:h.seg.w,s:[h.seg]},{cls:'zyo nospeak'})}</span>`
+      : `<span class="hq">🔎 ${T('huntSym')}</span><button class="symbtn" id="hSym">${h.z}</button>`;
+    main.innerHTML = `<h2 class="casehead">${R.c.place} ${A(R.c.title,{cls:'keephz nospeak'})}</h2>${track()}
+      <div class="stagebox ${STAGE_BG[R.c.id]||'day'}" id="stg" role="button" aria-label="再看一次動作">${(lines[li].act||[]).map(actorHTML).join('')}</div>
+      <div class="hunt" id="hunt">${huntTxt}${S.stars[key]?'<span class="got">⭐</span>':''}</div>
+      <div class="lines"><div class="line paper cur nospeak" id="ln${li}">${A(lines[li],{cls:'grid'})}</div></div>
+      <p class="tip">${T('tip')}</p>
+      <div class="controls">
+        ${li>0?'<button class="say alt" id="sPrev" aria-label="上一句">◀</button>':''}
+        <button class="say" id="sOnce">🔊 ${T('readLine')}</button>
+        <button class="say alt" id="sSlow">🐢 ${T('slow')}</button>
+        <button class="btn" id="sNext">${li<lines.length-1?T('nextLine')+' ▶':lastLabel}</button>
+      </div>`;
+    const cur=$('#ln'+li);
+    if (h.type==='sym') $('#hSym').onclick=()=>playSym(h.z);
+    cur.addEventListener('click', e=>{
+      const wd=e.target.closest('.wd'); if(!wd || solved) return;
+      const si=+wd.dataset.si;
+      if (h.ok.includes(si)){
+        solved=true; cur.classList.remove('nospeak');
+        cur.querySelectorAll('.wd.hint').forEach(x=>x.classList.remove('hint'));
+        (h.type==='sym' ? h.ok : [si]).forEach(k=>cur.querySelector(`.wd[data-si="${k}"]`).classList.add('hit'));
+        fx.ding(); playStage();
+        const r=wd.getBoundingClientRect();
+        if (miss===0){
+          R.combo=(R.combo||0)+1;
+          if(!S.stars[key]){ S.stars[key]=1; save(); R.earned++; refreshBar(); floatStar(r.left+r.width/2, r.top); }
+          else floatStar(r.left+r.width/2, r.top, '👍');
+          if (R.combo>=3 && R.combo%2===1){ setTimeout(()=>{ toast(`🔥 ${T('streak1')} ${R.combo} ${T('streak2')}`); fx.fanfare(); },500); }
+        } else { R.combo=0; floatStar(r.left+r.width/2, r.top, '👍'); }
+        $('#hunt').classList.add('done'); $('#hunt').insertAdjacentHTML('beforeend','<span class="got">✔</span>');
+        if (SRC){
+          const target = h.type==='word' ? h.seg.w : wd.dataset.say;
+          $('#hunt').insertAdjacentHTML('beforeend', `<div class="hmic"><button class="mic" id="hMic">🎤 ${T('sayIt')}「${A({t:target, s:[ln.s[h.type==='word'?h.ok[0]:si]]},{cls:'keephz nospeak'})}」</button><div class="hfb" id="hFb"></div></div>`);
+          loadPy();
+          $('#hMic').onclick=()=>micTry($('#hMic'), target, $('#hFb'), ()=>{
+            if(!S.stars[key+'v']){ S.stars[key+'v']=1; save(); R.earned++; refreshBar(); const rr=$('#hMic').getBoundingClientRect(); floatStar(rr.left+rr.width/2, rr.top); }
+            $('#stg').querySelectorAll('.actor').forEach((a,k)=>setTimeout(()=>playActor(a,$('#stg'),{m:'cheer', bub:k?false:'念對了！', bubble:!k}),k*150));
+          });
+        }
+      } else {
+        miss++; R.combo=0; fx.wrong(); wd.classList.remove('miss'); void wd.offsetWidth; wd.classList.add('miss');
+        speak(wd.dataset.say);
+        if (miss>=2) h.ok.forEach(k=>cur.querySelector(`.wd[data-si="${k}"]`).classList.add('hint'));
+      }
+    });
+    $('#sOnce').onclick=()=>speak(lines[li].t, cur, playStage);
+    $('#sSlow').onclick=()=>speakWords(cur, playStage);
+    $('#stg').onclick=e=>{ if(!e.target.closest('.actor')) playStage(); };
+    if(li>0) $('#sPrev').onclick=()=>{ li--; draw(); cur2(); };
+    $('#sNext').onclick=()=>{ if(li<lines.length-1){ li++; draw(); cur2(); } else next(); };
+  }
+  function cur2(){ if(S.auto) speak(lines[li].t, $('#ln'+li)); }
+  draw(); cur2();
+}
+function award(key, mistakes, bonus){
+  const st = mistakes===0?3:mistakes<=2?2:1;
+  const got = st + (bonus?1:0);
+  if ((S.stars[key]||0) < got) S.stars[key]=got;
+  save(); R.earned += got; refreshBar();
+  return {st, bonus};
+}
+function praise(){ const a=D.ph.praise; return a[Math.random()*a.length|0].t; }
+function clueCard(p, res){
+  R.clues.push(p.card);
+  fx.ding();
+  const ov=document.createElement('div'); ov.className='overlay';
+  ov.innerHTML = `<div class="card">
+    <div class="hdr">${A(D.ph.clueGot,{cls:'keephz'})}</div>
+    <div class="starsrow">${'⭐'.repeat(res.st)}${res.bonus?`🌟<span class="bonus">${A(D.ph.bonus,{cls:'keephz'})}</span>`:''}</div>
+    <div class="em cstage" style="position:relative">${actorHTML([p.card[0],'cheer'])}</div>
+    <div class="txt">${A(p.card[1])} <button class="say" data-t="${esc(p.card[1].t)}">🔊</button></div>
+    <button class="btn wide" id="ccNext">📒 ${T('collect')} ▶</button></div>`;
+  document.body.appendChild(ov);
+  const items=[{text:(Math.random()<.35?S.name+'探長，':'')+praise()}];
+  if(res.bonus) items.push({text:D.ph.bonus.t});
+  const cs=ov.querySelector('.cstage');
+  speakSeq(items, ()=>playActor(cs.querySelector('.actor'), cs));
+  ov.querySelector('#ccNext').onclick=()=>{ ov.remove(); next(); };
+}
+function wrongFeedback(el){ fx.wrong(); el.classList.remove('wrong'); void el.offsetWidth; el.classList.add('wrong'); const r=D.ph.retry; speak(r[Math.random()*r.length|0].t); }
+
+function pPick(p, idx){
+  let mistakes=0, listened=false, done=false;
+  onListen=()=>{ listened=true; };
+  main.innerHTML = `${track()}
+    <div class="prompt paper">${A(p.prompt)} <button class="say" data-t="${esc(p.prompt.t)}">🔊</button></div>
+    <div class="note lis">${A(p.clue,{cls:'zyo big'})}<br><button class="say" data-t="${esc(p.clue.t)}">🔊 ${T('hear')}</button></div>
+    <div class="opts">${p.options.map((o,i)=>`<button class="opt nospeak" data-i="${i}"><span class="em">${o.e}</span>${A(o.w,{cls:'keephz'})}</button>`).join('')}</div>`;
+  // options show pictures + characters only (no zhuyin) so the clue must be read
+  main.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
+    if(done) return; const i=+b.dataset.i;
+    if(i===p.answer){ done=true; b.classList.add('right'); const res=award(R.c.id+'-'+idx, mistakes, !listened && mistakes===0); setTimeout(()=>clueCard(p,res),500); }
+    else { mistakes++; wrongFeedback(b); if(mistakes>=2){ setTimeout(()=>speak(p.clue.t, [...main.querySelectorAll('.note .wd')]),900); } }
+  });
+  if(S.auto) speak(p.prompt.t);
+}
+function pRead(p, idx){
+  let mistakes=0, listened=false, done=false;
+  onListen=()=>{ listened=true; };
+  main.innerHTML = `${track()}
+    <div class="prompt paper">${A(D.ph.readHelp)} <button class="say" data-t="${esc(D.ph.readHelp.t)}">🔊</button></div>
+    <div class="witness" style="margin:16px 0">
+      <div class="who">${actorHTML([p.who[0],'nod'])}${A(p.who[1],{cls:'keephz'})}</div>
+      <div class="paper lis">${A(p.statement,{cls:'grid zyo'})}<div style="margin-top:10px"><button class="say" data-t="${esc(p.statement.t)}">🔊 ${T('hearWho')}</button></div></div>
+    </div>
+    <div class="prompt paper">${A(p.question)} <button class="say" data-t="${esc(p.question.t)}">🔊</button></div>
+    <div class="opts" style="margin-top:14px">${p.options.map((o,i)=>`<button class="opt nospeak" data-i="${i}"><span class="em">${o.e}</span>${A(o.w)}</button>`).join('')}</div>`;
+  main.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
+    if(done) return; const i=+b.dataset.i;
+    if(i===p.answer){ done=true; b.classList.add('right'); const res=award(R.c.id+'-'+idx, mistakes, !listened && mistakes===0); setTimeout(()=>clueCard(p,res),500); }
+    else { mistakes++; wrongFeedback(b); if(mistakes>=2) main.querySelector(`.opt[data-i="${p.answer}"]`).classList.add('hint'); }
+  });
+}
+function pTone(p, idx){
+  let mistakes=0, done=false;
+  const wordHTML = hide => A(p.word,{cls:'huge keephz', unit:(si,ci)=> ci===p.idx?{hideTone:hide, tgt:true}:{}});
+  main.innerHTML = `${track()}
+    <div class="prompt paper">${A(p.prompt)} <button class="say" data-t="${esc(p.prompt.t)}">🔊</button></div>
+    <div class="stage"><div id="tw">${wordHTML(true)}</div>
+      <button class="say" data-t="${esc(p.word.t)}">🔊 ${T('hearWord')}</button>
+      <div class="refrow" aria-label="四聲參考">${TONES.map(t=>`<button data-ref="${t[3]}">${t[3]}<small style="font-size:.5em">${t[1]}</small></button>`).join('')}</div>
+    </div>
+    <div class="tones">${TONES.map(t=>`<button class="chip" data-n="${t[0]}">${t[1]}<small>${A(W(t[2]),{cls:'keephz'})}</small></button>`).join('')}</div>
+    <p class="muted center" style="color:var(--onDesk)">${T('toneTip')}</p>`;
+  main.querySelectorAll('[data-ref]').forEach(b=>b.onclick=()=>speak(b.dataset.ref));
+  main.querySelectorAll('.tones .chip').forEach(b=>b.onclick=()=>{
+    if(done) return; const n=+b.dataset.n;
+    if(n===p.answer){ done=true; fx.pop(); b.style.outline='4px solid var(--good)'; $('#tw').innerHTML=wordHTML(false);
+      const res=award(R.c.id+'-'+idx, mistakes, false); setTimeout(()=>clueCard(p,res),700); }
+    else { mistakes++; wrongFeedback(b); speakSeq([{text:D.ph.retry[0].t},{text:p.word.t}]);
+      if(mistakes>=2) main.querySelector(`.tones .chip[data-n="${p.answer}"]`).classList.add('hint'); }
+  });
+  if(S.auto) speakSeq([{text:p.prompt.t},{text:p.word.t}]);
+}
+function pSpell(p, idx){
+  let mistakes=0, stageMiss=0, stage=0; const pick={ini:null, fin:null, tone:null};
+  const toneMark = p.target[2];
+  const stages = [
+    {name:T('ini'), opts:p.initials, ans:p.ini},
+    {name:T('fin'), opts:p.finals, ans:p.fin},
+    {name:T('tone'), opts:TONES.map(t=>t[1]), ans: toneMark||'ˉ'}
+  ];
+  function draw(){
+    const disp = A(p.word,{cls:'huge keephz', unit:(si,ci)=> ci===p.idx ? {tgt:true, slots:{ini:pick.ini, fin:pick.fin, tone: pick.tone==null?null:(pick.tone==='ˉ'?'':pick.tone)}} : {}});
+    const st=stages[Math.min(stage,2)];
+    main.innerHTML = `${track()}
+      <div class="prompt paper">${A(p.prompt)} <button class="say" data-t="${esc(p.prompt.t)}">🔊</button></div>
+      <div class="stage">${disp}<div style="margin-top:8px"><button class="say" data-t="${esc(p.word.t)}">🔊 ${T('hearRight')}</button></div></div>
+      <div class="steps">${stages.map((s,i)=>`<span class="${i<stage?'ok':i===stage?'now':''}">${i+1}. ${s.name}${i<stage?' ✔':''}</span>`).join('')}</div>
+      ${stage<3?`<div class="chips">${st.opts.map(o=>`<button class="chip ${[...o].length>1?'v':''}" data-o="${o}">${[...o].length>1?[...o].map(x=>`<span>${x}</span>`).join(''):o}${stage===2?`<small>${A(W(TONES.find(t=>t[1]===o)[2]),{cls:'keephz'})}</small>`:''}</button>`).join('')}</div>`
+        :`<div class="center" style="font-size:40px;color:var(--onDesk)">🔓</div>`}`;
+    main.querySelectorAll('.chips .chip').forEach(b=>b.onclick=()=>choose(b));
+  }
+  function choose(b){
+    const o=b.dataset.o, s=stages[stage];
+    if (stage===2) speak(TONES.find(t=>t[1]===o)[3]); else playSym(o);
+    if (o===s.ans){
+      fx.pop();
+      if(stage===0) pick.ini=o; else if(stage===1) pick.fin=o; else pick.tone=o;
+      stage++; stageMiss=0; draw();
+      if(stage===3){ setTimeout(()=>{ fx.ding(); speak(p.word.t); }, 250);
+        const res=award(R.c.id+'-'+idx, mistakes, false); setTimeout(()=>clueCard(p,res),1300); }
+    } else {
+      mistakes++; stageMiss++; fx.wrong(); b.classList.remove('wrong'); void b.offsetWidth; b.classList.add('wrong');
+      if(stageMiss>=2) main.querySelector(`.chip[data-o="${s.ans}"]`)?.classList.add('hint');
+    }
+  }
+  draw();
+  if(S.auto) speakSeq([{text:p.prompt.t},{text:p.word.t}]);
+}
+function pDeduce(){
+  const d=R.c.deduce; let mistakes=0, done=false;
+  const clues = R.clues.length? R.clues : R.c.puzzles.map(p=>p.card);
+  main.innerHTML = `${track()}
+    <div class="prompt paper">${A(d.question)} <button class="say" data-t="${esc(d.question.t)}">🔊</button></div>
+    <p class="lbl">📒 ${T('notebook')}</p>
+    <div class="notebook">${clues.map(c=>`<div class="cl"><span class="em">${c[0]}</span>${A(c[1])}<button class="say alt" data-t="${esc(c[1].t)}">🔊</button></div>`).join('')}</div>
+    <p class="lbl">🔎 ${T('suspects')}</p>
+    <div class="suspects">${d.suspects.map((s,i)=>`<div class="sus" id="sus${i}"><div class="em">${actorHTML([s.e,'idle'])}</div><div class="nm">${A(s.n)}</div>
+      <div class="tr">${A(s.t)} <button class="say alt" data-t="${esc(s.t.t)}">🔊</button></div>
+      <button class="btn wide" data-acc="${i}">${d.kind==='place'?'👉 '+T('here'):'👉 '+T('gotcha')}</button></div>`).join('')}</div>`;
+  main.querySelectorAll('[data-acc]').forEach(b=>b.onclick=()=>{
+    if(done) return; const i=+b.dataset.acc, card=$('#sus'+i);
+    if(i===d.answer){
+      done=true; card.classList.add('right'); card.insertAdjacentHTML('beforeend',`<span class="stamp">${d.kind==='place'?T('stampFound'):T('stampSolved')}</span>`); fx.stamp();
+      playActor(card.querySelector('.actor'), card, {m: d.kind==='place'?'boing':'shock', bub: d.kind==='place'?'叮！':'被發現了！'});
+      award(R.c.id+'-d', mistakes, false);
+      speakSeq([{text:D.ph.solved.t},{text:praise()}]);
+      setTimeout(()=>{ b.innerHTML='📖 '+T('ending')+' ▶'; b.onclick=()=>next(); b.scrollIntoView({block:'center',behavior:'smooth'}); }, 900);
+      setTimeout(()=>card.scrollIntoView({block:'center',behavior:'smooth'}),50);
+    } else { mistakes++; wrongFeedback(card); playActor(card.querySelector('.actor'), card, {m:'shake', bub: d.kind==='place'?'不在這裡！':'不是我啦！', sound:false}); speakSeq([{text:D.ph.retry[1].t},{text:D.ph.deduceHelp.t}]); }
+  });
+  if(S.auto) speak(d.question.t);
+}
+function celebrate(){
+  const c=R.c; S.done[c.id]=true; save(); refreshBar();
+  const r0=rankIdx(R.startTotal), r1=rankIdx(total());
+  const all = D.cases.every(x=>S.done[x.id]);
+  main.innerHTML = `<div class="card celebrate" style="margin:10px auto">
+    <div class="mascot party" style="width:min(240px,70vw)">${MASCOT}</div>
+    <div class="stamp">${T('stampBig')}</div>
+    <div class="badge">${c.badge}</div>
+    <div class="txt">${T('celeGet')}<br>${A(c.badgeName,{cls:'keephz'})}</div>
+    <div class="starsrow">⭐ × ${R.earned}</div>
+    ${r1>r0?`<div class="rankup">🎖️ ${T('levelUp')} <b>${rankHTML(r1)}</b></div>`:''}
+    ${all?`<div class="rankup">🏆 ${T('allDone')}</div>`:''}
+    <div class="row" style="justify-content:center;margin-top:10px">
+      <button class="btn" data-go="cases">📁 ${T('backCases')}</button>
+      ${all?`<button class="btn ghost" data-go="badges">🏆 ${T('seeCert')}</button>`:''}
+    </div></div>`;
+  fx.fanfare(); confetti();
+  const items=[{text:D.ph.solved.t},{text:S.name+'探長，妳得到了'+c.badgeName.t+'徽章！'}];
+  if(r1>r0) items.push({text:'升級了！妳現在是'+RANKS[r1][1]+'！'});
+  speakSeq(items);
+}
+
+/* ---------- 🎤 speech recognition (read aloud) ---------- */
+const SRC = window.SpeechRecognition || window.webkitSpeechRecognition;
+let PY=null, pyP=null, curRec=null;
+function loadPy(){
+  if(PY) return Promise.resolve(PY); if(pyP) return pyP;
+  pyP=new Promise(res=>{ const sc=document.createElement('script'); sc.src='https://cdn.jsdelivr.net/npm/pinyin-pro@3.29.4/dist/index.js';
+    sc.onload=()=>{ PY=window.pinyinPro||null; res(PY); }; sc.onerror=()=>res(null); document.head.appendChild(sc); setTimeout(()=>res(PY),6000); });
+  return pyP;
+}
+const hanOnly = t => (t||'').replace(/[^\p{Script=Han}]/gu,'');
+// pinyin -> zhuyin (for showing what was heard)
+const PZ_I=[['zh','ㄓ'],['ch','ㄔ'],['sh','ㄕ'],['b','ㄅ'],['p','ㄆ'],['m','ㄇ'],['f','ㄈ'],['d','ㄉ'],['t','ㄊ'],['n','ㄋ'],['l','ㄌ'],['g','ㄍ'],['k','ㄎ'],['h','ㄏ'],['j','ㄐ'],['q','ㄑ'],['x','ㄒ'],['r','ㄖ'],['z','ㄗ'],['c','ㄘ'],['s','ㄙ']];
+const PZ_F={a:'ㄚ',o:'ㄛ',e:'ㄜ',ai:'ㄞ',ei:'ㄟ',ao:'ㄠ',ou:'ㄡ',an:'ㄢ',en:'ㄣ',ang:'ㄤ',eng:'ㄥ',er:'ㄦ',ong:'ㄨㄥ',i:'ㄧ',ia:'ㄧㄚ',ie:'ㄧㄝ',iao:'ㄧㄠ',iu:'ㄧㄡ',iou:'ㄧㄡ',ian:'ㄧㄢ',in:'ㄧㄣ',iang:'ㄧㄤ',ing:'ㄧㄥ',iong:'ㄩㄥ',
+ u:'ㄨ',ua:'ㄨㄚ',uo:'ㄨㄛ',uai:'ㄨㄞ',ui:'ㄨㄟ',uei:'ㄨㄟ',uan:'ㄨㄢ',un:'ㄨㄣ',uen:'ㄨㄣ',uang:'ㄨㄤ',ueng:'ㄨㄥ',v:'ㄩ',ve:'ㄩㄝ',van:'ㄩㄢ',vn:'ㄩㄣ'};
+const PZ_Y={yi:'i',ya:'ia',ye:'ie',yao:'iao',you:'iou',yan:'ian',yin:'in',yang:'iang',ying:'ing',yong:'iong',yu:'v',yue:'ve',yuan:'van',yun:'vn',wu:'u',wa:'ua',wo:'uo',wai:'uai',wei:'uei',wan:'uan',wen:'uen',wang:'uang',weng:'ueng'};
+function py2zy(p){
+  if(PZ_Y[p]) return PZ_F[PZ_Y[p]]||p;
+  let ini='',rest=p; for(const [k,v] of PZ_I) if(p.startsWith(k)){ ini=v; rest=p.slice(k.length); break; }
+  if('ㄓㄔㄕㄖㄗㄘㄙ'.includes(ini) && ini && rest==='i') return ini;
+  if('ㄐㄑㄒ'.includes(ini) && ini && rest.startsWith('u')) rest='v'+rest.slice(1);
+  return ini+(PZ_F[rest]||'');
+}
+function annRuntime(text){
+  if(!PY) return esc(text);
+  try{
+    const arr=PY.pinyin(text,{type:'all',toneSandhi:false,v:true});
+    const ch=arr.filter(o=>o.isZh).map(o=>{ const base=o.pinyin.normalize('NFD').replace(/[\u0300\u0301\u0304\u030C]/g,'').normalize('NFC').replace('ü','v');
+      return [o.origin, py2zy(base), {1:'',2:'ˊ',3:'ˇ',4:'ˋ',0:'˙'}[o.num]||'']; });
+    return ch.length ? A({t:text, s:[{w:text, ch}]},{cls:'keephz nospeak'}) : esc(text);
+  }catch(e){ return esc(text); }
+}
+async function judge(target, alts){
+  await loadPy();
+  const tg=hanOnly(target), hs=alts.map(hanOnly).filter(Boolean);
+  if(!tg || !hs.length) return {ok:false};
+  if(hs.some(h=>h.includes(tg))) return {ok:true, perfect:true};
+  if(PY){
+    const key=t=>PY.pinyin(t,{toneType:'none',type:'array',v:true});
+    const tk=key(tg);
+    for(const h of hs){ const hk=key(h); if((' '+hk.join(' ')+' ').includes(' '+tk.join(' ')+' ')) return {ok:true}; }
+    if(tk.length>=3) for(const h of hs){ const hk=key(h); if(tk.filter(x=>hk.includes(x)).length>=tk.length-1) return {ok:true}; }
+  } else {
+    for(const h of hs){ if([...tg].filter(c=>h.includes(c)).length>=Math.ceil(tg.length*.6)) return {ok:true}; }
+  }
+  return {ok:false};
+}
+function listen(cb){
+  if(!SRC){ cb({err:'nosr'}); return; }
+  stopSpeak(); if(curRec){ try{curRec.abort()}catch(e){} }
+  const r=new SRC(); curRec=r; r.lang='zh-TW'; r.interimResults=false; r.maxAlternatives=5; r.continuous=false;
+  let done=false; const fin=x=>{ if(done) return; done=true; curRec=null; cb(x); };
+  r.onresult=e=>fin({alts:[...e.results[0]].map(x=>x.transcript)});
+  r.onerror=e=>fin({err:e.error||'err'});
+  r.onend=()=>fin({alts:[]});
+  try{ r.start(); }catch(e){ fin({err:'start'}); }
+  setTimeout(()=>{ try{ r.stop(); }catch(e){} }, 6000);
+}
+function micTry(btn, target, fb, onOk, onFail){
+  if(btn.classList.contains('on')) return;
+  loadPy();
+  const orig=btn.innerHTML; btn.classList.add('on'); btn.innerHTML='👂 '+T('listening'); fb.innerHTML='';
+  listen(res=>{
+    btn.classList.remove('on'); btn.innerHTML=orig;
+    if(res.err){
+      fb.innerHTML = /not-allowed|service|start|nosr|audio-capture/.test(res.err) ? '🎤 '+T('vBlocked') : '👂 '+T('vNoSpeech');
+      fx.wrong(); onFail&&onFail(); return;
+    }
+    judge(target, res.alts).then(j=>{
+      if(j.ok){ fb.innerHTML='🎉 '+T(j.perfect?'vPerfect':'vOk'); fx.ding(); onOk(j); }
+      else { fb.innerHTML = res.alts.length ? `👂 ${T('vHeard')} <b>${annRuntime(hanOnly(res.alts[0])||res.alts[0])}</b><br>${T('vTry')}` : '👂 '+T('vNoSpeech'); fx.wrong(); onFail&&onFail(); }
+    });
+  });
+}
+
+/* ---------- 🎤 念給安安聽 ---------- */
+function voiceGame(){
+  const seen=new Set(), pool=[];
+  const add=(a,e)=>{ if(a && !seen.has(a.t)){ seen.add(a.t); pool.push({a,e}); } };
+  SYM.forEach(x=>add(W(x[2]),x[3]));
+  D.cases.forEach(c=>c.puzzles.forEach(p=>{ if(p.type==='pick') p.options.forEach(o=>add(o.w,o.e)); }));
+  const list=pool.sort(()=>Math.random()-.5).slice(0,8);
+  let i=0, score=0, tries=0, listened=false, solved=false;
+  if(SRC) loadPy();
+  function draw(){
+    const w=list[i]; tries=0; listened=false; solved=false;
+    main.innerHTML = `<h2 class="casehead">🎤 ${T('voice')}</h2>
+      <div class="ahud"><span>📝 ${i+1} / ${list.length}</span><span>⭐ <b>${score}</b></span></div>
+      <div class="stagebox home" id="stg" style="height:150px">${actorHTML(['A','idle'])}</div>
+      <div class="vcard paper"><span class="em">${w.e}</span>${A(w.a,{cls:'huge keephz nospeak'})}</div>
+      <p class="center vhow">${SRC?T('vHow'):T('vNoSR')}</p>
+      <div class="center"><button class="mic big" id="vMic" ${SRC?'':'disabled'}>🎤 ${T('sayIt')}</button></div>
+      <div id="vFb" class="vfb"></div>
+      <div class="controls"><button class="say alt" id="vHear">🔊 ${T('hearWho')}</button><button class="btn ghost" id="vSkip">${T('vNext')} ▶</button></div>`;
+    const an=$('#stg .actor');
+    $('#vHear').onclick=()=>{ listened=true; speak(w.a.t); };
+    $('#vSkip').onclick=()=>{ i++; i<list.length?draw():end(); };
+    $('#vMic').onclick=()=>{ if(solved) return; micTry($('#vMic'), w.a.t, $('#vFb'), ()=>{
+        solved=true; const pts=listened?1:2; score+=pts;
+        const r=$('#vMic').getBoundingClientRect(); floatStar(r.left+r.width/2, r.top, `+${pts} ⭐`);
+        playActor(an,$('#stg'),{m:'cheer', bub:'好棒！'});
+        setTimeout(()=>{ i++; i<list.length?draw():end(); }, 1600);
+      }, ()=>{ tries++; playActor(an,$('#stg'),{m:'think'}); if(tries>=3){ $('#vFb').innerHTML+=`<br>${T('vGood')}`; setTimeout(()=>speak(w.a.t),600); } });
+    };
+  }
+  function end(){
+    const st=Math.min(8, Math.ceil(score/2)); const gain=st-(S.stars.voice||0); if(gain>0){ S.stars.voice=st; save(); refreshBar(); }
+    main.innerHTML = `<div class="card" style="margin:20px auto"><div class="mascot party" style="width:min(220px,60vw)">${MASCOT}</div>
+      <div class="txt">${T('vDone')}<br>⭐ <b style="font-size:1.4em;color:var(--stamp)">${score}</b></div>
+      ${gain>0?`<div class="starsrow">⭐ +${gain}</div>`:''}
+      <div class="row" style="justify-content:center;margin-top:10px"><button class="btn" id="vAgain">🎤 ${T('again')}</button><button class="btn ghost" data-go="home">🏠 ${T('home')}</button></div></div>`;
+    $('#vAgain').onclick=voiceGame; fx.fanfare(); confetti();
+  }
+  draw();
+}
+
+/* ---------- 注音打地鼠 ---------- */
+function arcade(){
+  const best=S.best||0;
+  main.innerHTML = `<h2 class="casehead">🐹 ${T('arcade')}</h2>
+    <div class="paper center" style="font-size:24px">${T('arcHow')}<br>
+      <span style="font-size:20px;color:var(--ink2)">🔥 ${T('arcCombo')}　🏆 ${T('best')} ${best}</span></div>
+    <div class="center" style="margin-top:20px"><button class="btn big" id="aGo">🔨 ${T('go')}</button></div>`;
+  $('#aGo').onclick=arcadePlay;
+}
+function arcadePlay(){
+  const POOL = SYM.map(x=>[x[2],x[3]]).filter((v,i,a)=>a.findIndex(y=>y[0]===v[0])===i);
+  let score=0, combo=0, time=45, target=null, busy=false, stayT=null, clock=null, last='';
+  main.innerHTML = `<div class="ahud"><span>⏱ <b id="aTime">45</b></span><span>🎯 <b id="aScore">0</b></span><span id="aCombo"></span></div>
+    <div class="atarget"><span class="em" id="aEm"></span><button class="say" id="aHear" aria-label="聽">🔊</button></div>
+    <div class="holes">${Array.from({length:9},(_,i)=>`<div class="hole" id="h${i}"><button class="mole" data-i="${i}"><span class="sign"></span><span class="critter">🐹</span></button></div>`).join('')}</div>`;
+  $('#aHear').onclick=()=>target && speak(target[0]);
+  function down(){ main.querySelectorAll('.mole.up').forEach(m=>m.classList.remove('up','hitme','no')); }
+  function round(){
+    if(time<=0 || !$('#h0')) return; busy=false; down(); clearTimeout(stayT);
+    do { target = POOL[Math.random()*POOL.length|0]; } while (target[0]===last); last=target[0];
+    const others = POOL.filter(x=>x[0]!==target[0]).sort(()=>Math.random()-.5).slice(0,2);
+    const words=[target,...others].sort(()=>Math.random()-.5);
+    const holes=[...Array(9).keys()].sort(()=>Math.random()-.5).slice(0,3);
+    $('#aEm').textContent=target[1];
+    setTimeout(()=>{
+      if(time<=0 || !$('#h0')) return;
+      holes.forEach((h,k)=>{ const m=$('#h'+h+' .mole'); m.dataset.w=words[k][0];
+        m.querySelector('.sign').innerHTML=A(W(words[k][0]),{cls:'zyo nospeak'}); m.classList.add('up'); });
+    },200);
+    stayT=setTimeout(()=>{ combo=0; hud(); round(); }, Math.max(2600, 5200 - score*90));
+  }
+  function hud(){ $('#aScore').textContent=score; $('#aTime').textContent=time; $('#aCombo').textContent = combo>=2 ? `🔥×${combo}` : ''; }
+  main.querySelectorAll('.mole').forEach(m=>m.onclick=e=>{
+    if(!m.classList.contains('up') || busy || time<=0) return;
+    if(m.dataset.w===target[0]){
+      busy=true; combo++; const pts = 1 + (combo>=3?1:0); score+=pts; hud();
+      m.classList.add('hitme'); sfx('boing');
+      const r=m.getBoundingClientRect(); floatStar(r.left+r.width/2, r.top, `+${pts}`);
+      clearTimeout(stayT); setTimeout(round, 550);
+    } else {
+      combo=0; hud(); m.classList.remove('no'); void m.offsetWidth; m.classList.add('no'); sfx('wobble');
+      speak(m.dataset.w);
+    }
+  });
+  clock=setInterval(()=>{ time--; hud(); if(time<=0){ clearInterval(clock); clearTimeout(stayT); down(); arcadeEnd(score); } },1000);
+  window._arcadeStop=()=>{ clearInterval(clock); clearTimeout(stayT); time=0; };
+  round();
+}
+function arcadeEnd(score){
+  const rec = score>(S.best||0); if(rec) S.best=score;
+  const st=Math.min(15, Math.floor((S.best||0)/3)); const gain=st-(S.stars.arcade||0);
+  if(gain>0) S.stars.arcade=st; save(); refreshBar();
+  main.innerHTML = `<div class="card" style="margin:20px auto">
+    <div class="badge">🐹</div><div class="txt">${T('timeUp')}<br>${T('youGot')} <b style="font-size:1.4em;color:var(--stamp)">${score}</b> ${T('pts')}</div>
+    ${rec?`<div class="rankup">🏆 ${T('newRec')}</div>`:`<div class="muted">🏆 ${T('best')} ${S.best}</div>`}
+    ${gain>0?`<div class="starsrow">⭐ +${gain}</div>`:''}
+    <div class="row" style="justify-content:center;margin-top:10px"><button class="btn" id="aAgain">🔨 ${T('again')}</button><button class="btn ghost" data-go="home">🏠 ${T('home')}</button></div></div>`;
+  $('#aAgain').onclick=arcadePlay; fx.fanfare(); if(rec) confetti();
+  speak(rec?`新紀錄！${score}分！`:`妳打到${score}分！`);
+}
+
+/* ---------- guide ---------- */
+function guide(){
+  const tile = s => `<button class="sym nospeak" data-sym="${s[0]}"><span class="s">${s[0]}</span><span style="font-size:30px">${s[3]}</span><span class="ex">${A(W(s[2]))}</span></button>`;
+  main.innerHTML = `<h2 class="casehead">ㄅ ${T('guide')}</h2>
+    <p class="center" style="color:var(--onDesk);margin-top:0;font-size:24px">${T('guideTap')}</p>
+    <p class="lbl">${T('ini')}</p><div class="symgrid">${SYM.slice(0,21).map(tile).join('')}</div>
+    <p class="lbl">${T('mid')}</p><div class="symgrid">${SYM.slice(21,24).map(tile).join('')}</div>
+    <p class="lbl">${T('fin')}</p><div class="symgrid">${SYM.slice(24).map(tile).join('')}</div>
+    <p class="lbl">${T('tone')} <button class="say" id="allT">🔊 ${A(D.ph.toneRef,{cls:'keephz'})}</button></p>
+    <div class="tonegrid">${TONES.map(t=>`<button class="sym nospeak" data-tone="${t[3]}"><span class="s">${t[1]}</span><span class="ex">${A(W(t[2]),{cls:'keephz'})}</span><span class="ex">${A(W(t[3]),{cls:'keephz'})}</span></button>`).join('')}</div>`;
+  main.querySelectorAll('[data-sym]').forEach(b=>b.onclick=()=>{ main.querySelectorAll('.sym.on').forEach(x=>x.classList.remove('on')); b.classList.add('on'); playSym(b.dataset.sym); });
+  main.querySelectorAll('[data-tone]').forEach(b=>b.onclick=()=>speak(b.dataset.tone));
+  $('#allT').onclick=()=>speakSeq(TONES.map(t=>({text:t[3], el:main.querySelector(`[data-tone="${t[3]}"]`)})));
+}
+
+/* ---------- badges ---------- */
+function badges(){
+  const all = D.cases.every(x=>S.done[x.id]);
+  main.innerHTML = `<h2 class="casehead">🏅 ${T('badges')}</h2>
+    <div class="badges">${D.cases.map(c=>`<div class="bslot ${S.done[c.id]?'':'off'}"><div class="badge">${c.badge}</div>${S.done[c.id]?A(c.badgeName,{cls:'keephz'})+`<div>⭐ ${caseStars(c)}</div>`:T('noBadge')}</div>`).join('')}</div>
+    <p class="lbl">🎖️ ${T('level')}</p>
+    <div class="paper">${RANKS.map((r,i)=>`<div style="font-size:22px;padding:4px 0;${i===rankIdx(total())?'font-weight:700;color:var(--stamp)':''}">${i<=rankIdx(total())?'✅':'⬜'} ${rankHTML(i)}　⭐ ${r[0]}</div>`).join('')}</div>
+    ${all?`<div class="cert"><div class="mascot" style="width:min(240px,70vw)">${MASCOT}</div><div style="font-size:50px">🏆</div><h2>${T('cert')}</h2><div class="who">${nameHTML()}</div>${A(D.ph.allDone)}<div style="margin-top:10px"><span class="stamp">${T('certStamp')}</span></div></div>`:''}`;
+}
+
+/* ---------- settings ---------- */
+function settings(){
+  const zs = zhVoices();
+  main.innerHTML = `<h2 class="casehead">⚙️ 設定</h2><div class="paper form">
+    <label>探長的名字<input type="text" id="fName" maxlength="12" value="${esc(S.name)}"></label>
+    <label>發音的聲音<select id="fVoice">${zs.length? zs.map(v=>`<option value="${esc(v.name)}" ${voice&&v.name===voice.name?'selected':''}>${esc(v.name)}（${esc(v.lang)}）</option>`).join('') : '<option>（系統預設）</option>'}</select></label>
+    <p class="muted">建議選「台灣」或 zh-TW 的聲音，發音最接近課本。</p>
+    <label>說話速度：<span id="rv">${S.rate}</span><input type="range" id="fRate" min="0.6" max="1.1" step="0.05" value="${S.rate}"></label>
+    <button class="btn ghost" id="fTest">🔊 試聽</button>
+    <label class="check"><input type="checkbox" id="fAuto" ${S.auto?'checked':''}> 換頁時自動念出來（不建議，會少了自己讀的練習）</label>
+    <hr style="border:0;border-top:1px dashed var(--kraft2);width:100%">
+    <button class="btn ghost" id="fReset">🗑️ 清除進度，從頭開始</button>
+    <p class="muted">進度只存在這台裝置的瀏覽器裡。</p></div>`;
+  $('#fName').oninput=e=>{ S.name=e.target.value.trim()||'以琴'; save(); refreshBar(); };
+  $('#fVoice').onchange=e=>{ S.voice=e.target.value; save(); chooseVoice(); speak('你好，我是安安，以琴探長的小幫手。'); };
+  $('#fRate').oninput=e=>{ S.rate=+e.target.value; $('#rv').textContent=S.rate; save(); };
+  $('#fTest').onclick=()=>speak('探長好，我是安安。媽，麻，馬，罵。');
+  $('#fAuto').onchange=e=>{ S.auto=e.target.checked; save(); };
+  $('#fReset').onclick=()=>{ if(confirm('確定要清除所有星星和徽章嗎？')){ S.stars={}; S.done={}; save(); refreshBar(); nav('home'); } };
+}
+
+$('#modeZi').innerHTML=T('mode'); setMode(!!S.zyOnly); refreshBar(); home();
+</script>
+</body>
+</html>
