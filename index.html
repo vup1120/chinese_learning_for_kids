@@ -520,6 +520,29 @@ main[data-screen="play"]:has(.birthday-book){max-width:1050px}
 /* Cover text uses the same readable Zhuyin as the story. */
 .game-title{font-size:48px;letter-spacing:.02em}.game-title .ann{line-height:1.4}.game-title .zy{font-size:.4em}.game-title>span{margin-top:12px;font-size:.75em;letter-spacing:.02em}.game-subtitle{font-size:21px;line-height:2}.adventure-tag{font-size:16px;letter-spacing:0}.adventure-tag .ann{line-height:1.6}.play-button{font-size:25px}.game-copy{width:64%}.world-hero{min-height:690px}.player-stats .ann{line-height:1.4}.home-chapters{margin:28px 40px 38px}.home-chapters .lobby-section{margin:0 0 18px}.home-chapters .island-card.locked{opacity:1}.island-number{font-size:16px}.island-status .ann{line-height:1.55;font-size:16px}.game-modes .mode-text small{line-height:1.8}.home-chapters .featured-island{grid-column:1/-1;display:grid;grid-template-columns:32% 1fr}.home-chapters .featured-island .island-scene{height:100%;min-height:160px}.home-chapters .featured-island .island-info{padding:18px 24px}
 @media(max-width:600px){.world-hero{min-height:800px}.game-title{font-size:36px}.game-title>span{font-size:.8em}.game-subtitle{font-size:19px}.game-copy{width:100%}.adventure-tag{font-size:14px}.play-button{font-size:22px}.home-chapters{margin:22px 14px 30px}.home-chapters .lobby-section{align-items:flex-start}.home-chapters .lobby-section h2{font-size:23px}.home-chapters .lobby-section>span{display:none}.island-number{font-size:13px}.home-chapters .island-info strong{font-size:20px}.home-chapters .island-status .ann{font-size:14px}.home-chapters .featured-island .island-info{padding:15px 12px}}
+
+/* Keep all seven story entrances easy to scan, with room for every reading. */
+.home-chapters .island-map{gap:18px}
+.home-chapters .island-scene{height:112px}
+.home-chapters .island-object{font-size:58px;margin-top:26px}
+.home-chapters .island-info{padding:14px 12px;gap:7px}
+.home-chapters .island-info strong{font-size:21px;min-height:76px}
+.home-chapters .island-info small{font-size:15px}
+.home-chapters .island-status{padding-top:8px}
+.home-chapters .island-status .ann{font-size:14px}
+.home-chapters .featured-island .island-info strong{min-height:0}
+.home-chapters .featured-island .island-scene{min-height:140px}
+@media(max-width:600px){
+ .world-hero{min-height:740px}
+ .home-chapters .island-map{gap:12px}
+ .home-chapters .island-scene{height:96px}
+ .home-chapters .island-object{font-size:44px;margin-top:32px}
+ .home-chapters .island-info{padding:12px 10px}
+ .home-chapters .island-info strong{font-size:19px;min-height:86px}
+ .home-chapters .island-info small{font-size:14px}
+ .home-chapters .island-status .ann{font-size:13px}
+ .home-chapters .featured-island .island-scene{min-height:150px}
+}
 </style>
 </head>
 <body>
@@ -794,7 +817,7 @@ const MASCOT = `<svg viewBox="0 0 320 262" role="img" aria-label="以琴探長�
  </g>
 </svg>`;
 
-const ANAN = `<svg viewBox="46 20 128 236" aria-label="安安"><g>
+const ANAN = `<svg viewBox="46 8 128 248" aria-label="安安"><g>
   <path d="M100 204 L132 204 L134 240 L112 240 L108 222 L104 240 L76 240 L78 204 Z" fill="#C9CACC"/>
   <path d="M84 216 L84 238 M126 216 L126 238" stroke="#B3B4B6" stroke-width="2"/>
   <rect x="70" y="237" width="34" height="14" rx="7" fill="#E4D7C1"/><rect x="106" y="237" width="34" height="14" rx="7" fill="#E4D7C1"/>
@@ -987,7 +1010,7 @@ function forestIcon(kind){
   if(kind==='badges')return wrap(`<path d="M36 64L29 100L52 87L65 101L70 64" fill="#B48070" stroke="${ink}" stroke-width="2"/><circle cx="60" cy="45" r="33" fill="#D8BE83" stroke="${ink}" stroke-width="3"/><circle cx="60" cy="45" r="25" stroke="#FFF6D9" stroke-width="2"/><path d="M59 27L66 40L81 42L70 52L72 66L58 59L46 67L48 52L36 43L51 40Z" fill="${cream}"/>`);
   return wrap(`<path d="M24 84Q8 30 94 15Q106 82 24 84Z" fill="#8AA276" stroke="${ink}" stroke-width="2"/><path d="M15 100L80 29M38 73L35 43M60 54L90 53" stroke="${ink}" stroke-width="3" stroke-linecap="round"/>`);
 }
-function homeZh(t,reading){const z=reading.trim().split(/\s+/);let i=0;const s=[...t].map(h=>{if(!/[\u3400-\u9fff]/.test(h))return {p:h};const r=z[i++];if(!r)throw Error('Missing cover reading: '+t);const tn=r.match(/[ˊˇˋ˙]$/)?.[0]||'';return {w:h,ch:[[h,r.replace(/[ˊˇˋ˙]$/,''),tn]]};});if(i!==z.length)throw Error('Extra cover reading: '+t);return A({t,s});}
+function homeZh(t,reading){const z=reading.trim().split(/\s+/);let i=0;const s=[...t].map(h=>{if(!/[\u3400-\u9fff]/.test(h))return {p:h};const r=z[i++];if(!r)throw Error('Missing cover reading: '+t);const tn=r.match(/[ˊˇˋ˙]$/)?.[0]||'';return {w:h,ch:[[h,r.replace(/[ˊˇˋ˙]$/,''),tn]]};});if(i!==z.length)throw Error('Extra cover reading: '+t);return A({t,s},{cls:'keephz'});}
 const COVER={
   tag:()=>homeZh('森林裡的注音冒險','ㄙㄣ ㄌㄧㄣˊ ㄌㄧˇ ㄉㄜ˙ ㄓㄨˋ ㄧㄣ ㄇㄠˋ ㄒㄧㄢˇ'),
   title:()=>homeZh('以琴探長','ㄧˇ ㄑㄧㄣˊ ㄊㄢˋ ㄓㄤˇ'),subtitle:()=>homeZh('森林祕密','ㄙㄣ ㄌㄧㄣˊ ㄇㄧˋ ㄇㄧˋ'),
