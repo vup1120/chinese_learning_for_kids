@@ -429,6 +429,40 @@ canvas#confetti{position:fixed; inset:0; width:100%; height:100%; pointer-events
 @media (prefers-reduced-motion: reduce){
   *{animation:none!important; transition:none!important}
 }
+
+/* Bright field-journal theme. Annotation geometry intentionally stays unchanged. */
+:root, :root[data-theme="dark"], :root:not([data-theme="light"]){
+ --desk:#F7F8F2;--desk2:#FFFFFF;--deskline:#E2E8DC;--paper:#FFFFFF;--paper2:#EDF1E8;
+ --kraft:#E6F0DD;--kraft2:#B7CDA5;--grid:#A4C6B6;--gridsoft:#E8F4EE;
+ --ink:#263D35;--ink2:#63756B;--onDesk:#263D35;--stamp:#C65743;
+ --amber:#F5C65B;--amber2:#C89831;--hl:#FFF0BA;--shadow:0 3px 0 #DFE5D9;
+}
+body{background-image:radial-gradient(#DCE6D7 1px,transparent 1px);background-size:24px 24px}
+.bar{padding:12px max(14px,calc((100vw - 1040px)/2));border-bottom:1px solid var(--deskline);box-shadow:0 4px 20px #314A3610;gap:12px}
+.bar .name{font-size:19px}.seg{background:#EEF2E9}.seg button{min-height:42px}.seg button[aria-pressed="true"]{background:#fff;box-shadow:0 2px 6px #263D3514}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #287D69;outline-offset:4px}
+main{max-width:1040px;padding:28px 24px 56px}
+.paper,.stage,.card,.notebook,.sus{border:1px solid #DFE8D9;border-radius:24px;box-shadow:0 6px 22px #30463509}
+.btn,.say,.chip,.opt{transition:transform .18s,box-shadow .18s;min-height:48px}
+@media(hover:hover){.btn:hover,.activity:hover,.folder:not(.locked):hover{transform:translateY(-3px);box-shadow:0 8px 0 #B7CDA5}}
+.hero{text-align:left;padding:0}.hero-panel{display:grid;grid-template-columns:1.12fr 1fr;align-items:center;background:#E9F1DF;border:1px solid #D8E5CB;border-radius:32px;overflow:hidden;padding:32px;gap:20px;position:relative}
+.hero-copy{position:relative;z-index:1}.eyebrow{font-size:15px;letter-spacing:.12em;color:#607D50;margin:0 0 16px;font-weight:700}.title{margin:0 0 20px;color:var(--ink)}.title .t1{font-size:clamp(34px,4.3vw,50px)}.title .t2{font-size:clamp(23px,2.9vw,32px);color:#527548}.title .zy{color:#527548}
+.hero .bubble{font-size:21px;line-height:1.8;margin:0 0 22px;padding:0;max-width:none;background:none;border:0;box-shadow:none}.bubble::before{display:none}
+.hero .pills{justify-content:flex-start;margin:18px 0 0}.pill{background:#FFFFFFAA;border:1px solid #D9E4CE;font-size:16px;padding:7px 12px}
+.hero-art{position:relative;min-height:340px;display:grid;place-items:center;border-radius:50% 50% 24px 24px;background:linear-gradient(#D4E9E3 0 75%,#B8D19A 75%);border:8px solid #FFFFFF80}
+.hero-art::before{content:"";position:absolute;width:82px;height:82px;border-radius:50%;background:#FFE89A;right:26px;top:30px;box-shadow:-105px 30px 0 -28px #FFFFFFAA}
+.hero-art::after{content:"";position:absolute;bottom:24px;width:80%;height:22px;border-radius:50%;background:#69865325}.hero-art .mascot{position:relative;z-index:1;width:100%;max-width:360px;margin-top:35px;filter:drop-shadow(0 8px 4px #43633B20)}
+.art-token{position:absolute;z-index:2;background:white;border:2px solid #D7E5CA;border-radius:18px;padding:10px 16px;font-size:24px;box-shadow:0 5px 0 #A9C699;transform:rotate(-10deg);top:25px;left:18px}.art-token.second{top:auto;bottom:35px;left:auto;right:10px;transform:rotate(10deg);background:#FFF2C8}
+.section-label{display:flex;align-items:center;justify-content:space-between;margin:30px 2px 16px}.section-label h2{font-size:25px;margin:0}.section-label span{font-size:16px;color:var(--ink2)}
+.activities{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.activity{display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:12px;border:1px solid #DEE5D7;background:#fff;border-radius:24px;padding:22px;color:var(--ink);box-shadow:0 4px 0 #E2E7DC;transition:transform .18s,box-shadow .18s;cursor:pointer;font-size:22px}
+.activity-icon{width:64px;height:64px;border-radius:20px;display:grid;place-items:center;background:var(--tile,#EFF3E7);font-size:35px}.activity-title{font-weight:700}.activity-foot{display:flex;width:100%;justify-content:space-between;align-items:center;color:var(--ink2);font-size:16px;margin-top:auto}.activity-arrow{font-size:24px;color:#4D7858}.activity .ann{line-height:1.65}
+.folders{grid-template-columns:repeat(2,minmax(0,1fr));gap:44px 22px;margin-top:36px}.folders .sect{grid-column:1/-1;margin:0}.folder{border:1px solid #D3E1C7;border-radius:0 24px 24px 24px;padding:24px;font-size:27px;transition:transform .18s,box-shadow .18s}.folder.locked{filter:none;background:#ECEFE8;color:#647064;box-shadow:0 4px 0 #D7DED2}.folder .ftab{border:1px solid #D3E1C7;border-bottom:0}.fplace{line-height:1.8}
+.controls{background:#E7EDE0;border:1px solid #D7E2CC;border-radius:22px;padding:14px}.track{flex-wrap:wrap;gap:9px;margin:8px 0 22px}.track i{background:#E5EBDD;opacity:1}.track i.now{outline:3px solid #EDBF55}.casehead{margin:6px 0 24px}.note{border-radius:20px;box-shadow:0 8px 24px #334A3415;border:1px solid #E8E5D4}.stagebox{border:1px solid #D9E5D1;border-radius:24px;height:220px}.opt{border:1px solid #DDE6D6}.lbl{font-weight:700}.sym{border:1px solid #DDE6D6;border-radius:20px}.steps>span{background:#E4EBDB}.ahud{background:#fff;border:1px solid #DEE7D6;border-radius:20px;padding:12px}.form input,.form select{max-width:100%}
+@media(min-width:800px){main:has(.hero){padding-top:32px}main:not(:has(.hero)):not(:has(.folders)){max-width:820px}}
+@media(max-width:700px){main{padding:18px 14px 40px}.hero-panel{grid-template-columns:1fr;padding:22px;gap:22px}.hero-art{grid-row:1;min-height:210px;max-width:360px;width:100%;justify-self:center}.hero-art .mascot{max-width:250px;margin-top:0}.hero-copy{text-align:center}.hero .pills{justify-content:center}.hero .bubble{text-align:left;font-size:20px}.title .t1{font-size:38px}.hero .btn.big{width:100%;font-size:24px}.activities{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.activity{padding:16px;font-size:20px;border-radius:20px}.activity-icon{width:54px;height:54px;font-size:30px}.activity-foot{font-size:14px}.section-label span{display:none}.folders{grid-template-columns:1fr}.bar{gap:6px;padding:8px}.bar .name{font-size:15px}.starpill{font-size:16px;padding:5px 8px}.seg button{padding:6px}.witness{gap:8px}.witness .who{font-size:18px}.suspects{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}}
+@media(max-width:440px){.bar .name{visibility:visible}.bar .name .rank{display:none}.title .t1{font-size:32px}.activity-foot{gap:4px}.art-token{font-size:20px;padding:7px 12px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
 </style>
 </head>
 <body>
@@ -885,19 +919,26 @@ function nav(name){
 }
 function home(){
   const t=total(), r=rankIdx(t);
+  const activities=[
+    ['shoot','🎯','shoot','聽一聽，找目標','#FFF0D6'],
+    ['voice','🎤','voice','開口念，大聲說','#F8E7EC'],
+    ['arcade','🐹','arcade','眼明手快挑戰','#E9E6FA'],
+    ['guide','ㄅ','guide','我的注音小字典','#E2F2EC'],
+    ['badges','🏅','badges','收藏每一次進步','#FFF3CB']
+  ];
   main.innerHTML = `<section class="hero">
-    <div class="mascot">${MASCOT}</div>
-    <h1 class="title">${A(D.ph.title,{cls:'t1 keephz'})}<br>${A(D.ph.subtitle,{cls:'t2 keephz'})}</h1>
-    <div class="bubble paper">${A(D.ph.welcome)} <button class="say" data-t="${esc(D.ph.welcome.t)}" aria-label="念給我聽">🔊</button></div>
-    <div class="pills"><span class="pill">🕵️ ${nameHTML()}</span><span class="pill">🎖️ ${rankHTML(r)}</span><span class="pill">⭐ ${t}</span></div>
-    <button class="btn big" data-go="cases">🔍 ${T('start')}</button>
-    <div class="row" style="justify-content:center;margin-top:16px">
-      <button class="btn ghost" data-go="shoot">🎯 ${T('shoot')}</button>
-      <button class="btn ghost" data-go="voice">🎤 ${T('voice')}</button>
-      <button class="btn ghost" data-go="arcade">🐹 ${T('arcade')}</button>
-      <button class="btn ghost" data-go="guide">ㄅ ${T('guide')}</button>
-      <button class="btn ghost" data-go="badges">🏅 ${T('badges')}</button>
-    </div></section>`;
+    <div class="hero-panel">
+      <div class="hero-copy"><p class="eyebrow">小小探長・大大冒險</p>
+        <h1 class="title">${A(D.ph.title,{cls:'t1 keephz'})}<br>${A(D.ph.subtitle,{cls:'t2 keephz'})}</h1>
+        <div class="bubble">${A(D.ph.welcome)} <button class="say alt" data-t="${esc(D.ph.welcome.t)}" aria-label="念給我聽">🔊</button></div>
+        <button class="btn big" data-go="cases">🔍 ${T('start')} <span aria-hidden="true">→</span></button>
+        <div class="pills"><span class="pill">🕵️ ${nameHTML()}</span><span class="pill">🎖️ ${rankHTML(r)}</span><span class="pill">⭐ ${t}</span></div>
+      </div>
+      <div class="hero-art"><span class="art-token" aria-hidden="true">ㄅ ㄆ ㄇ</span><div class="mascot">${MASCOT}</div><span class="art-token second" aria-hidden="true">🔍 線索發現！</span></div>
+    </div>
+    <div class="section-label"><h2>今天想玩什麼？</h2><span>每一次練習，都是新的發現</span></div>
+    <div class="activities">${activities.map(([go,icon,key,desc,color])=>`<button class="activity" data-go="${go}" style="--tile:${color}"><span class="activity-icon" aria-hidden="true">${icon}</span><span class="activity-title">${T(key)}</span><span class="activity-foot"><span>${desc}</span><span class="activity-arrow" aria-hidden="true">↗</span></span></button>`).join('')}</div>
+  </section>`;
 }
 function caseStars(c){ let s=0; c.puzzles.forEach((p,i)=>s+=S.stars[c.id+'-'+i]||0); s+=S.stars[c.id+'-d']||0; return s; }
 function cases(){
