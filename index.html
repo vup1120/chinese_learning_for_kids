@@ -2221,6 +2221,7 @@ $('#modeZi').innerHTML=T('mode'); setMode(!!S.zyOnly); refreshBar(); home();
   <p class="zhh-hint" id="zhh-hint"></p>
   <div id="zhh-groups"></div>
   <p class="zhh-status" id="zhh-status" role="status" aria-live="polite"></p>
+  <small style="display:block;margin-top:6px;font-size:12px;color:#44464e">音源：<a href="https://language.moe.gov.tw/001/Upload/files/SITE_CONTENT/M0001/deploy/index.html" target="_blank" rel="noopener">教育部</a> · <a href="https://creativecommons.org/licenses/by/4.0/deed.zh_TW" target="_blank" rel="noopener">CC BY 4.0</a> · 已放慢及調整音量</small>
  </section>
 </dialog>
 <script>
@@ -2233,29 +2234,67 @@ $('#modeZi').innerHTML=T('mode'); setMode(!!S.zyOnly); refreshBar(); home();
   document.getElementById('zhh-hint').innerHTML=label('點注音，聽發音。點外面，收起來。','ㄉㄧㄢˇ ㄓㄨˋ ㄧㄣ ㄊㄧㄥ ㄈㄚ ㄧㄣ ㄉㄧㄢˇ ㄨㄞˋ ㄇㄧㄢˋ ㄕㄡ ㄑㄧˇ ㄌㄞˊ');
   const sections=[['聲母','ㄕㄥ ㄇㄨˇ','ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙ'],['介音','ㄐㄧㄝˋ ㄧㄣ','ㄧㄨㄩ'],['韻母','ㄩㄣˋ ㄇㄨˇ','ㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦ']];
   groups.innerHTML=sections.map(([name,reading,symbols])=>`<section class="zhh-group"><h3>${label(name,reading)}</h3><div class="zhh-keys">${[...symbols].map(z=>`<button type="button" class="zhh-key" data-zhh-symbol="${z}" aria-label="聽 ${z} 的發音" aria-pressed="false">${z}</button>`).join('')}</div></section>`).join('');
-  let lastFocus=null, played=false;
+  let lastFocus=null, audioContext=null, activeSound=null, playbackId=0;
+  const recordings=new Map();
+  function getAudioContext(){
+    if(!audioContext){const AudioCtx=window.AudioContext||window.webkitAudioContext;if(!AudioCtx)throw Error('Audio unavailable');audioContext=new AudioCtx();}
+    return audioContext;
+  }
+  function recordingURL(symbol){return new URL('assets/zhuyin/'+symbol.codePointAt(0).toString(16)+'.mp3',document.baseURI).href;}
+  function loadRecording(symbol){
+    if(!recordings.has(symbol)){
+      const request=fetch(recordingURL(symbol)).then(response=>{if(!response.ok)throw Error('Audio unavailable');return response.arrayBuffer();}).then(data=>getAudioContext().decodeAudioData(data)).catch(error=>{recordings.delete(symbol);throw error;});
+      recordings.set(symbol,request);
+    }
+    return recordings.get(symbol);
+  }
+  function stopRecording(){
+    playbackId++;
+    if(!activeSound)return;
+    const {source,gain}=activeSound, now=audioContext.currentTime;
+    gain.gain.cancelScheduledValues(now);gain.gain.setValueAtTime(gain.gain.value,now);gain.gain.linearRampToValueAtTime(0,now+0.015);
+    try{source.stop(now+0.02);}catch(error){}
+    activeSound=null;
+  }
+  function playRecording(symbol){
+    stopRecording();stopSpeak();const id=playbackId;
+    let context;
+    try{context=getAudioContext();}catch(error){status.textContent='無法播放，請用 Safari 或 Chrome 開啟。';return;}
+    // Resume inside the tap handler so iOS can authorize this audio context.
+    Promise.all([context.resume(),loadRecording(symbol)]).then(([,buffer])=>{
+      if(id!==playbackId||!modal.open)return;
+      const source=context.createBufferSource(),gain=context.createGain(),now=context.currentTime;
+      source.buffer=buffer;source.connect(gain);gain.connect(context.destination);
+      gain.gain.setValueAtTime(0,now);gain.gain.linearRampToValueAtTime(0.9,now+0.015);
+      gain.gain.setValueAtTime(0.9,now+Math.max(0.015,buffer.duration-0.025));gain.gain.linearRampToValueAtTime(0,now+buffer.duration);
+      const sound={source,gain};activeSound=sound;
+      source.onended=()=>{source.disconnect();gain.disconnect();if(activeSound===sound)activeSound=null;};
+      source.start(now);
+    }).catch(error=>{if(id===playbackId&&modal.open)status.textContent='聲音尚未載入，請再點一次。';});
+  }
   launcher.addEventListener('click',()=>{
     if(modal.open){modal.close();return;}
-    lastFocus=document.activeElement;played=false;status.textContent='';
+    lastFocus=document.activeElement;status.textContent='';
     groups.querySelectorAll('[aria-pressed="true"]').forEach(b=>b.setAttribute('aria-pressed','false'));
     modal.showModal();launcher.setAttribute('aria-expanded','true');document.body.classList.add('zhh-scroll-lock');
     document.getElementById('zhh-close').focus();
+    // Cache the small recordings; no sound plays until a symbol is tapped.
+    if(window.AudioContext||window.webkitAudioContext)SYM.forEach(([symbol])=>loadRecording(symbol).catch(()=>{}));
   });
   document.getElementById('zhh-close').addEventListener('click',()=>modal.close());
   modal.addEventListener('click',event=>{if(event.target===modal)modal.close();});
   modal.addEventListener('close',()=>{
     launcher.setAttribute('aria-expanded','false');document.body.classList.remove('zhh-scroll-lock');
-    if(played)stopSpeak();
+    stopRecording();
     if(lastFocus?.isConnected)lastFocus.focus({preventScroll:true});
   });
   groups.addEventListener('click',event=>{
     const key=event.target.closest('[data-zhh-symbol]');if(!key)return;
     groups.querySelectorAll('[aria-pressed="true"]').forEach(b=>b.setAttribute('aria-pressed','false'));
     key.setAttribute('aria-pressed','true');
-    const symbol=key.dataset.zhhSymbol, entry=SYM.find(row=>row[0]===symbol);
-    if(!TTS){status.textContent='這個瀏覽器不能發音，請用 Safari 或 Chrome 開啟。';return;}
-    played=true;status.textContent=symbol+' · '+(entry?.[2]||'');
-    playSym(symbol);
+    const symbol=key.dataset.zhhSymbol;
+    status.textContent=symbol;
+    playRecording(symbol);
   });
 })();
 </script>
