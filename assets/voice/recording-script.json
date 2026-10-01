@@ -1,0 +1,7465 @@
+{
+  "purpose": "完整詞句錄音待辦；現有注音僅作核對提示，不代表已審音。自訂姓名與動態分數另需處理。",
+  "entries": [
+    {
+      "text": "鳳梨酥守護者",
+      "zhuyin": "ㄈㄥˋ ㄌㄧˊ ㄙㄨ ㄕㄡˇ ㄏㄨˋ ㄓㄜˇ",
+      "sources": [
+        "D.cases[0].badgeName"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "鳳梨酥不見了",
+      "zhuyin": "ㄈㄥˋ ㄌㄧˊ ㄙㄨ ㄅㄨˋ ㄐㄧㄢˋ ㄌㄜ˙",
+      "sources": [
+        "D.cases[0].title",
+        "D.cases[0].intro[1].q.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "森林麵包店",
+      "zhuyin": "ㄙㄣ ㄌㄧㄣˊ ㄇㄧㄢˋ ㄅㄠ ㄉㄧㄢˋ",
+      "sources": [
+        "D.cases[0].placeName"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "叮咚！森林麵包店開門囉～",
+      "zhuyin": "ㄉㄧㄥ ㄉㄨㄥ ㄙㄣ ㄌㄧㄣˊ ㄇㄧㄢˋ ㄅㄠ ㄉㄧㄢˋ ㄎㄞ ㄇㄣˊ ㄌㄨㄛ˙",
+      "sources": [
+        "D.cases[0].intro[0]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "今天的天氣怎麼樣？",
+      "zhuyin": "ㄐㄧㄣ ㄊㄧㄢ ㄉㄜ˙ ㄊㄧㄢ ㄑㄧˋ ㄗㄣˇ ㄇㄜ˙ ㄧㄤˋ",
+      "sources": [
+        "D.cases[0].intro[0].c.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "太陽好大",
+      "zhuyin": "ㄊㄞˋ ㄧㄤˊ ㄏㄠˇ ㄉㄚˋ",
+      "sources": [
+        "D.cases[0].intro[0].c.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "太陽亮得刺眼，麵包店的窗戶閃閃發光。",
+      "zhuyin": "ㄊㄞˋ ㄧㄤˊ ㄌㄧㄤˋ ㄉㄜ˙ ㄘˋ ㄧㄢˇ ㄇㄧㄢˋ ㄅㄠ ㄉㄧㄢˋ ㄉㄜ˙ ㄔㄨㄤ ㄏㄨˋ ㄕㄢˇ ㄕㄢˇ ㄈㄚ ㄍㄨㄤ",
+      "sources": [
+        "D.cases[0].intro[0].c.options[0].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "下一點點雨",
+      "zhuyin": "ㄒㄧㄚˋ ㄧ ㄉㄧㄢˇ ㄉㄧㄢˇ ㄩˇ",
+      "sources": [
+        "D.cases[0].intro[0].c.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "小雨滴滴答答，地上濕濕的，線索看得更清楚！",
+      "zhuyin": "ㄒㄧㄠˇ ㄩˇ ㄉㄧ ㄉㄧ ㄉㄚ ㄉㄚ ㄉㄧˋ ㄕㄤˋ ㄕ ㄕ ㄉㄜ˙ ㄒㄧㄢˋ ㄙㄨㄛˇ ㄎㄢˋ ㄉㄜ˙ ㄍㄥˋ ㄑㄧㄥ ㄔㄨˇ",
+      "sources": [
+        "D.cases[0].intro[0].c.options[1].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "風呼呼吹",
+      "zhuyin": "ㄈㄥ ㄏㄨ ㄏㄨ ㄔㄨㄟ",
+      "sources": [
+        "D.cases[0].intro[0].c.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "風一吹，樹葉沙沙響，好像有什麼東西飛過去。",
+      "zhuyin": "ㄈㄥ ㄧ ㄔㄨㄟ ㄕㄨˋ ㄧㄝˋ ㄕㄚ ㄕㄚ ㄒㄧㄤˇ ㄏㄠˇ ㄒㄧㄤˋ ㄧㄡˇ ㄕㄜˊ ㄇㄜ˙ ㄉㄨㄥ ㄒㄧ ㄈㄟ ㄍㄨㄛˋ ㄑㄩˋ",
+      "sources": [
+        "D.cases[0].intro[0].c.options[2].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "咦？熊老闆看著空空的盤子：「嗚嗚嗚……我的鳳梨酥不見了！」",
+      "zhuyin": "ㄧˊ ㄒㄩㄥˊ ㄌㄠˇ ㄅㄢˇ ㄎㄢˋ ㄓㄜ˙ ㄎㄨㄥ ㄎㄨㄥ ㄉㄜ˙ ㄆㄢˊ ㄗ˙ ㄨ ㄨ ㄨ ㄨㄛˇ ㄉㄜ˙ ㄈㄥˋ ㄌㄧˊ ㄙㄨ ㄅㄨˋ ㄐㄧㄢˋ ㄌㄜ˙",
+      "sources": [
+        "D.cases[0].intro[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "熊老闆為什麼哭？",
+      "zhuyin": "ㄒㄩㄥˊ ㄌㄠˇ ㄅㄢˇ ㄨㄟˊ ㄕㄜˊ ㄇㄜ˙ ㄎㄨ",
+      "sources": [
+        "D.cases[0].intro[1].q.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "他跌倒了",
+      "zhuyin": "ㄊㄚ ㄉㄧㄝˊ ㄉㄠˇ ㄌㄜ˙",
+      "sources": [
+        "D.cases[0].intro[1].q.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "店太熱了",
+      "zhuyin": "ㄉㄧㄢˋ ㄊㄞˋ ㄖㄜˋ ㄌㄜ˙",
+      "sources": [
+        "D.cases[0].intro[1].q.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "沒錯！鳳梨酥全部不見了。",
+      "zhuyin": "ㄇㄟˊ ㄘㄨㄛˋ ㄈㄥˋ ㄌㄧˊ ㄙㄨ ㄑㄩㄢˊ ㄅㄨˋ ㄅㄨˋ ㄐㄧㄢˋ ㄌㄜ˙",
+      "sources": [
+        "D.cases[0].intro[1].q.good"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以琴探長咻一聲跳出來，拿起放大鏡東看西看。",
+      "zhuyin": "ㄧˇ ㄑㄧㄣˊ ㄊㄢˋ ㄓㄤˇ ㄒㄧㄡ ㄧ ㄕㄥ ㄊㄧㄠˋ ㄔㄨ ㄌㄞˊ ㄋㄚˊ ㄑㄧˇ ㄈㄤˋ ㄉㄚˋ ㄐㄧㄥˋ ㄉㄨㄥ ㄎㄢˋ ㄒㄧ ㄎㄢˋ",
+      "sources": [
+        "D.cases[0].intro[2]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "安安翻開筆記本：「探長，我們出發吧！」",
+      "zhuyin": "ㄢ ㄢ ㄈㄢ ㄎㄞ ㄅㄧˇ ㄐㄧˋ ㄅㄣˇ ㄊㄢˋ ㄓㄤˇ ㄨㄛˇ ㄇㄣ˙ ㄔㄨ ㄈㄚ ㄅㄚ˙",
+      "sources": [
+        "D.cases[0].intro[3]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "探長，我們先做什麼？",
+      "zhuyin": "ㄊㄢˋ ㄓㄤˇ ㄨㄛˇ ㄇㄣ˙ ㄒㄧㄢ ㄗㄨㄛˋ ㄕㄜˊ ㄇㄜ˙",
+      "sources": [
+        "D.cases[0].intro[3].c.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "先問熊老闆",
+      "zhuyin": "ㄒㄧㄢ ㄨㄣˋ ㄒㄩㄥˊ ㄌㄠˇ ㄅㄢˇ",
+      "sources": [
+        "D.cases[0].intro[3].c.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以琴問：「你最後看到鳳梨酥是什麼時候？」熊老闆說：「剛剛還在呢！」",
+      "zhuyin": "ㄧˇ ㄑㄧㄣˊ ㄨㄣˋ ㄋㄧˇ ㄗㄨㄟˋ ㄏㄡˋ ㄎㄢˋ ㄉㄠˋ ㄈㄥˋ ㄌㄧˊ ㄙㄨ ㄕˋ ㄕㄜˊ ㄇㄜ˙ ㄕˊ ㄏㄡˋ ㄒㄩㄥˊ ㄌㄠˇ ㄅㄢˇ ㄕㄨㄛ ㄍㄤ ㄍㄤ ㄏㄞˊ ㄗㄞˋ ㄋㄜ˙",
+      "sources": [
+        "D.cases[0].intro[3].c.options[0].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "先看地上",
+      "zhuyin": "ㄒㄧㄢ ㄎㄢˋ ㄉㄧˋ ㄕㄤˋ",
+      "sources": [
+        "D.cases[0].intro[3].c.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以琴趴下來看地上：「哇，這裡有奇怪的痕跡！」",
+      "zhuyin": "ㄧˇ ㄑㄧㄣˊ ㄆㄚ ㄒㄧㄚˋ ㄌㄞˊ ㄎㄢˋ ㄉㄧˋ ㄕㄤˋ ㄨㄚ ㄓㄜˋ ㄌㄧˇ ㄧㄡˇ ㄑㄧˊ ㄍㄨㄞˋ ㄉㄜ˙ ㄏㄣˊ ㄐㄧ",
+      "sources": [
+        "D.cases[0].intro[3].c.options[1].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "先聞味道",
+      "zhuyin": "ㄒㄧㄢ ㄨㄣˊ ㄨㄟˋ ㄉㄠˋ",
+      "sources": [
+        "D.cases[0].intro[3].c.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以琴吸一口氣：「嗯～有香香的鳳梨味，往窗戶那邊飄！」",
+      "zhuyin": "ㄧˇ ㄑㄧㄣˊ ㄒㄧ ㄧ ㄎㄡˇ ㄑㄧˋ ㄣˊ ㄧㄡˇ ㄒㄧㄤ ㄒㄧㄤ ㄉㄜ˙ ㄈㄥˋ ㄌㄧˊ ㄨㄟˋ ㄨㄤˇ ㄔㄨㄤ ㄏㄨˋ ㄋㄚˋ ㄅㄧㄢ ㄆㄧㄠ",
+      "sources": [
+        "D.cases[0].intro[3].c.options[2].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "哇！原來是藍鵲阿姨拿的！",
+      "zhuyin": "ㄨㄚ ㄩㄢˊ ㄌㄞˊ ㄕˋ ㄌㄢˊ ㄑㄩㄝˋ ㄚ ㄧˊ ㄋㄚˊ ㄉㄜ˙",
+      "sources": [
+        "D.cases[0].ending[0]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "藍鵲阿姨紅著臉說：「對不起～今天是寶寶的生日，我想給他驚喜。」",
+      "zhuyin": "ㄌㄢˊ ㄑㄩㄝˋ ㄚ ㄧˊ ㄏㄨㄥˊ ㄓㄜ˙ ㄌㄧㄢˇ ㄕㄨㄛ ㄉㄨㄟˋ ㄅㄨˋ ㄑㄧˇ ㄐㄧㄣ ㄊㄧㄢ ㄕˋ ㄅㄠˇ ㄅㄠˇ ㄉㄜ˙ ㄕㄥ ㄖˋ ㄨㄛˇ ㄒㄧㄤˇ ㄍㄟˇ ㄊㄚ ㄐㄧㄥ ㄒㄧˇ",
+      "sources": [
+        "D.cases[0].ending[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "藍鵲阿姨為什麼拿鳳梨酥？",
+      "zhuyin": "ㄌㄢˊ ㄑㄩㄝˋ ㄚ ㄧˊ ㄨㄟˊ ㄕㄜˊ ㄇㄜ˙ ㄋㄚˊ ㄈㄥˋ ㄌㄧˊ ㄙㄨ",
+      "sources": [
+        "D.cases[0].ending[1].q.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "她肚子餓",
+      "zhuyin": "ㄊㄚ ㄉㄨˋ ㄗ˙ ㄜˋ",
+      "sources": [
+        "D.cases[0].ending[1].q.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "要給寶寶驚喜",
+      "zhuyin": "ㄧㄠˋ ㄍㄟˇ ㄅㄠˇ ㄅㄠˇ ㄐㄧㄥ ㄒㄧˇ",
+      "sources": [
+        "D.cases[0].ending[1].q.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "她在生氣",
+      "zhuyin": "ㄊㄚ ㄗㄞˋ ㄕㄥ ㄑㄧˋ",
+      "sources": [
+        "D.cases[0].ending[1].q.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "對！今天是寶寶的生日。",
+      "zhuyin": "ㄉㄨㄟˋ ㄐㄧㄣ ㄊㄧㄢ ㄕˋ ㄅㄠˇ ㄅㄠˇ ㄉㄜ˙ ㄕㄥ ㄖˋ",
+      "sources": [
+        "D.cases[0].ending[1].q.good"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "熊老闆哈哈大笑：「下次跟我說，我送你一大盒！」",
+      "zhuyin": "ㄒㄩㄥˊ ㄌㄠˇ ㄅㄢˇ ㄏㄚ ㄏㄚ ㄉㄚˋ ㄒㄧㄠˋ ㄒㄧㄚˋ ㄘˋ ㄍㄣ ㄨㄛˇ ㄕㄨㄛ ㄨㄛˇ ㄙㄨㄥˋ ㄋㄧˇ ㄧ ㄉㄚˋ ㄏㄜˊ",
+      "sources": [
+        "D.cases[0].ending[2]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "大家一起吃鳳梨酥，哇～好香好甜！",
+      "zhuyin": "ㄉㄚˋ ㄐㄧㄚ ㄧ ㄑㄧˇ ㄔ ㄈㄥˋ ㄌㄧˊ ㄙㄨ ㄨㄚ ㄏㄠˇ ㄒㄧㄤ ㄏㄠˇ ㄊㄧㄢˊ",
+      "sources": [
+        "D.cases[0].ending[3]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "哇，腳印好小，只有三根腳趾！",
+      "zhuyin": "ㄨㄚ ㄐㄧㄠˇ ㄧㄣˋ ㄏㄠˇ ㄒㄧㄠˇ ㄓˇ ㄧㄡˇ ㄙㄢ ㄍㄣ ㄐㄧㄠˇ ㄓˇ",
+      "sources": [
+        "D.cases[0].puzzles[0].card[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "咦？地上有奇怪的東西！讀讀看注音，這是什麼呢？",
+      "zhuyin": "ㄧˊ ㄉㄧˋ ㄕㄤˋ ㄧㄡˇ ㄑㄧˊ ㄍㄨㄞˋ ㄉㄜ˙ ㄉㄨㄥ ㄒㄧ ㄉㄨˊ ㄉㄨˊ ㄎㄢˋ ㄓㄨˋ ㄧㄣ ㄓㄜˋ ㄕˋ ㄕㄜˊ ㄇㄜ˙ ㄋㄜ˙",
+      "sources": [
+        "D.cases[0].puzzles[0].prompt"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "腳印",
+      "zhuyin": "ㄐㄧㄠˇ ㄧㄣˋ",
+      "sources": [
+        "D.cases[0].puzzles[0].clue",
+        "D.cases[0].puzzles[0].options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "餃子",
+      "zhuyin": "ㄐㄧㄠˇ ㄗ˙",
+      "sources": [
+        "D.cases[0].puzzles[0].options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "鈴鐺",
+      "zhuyin": "ㄌㄧㄥˊ ㄉㄤ",
+      "sources": [
+        "D.cases[0].puzzles[0].options[2].w",
+        "D.w.鈴鐺",
+        "D.jy[7].words[3].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "啪啪啪！是拍翅膀的聲音，小偷會飛！",
+      "zhuyin": "ㄆㄚ ㄆㄚ ㄆㄚ ㄕˋ ㄆㄞ ㄔˋ ㄅㄤˇ ㄉㄜ˙ ㄕㄥ ㄧㄣ ㄒㄧㄠˇ ㄊㄡ ㄏㄨㄟˋ ㄈㄟ",
+      "sources": [
+        "D.cases[0].puzzles[1].card[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "熊老闆說，他聽到啪啪啪的聲音。「翅膀」的「膀」是第幾聲？",
+      "zhuyin": "ㄒㄩㄥˊ ㄌㄠˇ ㄅㄢˇ ㄕㄨㄛ ㄊㄚ ㄊㄧㄥ ㄉㄠˋ ㄆㄚ ㄆㄚ ㄆㄚ ㄉㄜ˙ ㄕㄥ ㄧㄣ ㄔˋ ㄅㄤˇ ㄉㄜ˙ ㄅㄤˇ ㄕˋ ㄉㄧˋ ㄐㄧˇ ㄕㄥ",
+      "sources": [
+        "D.cases[0].puzzles[1].prompt"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "翅膀",
+      "zhuyin": "ㄔˋ ㄅㄤˇ",
+      "sources": [
+        "D.cases[0].puzzles[1].word"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "窗戶旁邊有一根藍色的羽毛，輕輕飄呀飄。",
+      "zhuyin": "ㄔㄨㄤ ㄏㄨˋ ㄆㄤˊ ㄅㄧㄢ ㄧㄡˇ ㄧ ㄍㄣ ㄌㄢˊ ㄙㄜˋ ㄉㄜ˙ ㄩˇ ㄇㄠˊ ㄑㄧㄥ ㄑㄧㄥ ㄆㄧㄠ ㄧㄚ˙ ㄆㄧㄠ",
+      "sources": [
+        "D.cases[0].puzzles[2].card[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "窗戶旁邊有東西在飄！幫「毛」拼出注音，打開證物箱！",
+      "zhuyin": "ㄔㄨㄤ ㄏㄨˋ ㄆㄤˊ ㄅㄧㄢ ㄧㄡˇ ㄉㄨㄥ ㄒㄧ ㄗㄞˋ ㄆㄧㄠ ㄅㄤ ㄇㄠˊ ㄆㄧㄣ ㄔㄨ ㄓㄨˋ ㄧㄣ ㄉㄚˇ ㄎㄞ ㄓㄥˋ ㄨˋ ㄒㄧㄤ",
+      "sources": [
+        "D.cases[0].puzzles[2].prompt"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "羽毛",
+      "zhuyin": "ㄩˇ ㄇㄠˊ",
+      "sources": [
+        "D.cases[0].puzzles[2].word"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "猴子一直在呼呼大睡，不是他！",
+      "zhuyin": "ㄏㄡˊ ㄗ˙ ㄧ ㄓˊ ㄗㄞˋ ㄏㄨ ㄏㄨ ㄉㄚˋ ㄕㄨㄟˋ ㄅㄨˋ ㄕˋ ㄊㄚ",
+      "sources": [
+        "D.cases[0].puzzles[3].card[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "猴子",
+      "zhuyin": "ㄏㄡˊ ㄗ˙",
+      "sources": [
+        "D.cases[0].puzzles[3].who[1]",
+        "D.cases[0].deduce.suspects[0].n",
+        "D.w.猴子"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "呼～我今天早上一直在樹上睡覺啦！",
+      "zhuyin": "ㄏㄨ ㄨㄛˇ ㄐㄧㄣ ㄊㄧㄢ ㄗㄠˇ ㄕㄤˋ ㄧ ㄓˊ ㄗㄞˋ ㄕㄨˋ ㄕㄤˋ ㄕㄨㄟˋ ㄐㄧㄠˋ ㄌㄚ˙",
+      "sources": [
+        "D.cases[0].puzzles[3].statement"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "猴子早上在做什麼？",
+      "zhuyin": "ㄏㄡˊ ㄗ˙ ㄗㄠˇ ㄕㄤˋ ㄗㄞˋ ㄗㄨㄛˋ ㄕㄜˊ ㄇㄜ˙",
+      "sources": [
+        "D.cases[0].puzzles[3].question"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "睡覺",
+      "zhuyin": "ㄕㄨㄟˋ ㄐㄧㄠˋ",
+      "sources": [
+        "D.cases[0].puzzles[3].options[0].w",
+        "D.cases[2].puzzles[0].options[0].w",
+        "D.w.睡覺",
+        "D.jy[11].words[4].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "吃蛋糕",
+      "zhuyin": "ㄔ ㄉㄢˋ ㄍㄠ",
+      "sources": [
+        "D.cases[0].puzzles[3].options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "踢足球",
+      "zhuyin": "ㄊㄧ ㄗㄨˊ ㄑㄧㄡˊ",
+      "sources": [
+        "D.cases[0].puzzles[3].options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "到底是誰拿走了鳳梨酥？",
+      "zhuyin": "ㄉㄠˋ ㄉㄧˇ ㄕˋ ㄕㄟˊ ㄋㄚˊ ㄗㄡˇ ㄌㄜ˙ ㄈㄥˋ ㄌㄧˊ ㄙㄨ",
+      "sources": [
+        "D.cases[0].deduce.question"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "有五根手指，會爬樹。",
+      "zhuyin": "ㄧㄡˇ ㄨˇ ㄍㄣ ㄕㄡˇ ㄓˇ ㄏㄨㄟˋ ㄆㄚˊ ㄕㄨˋ",
+      "sources": [
+        "D.cases[0].deduce.suspects[0].t"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "黑熊",
+      "zhuyin": "ㄏㄟ ㄒㄩㄥˊ",
+      "sources": [
+        "D.cases[0].deduce.suspects[1].n"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "腳很大，毛是黑色的。",
+      "zhuyin": "ㄐㄧㄠˇ ㄏㄣˇ ㄉㄚˋ ㄇㄠˊ ㄕˋ ㄏㄟ ㄙㄜˋ ㄉㄜ˙",
+      "sources": [
+        "D.cases[0].deduce.suspects[1].t"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "藍鵲",
+      "zhuyin": "ㄌㄢˊ ㄑㄩㄝˋ",
+      "sources": [
+        "D.cases[0].deduce.suspects[2].n"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "有三根腳趾，藍色的羽毛，會飛。",
+      "zhuyin": "ㄧㄡˇ ㄙㄢ ㄍㄣ ㄐㄧㄠˇ ㄓˇ ㄌㄢˊ ㄙㄜˋ ㄉㄜ˙ ㄩˇ ㄇㄠˊ ㄏㄨㄟˋ ㄈㄟ",
+      "sources": [
+        "D.cases[0].deduce.suspects[2].t"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "燈籠小英雄",
+      "zhuyin": "ㄉㄥ ㄌㄨㄥˊ ㄒㄧㄠˇ ㄧㄥ ㄒㄩㄥˊ",
+      "sources": [
+        "D.cases[1].badgeName"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "月亮燈籠不見了",
+      "zhuyin": "ㄩㄝˋ ㄌㄧㄤˋ ㄉㄥ ㄌㄨㄥˊ ㄅㄨˋ ㄐㄧㄢˋ ㄌㄜ˙",
+      "sources": [
+        "D.cases[1].title"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "動物村燈會",
+      "zhuyin": "ㄉㄨㄥˋ ㄨˋ ㄘㄨㄣ ㄉㄥ ㄏㄨㄟˋ",
+      "sources": [
+        "D.cases[1].placeName"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "晚上，動物村亮晶晶，燈會開始囉！",
+      "zhuyin": "ㄨㄢˇ ㄕㄤˋ ㄉㄨㄥˋ ㄨˋ ㄘㄨㄣ ㄌㄧㄤˋ ㄐㄧㄥ ㄐㄧㄥ ㄉㄥ ㄏㄨㄟˋ ㄎㄞ ㄕˇ ㄌㄨㄛ˙",
+      "sources": [
+        "D.cases[1].intro[0]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "可是……最大的月亮燈籠，咻的一下不見了！",
+      "zhuyin": "ㄎㄜˇ ㄕˋ ㄗㄨㄟˋ ㄉㄚˋ ㄉㄜ˙ ㄩㄝˋ ㄌㄧㄤˋ ㄉㄥ ㄌㄨㄥˊ ㄒㄧㄡ ㄉㄜ˙ ㄧ ㄒㄧㄚˋ ㄅㄨˋ ㄐㄧㄢˋ ㄌㄜ˙",
+      "sources": [
+        "D.cases[1].intro[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "什麼東西不見了？",
+      "zhuyin": "ㄕㄜˊ ㄇㄜ˙ ㄉㄨㄥ ㄒㄧ ㄅㄨˋ ㄐㄧㄢˋ ㄌㄜ˙",
+      "sources": [
+        "D.cases[1].intro[1].q.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "月亮燈籠",
+      "zhuyin": "ㄩㄝˋ ㄌㄧㄤˋ ㄉㄥ ㄌㄨㄥˊ",
+      "sources": [
+        "D.cases[1].intro[1].q.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "一隻小狗",
+      "zhuyin": "ㄧ ㄓ ㄒㄧㄠˇ ㄍㄡˇ",
+      "sources": [
+        "D.cases[1].intro[1].q.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "一盒餅乾",
+      "zhuyin": "ㄧ ㄏㄜˊ ㄅㄧㄥˇ ㄍㄢ",
+      "sources": [
+        "D.cases[1].intro[1].q.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "答對了，是最大的月亮燈籠！",
+      "zhuyin": "ㄉㄚˊ ㄉㄨㄟˋ ㄌㄜ˙ ㄕˋ ㄗㄨㄟˋ ㄉㄚˋ ㄉㄜ˙ ㄩㄝˋ ㄌㄧㄤˋ ㄉㄥ ㄌㄨㄥˊ",
+      "sources": [
+        "D.cases[1].intro[1].q.good"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "大家急得跳來跳去：「怎麼辦？怎麼辦？」",
+      "zhuyin": "ㄉㄚˋ ㄐㄧㄚ ㄐㄧˊ ㄉㄜ˙ ㄊㄧㄠˋ ㄌㄞˊ ㄊㄧㄠˋ ㄑㄩˋ ㄗㄣˇ ㄇㄜ˙ ㄅㄢˋ ㄗㄣˇ ㄇㄜ˙ ㄅㄢˋ",
+      "sources": [
+        "D.cases[1].intro[2]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "安安想幫忙，他要做什麼？",
+      "zhuyin": "ㄢ ㄢ ㄒㄧㄤˇ ㄅㄤ ㄇㄤˊ ㄊㄚ ㄧㄠˋ ㄗㄨㄛˋ ㄕㄜˊ ㄇㄜ˙",
+      "sources": [
+        "D.cases[1].intro[2].c.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "大聲問大家",
+      "zhuyin": "ㄉㄚˋ ㄕㄥ ㄨㄣˋ ㄉㄚˋ ㄐㄧㄚ",
+      "sources": [
+        "D.cases[1].intro[2].c.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "安安大喊：「有人看到月亮燈籠嗎？」動物們都搖搖頭。",
+      "zhuyin": "ㄢ ㄢ ㄉㄚˋ ㄏㄢˇ ㄧㄡˇ ㄖㄣˊ ㄎㄢˋ ㄉㄠˋ ㄩㄝˋ ㄌㄧㄤˋ ㄉㄥ ㄌㄨㄥˊ ㄇㄚ˙ ㄉㄨㄥˋ ㄨˋ ㄇㄣ˙ ㄉㄡ ㄧㄠˊ ㄧㄠˊ ㄊㄡˊ",
+      "sources": [
+        "D.cases[1].intro[2].c.options[0].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "畫一張尋找海報",
+      "zhuyin": "ㄏㄨㄚˋ ㄧ ㄓㄤ ㄒㄩㄣˊ ㄓㄠˇ ㄏㄞˇ ㄅㄠˋ",
+      "sources": [
+        "D.cases[1].intro[2].c.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "安安畫了一張大大的海報，貼在樹上。",
+      "zhuyin": "ㄢ ㄢ ㄏㄨㄚˋ ㄌㄜ˙ ㄧ ㄓㄤ ㄉㄚˋ ㄉㄚˋ ㄉㄜ˙ ㄏㄞˇ ㄅㄠˋ ㄊㄧㄝ ㄗㄞˋ ㄕㄨˋ ㄕㄤˋ",
+      "sources": [
+        "D.cases[1].intro[2].c.options[1].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "先安慰大家",
+      "zhuyin": "ㄒㄧㄢ ㄢ ㄨㄟˋ ㄉㄚˋ ㄐㄧㄚ",
+      "sources": [
+        "D.cases[1].intro[2].c.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "安安拍拍小兔的背：「別怕，探長一定找得到！」",
+      "zhuyin": "ㄢ ㄢ ㄆㄞ ㄆㄞ ㄒㄧㄠˇ ㄊㄨˋ ㄉㄜ˙ ㄅㄟˋ ㄅㄧㄝˊ ㄆㄚˋ ㄊㄢˋ ㄓㄤˇ ㄧ ㄉㄧㄥˋ ㄓㄠˇ ㄉㄜ˙ ㄉㄠˋ",
+      "sources": [
+        "D.cases[1].intro[2].c.options[2].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以琴探長扶好皇冠：「別怕，小偷一定留下了線索！」",
+      "zhuyin": "ㄧˇ ㄑㄧㄣˊ ㄊㄢˋ ㄓㄤˇ ㄈㄨˊ ㄏㄠˇ ㄏㄨㄤˊ ㄍㄨㄢ ㄅㄧㄝˊ ㄆㄚˋ ㄒㄧㄠˇ ㄊㄡ ㄧ ㄉㄧㄥˋ ㄌㄧㄡˊ ㄒㄧㄚˋ ㄌㄜ˙ ㄒㄧㄢˋ ㄙㄨㄛˇ",
+      "sources": [
+        "D.cases[1].intro[3]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "天好黑，要怎麼找？",
+      "zhuyin": "ㄊㄧㄢ ㄏㄠˇ ㄏㄟ ㄧㄠˋ ㄗㄣˇ ㄇㄜ˙ ㄓㄠˇ",
+      "sources": [
+        "D.cases[1].intro[3].c.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "請貓頭鷹幫忙",
+      "zhuyin": "ㄑㄧㄥˇ ㄇㄠ ㄊㄡˊ ㄧㄥ ㄅㄤ ㄇㄤˊ",
+      "sources": [
+        "D.cases[1].intro[3].c.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "貓頭鷹張開大眼睛：「咕咕！我晚上看得最清楚，我幫你們！」",
+      "zhuyin": "ㄇㄠ ㄊㄡˊ ㄧㄥ ㄓㄤ ㄎㄞ ㄉㄚˋ ㄧㄢˇ ㄐㄧㄥ ㄍㄨ ㄍㄨ ㄨㄛˇ ㄨㄢˇ ㄕㄤˋ ㄎㄢˋ ㄉㄜ˙ ㄗㄨㄟˋ ㄑㄧㄥ ㄔㄨˇ ㄨㄛˇ ㄅㄤ ㄋㄧˇ ㄇㄣ˙",
+      "sources": [
+        "D.cases[1].intro[3].c.options[0].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "點一個小燈籠",
+      "zhuyin": "ㄉㄧㄢˇ ㄧ ㄍㄜˋ ㄒㄧㄠˇ ㄉㄥ ㄌㄨㄥˊ",
+      "sources": [
+        "D.cases[1].intro[3].c.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "安安點亮小燈籠，地上一下子就亮了。",
+      "zhuyin": "ㄢ ㄢ ㄉㄧㄢˇ ㄌㄧㄤˋ ㄒㄧㄠˇ ㄉㄥ ㄌㄨㄥˊ ㄉㄧˋ ㄕㄤˋ ㄧ ㄒㄧㄚˋ ㄗ˙ ㄐㄧㄡˋ ㄌㄧㄤˋ ㄌㄜ˙",
+      "sources": [
+        "D.cases[1].intro[3].c.options[1].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "用耳朵聽",
+      "zhuyin": "ㄩㄥˋ ㄦˇ ㄉㄨㄛˇ ㄊㄧㄥ",
+      "sources": [
+        "D.cases[1].intro[3].c.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "大家安靜下來，遠遠傳來奇怪的聲音……",
+      "zhuyin": "ㄉㄚˋ ㄐㄧㄚ ㄢ ㄐㄧㄥˋ ㄒㄧㄚˋ ㄌㄞˊ ㄩㄢˇ ㄩㄢˇ ㄔㄨㄢˊ ㄌㄞˊ ㄑㄧˊ ㄍㄨㄞˋ ㄉㄜ˙ ㄕㄥ ㄧㄣ",
+      "sources": [
+        "D.cases[1].intro[3].c.options[2].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "原來是小白狗拿的！他低著頭，耳朵垂下來。",
+      "zhuyin": "ㄩㄢˊ ㄌㄞˊ ㄕˋ ㄒㄧㄠˇ ㄅㄞˊ ㄍㄡˇ ㄋㄚˊ ㄉㄜ˙ ㄊㄚ ㄉㄧ ㄓㄜ˙ ㄊㄡˊ ㄦˇ ㄉㄨㄛˇ ㄔㄨㄟˊ ㄒㄧㄚˋ ㄌㄞˊ",
+      "sources": [
+        "D.cases[1].ending[0]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "「我家晚上好黑好黑，我好怕……所以想要一個月亮。」",
+      "zhuyin": "ㄨㄛˇ ㄐㄧㄚ ㄨㄢˇ ㄕㄤˋ ㄏㄠˇ ㄏㄟ ㄏㄠˇ ㄏㄟ ㄨㄛˇ ㄏㄠˇ ㄆㄚˋ ㄙㄨㄛˇ ㄧˇ ㄒㄧㄤˇ ㄧㄠˋ ㄧ ㄍㄜˋ ㄩㄝˋ ㄌㄧㄤˋ",
+      "sources": [
+        "D.cases[1].ending[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以琴探長摸摸他的頭：「怕黑沒關係，但是要先問大家喔！」",
+      "zhuyin": "ㄧˇ ㄑㄧㄣˊ ㄊㄢˋ ㄓㄤˇ ㄇㄛ ㄇㄛ ㄊㄚ ㄉㄜ˙ ㄊㄡˊ ㄆㄚˋ ㄏㄟ ㄇㄟˊ ㄍㄨㄢ ㄒㄧˋ ㄉㄢˋ ㄕˋ ㄧㄠˋ ㄒㄧㄢ ㄨㄣˋ ㄉㄚˋ ㄐㄧㄚ ㄛ",
+      "sources": [
+        "D.cases[1].ending[2]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以琴探長說，怕黑的時候要怎麼辦？",
+      "zhuyin": "ㄧˇ ㄑㄧㄣˊ ㄊㄢˋ ㄓㄤˇ ㄕㄨㄛ ㄆㄚˋ ㄏㄟ ㄉㄜ˙ ㄕˊ ㄏㄡˋ ㄧㄠˋ ㄗㄣˇ ㄇㄜ˙ ㄅㄢˋ",
+      "sources": [
+        "D.cases[1].ending[2].q.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "自己偷偷拿",
+      "zhuyin": "ㄗˋ ㄐㄧˇ ㄊㄡ ㄊㄡ ㄋㄚˊ",
+      "sources": [
+        "D.cases[1].ending[2].q.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "先問大家",
+      "zhuyin": "ㄒㄧㄢ ㄨㄣˋ ㄉㄚˋ ㄐㄧㄚ",
+      "sources": [
+        "D.cases[1].ending[2].q.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "大聲哭",
+      "zhuyin": "ㄉㄚˋ ㄕㄥ ㄎㄨ",
+      "sources": [
+        "D.cases[1].ending[2].q.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "對！想要東西，要先問別人。",
+      "zhuyin": "ㄉㄨㄟˋ ㄒㄧㄤˇ ㄧㄠˋ ㄉㄨㄥ ㄒㄧ ㄧㄠˋ ㄒㄧㄢ ㄨㄣˋ ㄅㄧㄝˊ ㄖㄣˊ",
+      "sources": [
+        "D.cases[1].ending[2].q.good"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "大家送他一個小燈籠，小白狗開心得搖尾巴：汪汪汪！",
+      "zhuyin": "ㄉㄚˋ ㄐㄧㄚ ㄙㄨㄥˋ ㄊㄚ ㄧ ㄍㄜˋ ㄒㄧㄠˇ ㄉㄥ ㄌㄨㄥˊ ㄒㄧㄠˇ ㄅㄞˊ ㄍㄡˇ ㄎㄞ ㄒㄧㄣ ㄉㄜ˙ ㄧㄠˊ ㄨㄟˇ ㄅㄚ˙ ㄨㄤ ㄨㄤ ㄨㄤ",
+      "sources": [
+        "D.cases[1].ending[3]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "地上有一根被咬過的骨頭，上面都是牙齒印！",
+      "zhuyin": "ㄉㄧˋ ㄕㄤˋ ㄧㄡˇ ㄧ ㄍㄣ ㄅㄟˋ ㄧㄠˇ ㄍㄨㄛˋ ㄉㄜ˙ ㄍㄨˇ ㄊㄡ˙ ㄕㄤˋ ㄇㄧㄢˋ ㄉㄡ ㄕˋ ㄧㄚˊ ㄔˇ ㄧㄣˋ",
+      "sources": [
+        "D.cases[1].puzzles[0].card[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "燈籠旁邊的地上有東西！讀讀看注音，這是什麼呢？",
+      "zhuyin": "ㄉㄥ ㄌㄨㄥˊ ㄆㄤˊ ㄅㄧㄢ ㄉㄜ˙ ㄉㄧˋ ㄕㄤˋ ㄧㄡˇ ㄉㄨㄥ ㄒㄧ ㄉㄨˊ ㄉㄨˊ ㄎㄢˋ ㄓㄨˋ ㄧㄣ ㄓㄜˋ ㄕˋ ㄕㄜˊ ㄇㄜ˙ ㄋㄜ˙",
+      "sources": [
+        "D.cases[1].puzzles[0].prompt"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "骨頭",
+      "zhuyin": "ㄍㄨˇ ㄊㄡ˙",
+      "sources": [
+        "D.cases[1].puzzles[0].clue",
+        "D.cases[1].puzzles[0].options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "烏龜",
+      "zhuyin": "ㄨ ㄍㄨㄟ",
+      "sources": [
+        "D.cases[1].puzzles[0].options[0].w",
+        "D.cases[2].deduce.suspects[1].n",
+        "D.w.烏龜"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "大鼓",
+      "zhuyin": "ㄉㄚˋ ㄍㄨˇ",
+      "sources": [
+        "D.cases[1].puzzles[0].options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "骨頭上有白白的毛。",
+      "zhuyin": "ㄍㄨˇ ㄊㄡ˙ ㄕㄤˋ ㄧㄡˇ ㄅㄞˊ ㄅㄞˊ ㄉㄜ˙ ㄇㄠˊ",
+      "sources": [
+        "D.cases[1].puzzles[1].card[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "骨頭上黏著毛！幫「白」拼出注音，看看是什麼顏色！",
+      "zhuyin": "ㄍㄨˇ ㄊㄡ˙ ㄕㄤˋ ㄋㄧㄢˊ ㄓㄜ˙ ㄇㄠˊ ㄅㄤ ㄅㄞˊ ㄆㄧㄣ ㄔㄨ ㄓㄨˋ ㄧㄣ ㄎㄢˋ ㄎㄢˋ ㄕˋ ㄕㄜˊ ㄇㄜ˙ ㄧㄢˊ ㄙㄜˋ",
+      "sources": [
+        "D.cases[1].puzzles[1].prompt"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "白色",
+      "zhuyin": "ㄅㄞˊ ㄙㄜˋ",
+      "sources": [
+        "D.cases[1].puzzles[1].word",
+        "D.cases[1].puzzles[3].options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "遠遠的，有「汪汪汪」的叫聲！",
+      "zhuyin": "ㄩㄢˇ ㄩㄢˇ ㄉㄜ˙ ㄧㄡˇ ㄨㄤ ㄨㄤ ㄨㄤ ㄉㄜ˙ ㄐㄧㄠˋ ㄕㄥ",
+      "sources": [
+        "D.cases[1].puzzles[2].card[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "安安聽到遠遠的叫聲，汪汪汪！「汪汪」的「汪」是第幾聲？",
+      "zhuyin": "ㄢ ㄢ ㄊㄧㄥ ㄉㄠˋ ㄩㄢˇ ㄩㄢˇ ㄉㄜ˙ ㄐㄧㄠˋ ㄕㄥ ㄨㄤ ㄨㄤ ㄨㄤ ㄨㄤ ㄨㄤ ㄉㄜ˙ ㄨㄤ ㄕˋ ㄉㄧˋ ㄐㄧˇ ㄕㄥ",
+      "sources": [
+        "D.cases[1].puzzles[2].prompt"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "汪汪",
+      "zhuyin": "ㄨㄤ ㄨㄤ",
+      "sources": [
+        "D.cases[1].puzzles[2].word"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "小偷是白色的！",
+      "zhuyin": "ㄒㄧㄠˇ ㄊㄡ ㄕˋ ㄅㄞˊ ㄙㄜˋ ㄉㄜ˙",
+      "sources": [
+        "D.cases[1].puzzles[3].card[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "貓頭鷹",
+      "zhuyin": "ㄇㄠ ㄊㄡˊ ㄧㄥ",
+      "sources": [
+        "D.cases[1].puzzles[3].who[1]",
+        "D.cases[1].deduce.suspects[2].n",
+        "D.w.貓頭鷹"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "咕咕！我看到一個白白的影子，抱著圓圓的東西跑走了！",
+      "zhuyin": "ㄍㄨ ㄍㄨ ㄨㄛˇ ㄎㄢˋ ㄉㄠˋ ㄧ ㄍㄜˋ ㄅㄞˊ ㄅㄞˊ ㄉㄜ˙ ㄧㄥˇ ㄗ˙ ㄅㄠˋ ㄓㄜ˙ ㄩㄢˊ ㄩㄢˊ ㄉㄜ˙ ㄉㄨㄥ ㄒㄧ ㄆㄠˇ ㄗㄡˇ ㄌㄜ˙",
+      "sources": [
+        "D.cases[1].puzzles[3].statement"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "貓頭鷹看到什麼顏色的影子？",
+      "zhuyin": "ㄇㄠ ㄊㄡˊ ㄧㄥ ㄎㄢˋ ㄉㄠˋ ㄕㄜˊ ㄇㄜ˙ ㄧㄢˊ ㄙㄜˋ ㄉㄜ˙ ㄧㄥˇ ㄗ˙",
+      "sources": [
+        "D.cases[1].puzzles[3].question"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "黑色",
+      "zhuyin": "ㄏㄟ ㄙㄜˋ",
+      "sources": [
+        "D.cases[1].puzzles[3].options[0].w",
+        "D.cases[4].puzzles[1].options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "紅色",
+      "zhuyin": "ㄏㄨㄥˊ ㄙㄜˋ",
+      "sources": [
+        "D.cases[1].puzzles[3].options[1].w",
+        "D.w.紅色",
+        "D.jy[15].words[0].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "到底是誰拿走了月亮燈籠？",
+      "zhuyin": "ㄉㄠˋ ㄉㄧˇ ㄕˋ ㄕㄟˊ ㄋㄚˊ ㄗㄡˇ ㄌㄜ˙ ㄩㄝˋ ㄌㄧㄤˋ ㄉㄥ ㄌㄨㄥˊ",
+      "sources": [
+        "D.cases[1].deduce.question"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "白兔",
+      "zhuyin": "ㄅㄞˊ ㄊㄨˋ",
+      "sources": [
+        "D.cases[1].deduce.suspects[0].n"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "毛是白色的，喜歡吃紅蘿蔔。",
+      "zhuyin": "ㄇㄠˊ ㄕˋ ㄅㄞˊ ㄙㄜˋ ㄉㄜ˙ ㄒㄧˇ ㄏㄨㄢ ㄔ ㄏㄨㄥˊ ㄌㄨㄛˊ ㄅㄛ˙",
+      "sources": [
+        "D.cases[1].deduce.suspects[0].t"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "小白狗",
+      "zhuyin": "ㄒㄧㄠˇ ㄅㄞˊ ㄍㄡˇ",
+      "sources": [
+        "D.cases[1].deduce.suspects[1].n"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "毛是白色的，會汪汪叫，喜歡咬骨頭。",
+      "zhuyin": "ㄇㄠˊ ㄕˋ ㄅㄞˊ ㄙㄜˋ ㄉㄜ˙ ㄏㄨㄟˋ ㄨㄤ ㄨㄤ ㄐㄧㄠˋ ㄒㄧˇ ㄏㄨㄢ ㄧㄠˇ ㄍㄨˇ ㄊㄡ˙",
+      "sources": [
+        "D.cases[1].deduce.suspects[1].t"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "羽毛是咖啡色的，晚上不睡覺。",
+      "zhuyin": "ㄩˇ ㄇㄠˊ ㄕˋ ㄎㄚ ㄈㄟ ㄙㄜˋ ㄉㄜ˙ ㄨㄢˇ ㄕㄤˋ ㄅㄨˋ ㄕㄨㄟˋ ㄐㄧㄠˋ",
+      "sources": [
+        "D.cases[1].deduce.suspects[2].t"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "夜市神探",
+      "zhuyin": "ㄧㄝˋ ㄕˋ ㄕㄣˊ ㄊㄢˋ",
+      "sources": [
+        "D.cases[2].badgeName"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "珍珠奶茶不見了",
+      "zhuyin": "ㄓㄣ ㄓㄨ ㄋㄞˇ ㄔㄚˊ ㄅㄨˋ ㄐㄧㄢˋ ㄌㄜ˙",
+      "sources": [
+        "D.cases[2].title"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "熱鬧的夜市",
+      "zhuyin": "ㄖㄜˋ ㄋㄠˋ ㄉㄜ˙ ㄧㄝˋ ㄕˋ",
+      "sources": [
+        "D.cases[2].placeName"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "夜市到囉！香香的雞排，甜甜的奶茶，好熱鬧！",
+      "zhuyin": "ㄧㄝˋ ㄕˋ ㄉㄠˋ ㄌㄨㄛ˙ ㄒㄧㄤ ㄒㄧㄤ ㄉㄜ˙ ㄐㄧ ㄆㄞˊ ㄊㄧㄢˊ ㄊㄧㄢˊ ㄉㄜ˙ ㄋㄞˇ ㄔㄚˊ ㄏㄠˇ ㄖㄜˋ ㄋㄠˋ",
+      "sources": [
+        "D.cases[2].intro[0]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "松鼠老闆大叫：「哎呀！我的珍珠奶茶不見了！」",
+      "zhuyin": "ㄙㄨㄥ ㄕㄨˇ ㄌㄠˇ ㄅㄢˇ ㄉㄚˋ ㄐㄧㄠˋ ㄞ ㄧㄚ ㄨㄛˇ ㄉㄜ˙ ㄓㄣ ㄓㄨ ㄋㄞˇ ㄔㄚˊ ㄅㄨˋ ㄐㄧㄢˋ ㄌㄜ˙",
+      "sources": [
+        "D.cases[2].intro[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "松鼠老闆掉了什麼？",
+      "zhuyin": "ㄙㄨㄥ ㄕㄨˇ ㄌㄠˇ ㄅㄢˇ ㄉㄧㄠˋ ㄌㄜ˙ ㄕㄜˊ ㄇㄜ˙",
+      "sources": [
+        "D.cases[2].intro[1].q.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "珍珠奶茶",
+      "zhuyin": "ㄓㄣ ㄓㄨ ㄋㄞˇ ㄔㄚˊ",
+      "sources": [
+        "D.cases[2].intro[1].q.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "一串香腸",
+      "zhuyin": "ㄧ ㄔㄨㄢˋ ㄒㄧㄤ ㄔㄤˊ",
+      "sources": [
+        "D.cases[2].intro[1].q.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "他的帽子",
+      "zhuyin": "ㄊㄚ ㄉㄜ˙ ㄇㄠˋ ㄗ˙",
+      "sources": [
+        "D.cases[2].intro[1].q.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "沒錯，是珍珠奶茶！",
+      "zhuyin": "ㄇㄟˊ ㄘㄨㄛˋ ㄕˋ ㄓㄣ ㄓㄨ ㄋㄞˇ ㄔㄚˊ",
+      "sources": [
+        "D.cases[2].intro[1].q.good"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "安安舉起手：「探長，這是最難的案子，加油！」",
+      "zhuyin": "ㄢ ㄢ ㄐㄩˇ ㄑㄧˇ ㄕㄡˇ ㄊㄢˋ ㄓㄤˇ ㄓㄜˋ ㄕˋ ㄗㄨㄟˋ ㄋㄢˊ ㄉㄜ˙ ㄢˋ ㄗ˙ ㄐㄧㄚ ㄧㄡˊ",
+      "sources": [
+        "D.cases[2].intro[2]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "夜市人好多，先找哪裡？",
+      "zhuyin": "ㄧㄝˋ ㄕˋ ㄖㄣˊ ㄏㄠˇ ㄉㄨㄛ ㄒㄧㄢ ㄓㄠˇ ㄋㄚˇ ㄌㄧˇ",
+      "sources": [
+        "D.cases[2].intro[2].c.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "攤子前面",
+      "zhuyin": "ㄊㄢ ㄗ˙ ㄑㄧㄢˊ ㄇㄧㄢˋ",
+      "sources": [
+        "D.cases[2].intro[2].c.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "攤子前面亮亮的，好像有水……",
+      "zhuyin": "ㄊㄢ ㄗ˙ ㄑㄧㄢˊ ㄇㄧㄢˋ ㄌㄧㄤˋ ㄌㄧㄤˋ ㄉㄜ˙ ㄏㄠˇ ㄒㄧㄤˋ ㄧㄡˇ ㄕㄨㄟˇ",
+      "sources": [
+        "D.cases[2].intro[2].c.options[0].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "問隔壁的小貓",
+      "zhuyin": "ㄨㄣˋ ㄍㄜˊ ㄅㄧˋ ㄉㄜ˙ ㄒㄧㄠˇ ㄇㄠ",
+      "sources": [
+        "D.cases[2].intro[2].c.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "小貓舔舔手：「喵～我剛剛好像看到一個影子跳過去！」",
+      "zhuyin": "ㄒㄧㄠˇ ㄇㄠ ㄊㄧㄢˇ ㄊㄧㄢˇ ㄕㄡˇ ㄇㄧㄠ ㄨㄛˇ ㄍㄤ ㄍㄤ ㄏㄠˇ ㄒㄧㄤˋ ㄎㄢˋ ㄉㄠˋ ㄧ ㄍㄜˋ ㄧㄥˇ ㄗ˙ ㄊㄧㄠˋ ㄍㄨㄛˋ ㄑㄩˋ",
+      "sources": [
+        "D.cases[2].intro[2].c.options[1].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "看垃圾桶",
+      "zhuyin": "ㄎㄢˋ ㄌㄜˋ ㄙㄜˋ ㄊㄨㄥˇ",
+      "sources": [
+        "D.cases[2].intro[2].c.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "裡面只有空杯子，不過……杯子上有奇怪的味道！",
+      "zhuyin": "ㄌㄧˇ ㄇㄧㄢˋ ㄓˇ ㄧㄡˇ ㄎㄨㄥ ㄅㄟ ㄗ˙ ㄅㄨˋ ㄍㄨㄛˋ ㄅㄟ ㄗ˙ ㄕㄤˋ ㄧㄡˇ ㄑㄧˊ ㄍㄨㄞˋ ㄉㄜ˙ ㄨㄟˋ ㄉㄠˋ",
+      "sources": [
+        "D.cases[2].intro[2].c.options[2].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "哈！原來是青蛙弟弟拿的！",
+      "zhuyin": "ㄏㄚ ㄩㄢˊ ㄌㄞˊ ㄕˋ ㄑㄧㄥ ㄨㄚ ㄉㄧˋ ㄉㄧ˙ ㄋㄚˊ ㄉㄜ˙",
+      "sources": [
+        "D.cases[2].ending[0]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "青蛙弟弟說：「杯子裡有好多黑黑的蛋，我以為是青蛙寶寶，想救牠們！」",
+      "zhuyin": "ㄑㄧㄥ ㄨㄚ ㄉㄧˋ ㄉㄧ˙ ㄕㄨㄛ ㄅㄟ ㄗ˙ ㄌㄧˇ ㄧㄡˇ ㄏㄠˇ ㄉㄨㄛ ㄏㄟ ㄏㄟ ㄉㄜ˙ ㄉㄢˋ ㄨㄛˇ ㄧˇ ㄨㄟˊ ㄕˋ ㄑㄧㄥ ㄨㄚ ㄅㄠˇ ㄅㄠˇ ㄒㄧㄤˇ ㄐㄧㄡˋ ㄊㄚ ㄇㄣ˙",
+      "sources": [
+        "D.cases[2].ending[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "青蛙弟弟以為珍珠是什麼？",
+      "zhuyin": "ㄑㄧㄥ ㄨㄚ ㄉㄧˋ ㄉㄧ˙ ㄧˇ ㄨㄟˊ ㄓㄣ ㄓㄨ ㄕˋ ㄕㄜˊ ㄇㄜ˙",
+      "sources": [
+        "D.cases[2].ending[1].q.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "黑色的糖果",
+      "zhuyin": "ㄏㄟ ㄙㄜˋ ㄉㄜ˙ ㄊㄤˊ ㄍㄨㄛˇ",
+      "sources": [
+        "D.cases[2].ending[1].q.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "青蛙寶寶",
+      "zhuyin": "ㄑㄧㄥ ㄨㄚ ㄅㄠˇ ㄅㄠˇ",
+      "sources": [
+        "D.cases[2].ending[1].q.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "小石頭",
+      "zhuyin": "ㄒㄧㄠˇ ㄕˊ ㄊㄡˊ",
+      "sources": [
+        "D.cases[2].ending[1].q.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "哈哈，他以為是青蛙蛋！",
+      "zhuyin": "ㄏㄚ ㄏㄚ ㄊㄚ ㄧˇ ㄨㄟˊ ㄕˋ ㄑㄧㄥ ㄨㄚ ㄉㄢˋ",
+      "sources": [
+        "D.cases[2].ending[1].q.good"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "大家笑得東倒西歪：「哈哈哈！那是珍珠，不是青蛙蛋啦！」",
+      "zhuyin": "ㄉㄚˋ ㄐㄧㄚ ㄒㄧㄠˋ ㄉㄜ˙ ㄉㄨㄥ ㄉㄠˇ ㄒㄧ ㄨㄞ ㄏㄚ ㄏㄚ ㄏㄚ ㄋㄚˋ ㄕˋ ㄓㄣ ㄓㄨ ㄅㄨˋ ㄕˋ ㄑㄧㄥ ㄨㄚ ㄉㄢˋ ㄌㄚ˙",
+      "sources": [
+        "D.cases[2].ending[2]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "奶茶找回來了，要怎麼辦？",
+      "zhuyin": "ㄋㄞˇ ㄔㄚˊ ㄓㄠˇ ㄏㄨㄟˊ ㄌㄞˊ ㄌㄜ˙ ㄧㄠˋ ㄗㄣˇ ㄇㄜ˙ ㄅㄢˋ",
+      "sources": [
+        "D.cases[2].ending[2].c.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "大家一起分著喝",
+      "zhuyin": "ㄉㄚˋ ㄐㄧㄚ ㄧ ㄑㄧˇ ㄈㄣ ㄓㄜ˙ ㄏㄜ",
+      "sources": [
+        "D.cases[2].ending[2].c.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "松鼠老闆拿出好多杯子，每個人都喝到一口！",
+      "zhuyin": "ㄙㄨㄥ ㄕㄨˇ ㄌㄠˇ ㄅㄢˇ ㄋㄚˊ ㄔㄨ ㄏㄠˇ ㄉㄨㄛ ㄅㄟ ㄗ˙ ㄇㄟˇ ㄍㄜˋ ㄖㄣˊ ㄉㄡ ㄏㄜ ㄉㄠˋ ㄧ ㄎㄡˇ",
+      "sources": [
+        "D.cases[2].ending[2].c.options[0].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "請青蛙弟弟喝",
+      "zhuyin": "ㄑㄧㄥˇ ㄑㄧㄥ ㄨㄚ ㄉㄧˋ ㄉㄧ˙ ㄏㄜ",
+      "sources": [
+        "D.cases[2].ending[2].c.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "青蛙弟弟紅著臉：「謝謝！珍珠QQ的，好好吃！」",
+      "zhuyin": "ㄑㄧㄥ ㄨㄚ ㄉㄧˋ ㄉㄧ˙ ㄏㄨㄥˊ ㄓㄜ˙ ㄌㄧㄢˇ ㄒㄧㄝˋ ㄒㄧㄝ˙ ㄓㄣ ㄓㄨ ㄉㄜ˙ ㄏㄠˇ ㄏㄠˇ ㄔ",
+      "sources": [
+        "D.cases[2].ending[2].c.options[1].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "再買一杯給老闆",
+      "zhuyin": "ㄗㄞˋ ㄇㄞˇ ㄧ ㄅㄟ ㄍㄟˇ ㄌㄠˇ ㄅㄢˇ",
+      "sources": [
+        "D.cases[2].ending[2].c.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以琴買了一杯給松鼠老闆：「辛苦了！」",
+      "zhuyin": "ㄧˇ ㄑㄧㄣˊ ㄇㄞˇ ㄌㄜ˙ ㄧ ㄅㄟ ㄍㄟˇ ㄙㄨㄥ ㄕㄨˇ ㄌㄠˇ ㄅㄢˇ ㄒㄧㄣ ㄎㄨˇ ㄌㄜ˙",
+      "sources": [
+        "D.cases[2].ending[2].c.options[2].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "松鼠老闆請大家喝奶茶，安安大喊：「以琴探長，妳是真正的神探！」",
+      "zhuyin": "ㄙㄨㄥ ㄕㄨˇ ㄌㄠˇ ㄅㄢˇ ㄑㄧㄥˇ ㄉㄚˋ ㄐㄧㄚ ㄏㄜ ㄋㄞˇ ㄔㄚˊ ㄢ ㄢ ㄉㄚˋ ㄏㄢˇ ㄧˇ ㄑㄧㄣˊ ㄊㄢˋ ㄓㄤˇ ㄋㄧˇ ㄕˋ ㄓㄣ ㄓㄥˋ ㄉㄜ˙ ㄕㄣˊ ㄊㄢˋ",
+      "sources": [
+        "D.cases[2].ending[3]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "滴答滴答，地上有水滴，小偷身上濕濕的！",
+      "zhuyin": "ㄉㄧ ㄉㄚ ㄉㄧ ㄉㄚ ㄉㄧˋ ㄕㄤˋ ㄧㄡˇ ㄕㄨㄟˇ ㄉㄧ ㄒㄧㄠˇ ㄊㄡ ㄕㄣ ㄕㄤˋ ㄕ ㄕ ㄉㄜ˙",
+      "sources": [
+        "D.cases[2].puzzles[0].card[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "攤子前面亮亮的是什麼？讀讀看注音，猜猜看！",
+      "zhuyin": "ㄊㄢ ㄗ˙ ㄑㄧㄢˊ ㄇㄧㄢˋ ㄌㄧㄤˋ ㄌㄧㄤˋ ㄉㄜ˙ ㄕˋ ㄕㄜˊ ㄇㄜ˙ ㄉㄨˊ ㄉㄨˊ ㄎㄢˋ ㄓㄨˋ ㄧㄣ ㄘㄞ ㄘㄞ ㄎㄢˋ",
+      "sources": [
+        "D.cases[2].puzzles[0].prompt"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "水滴",
+      "zhuyin": "ㄕㄨㄟˇ ㄉㄧ",
+      "sources": [
+        "D.cases[2].puzzles[0].clue",
+        "D.cases[2].puzzles[0].options[2].w",
+        "D.w.水滴"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "書包",
+      "zhuyin": "ㄕㄨ ㄅㄠ",
+      "sources": [
+        "D.cases[2].puzzles[0].options[1].w",
+        "D.cases[5].puzzles[0].clue",
+        "D.cases[5].puzzles[0].options[2].w",
+        "D.w.書包"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "小偷是一跳一跳的，蹦蹦蹦！",
+      "zhuyin": "ㄒㄧㄠˇ ㄊㄡ ㄕˋ ㄧ ㄊㄧㄠˋ ㄧ ㄊㄧㄠˋ ㄉㄜ˙ ㄅㄥˋ ㄅㄥˋ ㄅㄥˋ",
+      "sources": [
+        "D.cases[2].puzzles[1].card[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "水滴旁邊的腳印離得好遠！幫「跳」拼出注音！",
+      "zhuyin": "ㄕㄨㄟˇ ㄉㄧ ㄆㄤˊ ㄅㄧㄢ ㄉㄜ˙ ㄐㄧㄠˇ ㄧㄣˋ ㄌㄧˊ ㄉㄜ˙ ㄏㄠˇ ㄩㄢˇ ㄅㄤ ㄊㄧㄠˋ ㄆㄧㄣ ㄔㄨ ㄓㄨˋ ㄧㄣ",
+      "sources": [
+        "D.cases[2].puzzles[1].prompt"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "跳",
+      "zhuyin": "ㄊㄧㄠˋ",
+      "sources": [
+        "D.cases[2].puzzles[1].word"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "小偷是綠色的，跳得很快！",
+      "zhuyin": "ㄒㄧㄠˇ ㄊㄡ ㄕˋ ㄌㄩˋ ㄙㄜˋ ㄉㄜ˙ ㄊㄧㄠˋ ㄉㄜ˙ ㄏㄣˇ ㄎㄨㄞˋ",
+      "sources": [
+        "D.cases[2].puzzles[2].card[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "小貓",
+      "zhuyin": "ㄒㄧㄠˇ ㄇㄠ",
+      "sources": [
+        "D.cases[2].puzzles[2].who[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "喵～我看見一個綠色的小東西，跳得又高又快！",
+      "zhuyin": "ㄇㄧㄠ ㄨㄛˇ ㄎㄢˋ ㄐㄧㄢˋ ㄧ ㄍㄜˋ ㄌㄩˋ ㄙㄜˋ ㄉㄜ˙ ㄒㄧㄠˇ ㄉㄨㄥ ㄒㄧ ㄊㄧㄠˋ ㄉㄜ˙ ㄧㄡˋ ㄍㄠ ㄧㄡˋ ㄎㄨㄞˋ",
+      "sources": [
+        "D.cases[2].puzzles[2].statement"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "小貓看見什麼顏色的小東西？",
+      "zhuyin": "ㄒㄧㄠˇ ㄇㄠ ㄎㄢˋ ㄐㄧㄢˋ ㄕㄜˊ ㄇㄜ˙ ㄧㄢˊ ㄙㄜˋ ㄉㄜ˙ ㄒㄧㄠˇ ㄉㄨㄥ ㄒㄧ",
+      "sources": [
+        "D.cases[2].puzzles[2].question"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "綠色",
+      "zhuyin": "ㄌㄩˋ ㄙㄜˋ",
+      "sources": [
+        "D.cases[2].puzzles[2].options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "黃色",
+      "zhuyin": "ㄏㄨㄤˊ ㄙㄜˋ",
+      "sources": [
+        "D.cases[2].puzzles[2].options[1].w",
+        "D.w.黃色",
+        "D.jy[14].words[2].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "藍色",
+      "zhuyin": "ㄌㄢˊ ㄙㄜˋ",
+      "sources": [
+        "D.cases[2].puzzles[2].options[2].w",
+        "D.cases[4].puzzles[1].options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "杯子上有池塘的味道！",
+      "zhuyin": "ㄅㄟ ㄗ˙ ㄕㄤˋ ㄧㄡˇ ㄔˊ ㄊㄤˊ ㄉㄜ˙ ㄨㄟˋ ㄉㄠˋ",
+      "sources": [
+        "D.cases[2].puzzles[3].card[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以琴探長聞一聞杯子，哇～有池塘的味道！「池塘」的「塘」是第幾聲？",
+      "zhuyin": "ㄧˇ ㄑㄧㄣˊ ㄊㄢˋ ㄓㄤˇ ㄨㄣˊ ㄧ ㄨㄣˊ ㄅㄟ ㄗ˙ ㄨㄚ ㄧㄡˇ ㄔˊ ㄊㄤˊ ㄉㄜ˙ ㄨㄟˋ ㄉㄠˋ ㄔˊ ㄊㄤˊ ㄉㄜ˙ ㄊㄤˊ ㄕˋ ㄉㄧˋ ㄐㄧˇ ㄕㄥ",
+      "sources": [
+        "D.cases[2].puzzles[3].prompt"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "池塘",
+      "zhuyin": "ㄔˊ ㄊㄤˊ",
+      "sources": [
+        "D.cases[2].puzzles[3].word"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "到底是誰拿走了珍珠奶茶？",
+      "zhuyin": "ㄉㄠˋ ㄉㄧˇ ㄕˋ ㄕㄟˊ ㄋㄚˊ ㄗㄡˇ ㄌㄜ˙ ㄓㄣ ㄓㄨ ㄋㄞˇ ㄔㄚˊ",
+      "sources": [
+        "D.cases[2].deduce.question"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "青蛙",
+      "zhuyin": "ㄑㄧㄥ ㄨㄚ",
+      "sources": [
+        "D.cases[2].deduce.suspects[0].n",
+        "D.w.青蛙",
+        "D.jy[7].words[4].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "綠色的，住在池塘，跳得又高又快。",
+      "zhuyin": "ㄌㄩˋ ㄙㄜˋ ㄉㄜ˙ ㄓㄨˋ ㄗㄞˋ ㄔˊ ㄊㄤˊ ㄊㄧㄠˋ ㄉㄜ˙ ㄧㄡˋ ㄍㄠ ㄧㄡˋ ㄎㄨㄞˋ",
+      "sources": [
+        "D.cases[2].deduce.suspects[0].t"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "綠色的，住在池塘，走路很慢。",
+      "zhuyin": "ㄌㄩˋ ㄙㄜˋ ㄉㄜ˙ ㄓㄨˋ ㄗㄞˋ ㄔˊ ㄊㄤˊ ㄗㄡˇ ㄌㄨˋ ㄏㄣˇ ㄇㄢˋ",
+      "sources": [
+        "D.cases[2].deduce.suspects[1].t"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "鴨子",
+      "zhuyin": "ㄧㄚ ㄗ˙",
+      "sources": [
+        "D.cases[2].deduce.suspects[2].n",
+        "D.w.鴨子",
+        "D.jy[0].words[5].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "黃色的，住在池塘，走路搖搖擺擺。",
+      "zhuyin": "ㄏㄨㄤˊ ㄙㄜˋ ㄉㄜ˙ ㄓㄨˋ ㄗㄞˋ ㄔˊ ㄊㄤˊ ㄗㄡˇ ㄌㄨˋ ㄧㄠˊ ㄧㄠˊ ㄅㄞˇ ㄅㄞˇ",
+      "sources": [
+        "D.cases[2].deduce.suspects[2].t"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "慕尼黑好朋友",
+      "zhuyin": "ㄇㄨˋ ㄋㄧˊ ㄏㄟ ㄏㄠˇ ㄆㄥˊ ㄧㄡˇ",
+      "sources": [
+        "D.cases[3].badgeName"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "消失的愛心薑餅",
+      "zhuyin": "ㄒㄧㄠ ㄕ ㄉㄜ˙ ㄞˋ ㄒㄧㄣ ㄐㄧㄤ ㄅㄧㄥˇ",
+      "sources": [
+        "D.cases[3].title"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "慕尼黑啤酒節",
+      "zhuyin": "ㄇㄨˋ ㄋㄧˊ ㄏㄟ ㄆㄧˊ ㄐㄧㄡˇ ㄐㄧㄝˊ",
+      "sources": [
+        "D.cases[3].placeName"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以琴住在德國慕尼黑。今天天氣好好，爸爸和媽媽帶大家去啤酒節玩！",
+      "zhuyin": "ㄧˇ ㄑㄧㄣˊ ㄓㄨˋ ㄗㄞˋ ㄉㄜˊ ㄍㄨㄛˊ ㄇㄨˋ ㄋㄧˊ ㄏㄟ ㄐㄧㄣ ㄊㄧㄢ ㄊㄧㄢ ㄑㄧˋ ㄏㄠˇ ㄏㄠˇ ㄅㄚˋ ㄅㄚ˙ ㄏㄜˊ ㄇㄚ ㄇㄚ ㄉㄞˋ ㄉㄚˋ ㄐㄧㄚ ㄑㄩˋ ㄆㄧˊ ㄐㄧㄡˇ ㄐㄧㄝˊ ㄨㄢˊ",
+      "sources": [
+        "D.cases[3].intro[0]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以琴住在哪個國家？",
+      "zhuyin": "ㄧˇ ㄑㄧㄣˊ ㄓㄨˋ ㄗㄞˋ ㄋㄚˇ ㄍㄜˋ ㄍㄨㄛˊ ㄐㄧㄚ",
+      "sources": [
+        "D.cases[3].intro[0].q.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "德國",
+      "zhuyin": "ㄉㄜˊ ㄍㄨㄛˊ",
+      "sources": [
+        "D.cases[3].intro[0].q.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "日本",
+      "zhuyin": "ㄖˋ ㄅㄣˇ",
+      "sources": [
+        "D.cases[3].intro[0].q.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "美國",
+      "zhuyin": "ㄇㄟˇ ㄍㄨㄛˊ",
+      "sources": [
+        "D.cases[3].intro[0].q.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "對！她住在德國慕尼黑。",
+      "zhuyin": "ㄉㄨㄟˋ ㄊㄚ ㄓㄨˋ ㄗㄞˋ ㄉㄜˊ ㄍㄨㄛˊ ㄇㄨˋ ㄋㄧˊ ㄏㄟ",
+      "sources": [
+        "D.cases[3].intro[0].q.good"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "哇～摩天輪轉呀轉，蝴蝶餅比臉還大！",
+      "zhuyin": "ㄨㄚ ㄇㄛˊ ㄊㄧㄢ ㄌㄨㄣˊ ㄓㄨㄢˇ ㄧㄚ˙ ㄓㄨㄢˇ ㄏㄨˊ ㄉㄧㄝˊ ㄅㄧㄥˇ ㄅㄧˇ ㄌㄧㄢˇ ㄏㄞˊ ㄉㄚˋ",
+      "sources": [
+        "D.cases[3].intro[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "媽媽問：「先玩哪一個？」",
+      "zhuyin": "ㄇㄚ ㄇㄚ ㄨㄣˋ ㄒㄧㄢ ㄨㄢˊ ㄋㄚˇ ㄧ ㄍㄜˋ",
+      "sources": [
+        "D.cases[3].intro[1].c.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "坐旋轉木馬",
+      "zhuyin": "ㄗㄨㄛˋ ㄒㄩㄢˊ ㄓㄨㄢˇ ㄇㄨˋ ㄇㄚˇ",
+      "sources": [
+        "D.cases[3].intro[1].c.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "大家坐上旋轉木馬，音樂一響，馬兒上上下下！",
+      "zhuyin": "ㄉㄚˋ ㄐㄧㄚ ㄗㄨㄛˋ ㄕㄤˋ ㄒㄩㄢˊ ㄓㄨㄢˇ ㄇㄨˋ ㄇㄚˇ ㄧㄣ ㄌㄜˋ ㄧ ㄒㄧㄤˇ ㄇㄚˇ ㄦˊ ㄕㄤˋ ㄕㄤˋ ㄒㄧㄚˋ ㄒㄧㄚˋ",
+      "sources": [
+        "D.cases[3].intro[1].c.options[0].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "吃一個大蝴蝶餅",
+      "zhuyin": "ㄔ ㄧ ㄍㄜˋ ㄉㄚˋ ㄏㄨˊ ㄉㄧㄝˊ ㄅㄧㄥˇ",
+      "sources": [
+        "D.cases[3].intro[1].c.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "爸爸買了最大的蝴蝶餅，安安一口咬下去！",
+      "zhuyin": "ㄅㄚˋ ㄅㄚ˙ ㄇㄞˇ ㄌㄜ˙ ㄗㄨㄟˋ ㄉㄚˋ ㄉㄜ˙ ㄏㄨˊ ㄉㄧㄝˊ ㄅㄧㄥˇ ㄢ ㄢ ㄧ ㄎㄡˇ ㄧㄠˇ ㄒㄧㄚˋ ㄑㄩˋ",
+      "sources": [
+        "D.cases[3].intro[1].c.options[1].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "看遊行",
+      "zhuyin": "ㄎㄢˋ ㄧㄡˊ ㄒㄧㄥˊ",
+      "sources": [
+        "D.cases[3].intro[1].c.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "街上有好多穿傳統衣服的人，吹著喇叭走過來。",
+      "zhuyin": "ㄐㄧㄝ ㄕㄤˋ ㄧㄡˇ ㄏㄠˇ ㄉㄨㄛ ㄔㄨㄢ ㄔㄨㄢˊ ㄊㄨㄥˇ ㄧ ㄈㄨˊ ㄉㄜ˙ ㄖㄣˊ ㄔㄨㄟ ㄓㄜ˙ ㄌㄚˇ ㄅㄚ ㄗㄡˇ ㄍㄨㄛˋ ㄌㄞˊ",
+      "sources": [
+        "D.cases[3].intro[1].c.options[2].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "舞台上有兩面大太鼓！今天，以琴要和好朋友可蕾一起表演。",
+      "zhuyin": "ㄨˇ ㄊㄞˊ ㄕㄤˋ ㄧㄡˇ ㄌㄧㄤˇ ㄇㄧㄢˋ ㄉㄚˋ ㄊㄞˋ ㄍㄨˇ ㄐㄧㄣ ㄊㄧㄢ ㄧˇ ㄑㄧㄣˊ ㄧㄠˋ ㄏㄜˊ ㄏㄠˇ ㄆㄥˊ ㄧㄡˇ ㄎㄜˇ ㄌㄟˇ ㄧ ㄑㄧˇ ㄅㄧㄠˇ ㄧㄢˇ",
+      "sources": [
+        "D.cases[3].intro[2]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以琴要和可蕾一起表演什麼？",
+      "zhuyin": "ㄧˇ ㄑㄧㄣˊ ㄧㄠˋ ㄏㄜˊ ㄎㄜˇ ㄌㄟˇ ㄧ ㄑㄧˇ ㄅㄧㄠˇ ㄧㄢˇ ㄕㄜˊ ㄇㄜ˙",
+      "sources": [
+        "D.cases[3].intro[2].q.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "跳芭蕾",
+      "zhuyin": "ㄊㄧㄠˋ ㄅㄚ ㄌㄟˇ",
+      "sources": [
+        "D.cases[3].intro[2].q.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "打太鼓",
+      "zhuyin": "ㄉㄚˇ ㄊㄞˋ ㄍㄨˇ",
+      "sources": [
+        "D.cases[3].intro[2].q.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "彈鋼琴",
+      "zhuyin": "ㄊㄢˊ ㄍㄤ ㄑㄧㄣˊ",
+      "sources": [
+        "D.cases[3].intro[2].q.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "對！兩個人一起打太鼓。",
+      "zhuyin": "ㄉㄨㄟˋ ㄌㄧㄤˇ ㄍㄜˋ ㄖㄣˊ ㄧ ㄑㄧˇ ㄉㄚˇ ㄊㄞˋ ㄍㄨˇ",
+      "sources": [
+        "D.cases[3].intro[2].q.good"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "咚！咚！咚咚咚！兩個人一起打，聲音好整齊，大家都拍手叫好！",
+      "zhuyin": "ㄉㄨㄥ ㄉㄨㄥ ㄉㄨㄥ ㄉㄨㄥ ㄉㄨㄥ ㄌㄧㄤˇ ㄍㄜˋ ㄖㄣˊ ㄧ ㄑㄧˇ ㄉㄚˇ ㄕㄥ ㄧㄣ ㄏㄠˇ ㄓㄥˇ ㄑㄧˊ ㄉㄚˋ ㄐㄧㄚ ㄉㄡ ㄆㄞ ㄕㄡˇ ㄐㄧㄠˋ ㄏㄠˇ",
+      "sources": [
+        "D.cases[3].intro[3]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "太鼓的聲音聽起來像什麼？",
+      "zhuyin": "ㄊㄞˋ ㄍㄨˇ ㄉㄜ˙ ㄕㄥ ㄧㄣ ㄊㄧㄥ ㄑㄧˇ ㄌㄞˊ ㄒㄧㄤˋ ㄕㄜˊ ㄇㄜ˙",
+      "sources": [
+        "D.cases[3].intro[3].q.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "咚咚咚",
+      "zhuyin": "ㄉㄨㄥ ㄉㄨㄥ ㄉㄨㄥ",
+      "sources": [
+        "D.cases[3].intro[3].q.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "汪汪汪",
+      "zhuyin": "ㄨㄤ ㄨㄤ ㄨㄤ",
+      "sources": [
+        "D.cases[3].intro[3].q.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "叮叮叮",
+      "zhuyin": "ㄉㄧㄥ ㄉㄧㄥ ㄉㄧㄥ",
+      "sources": [
+        "D.cases[3].intro[3].q.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "沒錯，咚咚咚，好有精神！",
+      "zhuyin": "ㄇㄟˊ ㄘㄨㄛˋ ㄉㄨㄥ ㄉㄨㄥ ㄉㄨㄥ ㄏㄠˇ ㄧㄡˇ ㄐㄧㄥ ㄕㄣˊ",
+      "sources": [
+        "D.cases[3].intro[3].q.good"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "好朋友莉亞跑過來：「以琴，聽說妳要回台灣念小學了？」",
+      "zhuyin": "ㄏㄠˇ ㄆㄥˊ ㄧㄡˇ ㄌㄧˋ ㄧㄚˇ ㄆㄠˇ ㄍㄨㄛˋ ㄌㄞˊ ㄧˇ ㄑㄧㄣˊ ㄊㄧㄥ ㄕㄨㄛ ㄋㄧˇ ㄧㄠˋ ㄏㄨㄟˊ ㄊㄞˊ ㄨㄢ ㄋㄧㄢˋ ㄒㄧㄠˇ ㄒㄩㄝˊ ㄌㄜ˙",
+      "sources": [
+        "D.cases[3].intro[4]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "莉亞聽說以琴要去哪裡？",
+      "zhuyin": "ㄌㄧˋ ㄧㄚˇ ㄊㄧㄥ ㄕㄨㄛ ㄧˇ ㄑㄧㄣˊ ㄧㄠˋ ㄑㄩˋ ㄋㄚˇ ㄌㄧˇ",
+      "sources": [
+        "D.cases[3].intro[4].q.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "去爬山",
+      "zhuyin": "ㄑㄩˋ ㄆㄚˊ ㄕㄢ",
+      "sources": [
+        "D.cases[3].intro[4].q.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "回台灣念小學",
+      "zhuyin": "ㄏㄨㄟˊ ㄊㄞˊ ㄨㄢ ㄋㄧㄢˋ ㄒㄧㄠˇ ㄒㄩㄝˊ",
+      "sources": [
+        "D.cases[3].intro[4].q.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "去游泳",
+      "zhuyin": "ㄑㄩˋ ㄧㄡˊ ㄩㄥˇ",
+      "sources": [
+        "D.cases[3].intro[4].q.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "沒錯，以琴要回台灣了。",
+      "zhuyin": "ㄇㄟˊ ㄘㄨㄛˋ ㄧˇ ㄑㄧㄣˊ ㄧㄠˋ ㄏㄨㄟˊ ㄊㄞˊ ㄨㄢ ㄌㄜ˙",
+      "sources": [
+        "D.cases[3].intro[4].q.good"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "莉亞做了一個愛心薑餅，上面寫著「好朋友」。可是……咦？薑餅不見了！",
+      "zhuyin": "ㄌㄧˋ ㄧㄚˇ ㄗㄨㄛˋ ㄌㄜ˙ ㄧ ㄍㄜˋ ㄞˋ ㄒㄧㄣ ㄐㄧㄤ ㄅㄧㄥˇ ㄕㄤˋ ㄇㄧㄢˋ ㄒㄧㄝˇ ㄓㄜ˙ ㄏㄠˇ ㄆㄥˊ ㄧㄡˇ ㄎㄜˇ ㄕˋ ㄧˊ ㄐㄧㄤ ㄅㄧㄥˇ ㄅㄨˋ ㄐㄧㄢˋ ㄌㄜ˙",
+      "sources": [
+        "D.cases[3].intro[5]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "薑餅不見了，要怎麼安慰莉亞？",
+      "zhuyin": "ㄐㄧㄤ ㄅㄧㄥˇ ㄅㄨˋ ㄐㄧㄢˋ ㄌㄜ˙ ㄧㄠˋ ㄗㄣˇ ㄇㄜ˙ ㄢ ㄨㄟˋ ㄌㄧˋ ㄧㄚˇ",
+      "sources": [
+        "D.cases[3].intro[5].c.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "抱抱她",
+      "zhuyin": "ㄅㄠˋ ㄅㄠˋ ㄊㄚ",
+      "sources": [
+        "D.cases[3].intro[5].c.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以琴抱住莉亞：「別難過，我一定幫妳找回來！」",
+      "zhuyin": "ㄧˇ ㄑㄧㄣˊ ㄅㄠˋ ㄓㄨˋ ㄌㄧˋ ㄧㄚˇ ㄅㄧㄝˊ ㄋㄢˊ ㄍㄨㄛˋ ㄨㄛˇ ㄧ ㄉㄧㄥˋ ㄅㄤ ㄋㄧˇ ㄓㄠˇ ㄏㄨㄟˊ ㄌㄞˊ",
+      "sources": [
+        "D.cases[3].intro[5].c.options[0].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "一起找線索",
+      "zhuyin": "ㄧ ㄑㄧˇ ㄓㄠˇ ㄒㄧㄢˋ ㄙㄨㄛˇ",
+      "sources": [
+        "D.cases[3].intro[5].c.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "莉亞擦擦眼淚：「好！我也要當小偵探！」",
+      "zhuyin": "ㄌㄧˋ ㄧㄚˇ ㄘㄚ ㄘㄚ ㄧㄢˇ ㄌㄟˋ ㄏㄠˇ ㄨㄛˇ ㄧㄝˇ ㄧㄠˋ ㄉㄤ ㄒㄧㄠˇ ㄓㄣ ㄊㄢˋ",
+      "sources": [
+        "D.cases[3].intro[5].c.options[1].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "買一個新的",
+      "zhuyin": "ㄇㄞˇ ㄧ ㄍㄜˋ ㄒㄧㄣ ㄉㄜ˙",
+      "sources": [
+        "D.cases[3].intro[5].c.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "莉亞搖搖頭：「不行，那個薑餅是我親手做的！」",
+      "zhuyin": "ㄌㄧˋ ㄧㄚˇ ㄧㄠˊ ㄧㄠˊ ㄊㄡˊ ㄅㄨˋ ㄒㄧㄥˊ ㄋㄚˋ ㄍㄜˋ ㄐㄧㄤ ㄅㄧㄥˇ ㄕˋ ㄨㄛˇ ㄑㄧㄣ ㄕㄡˇ ㄗㄨㄛˋ ㄉㄜ˙",
+      "sources": [
+        "D.cases[3].intro[5].c.options[2].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "什麼？是爸爸！薑餅就掛在爸爸的脖子上！",
+      "zhuyin": "ㄕㄜˊ ㄇㄜ˙ ㄕˋ ㄅㄚˋ ㄅㄚ˙ ㄐㄧㄤ ㄅㄧㄥˇ ㄐㄧㄡˋ ㄍㄨㄚˋ ㄗㄞˋ ㄅㄚˋ ㄅㄚ˙ ㄉㄜ˙ ㄅㄛˊ ㄗ˙ ㄕㄤˋ",
+      "sources": [
+        "D.cases[3].ending[0]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "爸爸抓抓頭：「哎呀，我以為是送我的啦！」",
+      "zhuyin": "ㄅㄚˋ ㄅㄚ˙ ㄓㄨㄚ ㄓㄨㄚ ㄊㄡˊ ㄞ ㄧㄚ ㄨㄛˇ ㄧˇ ㄨㄟˊ ㄕˋ ㄙㄨㄥˋ ㄨㄛˇ ㄉㄜ˙ ㄌㄚ˙",
+      "sources": [
+        "D.cases[3].ending[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "薑餅最後在誰身上？",
+      "zhuyin": "ㄐㄧㄤ ㄅㄧㄥˇ ㄗㄨㄟˋ ㄏㄡˋ ㄗㄞˋ ㄕㄟˊ ㄕㄣ ㄕㄤˋ",
+      "sources": [
+        "D.cases[3].ending[1].q.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "爸爸",
+      "zhuyin": "ㄅㄚˋ ㄅㄚ˙",
+      "sources": [
+        "D.cases[3].ending[1].q.options[0].w",
+        "D.cases[3].deduce.suspects[2].n"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "莉亞",
+      "zhuyin": "ㄌㄧˋ ㄧㄚˇ",
+      "sources": [
+        "D.cases[3].ending[1].q.options[1].w",
+        "D.cases[3].puzzles[2].who[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "一隻狗",
+      "zhuyin": "ㄧ ㄓ ㄍㄡˇ",
+      "sources": [
+        "D.cases[3].ending[1].q.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "沒錯，掛在爸爸的脖子上！",
+      "zhuyin": "ㄇㄟˊ ㄘㄨㄛˋ ㄍㄨㄚˋ ㄗㄞˋ ㄅㄚˋ ㄅㄚ˙ ㄉㄜ˙ ㄅㄛˊ ㄗ˙ ㄕㄤˋ",
+      "sources": [
+        "D.cases[3].ending[1].q.good"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "可蕾也跑過來，手上還拿著鼓棒：「下次回來，我們再一起打太鼓！」",
+      "zhuyin": "ㄎㄜˇ ㄌㄟˇ ㄧㄝˇ ㄆㄠˇ ㄍㄨㄛˋ ㄌㄞˊ ㄕㄡˇ ㄕㄤˋ ㄏㄞˊ ㄋㄚˊ ㄓㄜ˙ ㄍㄨˇ ㄅㄤˋ ㄒㄧㄚˋ ㄘˋ ㄏㄨㄟˊ ㄌㄞˊ ㄨㄛˇ ㄇㄣ˙ ㄗㄞˋ ㄧ ㄑㄧˇ ㄉㄚˇ ㄊㄞˋ ㄍㄨˇ",
+      "sources": [
+        "D.cases[3].ending[2]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "可蕾和以琴約好下次要做什麼？",
+      "zhuyin": "ㄎㄜˇ ㄌㄟˇ ㄏㄜˊ ㄧˇ ㄑㄧㄣˊ ㄩㄝ ㄏㄠˇ ㄒㄧㄚˋ ㄘˋ ㄧㄠˋ ㄗㄨㄛˋ ㄕㄜˊ ㄇㄜ˙",
+      "sources": [
+        "D.cases[3].ending[2].q.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "一起打太鼓",
+      "zhuyin": "ㄧ ㄑㄧˇ ㄉㄚˇ ㄊㄞˋ ㄍㄨˇ",
+      "sources": [
+        "D.cases[3].ending[2].q.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "一起坐飛機",
+      "zhuyin": "ㄧ ㄑㄧˇ ㄗㄨㄛˋ ㄈㄟ ㄐㄧ",
+      "sources": [
+        "D.cases[3].ending[2].q.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "一起烤餅乾",
+      "zhuyin": "ㄧ ㄑㄧˇ ㄎㄠˇ ㄅㄧㄥˇ ㄍㄢ",
+      "sources": [
+        "D.cases[3].ending[2].q.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "對！她們約好了。",
+      "zhuyin": "ㄉㄨㄟˋ ㄊㄚ ㄇㄣ˙ ㄩㄝ ㄏㄠˇ ㄌㄜ˙",
+      "sources": [
+        "D.cases[3].ending[2].q.good"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "莉亞把薑餅掛在以琴身上：「回台灣也不要忘記我喔！」",
+      "zhuyin": "ㄌㄧˋ ㄧㄚˇ ㄅㄚˇ ㄐㄧㄤ ㄅㄧㄥˇ ㄍㄨㄚˋ ㄗㄞˋ ㄧˇ ㄑㄧㄣˊ ㄕㄣ ㄕㄤˋ ㄏㄨㄟˊ ㄊㄞˊ ㄨㄢ ㄧㄝˇ ㄅㄨˋ ㄧㄠˋ ㄨㄤˋ ㄐㄧˋ ㄨㄛˇ ㄛ",
+      "sources": [
+        "D.cases[3].ending[3]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以琴抱了抱莉亞：「我會寫信給妳，我們永遠是好朋友！」",
+      "zhuyin": "ㄧˇ ㄑㄧㄣˊ ㄅㄠˋ ㄌㄜ˙ ㄅㄠˋ ㄌㄧˋ ㄧㄚˇ ㄨㄛˇ ㄏㄨㄟˋ ㄒㄧㄝˇ ㄒㄧㄣˋ ㄍㄟˇ ㄋㄧˇ ㄨㄛˇ ㄇㄣ˙ ㄩㄥˇ ㄩㄢˇ ㄕˋ ㄏㄠˇ ㄆㄥˊ ㄧㄡˇ",
+      "sources": [
+        "D.cases[3].ending[4]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "媽媽拿出相機：「大家站好，笑一個！」喀擦！照片裡的每個人都在笑。",
+      "zhuyin": "ㄇㄚ ㄇㄚ ㄋㄚˊ ㄔㄨ ㄒㄧㄤ ㄐㄧ ㄉㄚˋ ㄐㄧㄚ ㄓㄢˋ ㄏㄠˇ ㄒㄧㄠˋ ㄧ ㄍㄜˋ ㄎㄚ ㄘㄚ ㄓㄠˋ ㄆㄧㄢˋ ㄌㄧˇ ㄉㄜ˙ ㄇㄟˇ ㄍㄜˋ ㄖㄣˊ ㄉㄡ ㄗㄞˋ ㄒㄧㄠˋ",
+      "sources": [
+        "D.cases[3].ending[5]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "地上有蝴蝶餅的碎屑，小偷好愛吃蝴蝶餅！",
+      "zhuyin": "ㄉㄧˋ ㄕㄤˋ ㄧㄡˇ ㄏㄨˊ ㄉㄧㄝˊ ㄅㄧㄥˇ ㄉㄜ˙ ㄙㄨㄟˋ ㄒㄧㄝˋ ㄒㄧㄠˇ ㄊㄡ ㄏㄠˇ ㄞˋ ㄔ ㄏㄨˊ ㄉㄧㄝˊ ㄅㄧㄥˇ",
+      "sources": [
+        "D.cases[3].puzzles[0].card[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "地上掉了一點點東西！讀讀看注音，這是什麼？",
+      "zhuyin": "ㄉㄧˋ ㄕㄤˋ ㄉㄧㄠˋ ㄌㄜ˙ ㄧ ㄉㄧㄢˇ ㄉㄧㄢˇ ㄉㄨㄥ ㄒㄧ ㄉㄨˊ ㄉㄨˊ ㄎㄢˋ ㄓㄨˋ ㄧㄣ ㄓㄜˋ ㄕˋ ㄕㄜˊ ㄇㄜ˙",
+      "sources": [
+        "D.cases[3].puzzles[0].prompt"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "蝴蝶餅",
+      "zhuyin": "ㄏㄨˊ ㄉㄧㄝˊ ㄅㄧㄥˇ",
+      "sources": [
+        "D.cases[3].puzzles[0].clue",
+        "D.cases[3].puzzles[0].options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "蝴蝶",
+      "zhuyin": "ㄏㄨˊ ㄉㄧㄝˊ",
+      "sources": [
+        "D.cases[3].puzzles[0].options[0].w",
+        "D.w.蝴蝶",
+        "D.jy[1].words[3].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "鬆餅",
+      "zhuyin": "ㄙㄨㄥ ㄅㄧㄥˇ",
+      "sources": [
+        "D.cases[3].puzzles[0].options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "小偷戴著有羽毛的帽子！",
+      "zhuyin": "ㄒㄧㄠˇ ㄊㄡ ㄉㄞˋ ㄓㄜ˙ ㄧㄡˇ ㄩˇ ㄇㄠˊ ㄉㄜ˙ ㄇㄠˋ ㄗ˙",
+      "sources": [
+        "D.cases[3].puzzles[1].card[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "碎屑旁邊有一根羽毛，是從帽子上掉下來的！幫「帽」拼出注音！",
+      "zhuyin": "ㄙㄨㄟˋ ㄒㄧㄝˋ ㄆㄤˊ ㄅㄧㄢ ㄧㄡˇ ㄧ ㄍㄣ ㄩˇ ㄇㄠˊ ㄕˋ ㄘㄨㄥˊ ㄇㄠˋ ㄗ˙ ㄕㄤˋ ㄉㄧㄠˋ ㄒㄧㄚˋ ㄌㄞˊ ㄉㄜ˙ ㄅㄤ ㄇㄠˋ ㄆㄧㄣ ㄔㄨ ㄓㄨˋ ㄧㄣ",
+      "sources": [
+        "D.cases[3].puzzles[1].prompt"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "帽子",
+      "zhuyin": "ㄇㄠˋ ㄗ˙",
+      "sources": [
+        "D.cases[3].puzzles[1].word",
+        "D.w.帽子"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "小偷是個大個子，一直吃蝴蝶餅！",
+      "zhuyin": "ㄒㄧㄠˇ ㄊㄡ ㄕˋ ㄍㄜˋ ㄉㄚˋ ㄍㄜˋ ㄗ˙ ㄧ ㄓˊ ㄔ ㄏㄨˊ ㄉㄧㄝˊ ㄅㄧㄥˇ",
+      "sources": [
+        "D.cases[3].puzzles[2].card[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "我看到一個大個子，一邊哈哈笑，一邊吃蝴蝶餅！",
+      "zhuyin": "ㄨㄛˇ ㄎㄢˋ ㄉㄠˋ ㄧ ㄍㄜˋ ㄉㄚˋ ㄍㄜˋ ㄗ˙ ㄧ ㄅㄧㄢ ㄏㄚ ㄏㄚ ㄒㄧㄠˋ ㄧ ㄅㄧㄢ ㄔ ㄏㄨˊ ㄉㄧㄝˊ ㄅㄧㄥˇ",
+      "sources": [
+        "D.cases[3].puzzles[2].statement"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "莉亞看到的人在做什麼？",
+      "zhuyin": "ㄌㄧˋ ㄧㄚˇ ㄎㄢˋ ㄉㄠˋ ㄉㄜ˙ ㄖㄣˊ ㄗㄞˋ ㄗㄨㄛˋ ㄕㄜˊ ㄇㄜ˙",
+      "sources": [
+        "D.cases[3].puzzles[2].question"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "吃蝴蝶餅",
+      "zhuyin": "ㄔ ㄏㄨˊ ㄉㄧㄝˊ ㄅㄧㄥˇ",
+      "sources": [
+        "D.cases[3].puzzles[2].options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "坐摩天輪",
+      "zhuyin": "ㄗㄨㄛˋ ㄇㄛˊ ㄊㄧㄢ ㄌㄨㄣˊ",
+      "sources": [
+        "D.cases[3].puzzles[2].options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "啃骨頭",
+      "zhuyin": "ㄎㄣˇ ㄍㄨˇ ㄊㄡ˙",
+      "sources": [
+        "D.cases[3].puzzles[2].options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "哈哈哈！這個笑聲，好像是……？",
+      "zhuyin": "ㄏㄚ ㄏㄚ ㄏㄚ ㄓㄜˋ ㄍㄜˋ ㄒㄧㄠˋ ㄕㄥ ㄏㄠˇ ㄒㄧㄤˋ ㄕˋ",
+      "sources": [
+        "D.cases[3].puzzles[3].card[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以琴聽到一個笑聲，好像在哪裡聽過！「笑聲」的「笑」是第幾聲？",
+      "zhuyin": "ㄧˇ ㄑㄧㄣˊ ㄊㄧㄥ ㄉㄠˋ ㄧ ㄍㄜˋ ㄒㄧㄠˋ ㄕㄥ ㄏㄠˇ ㄒㄧㄤˋ ㄗㄞˋ ㄋㄚˇ ㄌㄧˇ ㄊㄧㄥ ㄍㄨㄛˋ ㄒㄧㄠˋ ㄕㄥ ㄉㄜ˙ ㄒㄧㄠˋ ㄕˋ ㄉㄧˋ ㄐㄧˇ ㄕㄥ",
+      "sources": [
+        "D.cases[3].puzzles[3].prompt"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "笑聲",
+      "zhuyin": "ㄒㄧㄠˋ ㄕㄥ",
+      "sources": [
+        "D.cases[3].puzzles[3].word"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "到底是誰拿走了愛心薑餅？",
+      "zhuyin": "ㄉㄠˋ ㄉㄧˇ ㄕˋ ㄕㄟˊ ㄋㄚˊ ㄗㄡˇ ㄌㄜ˙ ㄞˋ ㄒㄧㄣ ㄐㄧㄤ ㄅㄧㄥˇ",
+      "sources": [
+        "D.cases[3].deduce.question"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "臘腸狗",
+      "zhuyin": "ㄌㄚˋ ㄔㄤˊ ㄍㄡˇ",
+      "sources": [
+        "D.cases[3].deduce.suspects[0].n"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "腿短短的，個子小小的。",
+      "zhuyin": "ㄊㄨㄟˇ ㄉㄨㄢˇ ㄉㄨㄢˇ ㄉㄜ˙ ㄍㄜˋ ㄗ˙ ㄒㄧㄠˇ ㄒㄧㄠˇ ㄉㄜ˙",
+      "sources": [
+        "D.cases[3].deduce.suspects[0].t"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "白馬",
+      "zhuyin": "ㄅㄞˊ ㄇㄚˇ",
+      "sources": [
+        "D.cases[3].deduce.suspects[1].n"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "一直在拉車，只吃紅蘿蔔。",
+      "zhuyin": "ㄧ ㄓˊ ㄗㄞˋ ㄌㄚ ㄔㄜ ㄓˇ ㄔ ㄏㄨㄥˊ ㄌㄨㄛˊ ㄅㄛ˙",
+      "sources": [
+        "D.cases[3].deduce.suspects[1].t"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "個子大大的，戴著羽毛帽子，好愛吃蝴蝶餅！",
+      "zhuyin": "ㄍㄜˋ ㄗ˙ ㄉㄚˋ ㄉㄚˋ ㄉㄜ˙ ㄉㄞˋ ㄓㄜ˙ ㄩˇ ㄇㄠˊ ㄇㄠˋ ㄗ˙ ㄏㄠˇ ㄞˋ ㄔ ㄏㄨˊ ㄉㄧㄝˊ ㄅㄧㄥˇ",
+      "sources": [
+        "D.cases[3].deduce.suspects[2].t"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "找鑰匙高手",
+      "zhuyin": "ㄓㄠˇ ㄧㄠˋ ㄕ˙ ㄍㄠ ㄕㄡˇ",
+      "sources": [
+        "D.cases[4].badgeName"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "阿嬤的鑰匙任務",
+      "zhuyin": "ㄚ ㄇㄚ ㄉㄜ˙ ㄧㄠˋ ㄕ˙ ㄖㄣˋ ㄨˋ",
+      "sources": [
+        "D.cases[4].title"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "飛回台灣",
+      "zhuyin": "ㄈㄟ ㄏㄨㄟˊ ㄊㄞˊ ㄨㄢ",
+      "sources": [
+        "D.cases[4].placeName"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "咻～飛機起飛了！爸爸帶著以琴和安安，飛回台灣囉！",
+      "zhuyin": "ㄒㄧㄡ ㄈㄟ ㄐㄧ ㄑㄧˇ ㄈㄟ ㄌㄜ˙ ㄅㄚˋ ㄅㄚ˙ ㄉㄞˋ ㄓㄜ˙ ㄧˇ ㄑㄧㄣˊ ㄏㄜˊ ㄢ ㄢ ㄈㄟ ㄏㄨㄟˊ ㄊㄞˊ ㄨㄢ ㄌㄨㄛ˙",
+      "sources": [
+        "D.cases[4].intro[0]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "窗外的雲好像棉花糖，安安看著看著，就睡著了。",
+      "zhuyin": "ㄔㄨㄤ ㄨㄞˋ ㄉㄜ˙ ㄩㄣˊ ㄏㄠˇ ㄒㄧㄤˋ ㄇㄧㄢˊ ㄏㄨㄚ ㄊㄤˊ ㄢ ㄢ ㄎㄢˋ ㄓㄜ˙ ㄎㄢˋ ㄓㄜ˙ ㄐㄧㄡˋ ㄕㄨㄟˋ ㄓㄠˊ ㄌㄜ˙",
+      "sources": [
+        "D.cases[4].intro[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "安安在飛機上做什麼？",
+      "zhuyin": "ㄢ ㄢ ㄗㄞˋ ㄈㄟ ㄐㄧ ㄕㄤˋ ㄗㄨㄛˋ ㄕㄜˊ ㄇㄜ˙",
+      "sources": [
+        "D.cases[4].intro[1].q.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "一直唱歌",
+      "zhuyin": "ㄧ ㄓˊ ㄔㄤˋ ㄍㄜ",
+      "sources": [
+        "D.cases[4].intro[1].q.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "看著看著睡著了",
+      "zhuyin": "ㄎㄢˋ ㄓㄜ˙ ㄎㄢˋ ㄓㄜ˙ ㄕㄨㄟˋ ㄓㄠˊ ㄌㄜ˙",
+      "sources": [
+        "D.cases[4].intro[1].q.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "一直吃糖果",
+      "zhuyin": "ㄧ ㄓˊ ㄔ ㄊㄤˊ ㄍㄨㄛˇ",
+      "sources": [
+        "D.cases[4].intro[1].q.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "對，他看著雲就睡著了。",
+      "zhuyin": "ㄉㄨㄟˋ ㄊㄚ ㄎㄢˋ ㄓㄜ˙ ㄩㄣˊ ㄐㄧㄡˋ ㄕㄨㄟˋ ㄓㄠˊ ㄌㄜ˙",
+      "sources": [
+        "D.cases[4].intro[1].q.good"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "到台灣了！寶蛋阿姨和容容阿姨在機場揮手：「歡迎回家！」",
+      "zhuyin": "ㄉㄠˋ ㄊㄞˊ ㄨㄢ ㄌㄜ˙ ㄅㄠˇ ㄉㄢˋ ㄚ ㄧˊ ㄏㄜˊ ㄖㄨㄥˊ ㄖㄨㄥˊ ㄚ ㄧˊ ㄗㄞˋ ㄐㄧ ㄔㄤˇ ㄏㄨㄟ ㄕㄡˇ ㄏㄨㄢ ㄧㄥˊ ㄏㄨㄟˊ ㄐㄧㄚ",
+      "sources": [
+        "D.cases[4].intro[2]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "下飛機了，先做什麼？",
+      "zhuyin": "ㄒㄧㄚˋ ㄈㄟ ㄐㄧ ㄌㄜ˙ ㄒㄧㄢ ㄗㄨㄛˋ ㄕㄜˊ ㄇㄜ˙",
+      "sources": [
+        "D.cases[4].intro[2].c.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "跑去抱阿姨",
+      "zhuyin": "ㄆㄠˇ ㄑㄩˋ ㄅㄠˋ ㄚ ㄧˊ",
+      "sources": [
+        "D.cases[4].intro[2].c.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以琴衝過去抱住兩個阿姨，大家都笑了！",
+      "zhuyin": "ㄧˇ ㄑㄧㄣˊ ㄔㄨㄥ ㄍㄨㄛˋ ㄑㄩˋ ㄅㄠˋ ㄓㄨˋ ㄌㄧㄤˇ ㄍㄜˋ ㄚ ㄧˊ ㄉㄚˋ ㄐㄧㄚ ㄉㄡ ㄒㄧㄠˋ ㄌㄜ˙",
+      "sources": [
+        "D.cases[4].intro[2].c.options[0].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "先拿行李",
+      "zhuyin": "ㄒㄧㄢ ㄋㄚˊ ㄒㄧㄥˊ ㄌㄧˇ",
+      "sources": [
+        "D.cases[4].intro[2].c.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "安安推著行李車：「我來幫忙！」可是車子太重了。",
+      "zhuyin": "ㄢ ㄢ ㄊㄨㄟ ㄓㄜ˙ ㄒㄧㄥˊ ㄌㄧˇ ㄔㄜ ㄨㄛˇ ㄌㄞˊ ㄅㄤ ㄇㄤˊ ㄎㄜˇ ㄕˋ ㄔㄜ ㄗ˙ ㄊㄞˋ ㄓㄨㄥˋ ㄌㄜ˙",
+      "sources": [
+        "D.cases[4].intro[2].c.options[1].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "看機場的大螢幕",
+      "zhuyin": "ㄎㄢˋ ㄐㄧ ㄔㄤˇ ㄉㄜ˙ ㄉㄚˋ ㄧㄥˊ ㄇㄨˋ",
+      "sources": [
+        "D.cases[4].intro[2].c.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "螢幕上寫著：「歡迎回台灣！」以琴看得好開心。",
+      "zhuyin": "ㄧㄥˊ ㄇㄨˋ ㄕㄤˋ ㄒㄧㄝˇ ㄓㄜ˙ ㄏㄨㄢ ㄧㄥˊ ㄏㄨㄟˊ ㄊㄞˊ ㄨㄢ ㄧˇ ㄑㄧㄣˊ ㄎㄢˋ ㄉㄜ˙ ㄏㄠˇ ㄎㄞ ㄒㄧㄣ",
+      "sources": [
+        "D.cases[4].intro[2].c.options[2].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "容容阿姨拿出一封信：「這是阿嬤給探長的任務！」",
+      "zhuyin": "ㄖㄨㄥˊ ㄖㄨㄥˊ ㄚ ㄧˊ ㄋㄚˊ ㄔㄨ ㄧ ㄈㄥ ㄒㄧㄣˋ ㄓㄜˋ ㄕˋ ㄚ ㄇㄚ ㄍㄟˇ ㄊㄢˋ ㄓㄤˇ ㄉㄜ˙ ㄖㄣˋ ㄨˋ",
+      "sources": [
+        "D.cases[4].intro[3]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "要怎麼打開阿嬤的信？",
+      "zhuyin": "ㄧㄠˋ ㄗㄣˇ ㄇㄜ˙ ㄉㄚˇ ㄎㄞ ㄚ ㄇㄚ ㄉㄜ˙ ㄒㄧㄣˋ",
+      "sources": [
+        "D.cases[4].intro[3].c.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "請安安念",
+      "zhuyin": "ㄑㄧㄥˇ ㄢ ㄢ ㄋㄧㄢˋ",
+      "sources": [
+        "D.cases[4].intro[3].c.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "安安清清喉嚨，一個字一個字慢慢念出來。",
+      "zhuyin": "ㄢ ㄢ ㄑㄧㄥ ㄑㄧㄥ ㄏㄡˊ ㄌㄨㄥˊ ㄧ ㄍㄜˋ ㄗˋ ㄧ ㄍㄜˋ ㄗˋ ㄇㄢˋ ㄇㄢˋ ㄋㄧㄢˋ ㄔㄨ ㄌㄞˊ",
+      "sources": [
+        "D.cases[4].intro[3].c.options[0].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "自己念",
+      "zhuyin": "ㄗˋ ㄐㄧˇ ㄋㄧㄢˋ",
+      "sources": [
+        "D.cases[4].intro[3].c.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以琴深吸一口氣，自己把信念完了！",
+      "zhuyin": "ㄧˇ ㄑㄧㄣˊ ㄕㄣ ㄒㄧ ㄧ ㄎㄡˇ ㄑㄧˋ ㄗˋ ㄐㄧˇ ㄅㄚˇ ㄒㄧㄣˋ ㄋㄧㄢˋ ㄨㄢˊ ㄌㄜ˙",
+      "sources": [
+        "D.cases[4].intro[3].c.options[1].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "請爸爸念",
+      "zhuyin": "ㄑㄧㄥˇ ㄅㄚˋ ㄅㄚ˙ ㄋㄧㄢˋ",
+      "sources": [
+        "D.cases[4].intro[3].c.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "爸爸用很低的聲音念：「探長，任務開始！」大家都笑了。",
+      "zhuyin": "ㄅㄚˋ ㄅㄚˋ ㄩㄥˋ ㄏㄣˇ ㄉㄧ ㄉㄜ˙ ㄕㄥ ㄧㄣ ㄋㄧㄢˋ ㄊㄢˋ ㄓㄤˇ ㄖㄣˋ ㄨˋ ㄎㄞ ㄕˇ ㄉㄚˋ ㄐㄧㄚ ㄉㄡ ㄒㄧㄠˋ ㄌㄜ˙",
+      "sources": [
+        "D.cases[4].intro[3].c.options[2].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "信上寫著：「阿嬤家的鑰匙藏起來了，找到它，才能回家喔！」",
+      "zhuyin": "ㄒㄧㄣˋ ㄕㄤˋ ㄒㄧㄝˇ ㄓㄜ˙ ㄚ ㄇㄚ ㄐㄧㄚ ㄉㄜ˙ ㄧㄠˋ ㄕ˙ ㄘㄤˊ ㄑㄧˇ ㄌㄞˊ ㄌㄜ˙ ㄓㄠˇ ㄉㄠˋ ㄊㄚ ㄘㄞˊ ㄋㄥˊ ㄏㄨㄟˊ ㄐㄧㄚ ㄛ",
+      "sources": [
+        "D.cases[4].intro[4]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "阿嬤的任務是什麼？",
+      "zhuyin": "ㄚ ㄇㄚ ㄉㄜ˙ ㄖㄣˋ ㄨˋ ㄕˋ ㄕㄜˊ ㄇㄜ˙",
+      "sources": [
+        "D.cases[4].intro[4].q.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "找到家裡的鑰匙",
+      "zhuyin": "ㄓㄠˇ ㄉㄠˋ ㄐㄧㄚ ㄌㄧˇ ㄉㄜ˙ ㄧㄠˋ ㄕ˙",
+      "sources": [
+        "D.cases[4].intro[4].q.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "買一箱水果",
+      "zhuyin": "ㄇㄞˇ ㄧ ㄒㄧㄤ ㄕㄨㄟˇ ㄍㄨㄛˇ",
+      "sources": [
+        "D.cases[4].intro[4].q.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "寫十張考卷",
+      "zhuyin": "ㄒㄧㄝˇ ㄕˊ ㄓㄤ ㄎㄠˇ ㄐㄩㄢˋ",
+      "sources": [
+        "D.cases[4].intro[4].q.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "對！找到鑰匙才能回家。",
+      "zhuyin": "ㄉㄨㄟˋ ㄓㄠˇ ㄉㄠˋ ㄧㄠˋ ㄕ˙ ㄘㄞˊ ㄋㄥˊ ㄏㄨㄟˊ ㄐㄧㄚ",
+      "sources": [
+        "D.cases[4].intro[4].q.good"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "打開粉紅色行李箱，叮！鑰匙就在這裡！",
+      "zhuyin": "ㄉㄚˇ ㄎㄞ ㄈㄣˇ ㄏㄨㄥˊ ㄙㄜˋ ㄒㄧㄥˊ ㄌㄧˇ ㄒㄧㄤ ㄉㄧㄥ ㄧㄠˋ ㄕ˙ ㄐㄧㄡˋ ㄗㄞˋ ㄓㄜˋ ㄌㄧˇ",
+      "sources": [
+        "D.cases[4].ending[0]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "安安大叫：「耶！我們可以回阿嬤家了！」",
+      "zhuyin": "ㄢ ㄢ ㄉㄚˋ ㄐㄧㄠˋ ㄧㄝ ㄨㄛˇ ㄇㄣ˙ ㄎㄜˇ ㄧˇ ㄏㄨㄟˊ ㄚ ㄇㄚ ㄐㄧㄚ ㄌㄜ˙",
+      "sources": [
+        "D.cases[4].ending[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "找到鑰匙以後，大家怎麼回阿嬤家？",
+      "zhuyin": "ㄓㄠˇ ㄉㄠˋ ㄧㄠˋ ㄕ˙ ㄧˇ ㄏㄡˋ ㄉㄚˋ ㄐㄧㄚ ㄗㄣˇ ㄇㄜ˙ ㄏㄨㄟˊ ㄚ ㄇㄚ ㄐㄧㄚ",
+      "sources": [
+        "D.cases[4].ending[1].q.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "走路",
+      "zhuyin": "ㄗㄡˇ ㄌㄨˋ",
+      "sources": [
+        "D.cases[4].ending[1].q.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "坐計程車",
+      "zhuyin": "ㄗㄨㄛˋ ㄐㄧˋ ㄔㄥˊ ㄔㄜ",
+      "sources": [
+        "D.cases[4].ending[1].q.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "騎腳踏車",
+      "zhuyin": "ㄑㄧˊ ㄐㄧㄠˇ ㄊㄚˋ ㄔㄜ",
+      "sources": [
+        "D.cases[4].ending[1].q.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "沒錯，坐黃色的計程車！",
+      "zhuyin": "ㄇㄟˊ ㄘㄨㄛˋ ㄗㄨㄛˋ ㄏㄨㄤˊ ㄙㄜˋ ㄉㄜ˙ ㄐㄧˋ ㄔㄥˊ ㄔㄜ",
+      "sources": [
+        "D.cases[4].ending[1].q.good"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "大家坐上黃色的計程車，叭叭～出發！",
+      "zhuyin": "ㄉㄚˋ ㄐㄧㄚ ㄗㄨㄛˋ ㄕㄤˋ ㄏㄨㄤˊ ㄙㄜˋ ㄉㄜ˙ ㄐㄧˋ ㄔㄥˊ ㄔㄜ ㄅㄚ ㄅㄚ ㄔㄨ ㄈㄚ",
+      "sources": [
+        "D.cases[4].ending[2]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "鑰匙藏在一個行李箱裡！",
+      "zhuyin": "ㄧㄠˋ ㄕ˙ ㄘㄤˊ ㄗㄞˋ ㄧ ㄍㄜˋ ㄒㄧㄥˊ ㄌㄧˇ ㄒㄧㄤ ㄌㄧˇ",
+      "sources": [
+        "D.cases[4].puzzles[0].card[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "阿嬤的信上，第一個線索只有注音！讀讀看，這是什麼？",
+      "zhuyin": "ㄚ ㄇㄚ ㄉㄜ˙ ㄒㄧㄣˋ ㄕㄤˋ ㄉㄧˋ ㄧ ㄍㄜˋ ㄒㄧㄢˋ ㄙㄨㄛˇ ㄓˇ ㄧㄡˇ ㄓㄨˋ ㄧㄣ ㄉㄨˊ ㄉㄨˊ ㄎㄢˋ ㄓㄜˋ ㄕˋ ㄕㄜˊ ㄇㄜ˙",
+      "sources": [
+        "D.cases[4].puzzles[0].prompt"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "行李",
+      "zhuyin": "ㄒㄧㄥˊ ㄌㄧˇ",
+      "sources": [
+        "D.cases[4].puzzles[0].clue",
+        "D.cases[4].puzzles[0].options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "星星",
+      "zhuyin": "ㄒㄧㄥ ㄒㄧㄥ",
+      "sources": [
+        "D.cases[4].puzzles[0].options[0].w",
+        "D.w.星星",
+        "D.jy[7].words[0].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "梨子",
+      "zhuyin": "ㄌㄧˊ ㄗ˙",
+      "sources": [
+        "D.cases[4].puzzles[0].options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "是粉紅色的行李箱！",
+      "zhuyin": "ㄕˋ ㄈㄣˇ ㄏㄨㄥˊ ㄙㄜˋ ㄉㄜ˙ ㄒㄧㄥˊ ㄌㄧˇ ㄒㄧㄤ",
+      "sources": [
+        "D.cases[4].puzzles[1].card[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "寶蛋阿姨",
+      "zhuyin": "ㄅㄠˇ ㄉㄢˋ ㄚ ㄧˊ",
+      "sources": [
+        "D.cases[4].puzzles[1].who[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "我看到阿嬤把鑰匙放進一個粉紅色的箱子裡！",
+      "zhuyin": "ㄨㄛˇ ㄎㄢˋ ㄉㄠˋ ㄚ ㄇㄚ ㄅㄚˇ ㄧㄠˋ ㄕ˙ ㄈㄤˋ ㄐㄧㄣˋ ㄧ ㄍㄜˋ ㄈㄣˇ ㄏㄨㄥˊ ㄙㄜˋ ㄉㄜ˙ ㄒㄧㄤ ㄗ˙ ㄌㄧˇ",
+      "sources": [
+        "D.cases[4].puzzles[1].statement"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "寶蛋阿姨說，箱子是什麼顏色？",
+      "zhuyin": "ㄅㄠˇ ㄉㄢˋ ㄚ ㄧˊ ㄕㄨㄛ ㄒㄧㄤ ㄗ˙ ㄕˋ ㄕㄜˊ ㄇㄜ˙ ㄧㄢˊ ㄙㄜˋ",
+      "sources": [
+        "D.cases[4].puzzles[1].question"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "粉紅色",
+      "zhuyin": "ㄈㄣˇ ㄏㄨㄥˊ ㄙㄜˋ",
+      "sources": [
+        "D.cases[4].puzzles[1].options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "粉紅色行李箱在轉盤上轉圈圈！",
+      "zhuyin": "ㄈㄣˇ ㄏㄨㄥˊ ㄙㄜˋ ㄒㄧㄥˊ ㄌㄧˇ ㄒㄧㄤ ㄗㄞˋ ㄓㄨㄢˇ ㄆㄢˊ ㄕㄤˋ ㄓㄨㄢˋ ㄑㄩㄢ ㄑㄩㄢ",
+      "sources": [
+        "D.cases[4].puzzles[2].card[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "行李箱在哪裡？在轉盤上轉呀轉！幫「盤」拼出注音！",
+      "zhuyin": "ㄒㄧㄥˊ ㄌㄧˇ ㄒㄧㄤ ㄗㄞˋ ㄋㄚˇ ㄌㄧˇ ㄗㄞˋ ㄓㄨㄢˇ ㄆㄢˊ ㄕㄤˋ ㄓㄨㄢˇ ㄧㄚ˙ ㄓㄨㄢˇ ㄅㄤ ㄆㄢˊ ㄆㄧㄣ ㄔㄨ ㄓㄨˋ ㄧㄣ",
+      "sources": [
+        "D.cases[4].puzzles[2].prompt"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "轉盤",
+      "zhuyin": "ㄓㄨㄢˇ ㄆㄢˊ",
+      "sources": [
+        "D.cases[4].puzzles[2].word"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "喀！密碼對了，箱子打開了！",
+      "zhuyin": "ㄎㄚ ㄇㄧˋ ㄇㄚˇ ㄉㄨㄟˋ ㄌㄜ˙ ㄒㄧㄤ ㄗ˙ ㄉㄚˇ ㄎㄞ ㄌㄜ˙",
+      "sources": [
+        "D.cases[4].puzzles[3].card[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "行李箱有密碼鎖！密碼就是「匙」的聲調。「鑰匙」的「匙」是第幾聲？",
+      "zhuyin": "ㄒㄧㄥˊ ㄌㄧˇ ㄒㄧㄤ ㄧㄡˇ ㄇㄧˋ ㄇㄚˇ ㄙㄨㄛˇ ㄇㄧˋ ㄇㄚˇ ㄐㄧㄡˋ ㄕˋ ㄕ˙ ㄉㄜ˙ ㄕㄥ ㄉㄧㄠˋ ㄧㄠˋ ㄕ˙ ㄉㄜ˙ ㄕ˙ ㄕˋ ㄉㄧˋ ㄐㄧˇ ㄕㄥ",
+      "sources": [
+        "D.cases[4].puzzles[3].prompt"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "鑰匙",
+      "zhuyin": "ㄧㄠˋ ㄕ˙",
+      "sources": [
+        "D.cases[4].puzzles[3].word",
+        "D.w.鑰匙"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "鑰匙藏在哪裡？",
+      "zhuyin": "ㄧㄠˋ ㄕ˙ ㄘㄤˊ ㄗㄞˋ ㄋㄚˇ ㄌㄧˇ",
+      "sources": [
+        "D.cases[4].deduce.question"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "安安的背包",
+      "zhuyin": "ㄢ ㄢ ㄉㄜ˙ ㄅㄟ ㄅㄠ",
+      "sources": [
+        "D.cases[4].deduce.suspects[0].n"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "藍色的，裡面都是玩具。",
+      "zhuyin": "ㄌㄢˊ ㄙㄜˋ ㄉㄜ˙ ㄌㄧˇ ㄇㄧㄢˋ ㄉㄡ ㄕˋ ㄨㄢˊ ㄐㄩˋ",
+      "sources": [
+        "D.cases[4].deduce.suspects[0].t"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "黑色行李箱",
+      "zhuyin": "ㄏㄟ ㄙㄜˋ ㄒㄧㄥˊ ㄌㄧˇ ㄒㄧㄤ",
+      "sources": [
+        "D.cases[4].deduce.suspects[1].n"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "黑色的，放在推車上。",
+      "zhuyin": "ㄏㄟ ㄙㄜˋ ㄉㄜ˙ ㄈㄤˋ ㄗㄞˋ ㄊㄨㄟ ㄔㄜ ㄕㄤˋ",
+      "sources": [
+        "D.cases[4].deduce.suspects[1].t"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "粉紅色行李箱",
+      "zhuyin": "ㄈㄣˇ ㄏㄨㄥˊ ㄙㄜˋ ㄒㄧㄥˊ ㄌㄧˇ ㄒㄧㄤ",
+      "sources": [
+        "D.cases[4].deduce.suspects[2].n"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "粉紅色的，在轉盤上轉圈圈。",
+      "zhuyin": "ㄈㄣˇ ㄏㄨㄥˊ ㄙㄜˋ ㄉㄜ˙ ㄗㄞˋ ㄓㄨㄢˇ ㄆㄢˊ ㄕㄤˋ ㄓㄨㄢˋ ㄑㄩㄢ ㄑㄩㄢ",
+      "sources": [
+        "D.cases[4].deduce.suspects[2].t"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "阿嬤的寶貝",
+      "zhuyin": "ㄚ ㄇㄚ ㄉㄜ˙ ㄅㄠˇ ㄅㄟˋ",
+      "sources": [
+        "D.cases[5].badgeName"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "阿嬤家的驚喜",
+      "zhuyin": "ㄚ ㄇㄚ ㄐㄧㄚ ㄉㄜ˙ ㄐㄧㄥ ㄒㄧˇ",
+      "sources": [
+        "D.cases[5].title"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "阿嬤家",
+      "zhuyin": "ㄚ ㄇㄚ ㄐㄧㄚ",
+      "sources": [
+        "D.cases[5].placeName"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "計程車停下來了，阿嬤站在門口，等好久了！",
+      "zhuyin": "ㄐㄧˋ ㄔㄥˊ ㄔㄜ ㄊㄧㄥˊ ㄒㄧㄚˋ ㄌㄞˊ ㄌㄜ˙ ㄚ ㄇㄚ ㄓㄢˋ ㄗㄞˋ ㄇㄣˊ ㄎㄡˇ ㄉㄥˇ ㄏㄠˇ ㄐㄧㄡˇ ㄌㄜ˙",
+      "sources": [
+        "D.cases[5].intro[0]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "阿嬤張開手：「我的寶貝們，終於回來了！」",
+      "zhuyin": "ㄚ ㄇㄚ ㄓㄤ ㄎㄞ ㄕㄡˇ ㄨㄛˇ ㄉㄜ˙ ㄅㄠˇ ㄅㄟˋ ㄇㄣ˙ ㄓㄨㄥ ㄩˊ ㄏㄨㄟˊ ㄌㄞˊ ㄌㄜ˙",
+      "sources": [
+        "D.cases[5].intro[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "阿嬤看到大家，做了什麼？",
+      "zhuyin": "ㄚ ㄇㄚ ㄎㄢˋ ㄉㄠˋ ㄉㄚˋ ㄐㄧㄚ ㄗㄨㄛˋ ㄌㄜ˙ ㄕㄜˊ ㄇㄜ˙",
+      "sources": [
+        "D.cases[5].intro[1].q.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "張開手抱抱",
+      "zhuyin": "ㄓㄤ ㄎㄞ ㄕㄡˇ ㄅㄠˋ ㄅㄠˋ",
+      "sources": [
+        "D.cases[5].intro[1].q.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "關上門",
+      "zhuyin": "ㄍㄨㄢ ㄕㄤˋ ㄇㄣˊ",
+      "sources": [
+        "D.cases[5].intro[1].q.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "在睡覺",
+      "zhuyin": "ㄗㄞˋ ㄕㄨㄟˋ ㄐㄧㄠˋ",
+      "sources": [
+        "D.cases[5].intro[1].q.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "對！阿嬤等好久了。",
+      "zhuyin": "ㄉㄨㄟˋ ㄚ ㄇㄚ ㄉㄥˇ ㄏㄠˇ ㄐㄧㄡˇ ㄌㄜ˙",
+      "sources": [
+        "D.cases[5].intro[1].q.good"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "阿嬤笑咪咪：「屋子裡有好多禮物，還有你們最愛吃的東西喔！」",
+      "zhuyin": "ㄚ ㄇㄚ ㄒㄧㄠˋ ㄇㄧ ㄇㄧ ㄨ ㄗ˙ ㄌㄧˇ ㄧㄡˇ ㄏㄠˇ ㄉㄨㄛ ㄌㄧˇ ㄨˋ ㄏㄞˊ ㄧㄡˇ ㄋㄧˇ ㄇㄣ˙ ㄗㄨㄟˋ ㄞˋ ㄔ ㄉㄜ˙ ㄉㄨㄥ ㄒㄧ ㄛ",
+      "sources": [
+        "D.cases[5].intro[2]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "屋子裡有驚喜，先看哪一個？",
+      "zhuyin": "ㄨ ㄗ˙ ㄌㄧˇ ㄧㄡˇ ㄐㄧㄥ ㄒㄧˇ ㄒㄧㄢ ㄎㄢˋ ㄋㄚˇ ㄧ ㄍㄜˋ",
+      "sources": [
+        "D.cases[5].intro[2].c.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "先拆禮物",
+      "zhuyin": "ㄒㄧㄢ ㄔㄞ ㄌㄧˇ ㄨˋ",
+      "sources": [
+        "D.cases[5].intro[2].c.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以琴跑去看禮物：「哇，好多個！」",
+      "zhuyin": "ㄧˇ ㄑㄧㄣˊ ㄆㄠˇ ㄑㄩˋ ㄎㄢˋ ㄌㄧˇ ㄨˋ ㄨㄚ ㄏㄠˇ ㄉㄨㄛ ㄍㄜˋ",
+      "sources": [
+        "D.cases[5].intro[2].c.options[0].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "先去廚房",
+      "zhuyin": "ㄒㄧㄢ ㄑㄩˋ ㄔㄨˊ ㄈㄤˊ",
+      "sources": [
+        "D.cases[5].intro[2].c.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "廚房香噴噴，鍋子裡咕嚕咕嚕在煮東西！",
+      "zhuyin": "ㄔㄨˊ ㄈㄤˊ ㄒㄧㄤ ㄆㄣ ㄆㄣ ㄍㄨㄛ ㄗ˙ ㄌㄧˇ ㄍㄨ ㄌㄨ ㄍㄨ ㄌㄨ ㄗㄞˋ ㄓㄨˇ ㄉㄨㄥ ㄒㄧ",
+      "sources": [
+        "D.cases[5].intro[2].c.options[1].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "先跟阿嬤聊天",
+      "zhuyin": "ㄒㄧㄢ ㄍㄣ ㄚ ㄇㄚ ㄌㄧㄠˊ ㄊㄧㄢ",
+      "sources": [
+        "D.cases[5].intro[2].c.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "阿嬤摸摸以琴的頭：「長這麼高了，阿嬤好想妳。」",
+      "zhuyin": "ㄚ ㄇㄚ ㄇㄛ ㄇㄛ ㄧˇ ㄑㄧㄣˊ ㄉㄜ˙ ㄊㄡˊ ㄔㄤˊ ㄓㄜˋ ㄇㄜ˙ ㄍㄠ ㄌㄜ˙ ㄚ ㄇㄚ ㄏㄠˇ ㄒㄧㄤˇ ㄋㄧˇ",
+      "sources": [
+        "D.cases[5].intro[2].c.options[2].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "爸爸、媽媽、寶蛋阿姨、容容阿姨都來了，大家一起吃晚餐！",
+      "zhuyin": "ㄅㄚˋ ㄅㄚ˙ ㄇㄚ ㄇㄚ ㄅㄠˇ ㄉㄢˋ ㄚ ㄧˊ ㄖㄨㄥˊ ㄖㄨㄥˊ ㄚ ㄧˊ ㄉㄡ ㄌㄞˊ ㄌㄜ˙ ㄉㄚˋ ㄐㄧㄚ ㄧ ㄑㄧˇ ㄔ ㄨㄢˇ ㄘㄢ",
+      "sources": [
+        "D.cases[5].ending[0]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "安安吃咖哩飯，吃到臉上黃黃的，大家笑得好開心！",
+      "zhuyin": "ㄢ ㄢ ㄔ ㄍㄚ ㄌㄧˊ ㄈㄢˋ ㄔ ㄉㄠˋ ㄌㄧㄢˇ ㄕㄤˋ ㄏㄨㄤˊ ㄏㄨㄤˊ ㄉㄜ˙ ㄉㄚˋ ㄐㄧㄚ ㄒㄧㄠˋ ㄉㄜ˙ ㄏㄠˇ ㄎㄞ ㄒㄧㄣ",
+      "sources": [
+        "D.cases[5].ending[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "安安吃咖哩飯，吃到哪裡黃黃的？",
+      "zhuyin": "ㄢ ㄢ ㄔ ㄍㄚ ㄌㄧˊ ㄈㄢˋ ㄔ ㄉㄠˋ ㄋㄚˇ ㄌㄧˇ ㄏㄨㄤˊ ㄏㄨㄤˊ ㄉㄜ˙",
+      "sources": [
+        "D.cases[5].ending[1].q.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "手上",
+      "zhuyin": "ㄕㄡˇ ㄕㄤˋ",
+      "sources": [
+        "D.cases[5].ending[1].q.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "臉上",
+      "zhuyin": "ㄌㄧㄢˇ ㄕㄤˋ",
+      "sources": [
+        "D.cases[5].ending[1].q.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "鞋子上",
+      "zhuyin": "ㄒㄧㄝˊ ㄗ˙ ㄕㄤˋ",
+      "sources": [
+        "D.cases[5].ending[1].q.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "哈哈，吃到臉上都是！",
+      "zhuyin": "ㄏㄚ ㄏㄚ ㄔ ㄉㄠˋ ㄌㄧㄢˇ ㄕㄤˋ ㄉㄡ ㄕˋ",
+      "sources": [
+        "D.cases[5].ending[1].q.good"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以琴吃了一大口壽司：「阿嬤煮的最好吃了！」",
+      "zhuyin": "ㄧˇ ㄑㄧㄣˊ ㄔ ㄌㄜ˙ ㄧ ㄉㄚˋ ㄎㄡˇ ㄕㄡˋ ㄙ ㄚ ㄇㄚ ㄓㄨˇ ㄉㄜ˙ ㄗㄨㄟˋ ㄏㄠˇ ㄔ ㄌㄜ˙",
+      "sources": [
+        "D.cases[5].ending[2]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "吃飽了，晚上要做什麼？",
+      "zhuyin": "ㄔ ㄅㄠˇ ㄌㄜ˙ ㄨㄢˇ ㄕㄤˋ ㄧㄠˋ ㄗㄨㄛˋ ㄕㄜˊ ㄇㄜ˙",
+      "sources": [
+        "D.cases[5].ending[2].c.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "聽阿嬤說故事",
+      "zhuyin": "ㄊㄧㄥ ㄚ ㄇㄚ ㄕㄨㄛ ㄍㄨˋ ㄕˋ",
+      "sources": [
+        "D.cases[5].ending[2].c.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "阿嬤說起以前的事，說到大家都笑彎了腰。",
+      "zhuyin": "ㄚ ㄇㄚ ㄕㄨㄛ ㄑㄧˇ ㄧˇ ㄑㄧㄢˊ ㄉㄜ˙ ㄕˋ ㄕㄨㄛ ㄉㄠˋ ㄉㄚˋ ㄐㄧㄚ ㄉㄡ ㄒㄧㄠˋ ㄨㄢ ㄌㄜ˙ ㄧㄠ",
+      "sources": [
+        "D.cases[5].ending[2].c.options[0].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "跟媽媽整理新書包",
+      "zhuyin": "ㄍㄣ ㄇㄚ ㄇㄚ ㄓㄥˇ ㄌㄧˇ ㄒㄧㄣ ㄕㄨ ㄅㄠ",
+      "sources": [
+        "D.cases[5].ending[2].c.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "媽媽幫以琴把鉛筆一枝一枝放進新書包。",
+      "zhuyin": "ㄇㄚ ㄇㄚ ㄅㄤ ㄧˇ ㄑㄧㄣˊ ㄅㄚˇ ㄑㄧㄢ ㄅㄧˇ ㄧ ㄓ ㄧ ㄓ ㄈㄤˋ ㄐㄧㄣˋ ㄒㄧㄣ ㄕㄨ ㄅㄠ",
+      "sources": [
+        "D.cases[5].ending[2].c.options[1].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "在院子看星星",
+      "zhuyin": "ㄗㄞˋ ㄩㄢˋ ㄗ˙ ㄎㄢˋ ㄒㄧㄥ ㄒㄧㄥ",
+      "sources": [
+        "D.cases[5].ending[2].c.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "大家坐在院子裡，天上的星星好亮好亮。",
+      "zhuyin": "ㄉㄚˋ ㄐㄧㄚ ㄗㄨㄛˋ ㄗㄞˋ ㄩㄢˋ ㄗ˙ ㄌㄧˇ ㄊㄧㄢ ㄕㄤˋ ㄉㄜ˙ ㄒㄧㄥ ㄒㄧㄥ ㄏㄠˇ ㄌㄧㄤˋ ㄏㄠˇ ㄌㄧㄤˋ",
+      "sources": [
+        "D.cases[5].ending[2].c.options[2].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "阿嬤抱著以琴：「明天開始，妳就是台灣的小學生囉！」",
+      "zhuyin": "ㄚ ㄇㄚ ㄅㄠˋ ㄓㄜ˙ ㄧˇ ㄑㄧㄣˊ ㄇㄧㄥˊ ㄊㄧㄢ ㄎㄞ ㄕˇ ㄋㄧˇ ㄐㄧㄡˋ ㄕˋ ㄊㄞˊ ㄨㄢ ㄉㄜ˙ ㄒㄧㄠˇ ㄒㄩㄝˊ ㄕㄥ ㄌㄨㄛ˙",
+      "sources": [
+        "D.cases[5].ending[3]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "明天開始，以琴要做什麼？",
+      "zhuyin": "ㄇㄧㄥˊ ㄊㄧㄢ ㄎㄞ ㄕˇ ㄧˇ ㄑㄧㄣˊ ㄧㄠˋ ㄗㄨㄛˋ ㄕㄜˊ ㄇㄜ˙",
+      "sources": [
+        "D.cases[5].ending[3].q.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "當台灣的小學生",
+      "zhuyin": "ㄉㄤ ㄊㄞˊ ㄨㄢ ㄉㄜ˙ ㄒㄧㄠˇ ㄒㄩㄝˊ ㄕㄥ",
+      "sources": [
+        "D.cases[5].ending[3].q.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "回德國",
+      "zhuyin": "ㄏㄨㄟˊ ㄉㄜˊ ㄍㄨㄛˊ",
+      "sources": [
+        "D.cases[5].ending[3].q.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "去睡覺",
+      "zhuyin": "ㄑㄩˋ ㄕㄨㄟˋ ㄐㄧㄠˋ",
+      "sources": [
+        "D.cases[5].ending[3].q.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "對！新的冒險要開始了。",
+      "zhuyin": "ㄉㄨㄟˋ ㄒㄧㄣ ㄉㄜ˙ ㄇㄠˋ ㄒㄧㄢˇ ㄧㄠˋ ㄎㄞ ㄕˇ ㄌㄜ˙",
+      "sources": [
+        "D.cases[5].ending[3].q.good"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以琴探長笑了：「新的冒險，要開始囉！」",
+      "zhuyin": "ㄧˇ ㄑㄧㄣˊ ㄊㄢˋ ㄓㄤˇ ㄒㄧㄠˋ ㄌㄜ˙ ㄒㄧㄣ ㄉㄜ˙ ㄇㄠˋ ㄒㄧㄢˇ ㄧㄠˋ ㄎㄞ ㄕˇ ㄌㄨㄛ˙",
+      "sources": [
+        "D.cases[5].ending[4]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "是新書包！阿嬤說：「要上小學囉！」",
+      "zhuyin": "ㄕˋ ㄒㄧㄣ ㄕㄨ ㄅㄠ ㄚ ㄇㄚ ㄕㄨㄛ ㄧㄠˋ ㄕㄤˋ ㄒㄧㄠˇ ㄒㄩㄝˊ ㄌㄨㄛ˙",
+      "sources": [
+        "D.cases[5].puzzles[0].card[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "第一個禮物上貼著注音卡片。讀讀看，裡面是什麼？",
+      "zhuyin": "ㄉㄧˋ ㄧ ㄍㄜˋ ㄌㄧˇ ㄨˋ ㄕㄤˋ ㄊㄧㄝ ㄓㄜ˙ ㄓㄨˋ ㄧㄣ ㄎㄚˇ ㄆㄧㄢˋ ㄉㄨˊ ㄉㄨˊ ㄎㄢˋ ㄌㄧˇ ㄇㄧㄢˋ ㄕˋ ㄕㄜˊ ㄇㄜ˙",
+      "sources": [
+        "D.cases[5].puzzles[0].prompt"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "書本",
+      "zhuyin": "ㄕㄨ ㄅㄣˇ",
+      "sources": [
+        "D.cases[5].puzzles[0].options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "手錶",
+      "zhuyin": "ㄕㄡˇ ㄅㄧㄠˇ",
+      "sources": [
+        "D.cases[5].puzzles[0].options[1].w",
+        "D.w.手錶",
+        "D.jy[2].words[3].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "是一盒彩色鉛筆，可以畫好多畫！",
+      "zhuyin": "ㄕˋ ㄧ ㄏㄜˊ ㄘㄞˇ ㄙㄜˋ ㄑㄧㄢ ㄅㄧˇ ㄎㄜˇ ㄧˇ ㄏㄨㄚˋ ㄏㄠˇ ㄉㄨㄛ ㄏㄨㄚˋ",
+      "sources": [
+        "D.cases[5].puzzles[1].card[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "第二個禮物長長的。幫「筆」拼出注音，就能打開！",
+      "zhuyin": "ㄉㄧˋ ㄦˋ ㄍㄜˋ ㄌㄧˇ ㄨˋ ㄔㄤˊ ㄔㄤˊ ㄉㄜ˙ ㄅㄤ ㄅㄧˇ ㄆㄧㄣ ㄔㄨ ㄓㄨˋ ㄧㄣ ㄐㄧㄡˋ ㄋㄥˊ ㄉㄚˇ ㄎㄞ",
+      "sources": [
+        "D.cases[5].puzzles[1].prompt"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "鉛筆",
+      "zhuyin": "ㄑㄧㄢ ㄅㄧˇ",
+      "sources": [
+        "D.cases[5].puzzles[1].word",
+        "D.w.鉛筆"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "是以琴和安安最愛吃的咖哩飯和壽司！",
+      "zhuyin": "ㄕˋ ㄧˇ ㄑㄧㄣˊ ㄏㄜˊ ㄢ ㄢ ㄗㄨㄟˋ ㄞˋ ㄔ ㄉㄜ˙ ㄍㄚ ㄌㄧˊ ㄈㄢˋ ㄏㄜˊ ㄕㄡˋ ㄙ",
+      "sources": [
+        "D.cases[5].puzzles[2].card[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "阿嬤",
+      "zhuyin": "ㄚ ㄇㄚ",
+      "sources": [
+        "D.cases[5].puzzles[2].who[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "阿嬤煮了兩樣菜，一樣黃黃的，一樣捲捲的！",
+      "zhuyin": "ㄚ ㄇㄚ ㄓㄨˇ ㄌㄜ˙ ㄌㄧㄤˇ ㄧㄤˋ ㄘㄞˋ ㄧ ㄧㄤˋ ㄏㄨㄤˊ ㄏㄨㄤˊ ㄉㄜ˙ ㄧ ㄧㄤˋ ㄐㄩㄢˇ ㄐㄩㄢˇ ㄉㄜ˙",
+      "sources": [
+        "D.cases[5].puzzles[2].statement"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "阿嬤煮了什麼？",
+      "zhuyin": "ㄚ ㄇㄚ ㄓㄨˇ ㄌㄜ˙ ㄕㄜˊ ㄇㄜ˙",
+      "sources": [
+        "D.cases[5].puzzles[2].question"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "咖哩飯和壽司",
+      "zhuyin": "ㄍㄚ ㄌㄧˊ ㄈㄢˋ ㄏㄜˊ ㄕㄡˋ ㄙ",
+      "sources": [
+        "D.cases[5].puzzles[2].options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "牛肉麵",
+      "zhuyin": "ㄋㄧㄡˊ ㄖㄡˋ ㄇㄧㄢˋ",
+      "sources": [
+        "D.cases[5].puzzles[2].options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "披薩",
+      "zhuyin": "ㄆㄧ ㄙㄚˋ",
+      "sources": [
+        "D.cases[5].puzzles[2].options[2].w",
+        "D.w.披薩"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "壽司一個一個，排得好整齊！",
+      "zhuyin": "ㄕㄡˋ ㄙ ㄧ ㄍㄜˋ ㄧ ㄍㄜˋ ㄆㄞˊ ㄉㄜ˙ ㄏㄠˇ ㄓㄥˇ ㄑㄧˊ",
+      "sources": [
+        "D.cases[5].puzzles[3].card[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "開飯囉！「壽司」的「壽」是第幾聲？",
+      "zhuyin": "ㄎㄞ ㄈㄢˋ ㄌㄨㄛ˙ ㄕㄡˋ ㄙ ㄉㄜ˙ ㄕㄡˋ ㄕˋ ㄉㄧˋ ㄐㄧˇ ㄕㄥ",
+      "sources": [
+        "D.cases[5].puzzles[3].prompt"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "壽司",
+      "zhuyin": "ㄕㄡˋ ㄙ",
+      "sources": [
+        "D.cases[5].puzzles[3].word",
+        "D.w.壽司"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "魔法生日守護者",
+      "zhuyin": "ㄇㄛˊ ㄈㄚˇ ㄕㄥ ㄖˋ ㄕㄡˇ ㄏㄨˋ ㄓㄜˇ",
+      "sources": [
+        "D.cases[6].badgeName"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "消失的魔法蛋糕",
+      "zhuyin": "ㄒㄧㄠ ㄕ ㄉㄜ˙ ㄇㄛˊ ㄈㄚˇ ㄉㄢˋ ㄍㄠ",
+      "sources": [
+        "D.cases[6].title"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以諾的八歲魔法生日派對",
+      "zhuyin": "ㄧˇ ㄋㄨㄛˋ ㄉㄜ˙ ㄅㄚ ㄙㄨㄟˋ ㄇㄛˊ ㄈㄚˇ ㄕㄥ ㄖˋ ㄆㄞˋ ㄉㄨㄟˋ",
+      "sources": [
+        "D.cases[6].placeName"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "今天是以諾的八歲生日，派對會場變成了魔法學院！",
+      "zhuyin": "ㄐㄧㄣ ㄊㄧㄢ ㄕˋ ㄧˇ ㄋㄨㄛˋ ㄉㄜ˙ ㄅㄚ ㄙㄨㄟˋ ㄕㄥ ㄖˋ ㄆㄞˋ ㄉㄨㄟˋ ㄏㄨㄟˋ ㄔㄤˇ ㄅㄧㄢˋ ㄔㄥˊ ㄌㄜ˙ ㄇㄛˊ ㄈㄚˇ ㄒㄩㄝˊ ㄩㄢˋ",
+      "sources": [
+        "D.cases[6].intro[0]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以諾和朋友們披上魔法袍，戴著尖尖的魔法帽，手裡拿著魔法棒。",
+      "zhuyin": "ㄧˇ ㄋㄨㄛˋ ㄏㄜˊ ㄆㄥˊ ㄧㄡˇ ㄇㄣ˙ ㄆㄧ ㄕㄤˋ ㄇㄛˊ ㄈㄚˇ ㄆㄠˊ ㄉㄞˋ ㄓㄜ˙ ㄐㄧㄢ ㄐㄧㄢ ㄉㄜ˙ ㄇㄛˊ ㄈㄚˇ ㄇㄠˋ ㄕㄡˇ ㄌㄧˇ ㄋㄚˊ ㄓㄜ˙ ㄇㄛˊ ㄈㄚˇ ㄅㄤˋ",
+      "sources": [
+        "D.cases[6].intro[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "派對開始了，先去哪一個魔法關卡？",
+      "zhuyin": "ㄆㄞˋ ㄉㄨㄟˋ ㄎㄞ ㄕˇ ㄌㄜ˙ ㄒㄧㄢ ㄑㄩˋ ㄋㄚˇ ㄧ ㄍㄜˋ ㄇㄛˊ ㄈㄚˇ ㄍㄨㄢ ㄎㄚˇ",
+      "sources": [
+        "D.cases[6].intro[1].c.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "魔法咒語教室",
+      "zhuyin": "ㄇㄛˊ ㄈㄚˇ ㄓㄡˋ ㄩˇ ㄐㄧㄠˋ ㄕˋ",
+      "sources": [
+        "D.cases[6].intro[1].c.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以諾揮動魔法棒，金色星星飛滿了教室！",
+      "zhuyin": "ㄧˇ ㄋㄨㄛˋ ㄏㄨㄟ ㄉㄨㄥˋ ㄇㄛˊ ㄈㄚˇ ㄅㄤˋ ㄐㄧㄣ ㄙㄜˋ ㄒㄧㄥ ㄒㄧㄥ ㄈㄟ ㄇㄢˇ ㄌㄜ˙ ㄐㄧㄠˋ ㄕˋ",
+      "sources": [
+        "D.cases[6].intro[1].c.options[0].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "飛天掃帚練習場",
+      "zhuyin": "ㄈㄟ ㄊㄧㄢ ㄙㄠˇ ㄓㄡˇ ㄌㄧㄢˋ ㄒㄧˊ ㄔㄤˇ",
+      "sources": [
+        "D.cases[6].intro[1].c.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "掃帚飛呀飛，以諾穩穩地降落在草地上！",
+      "zhuyin": "ㄙㄠˇ ㄓㄡˇ ㄈㄟ ㄧㄚ˙ ㄈㄟ ㄧˇ ㄋㄨㄛˋ ㄨㄣˇ ㄨㄣˇ ㄉㄜ˙ ㄐㄧㄤˋ ㄌㄨㄛˋ ㄗㄞˋ ㄘㄠˇ ㄉㄧˋ ㄕㄤˋ",
+      "sources": [
+        "D.cases[6].intro[1].c.options[1].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "魔法石尋寶區",
+      "zhuyin": "ㄇㄛˊ ㄈㄚˇ ㄕˊ ㄒㄩㄣˊ ㄅㄠˇ ㄑㄩ",
+      "sources": [
+        "D.cases[6].intro[1].c.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "紫色魔法石發出亮光，指向生日蛋糕的方向。",
+      "zhuyin": "ㄗˇ ㄙㄜˋ ㄇㄛˊ ㄈㄚˇ ㄕˊ ㄈㄚ ㄔㄨ ㄌㄧㄤˋ ㄍㄨㄤ ㄓˇ ㄒㄧㄤˋ ㄕㄥ ㄖˋ ㄉㄢˋ ㄍㄠ ㄉㄜ˙ ㄈㄤ ㄒㄧㄤˋ",
+      "sources": [
+        "D.cases[6].intro[1].c.options[2].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "遊戲結束後，大家唱起生日快樂歌，準備切蛋糕。",
+      "zhuyin": "ㄧㄡˊ ㄒㄧˋ ㄐㄧㄝˊ ㄕㄨˋ ㄏㄡˋ ㄉㄚˋ ㄐㄧㄚ ㄔㄤˋ ㄑㄧˇ ㄕㄥ ㄖˋ ㄎㄨㄞˋ ㄌㄜˋ ㄍㄜ ㄓㄨㄣˇ ㄅㄟˋ ㄑㄧㄝ ㄉㄢˋ ㄍㄠ",
+      "sources": [
+        "D.cases[6].intro[2]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "可是蛋糕推車一送到，盤子上竟然空空的！生日蛋糕不見了！",
+      "zhuyin": "ㄎㄜˇ ㄕˋ ㄉㄢˋ ㄍㄠ ㄊㄨㄟ ㄔㄜ ㄧ ㄙㄨㄥˋ ㄉㄠˋ ㄆㄢˊ ㄗ˙ ㄕㄤˋ ㄐㄧㄥˋ ㄖㄢˊ ㄎㄨㄥ ㄎㄨㄥ ㄉㄜ˙ ㄕㄥ ㄖˋ ㄉㄢˋ ㄍㄠ ㄅㄨˋ ㄐㄧㄢˋ ㄌㄜ˙",
+      "sources": [
+        "D.cases[6].intro[3]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "大家準備切蛋糕時，發現了什麼？",
+      "zhuyin": "ㄉㄚˋ ㄐㄧㄚ ㄓㄨㄣˇ ㄅㄟˋ ㄑㄧㄝ ㄉㄢˋ ㄍㄠ ㄕˊ ㄈㄚ ㄒㄧㄢˋ ㄌㄜ˙ ㄕㄜˊ ㄇㄜ˙",
+      "sources": [
+        "D.cases[6].intro[3].q.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "蛋糕不見了",
+      "zhuyin": "ㄉㄢˋ ㄍㄠ ㄅㄨˋ ㄐㄧㄢˋ ㄌㄜ˙",
+      "sources": [
+        "D.cases[6].intro[3].q.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "蠟燭變長了",
+      "zhuyin": "ㄌㄚˋ ㄓㄨˊ ㄅㄧㄢˋ ㄔㄤˊ ㄌㄜ˙",
+      "sources": [
+        "D.cases[6].intro[3].q.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "帽子飛走了",
+      "zhuyin": "ㄇㄠˋ ㄗ˙ ㄈㄟ ㄗㄡˇ ㄌㄜ˙",
+      "sources": [
+        "D.cases[6].intro[3].q.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "沒錯！魔法蛋糕忽然不見了。",
+      "zhuyin": "ㄇㄟˊ ㄘㄨㄛˋ ㄇㄛˊ ㄈㄚˇ ㄉㄢˋ ㄍㄠ ㄏㄨ ㄖㄢˊ ㄅㄨˋ ㄐㄧㄢˋ ㄌㄜ˙",
+      "sources": [
+        "D.cases[6].intro[3].q.good"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以琴探長拿出放大鏡，安安翻開魔法筆記本：「我們一定會找到蛋糕！」",
+      "zhuyin": "ㄧˇ ㄑㄧㄣˊ ㄊㄢˋ ㄔㄤˊ ㄋㄚˊ ㄔㄨ ㄈㄤˋ ㄉㄚˋ ㄐㄧㄥˋ ㄢ ㄢ ㄈㄢ ㄎㄞ ㄇㄛˊ ㄈㄚˇ ㄅㄧˇ ㄐㄧˋ ㄅㄣˇ ㄨㄛˇ ㄇㄣ˙ ㄧ ㄉㄧㄥˋ ㄏㄨㄟˋ ㄓㄠˇ ㄉㄠˋ ㄉㄢˋ ㄍㄠ",
+      "sources": [
+        "D.cases[6].intro[4]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "紙條上說：這是冰淇淋蛋糕，一定要放在冰冰涼涼的地方！",
+      "zhuyin": "ㄓˇ ㄊㄧㄠˊ ㄕㄤˋ ㄕㄨㄛ ㄓㄜˋ ㄕˋ ㄅㄧㄥ ㄑㄧˊ ㄌㄧㄣˊ ㄉㄢˋ ㄍㄠ ㄧ ㄉㄧㄥˋ ㄧㄠˋ ㄈㄤˋ ㄗㄞˋ ㄅㄧㄥ ㄅㄧㄥ ㄌㄧㄤˊ ㄌㄧㄤˊ ㄉㄜ˙ ㄉㄧˋ ㄈㄤ",
+      "sources": [
+        "D.cases[6].puzzles[0].card[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "推車上有一張紙條，只寫注音。讀讀看，這是什麼？",
+      "zhuyin": "ㄊㄨㄟ ㄔㄜ ㄕㄤˋ ㄧㄡˇ ㄧ ㄓㄤ ㄓˇ ㄊㄧㄠˊ ㄓˇ ㄒㄧㄝˇ ㄓㄨˋ ㄧㄣ ㄉㄨˊ ㄉㄨˊ ㄎㄢˋ ㄓㄜˋ ㄕˋ ㄕㄜˊ ㄇㄜ˙",
+      "sources": [
+        "D.cases[6].puzzles[0].prompt"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "冰淇淋",
+      "zhuyin": "ㄅㄧㄥ ㄑㄧˊ ㄌㄧㄣˊ",
+      "sources": [
+        "D.cases[6].puzzles[0].clue",
+        "D.cases[6].puzzles[0].options[1].w",
+        "D.w.冰淇淋"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "冰塊",
+      "zhuyin": "ㄅㄧㄥ ㄎㄨㄞˋ",
+      "sources": [
+        "D.cases[6].puzzles[0].options[0].w",
+        "D.w.冰塊",
+        "D.jy[7].words[1].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "餅乾",
+      "zhuyin": "ㄅㄧㄥˇ ㄍㄢ",
+      "sources": [
+        "D.cases[6].puzzles[0].options[2].w",
+        "D.w.餅乾"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "卡片配完的時候，大家聽到叮叮噹噹的音樂，是從一個很大的東西裡面傳出來的！",
+      "zhuyin": "ㄎㄚˇ ㄆㄧㄢˋ ㄆㄟˋ ㄨㄢˊ ㄉㄜ˙ ㄕˊ ㄏㄡˋ ㄉㄚˋ ㄐㄧㄚ ㄊㄧㄥ ㄉㄠˋ ㄉㄧㄥ ㄉㄧㄥ ㄉㄤ ㄉㄤ ㄉㄜ˙ ㄧㄣ ㄌㄜˋ ㄕˋ ㄘㄨㄥˊ ㄧ ㄍㄜˋ ㄏㄣˇ ㄉㄚˋ ㄉㄜ˙ ㄉㄨㄥ ㄒㄧ ㄌㄧˇ ㄇㄧㄢˋ ㄔㄨㄢˊ ㄔㄨ ㄌㄞˊ ㄉㄜ˙",
+      "sources": [
+        "D.cases[6].puzzles[1].card[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "翻開魔法卡片，把注音和圖案配成一對！",
+      "zhuyin": "ㄈㄢ ㄎㄞ ㄇㄛˊ ㄈㄚˇ ㄎㄚˇ ㄆㄧㄢˋ ㄅㄚˇ ㄓㄨˋ ㄧㄣ ㄏㄜˊ ㄊㄨˊ ㄢˋ ㄆㄟˋ ㄔㄥˊ ㄧ ㄉㄨㄟˋ",
+      "sources": [
+        "D.cases[6].puzzles[1].prompt"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "蛋糕",
+      "zhuyin": "ㄉㄢˋ ㄍㄠ",
+      "sources": [
+        "D.cases[6].puzzles[1].pairs[0].word",
+        "D.w.蛋糕"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "氣球",
+      "zhuyin": "ㄑㄧˋ ㄑㄧㄡˊ",
+      "sources": [
+        "D.cases[6].puzzles[1].pairs[1].word",
+        "D.w.氣球"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "音樂",
+      "zhuyin": "ㄧㄣ ㄌㄜˋ",
+      "sources": [
+        "D.cases[6].puzzles[1].pairs[2].word"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "禮物",
+      "zhuyin": "ㄌㄧˇ ㄨˋ",
+      "sources": [
+        "D.cases[6].puzzles[1].pairs[3].word",
+        "D.w.禮物"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "蛋糕有三層，好大好高，窄窄的地方放不下！",
+      "zhuyin": "ㄉㄢˋ ㄍㄠ ㄧㄡˇ ㄙㄢ ㄘㄥˊ ㄏㄠˇ ㄉㄚˋ ㄏㄠˇ ㄍㄠ ㄓㄞˇ ㄓㄞˇ ㄉㄜ˙ ㄉㄧˋ ㄈㄤ ㄈㄤˋ ㄅㄨˋ ㄒㄧㄚˋ",
+      "sources": [
+        "D.cases[6].puzzles[2].card[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以諾",
+      "zhuyin": "ㄧˇ ㄋㄨㄛˋ",
+      "sources": [
+        "D.cases[6].puzzles[2].who[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "我的蛋糕有三層，比我的頭還大！",
+      "zhuyin": "ㄨㄛˇ ㄉㄜ˙ ㄉㄢˋ ㄍㄠ ㄧㄡˇ ㄙㄢ ㄘㄥˊ ㄅㄧˇ ㄨㄛˇ ㄉㄜ˙ ㄊㄡˊ ㄏㄞˊ ㄉㄚˋ",
+      "sources": [
+        "D.cases[6].puzzles[2].statement"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以諾的蛋糕有幾層？",
+      "zhuyin": "ㄧˇ ㄋㄨㄛˋ ㄉㄜ˙ ㄉㄢˋ ㄍㄠ ㄧㄡˇ ㄐㄧˇ ㄘㄥˊ",
+      "sources": [
+        "D.cases[6].puzzles[2].question"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "一層",
+      "zhuyin": "ㄧ ㄘㄥˊ",
+      "sources": [
+        "D.cases[6].puzzles[2].options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "兩層",
+      "zhuyin": "ㄌㄧㄤˇ ㄘㄥˊ",
+      "sources": [
+        "D.cases[6].puzzles[2].options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "三層",
+      "zhuyin": "ㄙㄢ ㄘㄥˊ",
+      "sources": [
+        "D.cases[6].puzzles[2].options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "想想三個線索，蛋糕藏在哪裡？",
+      "zhuyin": "ㄒㄧㄤˇ ㄒㄧㄤˇ ㄙㄢ ㄍㄜˋ ㄒㄧㄢˋ ㄙㄨㄛˇ ㄉㄢˋ ㄍㄠ ㄘㄤˊ ㄗㄞˋ ㄋㄚˇ ㄌㄧˇ",
+      "sources": [
+        "D.cases[6].deduce.question"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "長桌下面",
+      "zhuyin": "ㄔㄤˊ ㄓㄨㄛ ㄒㄧㄚˋ ㄇㄧㄢˋ",
+      "sources": [
+        "D.cases[6].deduce.suspects[0].n"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "暖暖的，大家的腳走來走去。",
+      "zhuyin": "ㄋㄨㄢˇ ㄋㄨㄢˇ ㄉㄜ˙ ㄉㄚˋ ㄐㄧㄚ ㄉㄜ˙ ㄐㄧㄠˇ ㄗㄡˇ ㄌㄞˊ ㄗㄡˇ ㄑㄩˋ",
+      "sources": [
+        "D.cases[6].deduce.suspects[0].t"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "大禮物箱裡面",
+      "zhuyin": "ㄉㄚˋ ㄌㄧˇ ㄨˋ ㄒㄧㄤ ㄌㄧˇ ㄇㄧㄢˋ",
+      "sources": [
+        "D.cases[6].deduce.suspects[1].n"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "好大好大，摸起來冰冰涼涼的。",
+      "zhuyin": "ㄏㄠˇ ㄉㄚˋ ㄏㄠˇ ㄉㄚˋ ㄇㄛ ㄑㄧˇ ㄌㄞˊ ㄅㄧㄥ ㄅㄧㄥ ㄌㄧㄤˊ ㄌㄧㄤˊ ㄉㄜ˙",
+      "sources": [
+        "D.cases[6].deduce.suspects[1].t"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "魔法書架上",
+      "zhuyin": "ㄇㄛˊ ㄈㄚˇ ㄕㄨ ㄐㄧㄚˋ ㄕㄤˋ",
+      "sources": [
+        "D.cases[6].deduce.suspects[2].n"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "冰冰涼涼的，可是窄窄的，只放得下書。",
+      "zhuyin": "ㄅㄧㄥ ㄅㄧㄥ ㄌㄧㄤˊ ㄌㄧㄤˊ ㄉㄜ˙ ㄎㄜˇ ㄕˋ ㄓㄞˇ ㄓㄞˇ ㄉㄜ˙ ㄓˇ ㄈㄤˋ ㄉㄜ˙ ㄒㄧㄚˋ ㄕㄨ",
+      "sources": [
+        "D.cases[6].deduce.suspects[2].t"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以琴打開大禮物箱，冷冷的白煙飄出來，三層的冰淇淋蛋糕就在裡面！",
+      "zhuyin": "ㄧˇ ㄑㄧㄣˊ ㄉㄚˇ ㄎㄞ ㄉㄚˋ ㄌㄧˇ ㄨˋ ㄒㄧㄤ ㄌㄥˇ ㄌㄥˇ ㄉㄜ˙ ㄅㄞˊ ㄧㄢ ㄆㄧㄠ ㄔㄨ ㄌㄞˊ ㄙㄢ ㄘㄥˊ ㄉㄜ˙ ㄅㄧㄥ ㄑㄧˊ ㄌㄧㄣˊ ㄉㄢˋ ㄍㄠ ㄐㄧㄡˋ ㄗㄞˋ ㄌㄧˇ ㄇㄧㄢˋ",
+      "sources": [
+        "D.cases[6].ending[0]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "蛋糕上的小音樂盒叮叮噹噹。原來是以諾的媽媽，偷偷把蛋糕冰起來，要給他驚喜！",
+      "zhuyin": "ㄉㄢˋ ㄍㄠ ㄕㄤˋ ㄉㄜ˙ ㄒㄧㄠˇ ㄧㄣ ㄌㄜˋ ㄏㄜˊ ㄉㄧㄥ ㄉㄧㄥ ㄉㄤ ㄉㄤ ㄩㄢˊ ㄌㄞˊ ㄕˋ ㄧˇ ㄋㄨㄛˋ ㄉㄜ˙ ㄇㄚ ㄇㄚ ㄊㄡ ㄊㄡ ㄅㄚˇ ㄉㄢˋ ㄍㄠ ㄅㄧㄥ ㄑㄧˇ ㄌㄞˊ ㄧㄠˋ ㄍㄟˇ ㄊㄚ ㄐㄧㄥ ㄒㄧˇ",
+      "sources": [
+        "D.cases[6].ending[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "是誰把蛋糕藏起來的？",
+      "zhuyin": "ㄕˋ ㄕㄟˊ ㄅㄚˇ ㄉㄢˋ ㄍㄠ ㄘㄤˊ ㄑㄧˇ ㄌㄞˊ ㄉㄜ˙",
+      "sources": [
+        "D.cases[6].ending[1].q.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以諾的媽媽",
+      "zhuyin": "ㄧˇ ㄋㄨㄛˋ ㄉㄜ˙ ㄇㄚ ㄇㄚ",
+      "sources": [
+        "D.cases[6].ending[1].q.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "白色貓頭鷹",
+      "zhuyin": "ㄅㄞˊ ㄙㄜˋ ㄇㄠ ㄊㄡˊ ㄧㄥ",
+      "sources": [
+        "D.cases[6].ending[1].q.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "安安",
+      "zhuyin": "ㄢ ㄢ",
+      "sources": [
+        "D.cases[6].ending[1].q.options[2].w",
+        "D.ui.helper"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "對！媽媽想給以諾一個驚喜。",
+      "zhuyin": "ㄉㄨㄟˋ ㄇㄚ ㄇㄚ ㄒㄧㄤˇ ㄍㄟˇ ㄧˇ ㄋㄨㄛˋ ㄧ ㄍㄜˋ ㄐㄧㄥ ㄒㄧˇ",
+      "sources": [
+        "D.cases[6].ending[1].q.good"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以諾吹熄八根蠟燭，許下生日願望，大家一起拍手！",
+      "zhuyin": "ㄧˇ ㄋㄨㄛˋ ㄔㄨㄟ ㄒㄧ ㄅㄚ ㄍㄣ ㄌㄚˋ ㄓㄨˊ ㄒㄩˇ ㄒㄧㄚˋ ㄕㄥ ㄖˋ ㄩㄢˋ ㄨㄤˋ ㄉㄚˋ ㄐㄧㄚ ㄧ ㄑㄧˇ ㄆㄞ ㄕㄡˇ",
+      "sources": [
+        "D.cases[6].ending[2]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以諾想先吃哪一種蛋糕？",
+      "zhuyin": "ㄧˇ ㄋㄨㄛˋ ㄒㄧㄤˇ ㄒㄧㄢ ㄔ ㄋㄚˇ ㄧ ㄓㄨㄥˇ ㄉㄢˋ ㄍㄠ",
+      "sources": [
+        "D.cases[6].ending[2].c.ask"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "巧克力蛋糕",
+      "zhuyin": "ㄑㄧㄠˇ ㄎㄜˋ ㄌㄧˋ ㄉㄢˋ ㄍㄠ",
+      "sources": [
+        "D.cases[6].ending[2].c.options[0].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "巧克力蛋糕香香甜甜，大家吃得笑咪咪！",
+      "zhuyin": "ㄑㄧㄠˇ ㄎㄜˋ ㄌㄧˋ ㄉㄢˋ ㄍㄠ ㄒㄧㄤ ㄒㄧㄤ ㄊㄧㄢˊ ㄊㄧㄢˊ ㄉㄚˋ ㄐㄧㄚ ㄔ ㄉㄜ˙ ㄒㄧㄠˋ ㄇㄧ ㄇㄧ",
+      "sources": [
+        "D.cases[6].ending[2].c.options[0].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "草莓蛋糕",
+      "zhuyin": "ㄘㄠˇ ㄇㄟˊ ㄉㄢˋ ㄍㄠ",
+      "sources": [
+        "D.cases[6].ending[2].c.options[1].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "紅紅的草莓排成八字，漂亮極了！",
+      "zhuyin": "ㄏㄨㄥˊ ㄏㄨㄥˊ ㄉㄜ˙ ㄘㄠˇ ㄇㄟˊ ㄆㄞˊ ㄔㄥˊ ㄅㄚ ㄗˋ ㄆㄧㄠˋ ㄌㄧㄤˋ ㄐㄧˊ ㄌㄜ˙",
+      "sources": [
+        "D.cases[6].ending[2].c.options[1].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "奶油蛋糕",
+      "zhuyin": "ㄋㄞˇ ㄧㄡˊ ㄉㄢˋ ㄍㄠ",
+      "sources": [
+        "D.cases[6].ending[2].c.options[2].w"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "白白的奶油像雲朵一樣軟綿綿！",
+      "zhuyin": "ㄅㄞˊ ㄅㄞˊ ㄉㄜ˙ ㄋㄞˇ ㄧㄡˊ ㄒㄧㄤˋ ㄩㄣˊ ㄉㄨㄛˇ ㄧ ㄧㄤˋ ㄖㄨㄢˇ ㄇㄧㄢˊ ㄇㄧㄢˊ",
+      "sources": [
+        "D.cases[6].ending[2].c.options[2].res"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以琴和安安一起揮動魔法棒，一隻白色貓頭鷹從窗外飛進來。",
+      "zhuyin": "ㄧˇ ㄑㄧㄣˊ ㄏㄜˊ ㄢ ㄢ ㄧ ㄑㄧˇ ㄏㄨㄟ ㄉㄨㄥˋ ㄇㄛˊ ㄈㄚˇ ㄅㄤˋ ㄧ ㄓ ㄅㄞˊ ㄙㄜˋ ㄇㄠ ㄊㄡˊ ㄧㄥ ㄘㄨㄥˊ ㄔㄨㄤ ㄨㄞˋ ㄈㄟ ㄐㄧㄣˋ ㄌㄞˊ",
+      "sources": [
+        "D.cases[6].ending[3]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "貓頭鷹送來一封信：「以諾，八歲生日快樂！希望下次再一起去 Hofis 遊樂園玩！」",
+      "zhuyin": "ㄇㄠ ㄊㄡˊ ㄧㄥ ㄙㄨㄥˋ ㄌㄞˊ ㄧ ㄈㄥ ㄒㄧㄣˋ ㄧˇ ㄋㄨㄛˋ ㄅㄚ ㄙㄨㄟˋ ㄕㄥ ㄖˋ ㄎㄨㄞˋ ㄌㄜˋ ㄒㄧ ㄨㄤˋ ㄒㄧㄚˋ ㄘˋ ㄗㄞˋ ㄧ ㄑㄧˇ ㄑㄩˋ ㄧㄡˊ ㄌㄜˋ ㄩㄢˊ ㄨㄢˊ",
+      "sources": [
+        "D.cases[6].ending[4]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "魔法蛋糕案成功解開，現在來看看以諾得到幾份生日禮物吧！",
+      "zhuyin": "ㄇㄛˊ ㄈㄚˇ ㄉㄢˋ ㄍㄠ ㄢˋ ㄔㄥˊ ㄍㄨㄥ ㄐㄧㄝˇ ㄎㄞ ㄒㄧㄢˋ ㄗㄞˋ ㄌㄞˊ ㄎㄢˋ ㄎㄢˋ ㄧˇ ㄋㄨㄛˋ ㄉㄜˊ ㄉㄠˋ ㄐㄧˇ ㄈㄣˋ ㄕㄥ ㄖˋ ㄌㄧˇ ㄨˋ ㄅㄚ˙",
+      "sources": [
+        "D.cases[6].ending[5]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "太棒了！",
+      "zhuyin": "ㄊㄞˋ ㄅㄤˋ ㄌㄜ˙",
+      "sources": [
+        "D.ph.praise[0]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "答對了，耶！",
+      "zhuyin": "ㄉㄚˊ ㄉㄨㄟˋ ㄌㄜ˙ ㄧㄝ",
+      "sources": [
+        "D.ph.praise[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "哇，好厲害！",
+      "zhuyin": "ㄨㄚ ㄏㄠˇ ㄌㄧˋ ㄏㄞˋ",
+      "sources": [
+        "D.ph.praise[2]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "探長真聰明！",
+      "zhuyin": "ㄊㄢˋ ㄓㄤˇ ㄓㄣ ㄘㄨㄥ ㄇㄧㄥˊ",
+      "sources": [
+        "D.ph.praise[3]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "完全正確，讚！",
+      "zhuyin": "ㄨㄢˊ ㄑㄩㄢˊ ㄓㄥˋ ㄑㄩㄝˋ ㄗㄢˋ",
+      "sources": [
+        "D.ph.praise[4]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "哎呀，再想想看～",
+      "zhuyin": "ㄞ ㄧㄚ ㄗㄞˋ ㄒㄧㄤˇ ㄒㄧㄤˇ ㄎㄢˋ",
+      "sources": [
+        "D.ph.retry[0]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "差一點點，再試一次！",
+      "zhuyin": "ㄔㄚˋ ㄧ ㄉㄧㄢˇ ㄉㄧㄢˇ ㄗㄞˋ ㄕˋ ㄧ ㄘˋ",
+      "sources": [
+        "D.ph.retry[1]"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "自己讀懂，多一顆星星！",
+      "zhuyin": "ㄗˋ ㄐㄧˇ ㄉㄨˊ ㄉㄨㄥˇ ㄉㄨㄛ ㄧ ㄎㄜ ㄒㄧㄥ ㄒㄧㄥ",
+      "sources": [
+        "D.ph.bonus"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "找到線索了！",
+      "zhuyin": "ㄓㄠˇ ㄉㄠˋ ㄒㄧㄢˋ ㄙㄨㄛˇ ㄌㄜ˙",
+      "sources": [
+        "D.ph.clueGot"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "叮叮叮！破案了！",
+      "zhuyin": "ㄉㄧㄥ ㄉㄧㄥ ㄉㄧㄥ ㄆㄛˋ ㄢˋ ㄌㄜ˙",
+      "sources": [
+        "D.ph.solved"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以琴探長",
+      "zhuyin": "ㄧˇ ㄑㄧㄣˊ ㄊㄢˋ ㄓㄤˇ",
+      "sources": [
+        "D.ph.title"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "注音破案記",
+      "zhuyin": "ㄓㄨˋ ㄧㄣ ㄆㄛˋ ㄢˋ ㄐㄧˋ",
+      "sources": [
+        "D.ph.subtitle"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "嗨！我是安安，以琴探長的小幫手。探長，我們一起用注音破案吧！",
+      "zhuyin": "ㄏㄞ ㄨㄛˇ ㄕˋ ㄢ ㄢ ㄧˇ ㄑㄧㄣˊ ㄊㄢˋ ㄓㄤˇ ㄉㄜ˙ ㄒㄧㄠˇ ㄅㄤ ㄕㄡˇ ㄊㄢˋ ㄓㄤˇ ㄨㄛˇ ㄇㄣ˙ ㄧ ㄑㄧˇ ㄩㄥˋ ㄓㄨˋ ㄧㄣ ㄆㄛˋ ㄢˋ ㄅㄚ˙",
+      "sources": [
+        "D.ph.welcome"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "讀注音，選圖片。",
+      "zhuyin": "ㄉㄨˊ ㄓㄨˋ ㄧㄣ ㄒㄩㄢˇ ㄊㄨˊ ㄆㄧㄢˋ",
+      "sources": [
+        "D.ph.pickHelp"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "證人有話要說！讀讀看他說了什麼？",
+      "zhuyin": "ㄓㄥˋ ㄖㄣˊ ㄧㄡˇ ㄏㄨㄚˋ ㄧㄠˋ ㄕㄨㄛ ㄉㄨˊ ㄉㄨˊ ㄎㄢˋ ㄊㄚ ㄕㄨㄛ ㄌㄜ˙ ㄕㄜˊ ㄇㄜ˙",
+      "sources": [
+        "D.ph.readHelp"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "看看線索，找出小偷！",
+      "zhuyin": "ㄎㄢˋ ㄎㄢˋ ㄒㄧㄢˋ ㄙㄨㄛˇ ㄓㄠˇ ㄔㄨ ㄒㄧㄠˇ ㄊㄡ",
+      "sources": [
+        "D.ph.deduceHelp"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "媽麻馬罵嗎",
+      "zhuyin": "ㄇㄚ ㄇㄚˊ ㄇㄚˇ ㄇㄚˋ ㄇㄚ˙",
+      "sources": [
+        "D.ph.toneRef"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以琴探長破了六個案子，是真正的神探！",
+      "zhuyin": "ㄧˇ ㄑㄧㄣˊ ㄊㄢˋ ㄓㄤˇ ㄆㄛˋ ㄌㄜ˙ ㄌㄧㄡˋ ㄍㄜˋ ㄢˋ ㄗ˙ ㄕˋ ㄓㄣ ㄓㄥˋ ㄉㄜ˙ ㄕㄣˊ ㄊㄢˋ",
+      "sources": [
+        "D.ph.allDone"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "一聲",
+      "zhuyin": "ㄧ ㄕㄥ",
+      "sources": [
+        "D.w.一聲"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "二聲",
+      "zhuyin": "ㄦˋ ㄕㄥ",
+      "sources": [
+        "D.w.二聲"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "三聲",
+      "zhuyin": "ㄙㄢ ㄕㄥ",
+      "sources": [
+        "D.w.三聲"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "四聲",
+      "zhuyin": "ㄙˋ ㄕㄥ",
+      "sources": [
+        "D.w.四聲"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "輕聲",
+      "zhuyin": "ㄑㄧㄥ ㄕㄥ",
+      "sources": [
+        "D.w.輕聲"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "聲母",
+      "zhuyin": "ㄕㄥ ㄇㄨˇ",
+      "sources": [
+        "D.w.聲母",
+        "D.ui.ini"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "韻母",
+      "zhuyin": "ㄩㄣˋ ㄇㄨˇ",
+      "sources": [
+        "D.w.韻母",
+        "D.ui.fin"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "聲調",
+      "zhuyin": "ㄕㄥ ㄉㄧㄠˋ",
+      "sources": [
+        "D.w.聲調",
+        "D.ui.tone"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "見習探長",
+      "zhuyin": "ㄐㄧㄢˋ ㄒㄧˊ ㄊㄢˋ ㄓㄤˇ",
+      "sources": [
+        "D.w.見習探長"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "小探長",
+      "zhuyin": "ㄒㄧㄠˇ ㄊㄢˋ ㄓㄤˇ",
+      "sources": [
+        "D.w.小探長"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "金牌探長",
+      "zhuyin": "ㄐㄧㄣ ㄆㄞˊ ㄊㄢˋ ㄓㄤˇ",
+      "sources": [
+        "D.w.金牌探長"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "超級神探",
+      "zhuyin": "ㄔㄠ ㄐㄧˊ ㄕㄣˊ ㄊㄢˋ",
+      "sources": [
+        "D.w.超級神探"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "傳說神探",
+      "zhuyin": "ㄔㄨㄢˊ ㄕㄨㄛ ㄕㄣˊ ㄊㄢˋ",
+      "sources": [
+        "D.w.傳說神探"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "玻",
+      "zhuyin": "ㄅㄛ",
+      "sources": [
+        "D.w.玻"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "玻璃",
+      "zhuyin": "ㄅㄛ ㄌㄧˊ",
+      "sources": [
+        "D.w.玻璃"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "坡",
+      "zhuyin": "ㄆㄛ",
+      "sources": [
+        "D.w.坡"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "葡萄",
+      "zhuyin": "ㄆㄨˊ ㄊㄠˊ",
+      "sources": [
+        "D.w.葡萄"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "摸",
+      "zhuyin": "ㄇㄛ",
+      "sources": [
+        "D.w.摸"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "貓",
+      "zhuyin": "ㄇㄠ",
+      "sources": [
+        "D.w.貓"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "佛",
+      "zhuyin": "ㄈㄛˊ",
+      "sources": [
+        "D.w.佛"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "飛機",
+      "zhuyin": "ㄈㄟ ㄐㄧ",
+      "sources": [
+        "D.w.飛機"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "得",
+      "zhuyin": "ㄉㄜˊ",
+      "sources": [
+        "D.w.得"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "大象",
+      "zhuyin": "ㄉㄚˋ ㄒㄧㄤˋ",
+      "sources": [
+        "D.w.大象",
+        "D.jy[6].words[1].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "特",
+      "zhuyin": "ㄊㄜˋ",
+      "sources": [
+        "D.w.特"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "兔子",
+      "zhuyin": "ㄊㄨˋ ㄗ˙",
+      "sources": [
+        "D.w.兔子"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "呢",
+      "zhuyin": "ㄋㄜ˙",
+      "sources": [
+        "D.w.呢"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "牛",
+      "zhuyin": "ㄋㄧㄡˊ",
+      "sources": [
+        "D.w.牛",
+        "D.jy[3].words[0].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "勒",
+      "zhuyin": "ㄌㄜˋ",
+      "sources": [
+        "D.w.勒"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "老虎",
+      "zhuyin": "ㄌㄠˇ ㄏㄨˇ",
+      "sources": [
+        "D.w.老虎"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "哥",
+      "zhuyin": "ㄍㄜ",
+      "sources": [
+        "D.w.哥"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "狗",
+      "zhuyin": "ㄍㄡˇ",
+      "sources": [
+        "D.w.狗"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "科",
+      "zhuyin": "ㄎㄜ",
+      "sources": [
+        "D.w.科"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "恐龍",
+      "zhuyin": "ㄎㄨㄥˇ ㄌㄨㄥˊ",
+      "sources": [
+        "D.w.恐龍"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "喝",
+      "zhuyin": "ㄏㄜ",
+      "sources": [
+        "D.w.喝"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "河馬",
+      "zhuyin": "ㄏㄜˊ ㄇㄚˇ",
+      "sources": [
+        "D.w.河馬"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "基",
+      "zhuyin": "ㄐㄧ",
+      "sources": [
+        "D.w.基"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "橘子",
+      "zhuyin": "ㄐㄩˊ ㄗ˙",
+      "sources": [
+        "D.w.橘子"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "七",
+      "zhuyin": "ㄑㄧ",
+      "sources": [
+        "D.w.七"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "汽車",
+      "zhuyin": "ㄑㄧˋ ㄔㄜ",
+      "sources": [
+        "D.w.汽車"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "西",
+      "zhuyin": "ㄒㄧ",
+      "sources": [
+        "D.w.西"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "西瓜",
+      "zhuyin": "ㄒㄧ ㄍㄨㄚ",
+      "sources": [
+        "D.w.西瓜",
+        "D.jy[8].words[1].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "知",
+      "zhuyin": "ㄓ",
+      "sources": [
+        "D.w.知"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "蜘蛛",
+      "zhuyin": "ㄓ ㄓㄨ",
+      "sources": [
+        "D.w.蜘蛛"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "吃",
+      "zhuyin": "ㄔ",
+      "sources": [
+        "D.w.吃"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "長頸鹿",
+      "zhuyin": "ㄔㄤˊ ㄐㄧㄥˇ ㄌㄨˋ",
+      "sources": [
+        "D.w.長頸鹿"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "詩",
+      "zhuyin": "ㄕ",
+      "sources": [
+        "D.w.詩"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "獅子",
+      "zhuyin": "ㄕ ㄗ˙",
+      "sources": [
+        "D.w.獅子"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "日",
+      "zhuyin": "ㄖˋ",
+      "sources": [
+        "D.w.日"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "熱狗",
+      "zhuyin": "ㄖㄜˋ ㄍㄡˇ",
+      "sources": [
+        "D.w.熱狗"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "資",
+      "zhuyin": "ㄗ",
+      "sources": [
+        "D.w.資"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "足球",
+      "zhuyin": "ㄗㄨˊ ㄑㄧㄡˊ",
+      "sources": [
+        "D.w.足球",
+        "D.jy[3].words[1].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "詞",
+      "zhuyin": "ㄘˊ",
+      "sources": [
+        "D.w.詞"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "草莓",
+      "zhuyin": "ㄘㄠˇ ㄇㄟˊ",
+      "sources": [
+        "D.w.草莓"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "思",
+      "zhuyin": "ㄙ",
+      "sources": [
+        "D.w.思"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "雨傘",
+      "zhuyin": "ㄩˇ ㄙㄢˇ",
+      "sources": [
+        "D.w.雨傘"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "衣",
+      "zhuyin": "ㄧ",
+      "sources": [
+        "D.w.衣"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "椅子",
+      "zhuyin": "ㄧˇ ㄗ˙",
+      "sources": [
+        "D.w.椅子"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "烏",
+      "zhuyin": "ㄨ",
+      "sources": [
+        "D.w.烏"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "魚",
+      "zhuyin": "ㄩˊ",
+      "sources": [
+        "D.w.魚"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "金魚",
+      "zhuyin": "ㄐㄧㄣ ㄩˊ",
+      "sources": [
+        "D.w.金魚"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "阿",
+      "zhuyin": "ㄚ",
+      "sources": [
+        "D.w.阿"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "喔",
+      "zhuyin": "ㄛ",
+      "sources": [
+        "D.w.喔"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "婆婆",
+      "zhuyin": "ㄆㄛˊ ㄆㄛ˙",
+      "sources": [
+        "D.w.婆婆"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "鵝",
+      "zhuyin": "ㄜˊ",
+      "sources": [
+        "D.w.鵝"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "天鵝",
+      "zhuyin": "ㄊㄧㄢ ㄜˊ",
+      "sources": [
+        "D.w.天鵝"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "椰子",
+      "zhuyin": "ㄧㄝˊ ㄗ˙",
+      "sources": [
+        "D.w.椰子"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "哀",
+      "zhuyin": "ㄞ",
+      "sources": [
+        "D.w.哀"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "愛心",
+      "zhuyin": "ㄞˋ ㄒㄧㄣ",
+      "sources": [
+        "D.w.愛心",
+        "D.jy[5].words[0].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "誒",
+      "zhuyin": "ㄟ",
+      "sources": [
+        "D.w.誒"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "杯子",
+      "zhuyin": "ㄅㄟ ㄗ˙",
+      "sources": [
+        "D.w.杯子"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "凹",
+      "zhuyin": "ㄠ",
+      "sources": [
+        "D.w.凹"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "歐",
+      "zhuyin": "ㄡ",
+      "sources": [
+        "D.w.歐"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "安",
+      "zhuyin": "ㄢ",
+      "sources": [
+        "D.w.安"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "雞蛋",
+      "zhuyin": "ㄐㄧ ㄉㄢˋ",
+      "sources": [
+        "D.w.雞蛋"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "恩",
+      "zhuyin": "ㄣ",
+      "sources": [
+        "D.w.恩"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "大門",
+      "zhuyin": "ㄉㄚˋ ㄇㄣˊ",
+      "sources": [
+        "D.w.大門"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "骯",
+      "zhuyin": "ㄤ",
+      "sources": [
+        "D.w.骯"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "糖果",
+      "zhuyin": "ㄊㄤˊ ㄍㄨㄛˇ",
+      "sources": [
+        "D.w.糖果"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "燈",
+      "zhuyin": "ㄉㄥ",
+      "sources": [
+        "D.w.燈"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "兒",
+      "zhuyin": "ㄦˊ",
+      "sources": [
+        "D.w.兒"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "耳朵",
+      "zhuyin": "ㄦˇ ㄉㄨㄛˇ",
+      "sources": [
+        "D.w.耳朵",
+        "D.jy[9].words[2].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "媽",
+      "zhuyin": "ㄇㄚ",
+      "sources": [
+        "D.w.媽"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "麻",
+      "zhuyin": "ㄇㄚˊ",
+      "sources": [
+        "D.w.麻"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "馬",
+      "zhuyin": "ㄇㄚˇ",
+      "sources": [
+        "D.w.馬"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "罵",
+      "zhuyin": "ㄇㄚˋ",
+      "sources": [
+        "D.w.罵"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "嗎",
+      "zhuyin": "ㄇㄚ˙",
+      "sources": [
+        "D.w.嗎"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "蘋果",
+      "zhuyin": "ㄆㄧㄥˊ ㄍㄨㄛˇ",
+      "sources": [
+        "D.w.蘋果",
+        "D.jy[7].words[2].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "香蕉",
+      "zhuyin": "ㄒㄧㄤ ㄐㄧㄠ",
+      "sources": [
+        "D.w.香蕉",
+        "D.jy[6].words[0].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "檸檬",
+      "zhuyin": "ㄋㄧㄥˊ ㄇㄥˊ",
+      "sources": [
+        "D.w.檸檬"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "桃子",
+      "zhuyin": "ㄊㄠˊ ㄗ˙",
+      "sources": [
+        "D.w.桃子"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "櫻桃",
+      "zhuyin": "ㄧㄥ ㄊㄠˊ",
+      "sources": [
+        "D.w.櫻桃"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "鳳梨",
+      "zhuyin": "ㄈㄥˋ ㄌㄧˊ",
+      "sources": [
+        "D.w.鳳梨"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "玉米",
+      "zhuyin": "ㄩˋ ㄇㄧˇ",
+      "sources": [
+        "D.w.玉米"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "紅蘿蔔",
+      "zhuyin": "ㄏㄨㄥˊ ㄌㄨㄛˊ ㄅㄛ˙",
+      "sources": [
+        "D.w.紅蘿蔔"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "番茄",
+      "zhuyin": "ㄈㄢ ㄑㄧㄝˊ",
+      "sources": [
+        "D.w.番茄"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "麵包",
+      "zhuyin": "ㄇㄧㄢˋ ㄅㄠ",
+      "sources": [
+        "D.w.麵包"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "漢堡",
+      "zhuyin": "ㄏㄢˋ ㄅㄠˇ",
+      "sources": [
+        "D.w.漢堡"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "薯條",
+      "zhuyin": "ㄕㄨˇ ㄊㄧㄠˊ",
+      "sources": [
+        "D.w.薯條"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "牛奶",
+      "zhuyin": "ㄋㄧㄡˊ ㄋㄞˇ",
+      "sources": [
+        "D.w.牛奶"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "飯糰",
+      "zhuyin": "ㄈㄢˋ ㄊㄨㄢˊ",
+      "sources": [
+        "D.w.飯糰"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "老鼠",
+      "zhuyin": "ㄌㄠˇ ㄕㄨˇ",
+      "sources": [
+        "D.w.老鼠"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "小豬",
+      "zhuyin": "ㄒㄧㄠˇ ㄓㄨ",
+      "sources": [
+        "D.w.小豬"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "綿羊",
+      "zhuyin": "ㄇㄧㄢˊ ㄧㄤˊ",
+      "sources": [
+        "D.w.綿羊"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "小雞",
+      "zhuyin": "ㄒㄧㄠˇ ㄐㄧ",
+      "sources": [
+        "D.w.小雞"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "熊貓",
+      "zhuyin": "ㄒㄩㄥˊ ㄇㄠ",
+      "sources": [
+        "D.w.熊貓"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "無尾熊",
+      "zhuyin": "ㄨˊ ㄨㄟˇ ㄒㄩㄥˊ",
+      "sources": [
+        "D.w.無尾熊"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "狐狸",
+      "zhuyin": "ㄏㄨˊ ㄌㄧˊ",
+      "sources": [
+        "D.w.狐狸"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "刺蝟",
+      "zhuyin": "ㄘˋ ㄨㄟˋ",
+      "sources": [
+        "D.w.刺蝟"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "螞蟻",
+      "zhuyin": "ㄇㄚˇ ㄧˇ",
+      "sources": [
+        "D.w.螞蟻"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "蜜蜂",
+      "zhuyin": "ㄇㄧˋ ㄈㄥ",
+      "sources": [
+        "D.w.蜜蜂"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "瓢蟲",
+      "zhuyin": "ㄆㄧㄠˊ ㄔㄨㄥˊ",
+      "sources": [
+        "D.w.瓢蟲"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "鯨魚",
+      "zhuyin": "ㄐㄧㄥ ㄩˊ",
+      "sources": [
+        "D.w.鯨魚"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "海豚",
+      "zhuyin": "ㄏㄞˇ ㄊㄨㄣˊ",
+      "sources": [
+        "D.w.海豚"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "章魚",
+      "zhuyin": "ㄓㄤ ㄩˊ",
+      "sources": [
+        "D.w.章魚"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "螃蟹",
+      "zhuyin": "ㄆㄤˊ ㄒㄧㄝˋ",
+      "sources": [
+        "D.w.螃蟹"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "斑馬",
+      "zhuyin": "ㄅㄢ ㄇㄚˇ",
+      "sources": [
+        "D.w.斑馬"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "蛇",
+      "zhuyin": "ㄕㄜˊ",
+      "sources": [
+        "D.w.蛇"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "剪刀",
+      "zhuyin": "ㄐㄧㄢˇ ㄉㄠ",
+      "sources": [
+        "D.w.剪刀",
+        "D.jy[4].words[3].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "眼鏡",
+      "zhuyin": "ㄧㄢˇ ㄐㄧㄥˋ",
+      "sources": [
+        "D.w.眼鏡"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "襪子",
+      "zhuyin": "ㄨㄚˋ ㄗ˙",
+      "sources": [
+        "D.w.襪子",
+        "D.jy[8].words[5].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "鞋子",
+      "zhuyin": "ㄒㄧㄝˊ ㄗ˙",
+      "sources": [
+        "D.w.鞋子",
+        "D.jy[1].words[1].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "衣服",
+      "zhuyin": "ㄧ ㄈㄨˊ",
+      "sources": [
+        "D.w.衣服"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "裙子",
+      "zhuyin": "ㄑㄩㄣˊ ㄗ˙",
+      "sources": [
+        "D.w.裙子",
+        "D.jy[18].words[0].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "手套",
+      "zhuyin": "ㄕㄡˇ ㄊㄠˋ",
+      "sources": [
+        "D.w.手套"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "電話",
+      "zhuyin": "ㄉㄧㄢˋ ㄏㄨㄚˋ",
+      "sources": [
+        "D.w.電話"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "電腦",
+      "zhuyin": "ㄉㄧㄢˋ ㄋㄠˇ",
+      "sources": [
+        "D.w.電腦"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "相機",
+      "zhuyin": "ㄒㄧㄤ ㄐㄧ",
+      "sources": [
+        "D.w.相機"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "時鐘",
+      "zhuyin": "ㄕˊ ㄓㄨㄥ",
+      "sources": [
+        "D.w.時鐘",
+        "D.jy[15].words[4].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "籃球",
+      "zhuyin": "ㄌㄢˊ ㄑㄧㄡˊ",
+      "sources": [
+        "D.w.籃球"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "風箏",
+      "zhuyin": "ㄈㄥ ㄓㄥ",
+      "sources": [
+        "D.w.風箏"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "公車",
+      "zhuyin": "ㄍㄨㄥ ㄔㄜ",
+      "sources": [
+        "D.w.公車"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "火車",
+      "zhuyin": "ㄏㄨㄛˇ ㄔㄜ",
+      "sources": [
+        "D.w.火車"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "船",
+      "zhuyin": "ㄔㄨㄢˊ",
+      "sources": [
+        "D.w.船",
+        "D.jy[12].words[0].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "腳踏車",
+      "zhuyin": "ㄐㄧㄠˇ ㄊㄚˋ ㄔㄜ",
+      "sources": [
+        "D.w.腳踏車"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "火箭",
+      "zhuyin": "ㄏㄨㄛˇ ㄐㄧㄢˋ",
+      "sources": [
+        "D.w.火箭"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "直升機",
+      "zhuyin": "ㄓˊ ㄕㄥ ㄐㄧ",
+      "sources": [
+        "D.w.直升機"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "救護車",
+      "zhuyin": "ㄐㄧㄡˋ ㄏㄨˋ ㄔㄜ",
+      "sources": [
+        "D.w.救護車"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "消防車",
+      "zhuyin": "ㄒㄧㄠ ㄈㄤˊ ㄔㄜ",
+      "sources": [
+        "D.w.消防車"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "太陽",
+      "zhuyin": "ㄊㄞˋ ㄧㄤˊ",
+      "sources": [
+        "D.w.太陽"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "月亮",
+      "zhuyin": "ㄩㄝˋ ㄌㄧㄤˋ",
+      "sources": [
+        "D.w.月亮",
+        "D.jy[6].words[3].a",
+        "D.jy[16].words[4].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "雲",
+      "zhuyin": "ㄩㄣˊ",
+      "sources": [
+        "D.w.雲"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "彩虹",
+      "zhuyin": "ㄘㄞˇ ㄏㄨㄥˊ",
+      "sources": [
+        "D.w.彩虹"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "花",
+      "zhuyin": "ㄏㄨㄚ",
+      "sources": [
+        "D.w.花",
+        "D.jy[8].words[0].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "大樹",
+      "zhuyin": "ㄉㄚˋ ㄕㄨˋ",
+      "sources": [
+        "D.w.大樹"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "高山",
+      "zhuyin": "ㄍㄠ ㄕㄢ",
+      "sources": [
+        "D.w.高山"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "火",
+      "zhuyin": "ㄏㄨㄛˇ",
+      "sources": [
+        "D.w.火",
+        "D.jy[9].words[0].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "雪人",
+      "zhuyin": "ㄒㄩㄝˇ ㄖㄣˊ",
+      "sources": [
+        "D.w.雪人",
+        "D.jy[16].words[1].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "眼睛",
+      "zhuyin": "ㄧㄢˇ ㄐㄧㄥ",
+      "sources": [
+        "D.w.眼睛",
+        "D.jy[7].words[5].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "鼻子",
+      "zhuyin": "ㄅㄧˊ ㄗ˙",
+      "sources": [
+        "D.w.鼻子"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "嘴巴",
+      "zhuyin": "ㄗㄨㄟˇ ㄅㄚ˙",
+      "sources": [
+        "D.w.嘴巴",
+        "D.jy[11].words[1].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "手",
+      "zhuyin": "ㄕㄡˇ",
+      "sources": [
+        "D.w.手"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "牙齒",
+      "zhuyin": "ㄧㄚˊ ㄔˇ",
+      "sources": [
+        "D.w.牙齒"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "床",
+      "zhuyin": "ㄔㄨㄤˊ",
+      "sources": [
+        "D.w.床",
+        "D.jy[14].words[0].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "電視",
+      "zhuyin": "ㄉㄧㄢˋ ㄕˋ",
+      "sources": [
+        "D.w.電視",
+        "D.jy[4].words[0].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "鋼琴",
+      "zhuyin": "ㄍㄤ ㄑㄧㄣˊ",
+      "sources": [
+        "D.w.鋼琴",
+        "D.jy[5].words[2].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "金牌",
+      "zhuyin": "ㄐㄧㄣ ㄆㄞˊ",
+      "sources": [
+        "D.w.金牌",
+        "D.jy[5].words[1].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "鍋子",
+      "zhuyin": "ㄍㄨㄛ ㄗ˙",
+      "sources": [
+        "D.w.鍋子",
+        "D.jy[9].words[1].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "筷子",
+      "zhuyin": "ㄎㄨㄞˋ ㄗ˙",
+      "sources": [
+        "D.w.筷子",
+        "D.jy[10].words[0].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "龍",
+      "zhuyin": "ㄌㄨㄥˊ",
+      "sources": [
+        "D.w.龍",
+        "D.jy[15].words[2].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "熊",
+      "zhuyin": "ㄒㄩㄥˊ",
+      "sources": [
+        "D.w.熊",
+        "D.jy[19].words[0].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "公雞",
+      "zhuyin": "ㄍㄨㄥ ㄐㄧ",
+      "sources": [
+        "D.w.公雞",
+        "D.jy[15].words[6].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "松鼠",
+      "zhuyin": "ㄙㄨㄥ ㄕㄨˇ",
+      "sources": [
+        "D.w.松鼠",
+        "D.jy[15].words[5].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "駱駝",
+      "zhuyin": "ㄌㄨㄛˋ ㄊㄨㄛˊ",
+      "sources": [
+        "D.w.駱駝",
+        "D.jy[9].words[3].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "蝦子",
+      "zhuyin": "ㄒㄧㄚ ㄗ˙",
+      "sources": [
+        "D.w.蝦子",
+        "D.jy[0].words[1].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "橋",
+      "zhuyin": "ㄑㄧㄠˊ",
+      "sources": [
+        "D.w.橋",
+        "D.jy[2].words[0].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "錢",
+      "zhuyin": "ㄑㄧㄢˊ",
+      "sources": [
+        "D.w.錢",
+        "D.jy[4].words[2].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "碗",
+      "zhuyin": "ㄨㄢˇ",
+      "sources": [
+        "D.w.碗",
+        "D.jy[12].words[5].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "鑽石",
+      "zhuyin": "ㄗㄨㄢˋ ㄕˊ",
+      "sources": [
+        "D.w.鑽石",
+        "D.jy[12].words[3].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "家",
+      "zhuyin": "ㄐㄧㄚ",
+      "sources": [
+        "D.w.家",
+        "D.jy[0].words[0].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "下雨",
+      "zhuyin": "ㄒㄧㄚˋ ㄩˇ",
+      "sources": [
+        "D.w.下雨",
+        "D.jy[0].words[2].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "加油",
+      "zhuyin": "ㄐㄧㄚ ㄧㄡˊ",
+      "sources": [
+        "D.w.加油",
+        "D.jy[0].words[3].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "恰恰",
+      "zhuyin": "ㄑㄧㄚˋ ㄑㄧㄚˋ",
+      "sources": [
+        "D.w.恰恰",
+        "D.jy[0].words[4].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "姐姐",
+      "zhuyin": "ㄐㄧㄝˇ ㄐㄧㄝ˙",
+      "sources": [
+        "D.w.姐姐",
+        "D.jy[1].words[0].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "茄子",
+      "zhuyin": "ㄑㄧㄝˊ ㄗ˙",
+      "sources": [
+        "D.w.茄子",
+        "D.jy[1].words[2].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "鐵軌",
+      "zhuyin": "ㄊㄧㄝˇ ㄍㄨㄟˇ",
+      "sources": [
+        "D.w.鐵軌",
+        "D.jy[1].words[4].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "寫字",
+      "zhuyin": "ㄒㄧㄝˇ ㄗˋ",
+      "sources": [
+        "D.w.寫字",
+        "D.jy[1].words[5].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "小鳥",
+      "zhuyin": "ㄒㄧㄠˇ ㄋㄧㄠˇ",
+      "sources": [
+        "D.w.小鳥",
+        "D.jy[2].words[1].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "票",
+      "zhuyin": "ㄆㄧㄠˋ",
+      "sources": [
+        "D.w.票",
+        "D.jy[2].words[2].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "釣魚",
+      "zhuyin": "ㄉㄧㄠˋ ㄩˊ",
+      "sources": [
+        "D.w.釣魚",
+        "D.jy[2].words[4].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "笑",
+      "zhuyin": "ㄒㄧㄠˋ",
+      "sources": [
+        "D.w.笑",
+        "D.jy[2].words[5].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "九",
+      "zhuyin": "ㄐㄧㄡˇ",
+      "sources": [
+        "D.w.九",
+        "D.jy[3].words[2].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "六",
+      "zhuyin": "ㄌㄧㄡˋ",
+      "sources": [
+        "D.w.六",
+        "D.jy[3].words[3].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "秋天",
+      "zhuyin": "ㄑㄧㄡ ㄊㄧㄢ",
+      "sources": [
+        "D.w.秋天",
+        "D.jy[3].words[4].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "修理",
+      "zhuyin": "ㄒㄧㄡ ㄌㄧˇ",
+      "sources": [
+        "D.w.修理",
+        "D.jy[3].words[5].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "麵條",
+      "zhuyin": "ㄇㄧㄢˋ ㄊㄧㄠˊ",
+      "sources": [
+        "D.w.麵條",
+        "D.jy[4].words[1].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "鞭炮",
+      "zhuyin": "ㄅㄧㄢ ㄆㄠˋ",
+      "sources": [
+        "D.w.鞭炮",
+        "D.jy[4].words[4].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "臉",
+      "zhuyin": "ㄌㄧㄢˇ",
+      "sources": [
+        "D.w.臉",
+        "D.jy[4].words[5].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "線",
+      "zhuyin": "ㄒㄧㄢˋ",
+      "sources": [
+        "D.w.線",
+        "D.jy[4].words[6].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "樹林",
+      "zhuyin": "ㄕㄨˋ ㄌㄧㄣˊ",
+      "sources": [
+        "D.w.樹林",
+        "D.jy[5].words[3].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "拼圖",
+      "zhuyin": "ㄆㄧㄣ ㄊㄨˊ",
+      "sources": [
+        "D.w.拼圖",
+        "D.jy[5].words[4].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "親親",
+      "zhuyin": "ㄑㄧㄣ ㄑㄧㄣ",
+      "sources": [
+        "D.w.親親",
+        "D.jy[5].words[5].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "牆壁",
+      "zhuyin": "ㄑㄧㄤˊ ㄅㄧˋ",
+      "sources": [
+        "D.w.牆壁",
+        "D.jy[6].words[2].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "講話",
+      "zhuyin": "ㄐㄧㄤˇ ㄏㄨㄚˋ",
+      "sources": [
+        "D.w.講話",
+        "D.jy[6].words[4].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "兩個",
+      "zhuyin": "ㄌㄧㄤˇ ㄍㄜˋ",
+      "sources": [
+        "D.w.兩個",
+        "D.jy[6].words[5].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "刷牙",
+      "zhuyin": "ㄕㄨㄚ ㄧㄚˊ",
+      "sources": [
+        "D.w.刷牙",
+        "D.jy[8].words[2].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "畫畫",
+      "zhuyin": "ㄏㄨㄚˋ ㄏㄨㄚˋ",
+      "sources": [
+        "D.w.畫畫",
+        "D.jy[8].words[3].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "抓",
+      "zhuyin": "ㄓㄨㄚ",
+      "sources": [
+        "D.w.抓",
+        "D.jy[8].words[4].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "說話",
+      "zhuyin": "ㄕㄨㄛ ㄏㄨㄚˋ",
+      "sources": [
+        "D.w.說話",
+        "D.jy[9].words[4].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "坐下",
+      "zhuyin": "ㄗㄨㄛˋ ㄒㄧㄚˋ",
+      "sources": [
+        "D.w.坐下",
+        "D.jy[9].words[5].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "乖乖",
+      "zhuyin": "ㄍㄨㄞ ㄍㄨㄞ",
+      "sources": [
+        "D.w.乖乖",
+        "D.jy[10].words[1].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "帥氣",
+      "zhuyin": "ㄕㄨㄞˋ ㄑㄧˋ",
+      "sources": [
+        "D.w.帥氣",
+        "D.jy[10].words[2].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "快跑",
+      "zhuyin": "ㄎㄨㄞˋ ㄆㄠˇ",
+      "sources": [
+        "D.w.快跑",
+        "D.jy[10].words[3].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "外套",
+      "zhuyin": "ㄨㄞˋ ㄊㄠˋ",
+      "sources": [
+        "D.w.外套",
+        "D.jy[10].words[4].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "腿",
+      "zhuyin": "ㄊㄨㄟˇ",
+      "sources": [
+        "D.w.腿",
+        "D.jy[11].words[2].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "鬼",
+      "zhuyin": "ㄍㄨㄟˇ",
+      "sources": [
+        "D.w.鬼",
+        "D.jy[11].words[3].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "對",
+      "zhuyin": "ㄉㄨㄟˋ",
+      "sources": [
+        "D.w.對",
+        "D.ui.memPair",
+        "D.jy[11].words[5].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "關門",
+      "zhuyin": "ㄍㄨㄢ ㄇㄣˊ",
+      "sources": [
+        "D.w.關門",
+        "D.jy[12].words[4].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "春天",
+      "zhuyin": "ㄔㄨㄣ ㄊㄧㄢ",
+      "sources": [
+        "D.w.春天",
+        "D.jy[13].words[0].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "摩天輪",
+      "zhuyin": "ㄇㄛˊ ㄊㄧㄢ ㄌㄨㄣˊ",
+      "sources": [
+        "D.w.摩天輪",
+        "D.jy[13].words[1].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "餛飩",
+      "zhuyin": "ㄏㄨㄣˊ ㄊㄨㄣ˙",
+      "sources": [
+        "D.w.餛飩",
+        "D.jy[13].words[2].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "嘴唇",
+      "zhuyin": "ㄗㄨㄟˇ ㄔㄨㄣˊ",
+      "sources": [
+        "D.w.嘴唇",
+        "D.jy[13].words[3].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "滾球",
+      "zhuyin": "ㄍㄨㄣˇ ㄑㄧㄡˊ",
+      "sources": [
+        "D.w.滾球",
+        "D.jy[13].words[4].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "蚊子",
+      "zhuyin": "ㄨㄣˊ ㄗ˙",
+      "sources": [
+        "D.w.蚊子",
+        "D.jy[13].words[5].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "窗戶",
+      "zhuyin": "ㄔㄨㄤ ㄏㄨˋ",
+      "sources": [
+        "D.w.窗戶",
+        "D.jy[14].words[1].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "雙胞胎",
+      "zhuyin": "ㄕㄨㄤ ㄅㄠ ㄊㄞ",
+      "sources": [
+        "D.w.雙胞胎",
+        "D.jy[14].words[3].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "撞到",
+      "zhuyin": "ㄓㄨㄤˋ ㄉㄠˋ",
+      "sources": [
+        "D.w.撞到",
+        "D.jy[14].words[4].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "國王",
+      "zhuyin": "ㄍㄨㄛˊ ㄨㄤˊ",
+      "sources": [
+        "D.w.國王",
+        "D.jy[14].words[5].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "冬天",
+      "zhuyin": "ㄉㄨㄥ ㄊㄧㄢ",
+      "sources": [
+        "D.w.冬天",
+        "D.jy[15].words[1].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "蟲",
+      "zhuyin": "ㄔㄨㄥˊ",
+      "sources": [
+        "D.w.蟲",
+        "D.jy[15].words[3].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "學校",
+      "zhuyin": "ㄒㄩㄝˊ ㄒㄧㄠˋ",
+      "sources": [
+        "D.w.學校",
+        "D.jy[16].words[0].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "拳頭",
+      "zhuyin": "ㄑㄩㄢˊ ㄊㄡˊ",
+      "sources": [
+        "D.w.拳頭",
+        "D.jy[17].words[0].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "圈圈",
+      "zhuyin": "ㄑㄩㄢ ㄑㄩㄢ",
+      "sources": [
+        "D.w.圈圈",
+        "D.jy[17].words[1].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "選擇",
+      "zhuyin": "ㄒㄩㄢˇ ㄗㄜˊ",
+      "sources": [
+        "D.w.選擇",
+        "D.jy[17].words[2].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "公園",
+      "zhuyin": "ㄍㄨㄥ ㄩㄢˊ",
+      "sources": [
+        "D.w.公園",
+        "D.jy[17].words[3].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "圓形",
+      "zhuyin": "ㄩㄢˊ ㄒㄧㄥˊ",
+      "sources": [
+        "D.w.圓形",
+        "D.jy[17].words[4].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "尋寶",
+      "zhuyin": "ㄒㄩㄣˊ ㄅㄠˇ",
+      "sources": [
+        "D.w.尋寶",
+        "D.jy[18].words[2].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "軍人",
+      "zhuyin": "ㄐㄩㄣ ㄖㄣˊ",
+      "sources": [
+        "D.w.軍人",
+        "D.jy[18].words[3].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "兇巴巴",
+      "zhuyin": "ㄒㄩㄥ ㄅㄚ ㄅㄚ",
+      "sources": [
+        "D.w.兇巴巴",
+        "D.jy[19].words[1].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "游泳",
+      "zhuyin": "ㄧㄡˊ ㄩㄥˇ",
+      "sources": [
+        "D.w.游泳",
+        "D.jy[19].words[2].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "擁抱",
+      "zhuyin": "ㄩㄥ ㄅㄠˋ",
+      "sources": [
+        "D.w.擁抱",
+        "D.jy[19].words[3].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "勇敢",
+      "zhuyin": "ㄩㄥˇ ㄍㄢˇ",
+      "sources": [
+        "D.w.勇敢",
+        "D.jy[19].words[4].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "開始辦案",
+      "zhuyin": "ㄎㄞ ㄕˇ ㄅㄢˋ ㄢˋ",
+      "sources": [
+        "D.ui.start"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "注音打地鼠",
+      "zhuyin": "ㄓㄨˋ ㄧㄣ ㄉㄚˇ ㄉㄧˋ ㄕㄨˇ",
+      "sources": [
+        "D.ui.arcade"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "注音寶典",
+      "zhuyin": "ㄓㄨˋ ㄧㄣ ㄅㄠˇ ㄉㄧㄢˇ",
+      "sources": [
+        "D.ui.guide"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "我的徽章",
+      "zhuyin": "ㄨㄛˇ ㄉㄜ˙ ㄏㄨㄟ ㄓㄤ",
+      "sources": [
+        "D.ui.badges"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "念給安安聽",
+      "zhuyin": "ㄋㄧㄢˋ ㄍㄟˇ ㄢ ㄢ ㄊㄧㄥ",
+      "sources": [
+        "D.ui.voice"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "案件簿",
+      "zhuyin": "ㄢˋ ㄐㄧㄢˋ ㄅㄨˋ",
+      "sources": [
+        "D.ui.caseBook"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "動物村的案子",
+      "zhuyin": "ㄉㄨㄥˋ ㄨˋ ㄘㄨㄣ ㄉㄜ˙ ㄢˋ ㄗ˙",
+      "sources": [
+        "D.ui.sectAnimal"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "回台灣的大冒險",
+      "zhuyin": "ㄏㄨㄟˊ ㄊㄞˊ ㄨㄢ ㄉㄜ˙ ㄉㄚˋ ㄇㄠˋ ㄒㄧㄢˇ",
+      "sources": [
+        "D.ui.sectJourney"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "案件",
+      "zhuyin": "ㄢˋ ㄐㄧㄢˋ",
+      "sources": [
+        "D.ui.tabCase"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "旅程",
+      "zhuyin": "ㄌㄩˇ ㄔㄥˊ",
+      "sources": [
+        "D.ui.tabTrip"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "還沒破案",
+      "zhuyin": "ㄏㄞˊ ㄇㄟˊ ㄆㄛˋ ㄢˋ",
+      "sources": [
+        "D.ui.notYet"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "先破上一個案子",
+      "zhuyin": "ㄒㄧㄢ ㄆㄛˋ ㄕㄤˋ ㄧ ㄍㄜˋ ㄢˋ ㄗ˙",
+      "sources": [
+        "D.ui.locked"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "破案",
+      "zhuyin": "ㄆㄛˋ ㄢˋ",
+      "sources": [
+        "D.ui.stampSolved"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "找到了",
+      "zhuyin": "ㄓㄠˇ ㄉㄠˋ ㄌㄜ˙",
+      "sources": [
+        "D.ui.stampFound"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "破案了！",
+      "zhuyin": "ㄆㄛˋ ㄢˋ ㄌㄜ˙",
+      "sources": [
+        "D.ui.stampBig"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "開始找線索",
+      "zhuyin": "ㄎㄞ ㄕˇ ㄓㄠˇ ㄒㄧㄢˋ ㄙㄨㄛˇ",
+      "sources": [
+        "D.ui.startClues"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "領取徽章",
+      "zhuyin": "ㄌㄧㄥˇ ㄑㄩˇ ㄏㄨㄟ ㄓㄤ",
+      "sources": [
+        "D.ui.getBadge"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "找找看，哪個詞是：",
+      "zhuyin": "ㄓㄠˇ ㄓㄠˇ ㄎㄢˋ ㄋㄚˇ ㄍㄜˋ ㄘˊ ㄕˋ",
+      "sources": [
+        "D.ui.huntWord"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "點一個有這個注音的詞：",
+      "zhuyin": "ㄉㄧㄢˇ ㄧ ㄍㄜˋ ㄧㄡˇ ㄓㄜˋ ㄍㄜˋ ㄓㄨˋ ㄧㄣ ㄉㄜ˙ ㄘˊ",
+      "sources": [
+        "D.ui.huntSym"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "先自己讀一讀，再聽聽看對不對！",
+      "zhuyin": "ㄒㄧㄢ ㄗˋ ㄐㄧˇ ㄉㄨˊ ㄧ ㄉㄨˊ ㄗㄞˋ ㄊㄧㄥ ㄊㄧㄥ ㄎㄢˋ ㄉㄨㄟˋ ㄅㄨˋ ㄉㄨㄟˋ",
+      "sources": [
+        "D.ui.tip"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "念這句",
+      "zhuyin": "ㄋㄧㄢˋ ㄓㄜˋ ㄐㄩˋ",
+      "sources": [
+        "D.ui.readLine"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "慢慢念",
+      "zhuyin": "ㄇㄢˋ ㄇㄢˋ ㄋㄧㄢˋ",
+      "sources": [
+        "D.ui.slow"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "下一句",
+      "zhuyin": "ㄒㄧㄚˋ ㄧ ㄐㄩˋ",
+      "sources": [
+        "D.ui.nextLine"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "連續",
+      "zhuyin": "ㄌㄧㄢˊ ㄒㄩˋ",
+      "sources": [
+        "D.ui.streak1"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "次答對！",
+      "zhuyin": "ㄘˋ ㄉㄚˊ ㄉㄨㄟˋ",
+      "sources": [
+        "D.ui.streak2"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "收進筆記本",
+      "zhuyin": "ㄕㄡ ㄐㄧㄣˋ ㄅㄧˇ ㄐㄧˋ ㄅㄣˇ",
+      "sources": [
+        "D.ui.collect"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "聽發音",
+      "zhuyin": "ㄊㄧㄥ ㄈㄚ ㄧㄣ",
+      "sources": [
+        "D.ui.hear"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "聽聽看",
+      "zhuyin": "ㄊㄧㄥ ㄊㄧㄥ ㄎㄢˋ",
+      "sources": [
+        "D.ui.hearWho"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "聽這個詞",
+      "zhuyin": "ㄊㄧㄥ ㄓㄜˋ ㄍㄜˋ ㄘˊ",
+      "sources": [
+        "D.ui.hearWord"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "聽正確發音",
+      "zhuyin": "ㄊㄧㄥ ㄓㄥˋ ㄑㄩㄝˋ ㄈㄚ ㄧㄣ",
+      "sources": [
+        "D.ui.hearRight"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "一聲不用寫符號，輕聲的點寫在上面。",
+      "zhuyin": "ㄧ ㄕㄥ ㄅㄨˋ ㄩㄥˋ ㄒㄧㄝˇ ㄈㄨˊ ㄏㄠˋ ㄑㄧㄥ ㄕㄥ ㄉㄜ˙ ㄉㄧㄢˇ ㄒㄧㄝˇ ㄗㄞˋ ㄕㄤˋ ㄇㄧㄢˋ",
+      "sources": [
+        "D.ui.toneTip"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "介音",
+      "zhuyin": "ㄐㄧㄝˋ ㄧㄣ",
+      "sources": [
+        "D.ui.mid"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "偵探筆記本",
+      "zhuyin": "ㄓㄣ ㄊㄢˋ ㄅㄧˇ ㄐㄧˋ ㄅㄣˇ",
+      "sources": [
+        "D.ui.notebook"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "嫌疑犯",
+      "zhuyin": "ㄒㄧㄢˊ ㄧˊ ㄈㄢˋ",
+      "sources": [
+        "D.ui.suspects"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "抓到了！",
+      "zhuyin": "ㄓㄨㄚ ㄉㄠˋ ㄌㄜ˙",
+      "sources": [
+        "D.ui.gotcha"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "就是這裡！",
+      "zhuyin": "ㄐㄧㄡˋ ㄕˋ ㄓㄜˋ ㄌㄧˇ",
+      "sources": [
+        "D.ui.here"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "看結局",
+      "zhuyin": "ㄎㄢˋ ㄐㄧㄝˊ ㄐㄩˊ",
+      "sources": [
+        "D.ui.ending"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "獲得徽章",
+      "zhuyin": "ㄏㄨㄛˋ ㄉㄜ˙ ㄏㄨㄟ ㄓㄤ",
+      "sources": [
+        "D.ui.celeGet"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "升級了！妳現在是",
+      "zhuyin": "ㄕㄥ ㄐㄧˊ ㄌㄜ˙ ㄋㄧˇ ㄒㄧㄢˋ ㄗㄞˋ ㄕˋ",
+      "sources": [
+        "D.ui.levelUp"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "全部案子都破了！去看神探證書吧！",
+      "zhuyin": "ㄑㄩㄢˊ ㄅㄨˋ ㄢˋ ㄗ˙ ㄉㄡ ㄆㄛˋ ㄌㄜ˙ ㄑㄩˋ ㄎㄢˋ ㄕㄣˊ ㄊㄢˋ ㄓㄥˋ ㄕㄨ ㄅㄚ˙",
+      "sources": [
+        "D.ui.allDone"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "回案件簿",
+      "zhuyin": "ㄏㄨㄟˊ ㄢˋ ㄐㄧㄢˋ ㄅㄨˋ",
+      "sources": [
+        "D.ui.backCases"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "看證書",
+      "zhuyin": "ㄎㄢˋ ㄓㄥˋ ㄕㄨ",
+      "sources": [
+        "D.ui.seeCert"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "看上面的圖片，找到牌子上寫對注音的地鼠，快打牠！",
+      "zhuyin": "ㄎㄢˋ ㄕㄤˋ ㄇㄧㄢˋ ㄉㄜ˙ ㄊㄨˊ ㄆㄧㄢˋ ㄓㄠˇ ㄉㄠˋ ㄆㄞˊ ㄗ˙ ㄕㄤˋ ㄒㄧㄝˇ ㄉㄨㄟˋ ㄓㄨˋ ㄧㄣ ㄉㄜ˙ ㄉㄧˋ ㄕㄨˇ ㄎㄨㄞˋ ㄉㄚˇ ㄊㄚ",
+      "sources": [
+        "D.ui.arcHow"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "連續打對會加分！",
+      "zhuyin": "ㄌㄧㄢˊ ㄒㄩˋ ㄉㄚˇ ㄉㄨㄟˋ ㄏㄨㄟˋ ㄐㄧㄚ ㄈㄣ",
+      "sources": [
+        "D.ui.arcCombo"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "最高分",
+      "zhuyin": "ㄗㄨㄟˋ ㄍㄠ ㄈㄣ",
+      "sources": [
+        "D.ui.best"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "開始！",
+      "zhuyin": "ㄎㄞ ㄕˇ",
+      "sources": [
+        "D.ui.go",
+        "D.ui.mGo"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "時間到！",
+      "zhuyin": "ㄕˊ ㄐㄧㄢ ㄉㄠˋ",
+      "sources": [
+        "D.ui.timeUp"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "妳打到",
+      "zhuyin": "ㄋㄧˇ ㄉㄚˇ ㄉㄠˋ",
+      "sources": [
+        "D.ui.youGot"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "分",
+      "zhuyin": "ㄈㄣ",
+      "sources": [
+        "D.ui.pts"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "新紀錄！",
+      "zhuyin": "ㄒㄧㄣ ㄐㄧˋ ㄌㄨˋ",
+      "sources": [
+        "D.ui.newRec"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "再玩一次",
+      "zhuyin": "ㄗㄞˋ ㄨㄢˊ ㄧ ㄘˋ",
+      "sources": [
+        "D.ui.again",
+        "D.ui.shootAgain"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "回首頁",
+      "zhuyin": "ㄏㄨㄟˊ ㄕㄡˇ ㄧㄝˋ",
+      "sources": [
+        "D.ui.home"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "點一下符號，聽它怎麼念。",
+      "zhuyin": "ㄉㄧㄢˇ ㄧ ㄒㄧㄚˋ ㄈㄨˊ ㄏㄠˋ ㄊㄧㄥ ㄊㄚ ㄗㄣˇ ㄇㄜ˙ ㄋㄧㄢˋ",
+      "sources": [
+        "D.ui.guideTap"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "還沒拿到",
+      "zhuyin": "ㄏㄞˊ ㄇㄟˊ ㄋㄚˊ ㄉㄠˋ",
+      "sources": [
+        "D.ui.noBadge"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "偵探等級",
+      "zhuyin": "ㄓㄣ ㄊㄢˋ ㄉㄥˇ ㄐㄧˊ",
+      "sources": [
+        "D.ui.level"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "神探證書",
+      "zhuyin": "ㄕㄣˊ ㄊㄢˋ ㄓㄥˋ ㄕㄨ",
+      "sources": [
+        "D.ui.cert"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "神探認證",
+      "zhuyin": "ㄕㄣˊ ㄊㄢˋ ㄖㄣˋ ㄓㄥˋ",
+      "sources": [
+        "D.ui.certStamp"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以琴",
+      "zhuyin": "ㄧˇ ㄑㄧㄣˊ",
+      "sources": [
+        "D.ui.name"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "字",
+      "zhuyin": "ㄗˋ",
+      "sources": [
+        "D.ui.mode"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "念念看",
+      "zhuyin": "ㄋㄧㄢˋ ㄋㄧㄢˋ ㄎㄢˋ",
+      "sources": [
+        "D.ui.sayIt"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "我在聽……",
+      "zhuyin": "ㄨㄛˇ ㄗㄞˋ ㄊㄧㄥ",
+      "sources": [
+        "D.ui.listening"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "念對了！",
+      "zhuyin": "ㄋㄧㄢˋ ㄉㄨㄟˋ ㄌㄜ˙",
+      "sources": [
+        "D.ui.vOk",
+        "D.bub.念對了！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "完美！",
+      "zhuyin": "ㄨㄢˊ ㄇㄟˇ",
+      "sources": [
+        "D.ui.vPerfect"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "再念一次看看！",
+      "zhuyin": "ㄗㄞˋ ㄋㄧㄢˋ ㄧ ㄘˋ ㄎㄢˋ ㄎㄢˋ",
+      "sources": [
+        "D.ui.vTry"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "我聽到：",
+      "zhuyin": "ㄨㄛˇ ㄊㄧㄥ ㄉㄠˋ",
+      "sources": [
+        "D.ui.vHeard"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "我沒聽到，大聲一點喔！",
+      "zhuyin": "ㄨㄛˇ ㄇㄟˊ ㄊㄧㄥ ㄉㄠˋ ㄉㄚˋ ㄕㄥ ㄧ ㄉㄧㄢˇ ㄛ",
+      "sources": [
+        "D.ui.vNoSpeech"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "下一個",
+      "zhuyin": "ㄒㄧㄚˋ ㄧ ㄍㄜˋ",
+      "sources": [
+        "D.ui.vNext"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "按麥克風，大聲念出這個詞！",
+      "zhuyin": "ㄢˋ ㄇㄞˋ ㄎㄜˋ ㄈㄥ ㄉㄚˋ ㄕㄥ ㄋㄧㄢˋ ㄔㄨ ㄓㄜˋ ㄍㄜˋ ㄘˊ",
+      "sources": [
+        "D.ui.vHow"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "全部念完了！",
+      "zhuyin": "ㄑㄩㄢˊ ㄅㄨˋ ㄋㄧㄢˋ ㄨㄢˊ ㄌㄜ˙",
+      "sources": [
+        "D.ui.vDone"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "這台機器不能用麥克風練習，請用平板試試看。",
+      "zhuyin": "ㄓㄜˋ ㄊㄞˊ ㄐㄧ ㄑㄧˋ ㄅㄨˋ ㄋㄥˊ ㄩㄥˋ ㄇㄞˋ ㄎㄜˋ ㄈㄥ ㄌㄧㄢˋ ㄒㄧˊ ㄑㄧㄥˇ ㄩㄥˋ ㄆㄧㄥˊ ㄅㄢˇ ㄕˋ ㄕˋ ㄎㄢˋ",
+      "sources": [
+        "D.ui.vNoSR"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "麥克風被擋住了，請爸爸幫忙打開。",
+      "zhuyin": "ㄇㄞˋ ㄎㄜˋ ㄈㄥ ㄅㄟˋ ㄉㄤˇ ㄓㄨˋ ㄌㄜ˙ ㄑㄧㄥˇ ㄅㄚˋ ㄅㄚ˙ ㄅㄤ ㄇㄤˊ ㄉㄚˇ ㄎㄞ",
+      "sources": [
+        "D.ui.vBlocked"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "沒關係，我們一起聽一次！",
+      "zhuyin": "ㄇㄟˊ ㄍㄨㄢ ㄒㄧˋ ㄨㄛˇ ㄇㄣ˙ ㄧ ㄑㄧˇ ㄊㄧㄥ ㄧ ㄘˋ",
+      "sources": [
+        "D.ui.vGood"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "第",
+      "zhuyin": "ㄉㄧˋ",
+      "sources": [
+        "D.ui.progress"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "個",
+      "zhuyin": "ㄍㄜˋ",
+      "sources": [
+        "D.ui.of"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "啤酒節射擊攤位",
+      "zhuyin": "ㄆㄧˊ ㄐㄧㄡˇ ㄐㄧㄝˊ ㄕㄜˋ ㄐㄧ ㄊㄢ ㄨㄟˋ",
+      "sources": [
+        "D.ui.shoot"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "把彈弓往後拉，放開就能射出蝴蝶餅！射中寫對注音的氣球。三十秒內射中五個，就送妳摩天輪的票！",
+      "zhuyin": "ㄅㄚˇ ㄉㄢˋ ㄍㄨㄥ ㄨㄤˇ ㄏㄡˋ ㄌㄚ ㄈㄤˋ ㄎㄞ ㄐㄧㄡˋ ㄋㄥˊ ㄕㄜˋ ㄔㄨ ㄏㄨˊ ㄉㄧㄝˊ ㄅㄧㄥˇ ㄕㄜˋ ㄓㄨㄥˋ ㄒㄧㄝˇ ㄉㄨㄟˋ ㄓㄨˋ ㄧㄣ ㄉㄜ˙ ㄑㄧˋ ㄑㄧㄡˊ ㄙㄢ ㄕˊ ㄇㄧㄠˇ ㄋㄟˋ ㄕㄜˋ ㄓㄨㄥˋ ㄨˇ ㄍㄜˋ ㄐㄧㄡˋ ㄙㄨㄥˋ ㄋㄧˇ ㄇㄛˊ ㄊㄧㄢ ㄌㄨㄣˊ ㄉㄜ˙ ㄆㄧㄠˋ",
+      "sources": [
+        "D.ui.shootHow"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "開始射擊！",
+      "zhuyin": "ㄎㄞ ㄕˇ ㄕㄜˋ ㄐㄧ",
+      "sources": [
+        "D.ui.shootGo"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "打中",
+      "zhuyin": "ㄉㄚˇ ㄓㄨㄥˋ",
+      "sources": [
+        "D.ui.hits"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "還差",
+      "zhuyin": "ㄏㄞˊ ㄔㄚˋ",
+      "sources": [
+        "D.ui.need"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "免費摩天輪票！",
+      "zhuyin": "ㄇㄧㄢˇ ㄈㄟˋ ㄇㄛˊ ㄊㄧㄢ ㄌㄨㄣˊ ㄆㄧㄠˋ",
+      "sources": [
+        "D.ui.ticket"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "摩天輪慢慢升上去，整個慕尼黑都在腳下，好漂亮！",
+      "zhuyin": "ㄇㄛˊ ㄊㄧㄢ ㄌㄨㄣˊ ㄇㄢˋ ㄇㄢˋ ㄕㄥ ㄕㄤˋ ㄑㄩˋ ㄓㄥˇ ㄍㄜˋ ㄇㄨˋ ㄋㄧˊ ㄏㄟ ㄉㄡ ㄗㄞˋ ㄐㄧㄠˇ ㄒㄧㄚˋ ㄏㄠˇ ㄆㄧㄠˋ ㄌㄧㄤˋ",
+      "sources": [
+        "D.ui.wheelTop"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "時間到！再試一次就拿得到票囉！",
+      "zhuyin": "ㄕˊ ㄐㄧㄢ ㄉㄠˋ ㄗㄞˋ ㄕˋ ㄧ ㄘˋ ㄐㄧㄡˋ ㄋㄚˊ ㄉㄜ˙ ㄉㄠˋ ㄆㄧㄠˋ ㄌㄨㄛ˙",
+      "sources": [
+        "D.ui.shootFail"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "準備……",
+      "zhuyin": "ㄓㄨㄣˇ ㄅㄟˋ",
+      "sources": [
+        "D.ui.ready"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "想想看",
+      "zhuyin": "ㄒㄧㄤˇ ㄒㄧㄤˇ ㄎㄢˋ",
+      "sources": [
+        "D.ui.qHead"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "妳來決定！",
+      "zhuyin": "ㄋㄧˇ ㄌㄞˊ ㄐㄩㄝˊ ㄉㄧㄥˋ",
+      "sources": [
+        "D.ui.cHead"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "答對了！",
+      "zhuyin": "ㄉㄚˊ ㄉㄨㄟˋ ㄌㄜ˙",
+      "sources": [
+        "D.ui.qRight"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "再想想看～",
+      "zhuyin": "ㄗㄞˋ ㄒㄧㄤˇ ㄒㄧㄤˇ ㄎㄢˋ",
+      "sources": [
+        "D.ui.qWrong"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "妳選了",
+      "zhuyin": "ㄋㄧˇ ㄒㄩㄢˇ ㄌㄜ˙",
+      "sources": [
+        "D.ui.pick"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "先把上面的故事讀一遍，再回答！",
+      "zhuyin": "ㄒㄧㄢ ㄅㄚˇ ㄕㄤˋ ㄇㄧㄢˋ ㄉㄜ˙ ㄍㄨˋ ㄕˋ ㄉㄨˊ ㄧ ㄅㄧㄢˋ ㄗㄞˋ ㄏㄨㄟˊ ㄉㄚˊ",
+      "sources": [
+        "D.ui.readFirst"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "也可以直接點氣球喔！",
+      "zhuyin": "ㄧㄝˇ ㄎㄜˇ ㄧˇ ㄓˊ ㄐㄧㄝ ㄉㄧㄢˇ ㄑㄧˋ ㄑㄧㄡˊ ㄛ",
+      "sources": [
+        "D.ui.shootTip"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "金色氣球可以多五秒！",
+      "zhuyin": "ㄐㄧㄣ ㄙㄜˋ ㄑㄧˋ ㄑㄧㄡˊ ㄎㄜˇ ㄧˇ ㄉㄨㄛ ㄨˇ ㄇㄧㄠˇ",
+      "sources": [
+        "D.ui.shootGold"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "連擊",
+      "zhuyin": "ㄌㄧㄢˊ ㄐㄧ",
+      "sources": [
+        "D.ui.combo"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "多五秒！",
+      "zhuyin": "ㄉㄨㄛ ㄨˇ ㄇㄧㄠˇ",
+      "sources": [
+        "D.ui.plusTime",
+        "D.bub.多五秒！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "結合韻大考驗",
+      "zhuyin": "ㄐㄧㄝˊ ㄏㄜˊ ㄩㄣˋ ㄉㄚˋ ㄎㄠˇ ㄧㄢˋ",
+      "sources": [
+        "D.ui.exTitle"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "全部二十個結合韻，一題一題來挑戰！",
+      "zhuyin": "ㄑㄩㄢˊ ㄅㄨˋ ㄦˋ ㄕˊ ㄍㄜˋ ㄐㄧㄝˊ ㄏㄜˊ ㄩㄣˋ ㄧ ㄊㄧˊ ㄧ ㄊㄧˊ ㄌㄞˊ ㄊㄧㄠˇ ㄓㄢˋ",
+      "sources": [
+        "D.ui.exSub"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "開始考試",
+      "zhuyin": "ㄎㄞ ㄕˇ ㄎㄠˇ ㄕˋ",
+      "sources": [
+        "D.ui.exStart"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "聽一聽，哪一張卡是對的？",
+      "zhuyin": "ㄊㄧㄥ ㄧ ㄊㄧㄥ ㄋㄚˇ ㄧ ㄓㄤ ㄎㄚˇ ㄕˋ ㄉㄨㄟˋ ㄉㄜ˙",
+      "sources": [
+        "D.ui.exHear"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "少了哪個結合韻？",
+      "zhuyin": "ㄕㄠˇ ㄌㄜ˙ ㄋㄚˇ ㄍㄜˋ ㄐㄧㄝˊ ㄏㄜˊ ㄩㄣˋ",
+      "sources": [
+        "D.ui.exMiss"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "考試成績",
+      "zhuyin": "ㄎㄠˇ ㄕˋ ㄔㄥˊ ㄐㄧˋ",
+      "sources": [
+        "D.ui.exScore"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "題答對",
+      "zhuyin": "ㄊㄧˊ ㄉㄚˊ ㄉㄨㄟˋ",
+      "sources": [
+        "D.ui.exPts"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "這些還要多練習：",
+      "zhuyin": "ㄓㄜˋ ㄒㄧㄝ ㄏㄞˊ ㄧㄠˋ ㄉㄨㄛ ㄌㄧㄢˋ ㄒㄧˊ",
+      "sources": [
+        "D.ui.exWrong"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "全部答對，太厲害了！",
+      "zhuyin": "ㄑㄩㄢˊ ㄅㄨˋ ㄉㄚˊ ㄉㄨㄟˋ ㄊㄞˋ ㄌㄧˋ ㄏㄞˋ ㄌㄜ˙",
+      "sources": [
+        "D.ui.exPerfect"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "最高紀錄",
+      "zhuyin": "ㄗㄨㄟˋ ㄍㄠ ㄐㄧˋ ㄌㄨˋ",
+      "sources": [
+        "D.ui.exBest"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "再考一次",
+      "zhuyin": "ㄗㄞˋ ㄎㄠˇ ㄧ ㄘˋ",
+      "sources": [
+        "D.ui.exRetry"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "去練習",
+      "zhuyin": "ㄑㄩˋ ㄌㄧㄢˋ ㄒㄧˊ",
+      "sources": [
+        "D.ui.exPractice"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "結合韻小怪獸",
+      "zhuyin": "ㄐㄧㄝˊ ㄏㄜˊ ㄩㄣˋ ㄒㄧㄠˇ ㄍㄨㄞˋ ㄕㄡˋ",
+      "sources": [
+        "D.ui.mTitle"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "餵小怪獸吃注音，學會拼結合韻！",
+      "zhuyin": "ㄨㄟˋ ㄒㄧㄠˇ ㄍㄨㄞˋ ㄕㄡˋ ㄔ ㄓㄨˋ ㄧㄣ ㄒㄩㄝˊ ㄏㄨㄟˋ ㄆㄧㄣ ㄐㄧㄝˊ ㄏㄜˊ ㄩㄣˋ",
+      "sources": [
+        "D.ui.mSub"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "看示範",
+      "zhuyin": "ㄎㄢˋ ㄕˋ ㄈㄢˋ",
+      "sources": [
+        "D.ui.mStep1"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "拼一拼",
+      "zhuyin": "ㄆㄧㄣ ㄧ ㄆㄧㄣ",
+      "sources": [
+        "D.ui.mStep2"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "聽一聽",
+      "zhuyin": "ㄊㄧㄥ ㄧ ㄊㄧㄥ",
+      "sources": [
+        "D.ui.mStep3"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "兩個注音手牽手，變成一個新的音！",
+      "zhuyin": "ㄌㄧㄤˇ ㄍㄜˋ ㄓㄨˋ ㄧㄣ ㄕㄡˇ ㄑㄧㄢ ㄕㄡˇ ㄅㄧㄢˋ ㄔㄥˊ ㄧ ㄍㄜˋ ㄒㄧㄣ ㄉㄜ˙ ㄧㄣ",
+      "sources": [
+        "D.ui.mDemo"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "再聽一次",
+      "zhuyin": "ㄗㄞˋ ㄊㄧㄥ ㄧ ㄘˋ",
+      "sources": [
+        "D.ui.mAgain"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "把卡片拖到小怪獸的嘴巴，聽聽拼出來的音！",
+      "zhuyin": "ㄅㄚˇ ㄎㄚˇ ㄆㄧㄢˋ ㄊㄨㄛ ㄉㄠˋ ㄒㄧㄠˇ ㄍㄨㄞˋ ㄕㄡˋ ㄉㄜ˙ ㄗㄨㄟˇ ㄅㄚ˙ ㄊㄧㄥ ㄊㄧㄥ ㄆㄧㄣ ㄔㄨ ㄌㄞˊ ㄉㄜ˙ ㄧㄣ",
+      "sources": [
+        "D.ui.mFeed"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "（用點的也可以）",
+      "zhuyin": "ㄩㄥˋ ㄉㄧㄢˇ ㄉㄜ˙ ㄧㄝˇ ㄎㄜˇ ㄧˇ",
+      "sources": [
+        "D.ui.mFeedTap"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "小怪獸想吃哪一張？先聽，再拖給牠！",
+      "zhuyin": "ㄒㄧㄠˇ ㄍㄨㄞˋ ㄕㄡˋ ㄒㄧㄤˇ ㄔ ㄋㄚˇ ㄧ ㄓㄤ ㄒㄧㄢ ㄊㄧㄥ ㄗㄞˋ ㄊㄨㄛ ㄍㄟˇ ㄊㄚ",
+      "sources": [
+        "D.ui.mQuiz"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "好好吃！",
+      "zhuyin": "ㄏㄠˇ ㄏㄠˇ ㄔ",
+      "sources": [
+        "D.ui.mYum",
+        "D.bub.好好吃！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "不是這個啦！",
+      "zhuyin": "ㄅㄨˋ ㄕˋ ㄓㄜˋ ㄍㄜˋ ㄌㄚ˙",
+      "sources": [
+        "D.ui.mNo",
+        "D.bub.不是這個啦！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "小怪獸吃飽了！",
+      "zhuyin": "ㄒㄧㄠˇ ㄍㄨㄞˋ ㄕㄡˋ ㄔ ㄅㄠˇ ㄌㄜ˙",
+      "sources": [
+        "D.ui.mDone"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "下一關",
+      "zhuyin": "ㄒㄧㄚˋ ㄧ ㄍㄨㄢ",
+      "sources": [
+        "D.ui.mNext"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "回地圖",
+      "zhuyin": "ㄏㄨㄟˊ ㄉㄧˋ ㄊㄨˊ",
+      "sources": [
+        "D.ui.mMap"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "得到新貼紙！",
+      "zhuyin": "ㄉㄜˊ ㄉㄠˋ ㄒㄧㄣ ㄊㄧㄝ ㄓˇ",
+      "sources": [
+        "D.ui.mSticker"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "我的貼紙",
+      "zhuyin": "ㄨㄛˇ ㄉㄜ˙ ㄊㄧㄝ ㄓˇ",
+      "sources": [
+        "D.ui.mBook"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "結合韻小火車",
+      "zhuyin": "ㄐㄧㄝˊ ㄏㄜˊ ㄩㄣˋ ㄒㄧㄠˇ ㄏㄨㄛˇ ㄔㄜ",
+      "sources": [
+        "D.ui.train"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "把聲母和結合韻連起來",
+      "zhuyin": "ㄅㄚˇ ㄕㄥ ㄇㄨˇ ㄏㄜˊ ㄐㄧㄝˊ ㄏㄜˊ ㄩㄣˋ ㄌㄧㄢˊ ㄑㄧˇ ㄌㄞˊ",
+      "sources": [
+        "D.ui.trainSub"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "選一個車站",
+      "zhuyin": "ㄒㄩㄢˇ ㄧ ㄍㄜˋ ㄔㄜ ㄓㄢˋ",
+      "sources": [
+        "D.ui.trainPick"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "綜合挑戰",
+      "zhuyin": "ㄗㄨㄥˋ ㄏㄜˊ ㄊㄧㄠˇ ㄓㄢˋ",
+      "sources": [
+        "D.ui.trainAll"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "ㄧ的家族",
+      "zhuyin": "ㄉㄜ˙ ㄐㄧㄚ ㄗㄨˊ",
+      "sources": [
+        "D.ui.famI"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "ㄨ的家族",
+      "zhuyin": "ㄉㄜ˙ ㄐㄧㄚ ㄗㄨˊ",
+      "sources": [
+        "D.ui.famU"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "ㄩ的家族",
+      "zhuyin": "ㄉㄜ˙ ㄐㄧㄚ ㄗㄨˊ",
+      "sources": [
+        "D.ui.famV"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "火車頭要坐哪個聲母？",
+      "zhuyin": "ㄏㄨㄛˇ ㄔㄜ ㄊㄡˊ ㄧㄠˋ ㄗㄨㄛˋ ㄋㄚˇ ㄍㄜˋ ㄕㄥ ㄇㄨˇ",
+      "sources": [
+        "D.ui.tHead"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "車廂要放哪個結合韻？",
+      "zhuyin": "ㄔㄜ ㄒㄧㄤ ㄧㄠˋ ㄈㄤˋ ㄋㄚˇ ㄍㄜˋ ㄐㄧㄝˊ ㄏㄜˊ ㄩㄣˋ",
+      "sources": [
+        "D.ui.tCar"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "讀一讀，這個音在哪張圖？",
+      "zhuyin": "ㄉㄨˊ ㄧ ㄉㄨˊ ㄓㄜˋ ㄍㄜˋ ㄧㄣ ㄗㄞˋ ㄋㄚˇ ㄓㄤ ㄊㄨˊ",
+      "sources": [
+        "D.ui.tFind"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "火車開走囉！",
+      "zhuyin": "ㄏㄨㄛˇ ㄔㄜ ㄎㄞ ㄗㄡˇ ㄌㄨㄛ˙",
+      "sources": [
+        "D.ui.tDone"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "再開一次",
+      "zhuyin": "ㄗㄞˋ ㄎㄞ ㄧ ㄘˋ",
+      "sources": [
+        "D.ui.tAgain"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "回車站",
+      "zhuyin": "ㄏㄨㄟˊ ㄔㄜ ㄓㄢˋ",
+      "sources": [
+        "D.ui.tBack"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "魔法記憶翻牌",
+      "zhuyin": "ㄇㄛˊ ㄈㄚˇ ㄐㄧˋ ㄧˋ ㄈㄢ ㄆㄞˊ",
+      "sources": [
+        "D.ui.memTitle"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "翻開兩張卡，配成一對就能留下來。慢慢想！",
+      "zhuyin": "ㄈㄢ ㄎㄞ ㄌㄧㄤˇ ㄓㄤ ㄎㄚˇ ㄆㄟˋ ㄔㄥˊ ㄧ ㄉㄨㄟˋ ㄐㄧㄡˋ ㄋㄥˊ ㄌㄧㄡˊ ㄒㄧㄚˋ ㄌㄞˊ ㄇㄢˋ ㄇㄢˋ ㄒㄧㄤˇ",
+      "sources": [
+        "D.ui.memHow"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "找到",
+      "zhuyin": "ㄓㄠˇ ㄉㄠˋ",
+      "sources": [
+        "D.ui.memFound"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "選一張卡，開始吧！",
+      "zhuyin": "ㄒㄩㄢˇ ㄧ ㄓㄤ ㄎㄚˇ ㄎㄞ ㄕˇ ㄅㄚ˙",
+      "sources": [
+        "D.ui.memStart"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "配對成功！",
+      "zhuyin": "ㄆㄟˋ ㄉㄨㄟˋ ㄔㄥˊ ㄍㄨㄥ",
+      "sources": [
+        "D.ui.memOk"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "記住這兩張的位置，再試一次！",
+      "zhuyin": "ㄐㄧˋ ㄓㄨˋ ㄓㄜˋ ㄌㄧㄤˇ ㄓㄤ ㄉㄜ˙ ㄨㄟˋ ㄓˋ ㄗㄞˋ ㄕˋ ㄧ ㄘˋ",
+      "sources": [
+        "D.ui.memTry"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "記住位置",
+      "zhuyin": "ㄐㄧˋ ㄓㄨˋ ㄨㄟˋ ㄓˋ",
+      "sources": [
+        "D.ui.memRemember"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "魔法配對",
+      "zhuyin": "ㄇㄛˊ ㄈㄚˇ ㄆㄟˋ ㄉㄨㄟˋ",
+      "sources": [
+        "D.ui.matchTitle"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "讀一讀：",
+      "zhuyin": "ㄉㄨˊ ㄧ ㄉㄨˊ",
+      "sources": [
+        "D.ui.readIt"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "魔法案件完成",
+      "zhuyin": "ㄇㄛˊ ㄈㄚˇ ㄢˋ ㄐㄧㄢˋ ㄨㄢˊ ㄔㄥˊ",
+      "sources": [
+        "D.ui.bdayDone"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以諾的生日積分",
+      "zhuyin": "ㄧˇ ㄋㄨㄛˋ ㄉㄜ˙ ㄕㄥ ㄖˋ ㄐㄧ ㄈㄣ",
+      "sources": [
+        "D.ui.bdayScore"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "積分越高，得到的生日禮物越多！這次得到",
+      "zhuyin": "ㄐㄧ ㄈㄣ ㄩㄝˋ ㄍㄠ ㄉㄜˊ ㄉㄠˋ ㄉㄜ˙ ㄕㄥ ㄖˋ ㄌㄧˇ ㄨˋ ㄩㄝˋ ㄉㄨㄛ ㄓㄜˋ ㄘˋ ㄉㄜˊ ㄉㄠˋ",
+      "sources": [
+        "D.ui.bdayMore"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "份",
+      "zhuyin": "ㄈㄣˋ",
+      "sources": [
+        "D.ui.bdayCount"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "再玩一次，多拿禮物",
+      "zhuyin": "ㄗㄞˋ ㄨㄢˊ ㄧ ㄘˋ ㄉㄨㄛ ㄋㄚˊ ㄌㄧˇ ㄨˋ",
+      "sources": [
+        "D.ui.bdayAgain"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以諾，八歲生日快樂！",
+      "zhuyin": "ㄧˇ ㄋㄨㄛˋ ㄅㄚ ㄙㄨㄟˋ ㄕㄥ ㄖˋ ㄎㄨㄞˋ ㄌㄜˋ",
+      "sources": [
+        "D.ui.bdayWish1"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "希望下次再一起去",
+      "zhuyin": "ㄒㄧ ㄨㄤˋ ㄒㄧㄚˋ ㄘˋ ㄗㄞˋ ㄧ ㄑㄧˇ ㄑㄩˋ",
+      "sources": [
+        "D.ui.bdayWish2"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "遊樂園玩！",
+      "zhuyin": "ㄧㄡˊ ㄌㄜˋ ㄩㄢˊ ㄨㄢˊ",
+      "sources": [
+        "D.ui.bdayWish3"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "以琴和安安",
+      "zhuyin": "ㄧˇ ㄑㄧㄣˊ ㄏㄜˊ ㄢ ㄢ",
+      "sources": [
+        "D.ui.bdayFrom"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "魔法糖果袋",
+      "zhuyin": "ㄇㄛˊ ㄈㄚˇ ㄊㄤˊ ㄍㄨㄛˇ ㄉㄞˋ",
+      "sources": [
+        "D.ui.gift1"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "發光魔法棒",
+      "zhuyin": "ㄈㄚ ㄍㄨㄤ ㄇㄛˊ ㄈㄚˇ ㄅㄤˋ",
+      "sources": [
+        "D.ui.gift2"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "飛天掃帚模型",
+      "zhuyin": "ㄈㄟ ㄊㄧㄢ ㄙㄠˇ ㄓㄡˇ ㄇㄛˊ ㄒㄧㄥˊ",
+      "sources": [
+        "D.ui.gift3"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "白色貓頭鷹玩偶",
+      "zhuyin": "ㄅㄞˊ ㄙㄜˋ ㄇㄠ ㄊㄡˊ ㄧㄥ ㄨㄢˊ ㄡˇ",
+      "sources": [
+        "D.ui.gift4"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "神祕金色禮物箱",
+      "zhuyin": "ㄕㄣˊ ㄇㄧˋ ㄐㄧㄣ ㄙㄜˋ ㄌㄧˇ ㄨˋ ㄒㄧㄤ",
+      "sources": [
+        "D.ui.gift5"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "嘿咻！",
+      "zhuyin": "ㄏㄟ ㄒㄧㄡ",
+      "sources": [
+        "D.bub.嘿咻！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "耶！",
+      "zhuyin": "ㄧㄝ",
+      "sources": [
+        "D.bub.耶！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "啵嗡～",
+      "zhuyin": "ㄅㄛ ㄨㄥ",
+      "sources": [
+        "D.bub.啵嗡～"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "嗨～",
+      "zhuyin": "ㄏㄞ",
+      "sources": [
+        "D.bub.嗨～"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "啦啦啦～",
+      "zhuyin": "ㄌㄚ˙ ㄌㄚ˙ ㄌㄚ˙",
+      "sources": [
+        "D.bub.啦啦啦～"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "扭扭～",
+      "zhuyin": "ㄋㄧㄡˇ ㄋㄧㄡˇ",
+      "sources": [
+        "D.bub.扭扭～"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "哎呀！",
+      "zhuyin": "ㄞ ㄧㄚ",
+      "sources": [
+        "D.bub.哎呀！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "好怕……",
+      "zhuyin": "ㄏㄠˇ ㄆㄚˋ",
+      "sources": [
+        "D.bub.好怕……"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "嗚嗚～",
+      "zhuyin": "ㄨ ㄨ",
+      "sources": [
+        "D.bub.嗚嗚～"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "嗚……",
+      "zhuyin": "ㄨ",
+      "sources": [
+        "D.bub.嗚……"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "轉～",
+      "zhuyin": "ㄓㄨㄢˋ",
+      "sources": [
+        "D.bub.轉～"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "咻！",
+      "zhuyin": "ㄒㄧㄡ",
+      "sources": [
+        "D.bub.咻！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "登登！",
+      "zhuyin": "ㄉㄥ ㄉㄥ",
+      "sources": [
+        "D.bub.登登！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "亮晶晶！",
+      "zhuyin": "ㄌㄧㄤˋ ㄐㄧㄥ ㄐㄧㄥ",
+      "sources": [
+        "D.bub.亮晶晶！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "哇～",
+      "zhuyin": "ㄨㄚ",
+      "sources": [
+        "D.bub.哇～"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "哇！",
+      "zhuyin": "ㄨㄚ",
+      "sources": [
+        "D.bub.哇！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "嗯……",
+      "zhuyin": "ㄣˊ",
+      "sources": [
+        "D.bub.嗯……"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "看我的！",
+      "zhuyin": "ㄎㄢˋ ㄨㄛˇ ㄉㄜ˙",
+      "sources": [
+        "D.bub.看我的！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "哈哈哈！",
+      "zhuyin": "ㄏㄚ ㄏㄚ ㄏㄚ",
+      "sources": [
+        "D.bub.哈哈哈！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "啊嗚！",
+      "zhuyin": "ㄚ ㄨ",
+      "sources": [
+        "D.bub.啊嗚！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "嗯嗯！",
+      "zhuyin": "ㄣˋ ㄣˋ",
+      "sources": [
+        "D.bub.嗯嗯！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "乖乖～",
+      "zhuyin": "ㄍㄨㄞ ㄍㄨㄞ",
+      "sources": [
+        "D.bub.乖乖～"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "好愛你！",
+      "zhuyin": "ㄏㄠˇ ㄞˋ ㄋㄧˇ",
+      "sources": [
+        "D.bub.好愛你！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "在哪裡？",
+      "zhuyin": "ㄗㄞˋ ㄋㄚˇ ㄌㄧˇ",
+      "sources": [
+        "D.bub.在哪裡？"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "噠噠噠！",
+      "zhuyin": "ㄉㄚ ㄉㄚ ㄉㄚ",
+      "sources": [
+        "D.bub.噠噠噠！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "咻～",
+      "zhuyin": "ㄒㄧㄡ",
+      "sources": [
+        "D.bub.咻～"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "叭叭！",
+      "zhuyin": "ㄅㄚ ㄅㄚ",
+      "sources": [
+        "D.bub.叭叭！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "飄～",
+      "zhuyin": "ㄆㄧㄠ",
+      "sources": [
+        "D.bub.飄～"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "呼嚕～",
+      "zhuyin": "ㄏㄨ ㄌㄨ",
+      "sources": [
+        "D.bub.呼嚕～"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "嘿嘿～",
+      "zhuyin": "ㄏㄟ ㄏㄟ",
+      "sources": [
+        "D.bub.嘿嘿～"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "什麼！",
+      "zhuyin": "ㄕㄜˊ ㄇㄜ˙",
+      "sources": [
+        "D.bub.什麼！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "抱抱！",
+      "zhuyin": "ㄅㄠˋ ㄅㄠˋ",
+      "sources": [
+        "D.bub.抱抱！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "嘻嘻～",
+      "zhuyin": "ㄒㄧ ㄒㄧ",
+      "sources": [
+        "D.bub.嘻嘻～"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "嘰～",
+      "zhuyin": "ㄐㄧ",
+      "sources": [
+        "D.bub.嘰～"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "好癢！",
+      "zhuyin": "ㄏㄠˇ ㄧㄤˇ",
+      "sources": [
+        "D.bub.好癢！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "轉圈圈！",
+      "zhuyin": "ㄓㄨㄢˋ ㄑㄩㄢ ㄑㄩㄢ",
+      "sources": [
+        "D.bub.轉圈圈！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "嘻嘻嘻！",
+      "zhuyin": "ㄒㄧ ㄒㄧ ㄒㄧ",
+      "sources": [
+        "D.bub.嘻嘻嘻！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "嘿！",
+      "zhuyin": "ㄏㄟ",
+      "sources": [
+        "D.bub.嘿！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "扭一扭～",
+      "zhuyin": "ㄋㄧㄡˇ ㄧ ㄋㄧㄡˇ",
+      "sources": [
+        "D.bub.扭一扭～"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "叮咚！",
+      "zhuyin": "ㄉㄧㄥ ㄉㄨㄥ",
+      "sources": [
+        "D.bub.叮咚！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "空空！",
+      "zhuyin": "ㄎㄨㄥ ㄎㄨㄥ",
+      "sources": [
+        "D.bub.空空！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "汪汪汪！",
+      "zhuyin": "ㄨㄤ ㄨㄤ ㄨㄤ",
+      "sources": [
+        "D.bub.汪汪汪！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "轉呀轉～",
+      "zhuyin": "ㄓㄨㄢˇ ㄧㄚ˙ ㄓㄨㄢˇ",
+      "sources": [
+        "D.bub.轉呀轉～"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "好大！",
+      "zhuyin": "ㄏㄠˇ ㄉㄚˋ",
+      "sources": [
+        "D.bub.好大！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "叮！",
+      "zhuyin": "ㄉㄧㄥ",
+      "sources": [
+        "D.bub.叮！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "驚喜！",
+      "zhuyin": "ㄐㄧㄥ ㄒㄧˇ",
+      "sources": [
+        "D.bub.驚喜！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "好吃！",
+      "zhuyin": "ㄏㄠˇ ㄔ",
+      "sources": [
+        "D.bub.好吃！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "不在這裡！",
+      "zhuyin": "ㄅㄨˋ ㄗㄞˋ ㄓㄜˋ ㄌㄧˇ",
+      "sources": [
+        "D.bub.不在這裡！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "不是我啦！",
+      "zhuyin": "ㄅㄨˋ ㄕˋ ㄨㄛˇ ㄌㄚ˙",
+      "sources": [
+        "D.bub.不是我啦！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "被發現了！",
+      "zhuyin": "ㄅㄟˋ ㄈㄚ ㄒㄧㄢˋ ㄌㄜ˙",
+      "sources": [
+        "D.bub.被發現了！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "好棒！",
+      "zhuyin": "ㄏㄠˇ ㄅㄤˋ",
+      "sources": [
+        "D.bub.好棒！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "咚咚咚！",
+      "zhuyin": "ㄉㄨㄥ ㄉㄨㄥ ㄉㄨㄥ",
+      "sources": [
+        "D.bub.咚咚咚！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "約好囉！",
+      "zhuyin": "ㄩㄝ ㄏㄠˇ ㄌㄨㄛ˙",
+      "sources": [
+        "D.bub.約好囉！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "中了！",
+      "zhuyin": "ㄓㄨㄥˋ ㄌㄜ˙",
+      "sources": [
+        "D.bub.中了！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "射中了！",
+      "zhuyin": "ㄕㄜˋ ㄓㄨㄥˋ ㄌㄜ˙",
+      "sources": [
+        "D.bub.射中了！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "找到了！",
+      "zhuyin": "ㄓㄠˇ ㄉㄠˋ ㄌㄜ˙",
+      "sources": [
+        "D.bub.找到了！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "嘟嘟～",
+      "zhuyin": "ㄉㄨ ㄉㄨ",
+      "sources": [
+        "D.bub.嘟嘟～"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "再聽一次！",
+      "zhuyin": "ㄗㄞˋ ㄊㄧㄥ ㄧ ㄘˋ",
+      "sources": [
+        "D.bub.再聽一次！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "砰！",
+      "zhuyin": "ㄆㄥ",
+      "sources": [
+        "D.bub.砰！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "生日快樂！",
+      "zhuyin": "ㄕㄥ ㄖˋ ㄎㄨㄞˋ ㄌㄜˋ",
+      "sources": [
+        "D.bub.生日快樂！"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "水",
+      "zhuyin": "ㄕㄨㄟˇ",
+      "sources": [
+        "D.jy[11].words[0].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "穿衣服",
+      "zhuyin": "ㄔㄨㄢ ㄧ ㄈㄨˊ",
+      "sources": [
+        "D.jy[12].words[1].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "酸",
+      "zhuyin": "ㄙㄨㄢ",
+      "sources": [
+        "D.jy[12].words[2].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "喜鵲",
+      "zhuyin": "ㄒㄧˇ ㄑㄩㄝˋ",
+      "sources": [
+        "D.jy[16].words[2].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "缺牙",
+      "zhuyin": "ㄑㄩㄝ ㄧㄚˊ",
+      "sources": [
+        "D.jy[16].words[3].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "一群羊",
+      "zhuyin": "ㄧ ㄑㄩㄣˊ ㄧㄤˊ",
+      "sources": [
+        "D.jy[18].words[1].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    },
+    {
+      "text": "白雲",
+      "zhuyin": "ㄅㄞˊ ㄩㄣˊ",
+      "sources": [
+        "D.jy[18].words[4].a"
+      ],
+      "status": "needs_recording_and_pronunciation_review"
+    }
+  ]
+}

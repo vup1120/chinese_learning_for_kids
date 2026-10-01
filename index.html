@@ -765,7 +765,7 @@ const SYM = [
 const VOCAB = ()=>{ const seenW=new Set(), seenE=new Set(), out=[]; [...(D.vocab||[]), ...SYM.map(x=>[x[2],x[3]])].forEach(([w,e])=>{ if(!D.w[w]||seenW.has(w)||seenE.has(e)) return; seenW.add(w); seenE.add(e); out.push([w,e]); }); return out; };
 const REP = Object.fromEntries(SYM.map(s=>[s[0], s[1]||s[2]]));
 Object.assign(REP,{'ㄧㄚ':'鴨','ㄧㄝ':'耶','ㄧㄠ':'腰','ㄧㄡ':'優','ㄧㄢ':'煙','ㄧㄣ':'音','ㄧㄤ':'央','ㄧㄥ':'英',
- 'ㄨㄚ':'蛙','ㄨㄛ':'窩','ㄨㄞ':'歪','ㄨㄟ':'威','ㄨㄢ':'彎','ㄨㄣ':'溫','ㄨㄤ':'汪','ㄨㄥ':'翁','ㄩㄝ':'約','ㄩㄢ':'冤','ㄩㄣ':'暈','ㄩㄥ':'擁'});
+ 'ㄨㄚ':'蛙','ㄨㄛ':'窩','ㄨㄞ':'歪','ㄨㄟ':'威','ㄨㄢ':'彎','ㄨㄣ':'溫','ㄨㄤ':'汪','ㄨㄥ':'翁','ㄩㄝ':'約','ㄩㄢ':'冤','ㄩㄣ':'暈','ㄩㄥ':'雍'});
 const TONES = [[1,'ˉ','一聲','媽'],[2,'ˊ','二聲','麻'],[3,'ˇ','三聲','馬'],[4,'ˋ','四聲','罵'],[0,'˙','輕聲','嗎']];
 const MARK2NUM = {'':1,'ˊ':2,'ˇ':3,'ˋ':4,'˙':0};
 
@@ -849,20 +849,32 @@ function utter(text, rate){
 let hlEls=[];
 function clearHl(){ hlEls.forEach(e=>e.classList.remove('on')); hlEls=[]; }
 let seqId=0;
-function stopSpeak(){ seqId++; if(TTS) TTS.cancel(); clearHl(); }
+function stopSpeak(){ seqId++; window.zhuyinAudio?.stop(); if(TTS) TTS.cancel(); clearHl(); }
 // items: [{text, el?, rate?}]; done() runs once when the last item finishes (with a timer fallback)
 function speakSeq(items, done){
   stopSpeak(); const id=++seqId; let fired=false, tm=null;
   const fire=()=>{ if(fired||id!==seqId) return; fired=true; clearTimeout(tm); if(done) done(); };
-  if(done){ const chars=items.reduce((a,it)=>a+(it.text||'').length,0); tm=setTimeout(fire, chars*330/S.rate + (TTS?2600:700)); }
-  if(!TTS) return; if(TTS.paused) TTS.resume();
-  const list=items.filter(it=>it.text);
-  list.forEach((it,k)=>{
-    const u = utter(it.text, it.rate);
-    u.onstart = ()=>{ clearHl(); if(it.el){ (Array.isArray(it.el)?it.el:[it.el]).forEach(e=>{e.classList.add('on'); hlEls.push(e);}); } };
-    u.onend = ()=>{ if(it.el) clearHl(); if(k===list.length-1) setTimeout(fire,150); };
-    TTS.speak(u);
-  });
+  if(done){ const duration=items.reduce((a,it)=>a+(it.symbol?1600:(it.text||'').length*330/S.rate),0); tm=setTimeout(fire,duration+(TTS?2600:700)); }
+  const list=items.filter(it=>it.symbol||it.text);
+  function next(k){
+    if(id!==seqId)return;
+    if(k===list.length){setTimeout(fire,150);return;}
+    const it=list[k];
+    const highlight=()=>{clearHl();if(it.el){(Array.isArray(it.el)?it.el:[it.el]).forEach(e=>{e.classList.add('on');hlEls.push(e);});}};
+    let advanced=false;
+    const advance=()=>{if(advanced||id!==seqId)return;advanced=true;clearHl();next(k+1);};
+    if(it.symbol){
+      highlight();
+      window.zhuyinAudio.play(it.symbol).then(advance).catch(()=>{
+        if(id!==seqId)return;
+        clearHl();const note=$('#vnote');note.hidden=false;note.textContent='注音錄音尚未載入，請連上網路後再點一次。';fire();
+      });
+    }else if(TTS){
+      if(TTS.paused)TTS.resume();
+      const u=utter(it.text,it.rate);u.onstart=highlight;u.onend=advance;u.onerror=advance;TTS.speak(u);
+    }else advance();
+  }
+  next(0);
 }
 const speak = (text, el, done) => speakSeq([{text, el}], done);
 function speakWords(container, done){
@@ -871,7 +883,7 @@ function speakWords(container, done){
 }
 function playSym(z){
   const s = SYM.find(x=>x[0]===z);
-  if (s) speakSeq([{text: s[1] ? `${s[1]}，${s[2]}` : s[2]}]);
+  if (s) speakSeq([{symbol:z}]);
   else speak(REP[z]||z);
 }
 
@@ -1880,7 +1892,7 @@ const MFAM={'ㄧ':{c:'#FF9F45',d:'#E07B1E',name:'famI'},'ㄨ':{c:'#4FA8E8',d:'#2
 // only characters with ONE reading, so the voice can't pick a wrong one
 const MREP={'ㄧ':'醫','ㄨ':'烏','ㄩ':'迂','ㄚ':'阿','ㄞ':'哀','ㄡ':'歐','ㄢ':'安','ㄣ':'恩','ㄤ':'骯'};
 const FINREP={'ㄧㄚ':'鴨','ㄧㄝ':'椰','ㄧㄠ':'腰','ㄧㄡ':'優','ㄧㄢ':'煙','ㄧㄣ':'音','ㄧㄤ':'央','ㄧㄥ':'英','ㄨㄚ':'蛙','ㄨㄛ':'窩','ㄨㄞ':'歪','ㄨㄟ':'威',
-  'ㄨㄢ':'彎','ㄨㄣ':'溫','ㄨㄤ':'汪','ㄨㄥ':'翁','ㄩㄝ':'曰','ㄩㄢ':'冤','ㄩㄣ':'氳','ㄩㄥ':'擁'};
+  'ㄨㄢ':'彎','ㄨㄣ':'溫','ㄨㄤ':'汪','ㄨㄥ':'翁','ㄩㄝ':'曰','ㄩㄢ':'冤','ㄩㄣ':'氳','ㄩㄥ':'雍'};
 const INIREP={'ㄅ':'玻','ㄆ':'坡','ㄇ':'摸','ㄈ':'佛','ㄉ':'德','ㄊ':'特','ㄋ':'訥','ㄌ':'仂','ㄍ':'哥','ㄎ':'科','ㄏ':'訶','ㄐ':'基','ㄑ':'七','ㄒ':'西','ㄓ':'知','ㄔ':'吃','ㄕ':'詩','ㄖ':'日','ㄗ':'資','ㄘ':'詞','ㄙ':'思'};
 const sayChar = w => w.solo ? [{text:w.ch,rate:.8},{text:w.a.t,rate:.85}] : [{text:w.a.t,rate:.8}];
 const shuf=a=>a.map(x=>[Math.random(),x]).sort((p,q)=>p[0]-q[0]).map(x=>x[1]);
@@ -1917,8 +1929,8 @@ function monsterLevel(fin){
   const allJ=D.jy.flatMap(l=>l.words);
   let quiz=shuf(L.words).slice(0,5); while(quiz.length<5) quiz.push(shuf(L.words)[0]);
   let qi=0, miss=0, qmiss=0;
-  const finSay=()=>{ const a=MREP[fin[0]], b=MREP[fin.slice(1)]; return (a&&b?[{text:a,rate:.7},{text:b,rate:.7}]:[]).concat([{text:FINREP[fin],rate:.75},{text:FINREP[fin],rate:.75}]); };
-  const blendSay=w=>[{text:INIREP[w.ini]||'',rate:.7},{text:FINREP[w.fin],rate:.7}, ...sayChar(w)];
+  const finSay=()=>[...fin].map(symbol=>({symbol})).concat([{text:FINREP[fin],rate:.75},{text:FINREP[fin],rate:.75}]);
+  const blendSay=w=>[...(w.ini?[{symbol:w.ini}]:[]),{text:FINREP[w.fin],rate:.7}, ...sayChar(w)];
   function frame(step, inner){
     main.innerHTML=`<div class="mon-level" style="--fc:${famC.c};--fd:${famC.d}">
       <div class="mon-top"><button class="say alt" id="mBack" aria-label="回地圖">🗺️</button>
@@ -2256,27 +2268,32 @@ $('#modeZi').innerHTML=T('mode'); setMode(!!S.zyOnly); refreshBar(); home();
   function stopRecording(){
     playbackId++;
     if(!activeSound)return;
-    const {source,gain}=activeSound, now=audioContext.currentTime;
+    const {source,gain,resolve}=activeSound, now=audioContext.currentTime;
     gain.gain.cancelScheduledValues(now);gain.gain.setValueAtTime(gain.gain.value,now);gain.gain.linearRampToValueAtTime(0,now+0.015);
     try{source.stop(now+0.02);}catch(error){}
     activeSound=null;
+    resolve(false);
   }
   function playRecording(symbol){
-    stopRecording();stopSpeak();const id=playbackId;
+    stopRecording();const id=playbackId;
     let context;
-    try{context=getAudioContext();}catch(error){status.textContent='無法播放，請用 Safari 或 Chrome 開啟。';return;}
+    try{context=getAudioContext();}catch(error){return Promise.reject(error);}
     // Resume inside the tap handler so iOS can authorize this audio context.
-    Promise.all([context.resume(),loadRecording(symbol)]).then(([,buffer])=>{
-      if(id!==playbackId||!modal.open)return;
+    return Promise.all([context.resume(),loadRecording(symbol)]).then(([,buffer])=>{
+      if(id!==playbackId)return false;
+      return new Promise(resolve=>{
       const source=context.createBufferSource(),gain=context.createGain(),now=context.currentTime;
       source.buffer=buffer;source.connect(gain);gain.connect(context.destination);
       gain.gain.setValueAtTime(0,now);gain.gain.linearRampToValueAtTime(0.9,now+0.015);
       gain.gain.setValueAtTime(0.9,now+Math.max(0.015,buffer.duration-0.025));gain.gain.linearRampToValueAtTime(0,now+buffer.duration);
-      const sound={source,gain};activeSound=sound;
-      source.onended=()=>{source.disconnect();gain.disconnect();if(activeSound===sound)activeSound=null;};
+      const sound={source,gain,resolve};activeSound=sound;
+      source.onended=()=>{source.disconnect();gain.disconnect();if(activeSound===sound)activeSound=null;resolve(true);};
       source.start(now);
-    }).catch(error=>{if(id===playbackId&&modal.open)status.textContent='聲音尚未載入，請再點一次。';});
+      });
+    });
   }
+  // All game screens share the same decoded recordings and cancellation lifecycle.
+  window.zhuyinAudio={play:playRecording,stop:stopRecording};
   launcher.addEventListener('click',()=>{
     if(modal.open){modal.close();return;}
     lastFocus=document.activeElement;status.textContent='';
@@ -2299,7 +2316,8 @@ $('#modeZi').innerHTML=T('mode'); setMode(!!S.zyOnly); refreshBar(); home();
     key.setAttribute('aria-pressed','true');
     const symbol=key.dataset.zhhSymbol;
     status.textContent=symbol;
-    playRecording(symbol);
+    stopSpeak();const id=playbackId;
+    playRecording(symbol).catch(()=>{if(modal.open&&id+1===playbackId)status.textContent='聲音尚未載入，請再點一次。';});
   });
 })();
 </script>
