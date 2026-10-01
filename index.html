@@ -840,8 +840,18 @@ function voiceNote(){
     n.innerHTML='找不到<b>中文語音</b>，發音功能需要它。<br>iPad／iPhone：設定 → 輔助使用 → 朗讀內容 → 聲音 → 中文（台灣）→ 下載一個聲音。<br>Android：設定 → 文字轉語音 → 安裝 Google 語音的「國語（台灣）」。<br>電腦：用 Chrome 或 Edge 開啟。';
   } else n.hidden=true;
 }
-function utter(text, rate){
-  const u = new SpeechSynthesisUtterance(text);
+function speechText(text, el){
+  // Keep displayed text intact; use an unambiguous homophone for the chief reading.
+  let spoken=String(text).replace(/探長/g,'探掌');
+  if(spoken==='長' && el && !Array.isArray(el)){
+    const unit=el.closest('.u');
+    const symbols=[...(unit?.querySelectorAll('.zy b')||[])].map(b=>b.textContent).join('');
+    if(symbols==='ㄓㄤ' && unit.querySelector('.tn')?.textContent==='ˇ')spoken='掌';
+  }
+  return spoken;
+}
+function utter(text, rate, el){
+  const u = new SpeechSynthesisUtterance(speechText(text,el));
   u.lang = voice ? voice.lang : 'zh-TW'; if (voice) u.voice = voice;
   u.rate = rate || S.rate; u.pitch = 1.05;
   return u;
@@ -871,7 +881,7 @@ function speakSeq(items, done){
       });
     }else if(TTS){
       if(TTS.paused)TTS.resume();
-      const u=utter(it.text,it.rate);u.onstart=highlight;u.onend=advance;u.onerror=advance;TTS.speak(u);
+      const u=utter(it.text,it.rate,it.el);u.onstart=highlight;u.onend=advance;u.onerror=advance;TTS.speak(u);
     }else advance();
   }
   next(0);
