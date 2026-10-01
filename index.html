@@ -952,8 +952,24 @@ function beep(f, t0, dur, type='sine', vol=.14){
   const t=a.currentTime+t0; g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(vol,t+.02); g.gain.exponentialRampToValueAtTime(.001,t+dur);
   o.start(t); o.stop(t+dur+.05);
 }
+// Gentle synthesized brass; no spoken imitation or external recording.
+let celebrationNodes=[];
+function trumpetCelebration(long=false){
+  const a=ac();if(!a)return;
+  celebrationNodes.forEach(node=>{try{node.stop();}catch(e){}});celebrationNodes=[];
+  const notes=long?[[523,0,.28],[523,.32,.28],[523,.64,.28],[659,.96,.5],[784,1.52,.52],[1047,2.12,.85],[784,3.04,.96]]:[[523,0,.16],[659,.18,.16],[784,.36,.64]];
+  notes.forEach(([f,offset,dur])=>{
+    const t=a.currentTime+offset,g=a.createGain(),filter=a.createBiquadFilter();
+    filter.type='lowpass';filter.frequency.value=2600;filter.Q.value=.7;
+    filter.connect(g);g.connect(a.destination);
+    g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.065,t+.025);g.gain.setValueAtTime(.05,t+Math.max(.03,dur-.1));g.gain.linearRampToValueAtTime(0,t+dur);
+    [1,2,3].forEach((h,i)=>{const o=a.createOscillator(),mix=a.createGain();o.type='sine';o.frequency.value=f*h;mix.gain.value=[1,.45,.18][i];o.connect(mix);mix.connect(filter);o.start(t);o.stop(t+dur);celebrationNodes.push(o);o.onended=()=>{o.disconnect();mix.disconnect();celebrationNodes=celebrationNodes.filter(x=>x!==o);};});
+    setTimeout(()=>{filter.disconnect();g.disconnect();},(offset+dur+.1)*1000);
+  });
+}
 const fx = {
-  ding(){ [659,831,988,1319].forEach((f,i)=>beep(f,i*.065,.16,'triangle',.09)); },
+  ding(){ trumpetCelebration(false); },
+  victory(){ trumpetCelebration(true); },
   wrong(){ beep(240,0,.18,'triangle',.12); beep(200,.12,.22,'triangle',.12); },
   pop(){ beep(700,0,.12,'sine',.1); },
   fanfare(){ [523,659,784,1047,784,1047].forEach((f,i)=>beep(f,i*.12,.3,'triangle',.12)); },
@@ -1686,7 +1702,7 @@ function celebrate(){
       <div class="birthday-wish">🦉💌 <b>${T('bdayWish1')}</b><br>${T('bdayWish2')} Hofis ${T('bdayWish3')}<br>—— ${T('bdayFrom')} 🪄</div>
       <div class="row" style="justify-content:center"><button class="btn" data-go="cases">📁 ${T('backCases')}</button><button class="btn ghost" onclick="startCase(${R.ci})">↻ ${T('bdayAgain')}</button></div>
     </div>`;
-    fx.fanfare(); confetti(); speakSeq([{text:'以諾，八歲生日快樂！'},{text:'希望下次再一起去 Hofis 遊樂園玩！'}]);
+    fx.victory(); confetti(); speakSeq([{text:'以諾，八歲生日快樂！'},{text:'希望下次再一起去 Hofis 遊樂園玩！'}]);
     return;
   }
   main.innerHTML = `<div class="card celebrate" style="margin:10px auto">
@@ -1701,7 +1717,7 @@ function celebrate(){
       <button class="btn" data-go="cases">📁 ${T('backCases')}</button>
       ${all?`<button class="btn ghost" data-go="badges">🏆 ${T('seeCert')}</button>`:''}
     </div></div>`;
-  fx.fanfare(); confetti();
+  fx.victory(); confetti();
   const items=[{text:D.ph.solved.t},{text:S.name+'探長，妳得到了'+c.badgeName.t+'徽章！'}];
   if(r1>r0) items.push({text:'升級了！妳現在是'+RANKS[r1][1]+'！'});
   speakSeq(items);
@@ -1817,7 +1833,7 @@ function voiceGame(){
       <div class="txt">${T('vDone')}<br>⭐ <b style="font-size:1.4em;color:var(--stamp)">${score}</b></div>
       ${gain>0?`<div class="starsrow">⭐ +${gain}</div>`:''}
       <div class="row" style="justify-content:center;margin-top:10px"><button class="btn" id="vAgain">🎤 ${T('again')}</button><button class="btn ghost" data-go="home">🏠 ${T('home')}</button></div></div>`;
-    $('#vAgain').onclick=voiceGame; fx.fanfare(); confetti();
+    $('#vAgain').onclick=voiceGame; fx.victory(); confetti();
   }
   draw();
 }
@@ -1969,7 +1985,7 @@ function shootWin(inCase){
   $('#shNext').onclick=()=>inCase?next():nav('home');
   $('#shAgain').onclick=()=>shootPlay(inCase);
   let h=0; const tick=setInterval(()=>{ const el=$('#fwH'); if(!el){ clearInterval(tick); return; } h=Math.min(50,h+1); el.textContent='⬆ '+h+' m'; if(h>=50) clearInterval(tick); },180);
-  fx.fanfare(); setTimeout(()=>{ if($('#fw')) speakSeq([{text:D.ui.ticket.t},{text:D.ui.wheelTop.t}]); }, 1200);
+  fx.victory(); setTimeout(()=>{ if($('#fw')) speakSeq([{text:D.ui.ticket.t},{text:D.ui.wheelTop.t}]); }, 1200);
   setTimeout(()=>{ const t=$('#fwText'); if(t) t.classList.add('on'); }, 5200);
 }
 
@@ -2121,7 +2137,7 @@ function monsterLevel(fin){
         ${nxt?`<button class="btn" id="mNextB">${T('mNext')} ${zyCard(nxt.fin,'')}</button>`:''}
         <button class="btn ghost" id="mMapB">🗺️ ${T('mMap')}</button></div></div>`;
     if(nxt) $('#mNextB').onclick=()=>monsterLevel(nxt.fin); $('#mMapB').onclick=monsterMap;
-    fx.fanfare(); confetti(); speak(D.ui.mDone.t);
+    fx.victory(); confetti(); speak(D.ui.mDone.t);
   }
   demo();
 }
@@ -2184,7 +2200,7 @@ function jyExam(){
       <div class="row" style="justify-content:center;margin-top:10px"><button class="btn" id="exAgain">📝 ${T('exRetry')}</button><button class="btn ghost" id="exMap">🗺️ ${T('mMap')}</button></div></div>`;
     main.querySelectorAll('.ex-wrong .mon-node').forEach(b=>b.onclick=()=>monsterLevel(b.dataset.fin));
     $('#exAgain').onclick=jyExam; $('#exMap').onclick=monsterMap;
-    fx.fanfare(); if(right>=15) confetti();
+    fx.victory(); if(right>=15) confetti();
   }
   draw();
 }
@@ -2255,7 +2271,7 @@ function arcadeEnd(score){
     ${rec?`<div class="rankup">🏆 ${T('newRec')}</div>`:`<div class="muted">🏆 ${T('best')} ${S.best}</div>`}
     ${gain>0?`<div class="starsrow">⭐ +${gain}</div>`:''}
     <div class="row" style="justify-content:center;margin-top:10px"><button class="btn" id="aAgain">🔨 ${T('again')}</button><button class="btn ghost" data-go="home">🏠 ${T('home')}</button></div></div>`;
-  $('#aAgain').onclick=arcadePlay; fx.fanfare(); if(rec) confetti();
+  $('#aAgain').onclick=arcadePlay; fx.victory(); if(rec) confetti();
   speak(rec?`新紀錄！${score}分！`:`妳打到${score}分！`);
 }
 
