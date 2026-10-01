@@ -777,7 +777,10 @@ body,.ann .hz,.ann .zy{color:#25272D}
 .magic-score .ann .zy b,.birthday-book .magic-score .ann .zy b{font-size:inherit;font-weight:400;color:inherit;line-height:1;height:1.04em}
 .magic-score .ann .hz{font-size:1em}
 .magic-score .ann .zy,.birthday-book .magic-score .ann .zy{font-size:.45em}
-</style></head>
+</style><style>
+.multiplication-entry{display:flex;align-items:center;gap:16px;background:#e5f1f7;color:#293c51;border:2px solid #b6d0dc;border-radius:22px;padding:18px 22px;margin:24px 28px;text-decoration:none;box-shadow:0 4px 0 #cbdce1}.multiplication-icon{font-size:47px;background:#fffaf0;border-radius:16px;width:68px;height:68px;display:grid;place-items:center;flex:none}.multiplication-entry>span:nth-child(2){flex:1}.multiplication-entry strong,.multiplication-entry small{display:block}.multiplication-entry strong{font-size:23px}.multiplication-entry small{font-size:15px;margin-top:7px}.multiplication-entry .zy{font-size:.42em}.multiplication-entry:hover{background:#dcecf4}.multiplication-entry:focus-visible{outline:3px solid #b5744c;outline-offset:4px}@media(max-width:600px){.multiplication-entry{margin:18px 14px;padding:15px 12px;gap:10px}.multiplication-entry strong{font-size:19px}.multiplication-entry small{font-size:13px}.multiplication-icon{width:49px;height:55px;font-size:37px}}
+</style>
+</head>
 <body>
 <header class="bar">
   <button class="home" data-go="home" aria-label="回首頁">🏠</button>
@@ -1367,6 +1370,7 @@ function home(){
       <div class="hero-party" aria-label="以琴與安安準備出發"><span class="forest-leaf leaf-one" aria-hidden="true"><svg viewBox="0 0 80 80"><path d="M13 63Q5 16 66 12Q78 61 13 63Z" fill="#8AAB72"/><path d="M8 72L57 24M28 52L24 30M43 39L63 37" fill="none" stroke="#567B50" stroke-width="3" stroke-linecap="round"/></svg></span><div class="party-shadow"></div>${MASCOT}<span class="hero-companion" aria-hidden="true">${forestIcon('owl')}</span></div>
       <div class="world-caption" aria-hidden="true">✦ A LITTLE FOREST ADVENTURE ✦</div>
     </div>
+    <a class="multiplication-entry" href="multiplication.html" aria-label="九九乘法冒險"><span class="multiplication-icon" aria-hidden="true">×</span><span><strong>${homeZh('九九乘法冒險','ㄐㄧㄡˇ ㄐㄧㄡˇ ㄔㄥˊ ㄈㄚˇ ㄇㄠˋ ㄒㄧㄢˇ')}</strong><small>${homeZh('小豬快回家！','ㄒㄧㄠˇ ㄓㄨ ㄎㄨㄞˋ ㄏㄨㄟˊ ㄐㄧㄚ')}</small></span><span aria-hidden="true">➜</span></a>
     <section class="home-chapters"><div class="lobby-section"><h2>${COVER.chapters()}</h2><span>${COVER.choose()}</span></div>${chapterCards()}</section>
     <div class="lobby-section"><h2>${COVER.games()}</h2><span>${COVER.play()}</span></div>
     <div class="game-modes">${activities.map(([go,icon,key,desc,color])=>`<button class="mode-tile ${color}" data-go="${go}"><div class="mode-art"><span>${forestIcon(go)}</span><i aria-hidden="true">·</i></div><div class="mode-text"><strong>${T(key)}</strong><small>${desc}</small></div><span class="mode-play" aria-hidden="true">▶</span></button>`).join('')}</div>
