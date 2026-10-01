@@ -13,6 +13,24 @@
 .cloud,.hill,.road,.party,.flock{display:none!important}
 .question{top:1.5%;width:min(600px,48%);padding:7px 22px 9px;border:3px solid #fff4c8;border-radius:23px;background:#17344dcc;color:#fff;text-shadow:0 2px 3px #102739;box-shadow:0 8px 25px #2034464d}.question small{display:none}.equation{font-size:clamp(38px,4.4vw,62px);line-height:1;color:#fff8c9;text-shadow:0 3px #8d4c2b}.timer{height:10px;margin:6px auto 2px;border-width:2px}.question #seconds{font-size:16px}.houses{top:14%;left:1%;right:1%;height:17%;gap:0}.house{width:33%;max-width:none;height:100%}.house svg{opacity:0}.house .number{top:0;left:17%;right:17%;padding:.06em .1em .1em}.house:hover:not(:disabled){transform:scale(1.04)}.caption{bottom:2.5%;left:24%;right:24%;padding:9px 14px;border:2px solid #fff5ce;border-radius:20px;background:#17344ddd;color:white;text-shadow:0 2px #17344d}.hud{z-index:13}.badge,#pause{background:#fff8dcf2}.cinematic{transition:opacity .25s ease}.cinematic.show{animation-fill-mode:both}
 @media(max-width:700px){#stage{height:auto;min-height:0;aspect-ratio:16/10;border-width:3px}.question{top:1%;width:52%;padding:4px 8px;border-radius:14px}.equation{font-size:clamp(25px,8vw,43px)}.question #seconds{font-size:12px}.timer{margin:3px auto 1px}.hud{top:6px;left:8px;right:8px;font-size:11px}.badge,#pause{padding:6px 8px}.houses{top:15%;height:19%}.house .number{font-size:clamp(25px,9vw,48px);border-width:2px;border-radius:9px}.caption{left:17%;right:17%;bottom:2%;padding:5px;font-size:12px}.cinematic-copy{top:3%;padding:7px 12px;font-size:clamp(17px,5vw,28px)}.cinematic-answer{top:18%;font-size:clamp(27px,9vw,49px)}}
+
+/* Keep the entire illustrated scene visible. Camera motion changes the image,
+   never the whole overlay, so titles and characters cannot be clipped. */
+#stage{width:min(1400px,96vw,calc((100svh - 84px)*16/9));height:auto;min-height:0;aspect-ratio:16/9;background-size:100% 100%}
+.cinematic{background-size:100% 100%;background-repeat:no-repeat;background-color:#d9c493;transform:none!important}
+.cinematic.chase-scene{animation:camera-chase-safe 3.7s ease-in-out both}
+.cinematic.inflate-scene{transform:none!important}
+.cinematic.reward5,.cinematic.reward10{animation:reward-reveal-safe 4s ease-out both}
+@keyframes camera-chase-safe{0%{background-position:49% 50%;filter:brightness(.96)}35%{background-position:51% 50%;filter:brightness(1.04)}70%{background-position:49% 50%;filter:brightness(1)}100%{background-position:50% 50%;filter:brightness(.98)}}
+@keyframes reward-reveal-safe{0%{opacity:0;filter:brightness(1.6)}22%{opacity:1;filter:brightness(1.12)}100%{opacity:1;filter:brightness(1)}}
+.question{top:1.2%;width:min(820px,62%);padding:8px 22px 10px;background:#17344dbf}
+.equation{font-size:clamp(54px,5.5vw,82px);line-height:.98;letter-spacing:3px}
+.timer{width:min(430px,72%);height:12px;margin:8px auto 2px}
+.question #seconds{font-size:17px}
+.hud #score{position:absolute;left:0;top:54px}
+.cinematic-copy{top:2.5%;width:min(780px,72%);padding:10px 20px;font-size:clamp(24px,3.1vw,40px);line-height:1.1}
+.cinematic-sub{line-height:1.25}
+@media(max-width:700px){#stage{width:98vw;aspect-ratio:16/9}.question{top:1%;width:68%;padding:4px 8px 6px}.equation{font-size:clamp(35px,10vw,52px)}.timer{width:76%;height:8px;margin:4px auto 1px}.question #seconds{font-size:11px}.hud #score{top:34px}.cinematic-copy{top:2%;width:78%;padding:5px 8px;font-size:clamp(15px,4.2vw,23px);border-width:2px}.cinematic-sub{margin-top:2px}.cinematic-answer{top:19%;font-size:clamp(25px,8vw,44px)}}
 </style>
 <header><strong>🐷 小豬快回家！</strong><div><a href="index.html">回中文遊戲</a>　<button id="sound" aria-label="切換音效">♪</button></div></header>
 <main id="stage"><div class="cloud"></div><div class="cloud second"></div><div class="hill"></div><div class="hill two"></div><div class="road"></div><div class="hud"><span class="badge" id="player">小豬找家</span><span class="badge" id="score">0 / 10</span><button id="pause">暫停</button></div><div class="question"><small>哪一間才是小豬的家？</small><div class="equation" id="equation">7 × 3 = ?</div><div class="timer"><i id="bar"></i></div><b id="seconds">5.0 秒</b></div><div id="status" role="status" aria-live="polite"></div><div class="houses" id="houses"></div><div class="party" id="party"></div><div class="flock" id="flock"></div><div class="boom">砰！</div><div class="tears" id="tears"></div><div class="flood"></div><div class="caption" id="caption">點選答案房子，快帶小豬回家！</div>
