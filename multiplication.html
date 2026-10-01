@@ -45,10 +45,64 @@
 .burst .question,.burst .houses,.burst .caption{visibility:hidden}
 .burst .cinematic-copy{top:3%;width:auto;min-width:300px;font-size:clamp(30px,4vw,54px)}
 @media(max-width:700px){.question{width:58%;padding:2px 6px 4px}.equation{font-size:clamp(32px,8.5vw,47px)}.timer{height:7px;margin-top:2px}.question #seconds{font-size:10px}.house .number{font-size:clamp(28px,8vw,45px)}.cinematic.inflate-scene{background-size:84% auto}.burst .cinematic-copy{min-width:0;width:auto;font-size:clamp(20px,6vw,32px)}}
+
+/* Responsive layout: controls and question occupy their own rows. */
+header{height:auto;min-height:60px;flex-wrap:wrap}
+header>div{display:flex;align-items:center;gap:10px}
+#stage{display:grid;grid-template-rows:auto auto auto;width:min(1200px,96%);height:auto;min-height:0;aspect-ratio:auto;background-size:0 0;margin-bottom:18px;overflow:hidden}
+.hud{position:relative;top:auto;left:auto;right:auto;padding:12px 16px;flex-wrap:wrap;z-index:3}
+.hud #score{position:static;margin-left:auto}
+.badge{max-width:100%;overflow-wrap:anywhere}
+.question{position:relative;top:auto;left:auto;transform:none;justify-self:center;width:min(720px,calc(100% - 24px));margin:0 12px 12px;padding:12px 16px}
+.equation{font-size:clamp(40px,6vw,70px);line-height:1.12;letter-spacing:1px;white-space:nowrap}
+.question #seconds{font-size:15px}
+.timer{height:10px;margin:8px auto 4px}
+.scene{position:relative;min-width:0;width:100%;aspect-ratio:16/9;background:inherit;background-size:100% 100%;background-repeat:no-repeat;overflow:hidden;isolation:isolate}
+.houses{top:14%;height:24%;left:1%;right:1%;gap:0}
+.house{min-width:0;width:33.333%;min-height:64px;touch-action:manipulation}
+.house .number{top:2%;font-size:clamp(30px,5.8vw,76px)}
+.caption{bottom:2%;left:12%;right:12%;font-size:clamp(13px,1.6vw,18px)}
+#status{top:38%;left:4%;right:4%;font-size:clamp(16px,2vw,23px)}
+.overlay{z-index:30;align-items:center;overflow:auto}
+.panel{max-height:calc(100svh - 36px)}
+.burst .question{visibility:visible}
+.burst .equation{opacity:.7}
+.burst .timer,.burst #seconds{visibility:hidden}
+@media(max-width:700px){
+ header{padding:8px 12px;gap:8px}
+ header strong{font-size:18px}
+ header a{font-size:13px}
+ #sound,#pause{min-height:44px;padding:9px 12px}
+ #stage{width:calc(100% - 12px);border-radius:18px;border-width:3px}
+ .hud{padding:8px;gap:6px;font-size:13px}
+ .badge{padding:8px 10px}
+ #player{max-width:48%}
+ .question{width:calc(100% - 16px);margin:0 8px 10px;padding:10px 8px}
+ .equation{font-size:clamp(38px,10vw,58px)}
+ .scene{aspect-ratio:auto;height:clamp(300px,62vw,430px)}
+ .houses{top:14%;height:24%}
+ .house .number{font-size:clamp(30px,8vw,48px)}
+ .caption{left:5%;right:5%;padding:6px 8px;line-height:1.4}
+ .cinematic-copy{width:90%;font-size:clamp(18px,4.5vw,28px)}
+ .angry-card{padding:12px;font-size:22px;bottom:7%}
+ .panel{padding:18px;width:min(520px,100%)}
+ .panel h1{font-size:28px}
+ .tables{grid-template-columns:repeat(5,minmax(0,1fr));gap:7px}
+ .tables span{padding:12px 0}
+ .overlay{position:fixed;padding:12px}
+}
+@media(max-height:500px) and (orientation:landscape){
+ header{min-height:44px}
+ .hud{padding:6px 12px}
+ .question{padding:6px 12px;margin-bottom:8px}
+ .equation{font-size:42px}
+ .scene{height:auto;aspect-ratio:16/9}
+ .overlay{position:fixed}
+}
 </style>
 <header><strong>🐷 小豬快回家！</strong><div><a href="index.html">回中文遊戲</a>　<button id="sound" aria-label="切換音效">♪</button></div></header>
-<main id="stage"><div class="cloud"></div><div class="cloud second"></div><div class="hill"></div><div class="hill two"></div><div class="road"></div><div class="hud"><span class="badge" id="player">小豬找家</span><span class="badge" id="score">0 / 10</span><button id="pause">暫停</button></div><div class="question"><small>哪一間才是小豬的家？</small><div class="equation" id="equation">7 × 3 = ?</div><div class="timer"><i id="bar"></i></div><b id="seconds">5.0 秒</b></div><div id="status" role="status" aria-live="polite"></div><div class="houses" id="houses"></div><div class="party" id="party"></div><div class="flock" id="flock"></div><div class="boom">砰！</div><div class="tears" id="tears"></div><div class="flood"></div><div class="caption" id="caption">點選答案房子，快帶小豬回家！</div>
-<div class="cinematic" id="cinematic" aria-live="polite"></div><div class="overlay" id="overlay"></div></main>
+<main id="stage"><div class="cloud"></div><div class="cloud second"></div><div class="hill"></div><div class="hill two"></div><div class="road"></div><div class="hud"><span class="badge" id="player">小豬找家</span><span class="badge" id="score">0 / 10</span><button id="pause">暫停</button></div><div class="question"><small>哪一間才是小豬的家？</small><div class="equation" id="equation">7 × 3 = ?</div><div class="timer"><i id="bar"></i></div><b id="seconds">5.0 秒</b></div><div class="scene"><div id="status" role="status" aria-live="polite"></div><div class="houses" id="houses"></div><div class="party" id="party"></div><div class="flock" id="flock"></div><div class="boom">砰！</div><div class="tears" id="tears"></div><div class="flood"></div><div class="caption" id="caption">點選答案房子，快帶小豬回家！</div>
+<div class="cinematic" id="cinematic" aria-live="polite"></div></div><div class="overlay" id="overlay"></div></main>
 <script>
 'use strict';
 const $=s=>document.querySelector(s),stage=$('#stage'),overlay=$('#overlay'),cinematic=$('#cinematic');
