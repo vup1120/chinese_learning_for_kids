@@ -152,6 +152,10 @@ main{max-width:760px; margin:0 auto; padding:14px 14px 40px}
 .slot.fill{border-style:solid; border-color:var(--good); color:var(--good); animation:popin .35s}
 .tslot{position:absolute; right:-.9em; top:calc(50% - .7em); width:1.2em; height:1.4em; border:2px dashed var(--stamp); border-radius:4px; color:var(--stamp); display:grid; place-items:center}
 .tslot.fill{border-style:solid; border-color:var(--good); color:var(--good)}
+/* Reserve the tone box inside a fill-in character so the next character cannot cover it. */
+.u.has-slots{margin-inline:.14em}
+.u.has-slots .zy{padding-right:1.65em}
+.u.has-slots .tslot{right:.15em}
 @keyframes popin{0%{transform:scale(.3)}70%{transform:scale(1.25)}100%{transform:scale(1)}}
 .steps{display:flex; justify-content:center; gap:8px; margin:6px 0 10px; font-size:18px}
 .steps > span{padding:4px 12px; border-radius:999px; background:rgba(255,255,255,.12); color:var(--onDesk)}
@@ -640,6 +644,7 @@ body,.ann .hz,.ann .zy{color:#25272D}
 .ex-bar{height:12px;background:#fff;border-radius:99px;overflow:hidden;margin:6px 4px 8px;box-shadow:inset 0 0 0 2px #E6D3B5}
 .ex-bar div{height:100%;background:var(--fc);transition:width .4s}
 .ex-word{display:flex;align-items:center;justify-content:center;gap:12px;background:#fff;border-radius:22px;padding:8px;margin:6px 0 10px}
+.ex-word .u{margin-inline:.12em}
 .mcard.pick-ok{background:#D1F5E1;box-shadow:0 6px 0 #3E9B5F,inset 0 0 0 4px #3E9B5F}
 .mcard.pick-no{background:#FFE0E0;box-shadow:0 6px 0 #C8342B,inset 0 0 0 4px #C8342B;animation:shake .4s}
 .ex-big{font-size:1.8em;color:var(--fd)}
@@ -792,7 +797,7 @@ function U(c, o={}){
     else if (tn) t=`<i class="tn" style="--n:${n}">${tn}</i>`;
     col = syms.map(s=>`<b>${s}</b>`).join('') + t;
   }
-  return `<span class="u${o.tgt?' tgt':''}"><span class="hz">${h}</span><span class="zy">${col}</span></span>`;
+  return `<span class="u${o.tgt?' tgt':''}${o.slots?' has-slots':''}"><span class="hz">${h}</span><span class="zy">${col}</span></span>`;
 }
 function A(a, o={}){
   if(!a) return '';
